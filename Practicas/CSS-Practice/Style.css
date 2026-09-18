@@ -55,7 +55,7 @@ nav a{
 main{
     width: 80%;
     /* 1rem = 20px*/
-    margin: 1rem auto;
+    margin: 2rem auto;
     /*ocupa como minimo el 50% de la pantalla*/
     min-width: 50vh;
 }
@@ -64,14 +64,14 @@ main{
 section{
     background-color: white;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 /*ARTICLE estilo para bloque indepenediente de contenido*/
 article{
     background-color: #eeeeee;
-    padding: 0.75rem;
-    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
     /*Aqui usamos px porque queremos un grosor fijo para el borde*/
     border-left: 5px solid #3498db;
 }
@@ -79,7 +79,7 @@ article{
 /*ASIDE estio para la informacion secundaria*/
 aside{
     background-color: beige;
-    padding: 1rem;
+    padding: 0.5rem;
     margin-bottom: 1rem;
 }
 
