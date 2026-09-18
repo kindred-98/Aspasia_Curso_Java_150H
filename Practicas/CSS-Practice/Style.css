@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Definimos el tamaño de la fuente ahora
+0.5 rem = 10px
+1rem = 20px
+1.5 rem = 30px
+2 rem = 40px */
+
+html{
+    font-size: 20px;
+}
+/*BODY Estilo generales de todas la pagina*/
+body{
+    /*Tipo de letra que se utiliza en toda la web*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*Elimina el margen que pone el navegador por defecto*/
+    margin:0;
+    /*Color de fondo de la pagina*/
+    background-color: #a1b304;
+}
+
+/*HEADER Estilo para la cabecera de la pagina*/
+header{
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    /*1rem = 20px*/
+    padding:  1rem;
+    /* 20vh = 20% de la  altura visible de la pantalla*/
+    min-height: 200px;
+}
+
+/* Estilo para el menu de navegacion*/
+nav{
+    background-color: #34495e;
+    text-align: center;
+    /*1rem = 20px*/
+    font-size: 1rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: aliceblue;
+    /* 0.75rem = 15px */
+    margin: 0.75rem;
+}
