@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kindred</title>
+    <link rel="stylesheet" href= "../CSS-Practice/Style.css">
 </head>
 
 <body>
+
     <header>
-    <h1> Mi primera pagina semantica </h1>
-    <p> Aprendiendo las etiquetas principales</p>
+    <h1>Mi primera pagina semantica</h1>
+    <p>Aprendiendo las etiquetas principales</p>
     </header>
 
 <!-- NAV se utilizar para crear una zona de navegacion que contiene enlaces a diferentes partes de la web.
@@ -18,9 +20,9 @@ el simbolo # se usa como enlance provisional porque aun no hemos puesto el enlac
 normalmente al incio de la pagina. Es un enlace que se usa para indicar una referencia dentro de la misma pagina -->
 <nav>
     <ul>
-    <li> <a href= "#">Inicio</a></li>
-    <li> <a href= "#">Noticias</a></li>
-    <li> <a href= "#">Contacto</a></li>
+    <a href= "#">Inicio</a>
+    <a href= "#">Noticias</a>
+    <a href= "#">Contacto</a>
     </ul>
 </nav>
 
@@ -29,10 +31,11 @@ normalmente al incio de la pagina. Es un enlace que se usa para indicar una refe
 <main>  
     <!-- SECTION sirve para agrupar contenido relacionando dentro de una pagina -->
     <section>
-        <article>
-        <h2>Primera Noticia</h2>
+
+    <article>
+        <h3>Primera Noticia</h3>
         <!-- ARTICLE es el contenido independiente, puede ser una noticia una  entrada de blog o una publicacion -->
-         <p>Estamos aprendiendo a crear paginas web utilizando etiquetas semanticas de HTML </p>
+        <p>Estamos aprendiendo a crear paginas web utilizando etiquetas semanticas de HTML </p>
     </article>
 
     <!-- Otro articulo -->
@@ -44,12 +47,24 @@ normalmente al incio de la pagina. Es un enlace que se usa para indicar una refe
     </section>
 
     <!-- ASIDE contiene informacion secundaria relacionada con el contenido por ejemplo enlaces, publicidad, noticias relacionadas, etc -->
-
-
     <aside>
 
+    <h3>Enlace relacionado</h3>
+
+    <ul>
+        <li> <a href="#"> Curso de he HTML</a></li>
+        <li><a href="#">Curso de CSS</a></li>
+    </ul>
+
     </aside>
+
 </main>
+
+<!-- FOOTER reprensenta el pie de pagina, puede contener informacion de contacto
+copyright -->
+<footer>
+    <p>2026 - Mi primera pagina web</p>
+</footer>
 
 </body>
 </html>
