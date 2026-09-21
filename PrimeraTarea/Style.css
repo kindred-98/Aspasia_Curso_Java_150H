@@ -1,0 +1,153 @@
+/* =============================================
+   RESET GENERAL
+   ============================================= */
+
+/* box-sizing: border-box hace que padding y border
+   se incluyan dentro del ancho/alto total del elemento */
+* {
+    box-sizing: border-box;
+}
+
+/* Font-size base de 20px para que 1rem = 20px */
+html {
+    font-size: 20px;
+}
+
+/* Reseteo de márgenes del body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #010101;
+    color: #e0e0e0;
+}
+
+/* =============================================
+   HEADER - Cabecera
+   - 100% de ancho (se comporta como bloque)
+   - Altura de 150px
+   ============================================= */
+header {
+    background-color: #04aaeb;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    height: 150px;              /* Altura fija de 150px */
+    border: 1px solid #070707;  /* Borde para visualizar el tamaño */
+    display: flex;               /* Flexbox para centrar contenido vertical y horizontal */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =============================================
+   NAV - Barra de navegación
+   - 100% de ancho
+   - Altura de 70px
+   - Debajo del header
+   ============================================= */
+nav {
+    background-color: rgb(6, 6, 6);
+    height: 70px;               /* Altura fija de 70px */
+    border: 3px solid #04aaeb;  /* Borde para visualizar el tamaño */
+    display: flex;               /* Flexbox para alinear los links */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista del nav sin viñetas */
+nav ul {
+    list-style: none;           /* Eliminar puntos de la lista */
+    display: flex;              /* Links en fila */
+    gap: 2rem;                  /* Espacio entre cada link */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de los links del nav */
+nav a {
+    color: white;               /* Texto blanco */
+    text-decoration: none;      /* Sin subrayado */
+    font-size: 1rem;            /* Tamaño de fuente usando rem */
+    padding: 0.5rem 1rem;       /* Espaciado interno */
+    border-radius: 4px;         /* Bordes redondeados */
+    transition: background 0.3s; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto hover en los links */
+nav a:hover {
+    background-color: rgba(32, 170, 170, 0.2);
+}
+
+/* =============================================
+   CONTENEDOR PRINCIPAL
+   - 90% de ancho
+   - Centrado con margin: 0 auto
+   - Contiene main (70%) y aside (30%)
+   ============================================= */
+.contenedor {
+    width: 90%;                 /* 90% del ancho de la pantalla */
+    margin: 0 auto;             /* Centrado horizontalmente */
+    display: flex;              /* Flexbox para que main y aside estén lado a lado */
+    gap: 1rem;                  /* Espacio entre main y aside */
+    padding: 1rem 0;            /* Espacio arriba y abajo del contenedor */
+}
+
+/* =============================================
+   MAIN - Contenido principal
+   - 70% del contenedor
+   - Altura de 400px
+   ============================================= */
+main {
+    width: 70%;                 /* 70% del contenedor */
+    height: 400px;              /* Altura fija de 400px */
+    background-color: #1a1a2e;
+    border: 2px solid #e74c3c;  /* Borde rojo para visualizar el tamaño */
+    padding: 1.5rem;            /* Espaciado interno en rem */
+    border-radius: 8px;         /* Bordes redondeados */
+}
+
+/* =============================================
+   ASIDE - Información secundaria
+   - 30% del contenedor
+   - Altura de 400px
+   ============================================= */
+aside {
+    width: 30%;                 /* 30% del contenedor */
+    height: 400px;              /* Altura fija de 400px */
+    background-color: #16213e;
+    border: 2px solid #3498db;  /* Borde azul para visualizar el tamaño */
+    padding: 1.5rem;            /* Espaciado interno en rem */
+    border-radius: 8px;         /* Bordes redondeados */
+}
+
+/* =============================================
+   FOOTER - Pie de página
+   - 100% de ancho
+   - Altura de 120px
+   ============================================= */
+footer {
+    background-color: #7c7730;
+    color: white;
+    text-align: center;
+    height: 120px;              /* Altura fija de 120px */
+    border: 2px solid #c89b3c;  /* Borde para visualizar el tamaño */
+    display: flex;               /* Flexbox para centrar el texto */
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;            /* Empuja el footer hacia abajo si hay poco contenido */
+}
+
+/* =============================================
+   RESPONSIVE
+   - En pantallas pequeñas, main y aside se apilan
+   ============================================= */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;  /* main y aside uno debajo del otro */
+    }
+
+    main, aside {
+        width: 100%;             /* Cada uno ocupa el 100% del contenedor */
+        height: auto;            /* Altura automática en móvil */
+    }
+}
