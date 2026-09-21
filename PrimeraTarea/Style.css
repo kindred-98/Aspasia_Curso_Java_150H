@@ -85,7 +85,7 @@ nav a:hover {
    - Contiene main (70%) y aside (30%)
    ============================================= */
 .contenedor {
-    width: 90%;                 /* 90% del ancho de la pantalla */
+    width: 95%;                 /* 95% del ancho de la pantalla */
     margin: 0 auto;             /* Centrado horizontalmente */
     display: flex;              /* Flexbox para que main y aside estén lado a lado */
     gap: 1rem;                  /* Espacio entre main y aside */
@@ -99,7 +99,7 @@ nav a:hover {
    ============================================= */
 main {
     width: 70%;                 /* 70% del contenedor */
-    height: 400px;              /* Altura fija de 400px */
+    height: 500px;              /* Altura fija de 500px */
     background-color: #1a1a2e;
     border: 2px solid #e74c3c;  /* Borde rojo para visualizar el tamaño */
     padding: 1.5rem;            /* Espaciado interno en rem */
@@ -113,7 +113,7 @@ main {
    ============================================= */
 aside {
     width: 30%;                 /* 30% del contenedor */
-    height: 400px;              /* Altura fija de 400px */
+    height: 500px;              /* Altura fija de 500px */
     background-color: #16213e;
     border: 2px solid #3498db;  /* Borde azul para visualizar el tamaño */
     padding: 1.5rem;            /* Espaciado interno en rem */
@@ -129,7 +129,7 @@ footer {
     background-color: #7c7730;
     color: white;
     text-align: center;
-    height: 120px;              /* Altura fija de 120px */
+    height: 100px;              /* Altura fija de 100px */
     border: 2px solid #c89b3c;  /* Borde para visualizar el tamaño */
     display: flex;               /* Flexbox para centrar el texto */
     justify-content: center;
