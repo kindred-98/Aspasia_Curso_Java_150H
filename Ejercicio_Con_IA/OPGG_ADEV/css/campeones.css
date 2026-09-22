@@ -124,6 +124,7 @@ footer a:hover {
     border: 1px solid #1e5c3a;
     border-radius: 10px;
     transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ff00b7ae, #05f469a7);
 }
 
 .champion-card:hover {
@@ -134,13 +135,13 @@ footer a:hover {
 
 .champion-info h3 {
     font-size: 0.9rem;
-    color: #2ecc71;
+    color: #000000;
     margin-bottom: 0.3rem;
 }
 
 .champion-points {
-    font-size: 0.65rem;
-    color: #8fbb9a;
+    font-size: 0.70rem;
+    color: rgb(252, 251, 252);
     margin-top: 0.2rem;
 }
 
@@ -150,8 +151,8 @@ footer a:hover {
     align-items: center;
     gap: 0.3rem;
     padding: 0.2rem 0.5rem;
-    background: rgba(46, 204, 113, 0.15);
-    border: 1px solid #2ecc71;
+    background: rgb(0, 5, 2);
+    border: 1px solid #f406ec;
     border-radius: 4px;
     font-size: 0.65rem;
     color: #2ecc71;

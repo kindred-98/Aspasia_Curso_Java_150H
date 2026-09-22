@@ -179,7 +179,7 @@ nav a.active {
 /* Contenido principal: 70% */
 main {
     width: 70%;
-    background: rgba(15, 25, 35, 0.92);
+    background: rgb(0, 0, 0);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 8px 40px rgb(255, 221, 0);
