@@ -1,7 +1,7 @@
 /* ===== PERFIL PAGE - ESTILOS ESPECÍFICOS ===== */
 
 body {
-    background-image: url('img/bg-profile.jpg');
+    background-image: url('../img/bg-profile.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
