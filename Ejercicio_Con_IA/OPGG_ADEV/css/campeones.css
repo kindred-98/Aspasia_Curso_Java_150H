@@ -10,27 +10,28 @@ body {
 }
 
 body::before {
-    background: linear-gradient(180deg, rgba(8, 22, 14, 0.88) 0%, rgba(8, 22, 14, 0.95) 100%);
+    background: linear-gradient(180deg, rgb(255, 0, 255) 0%, rgba(0, 252, 109, 0.823) 100%);
 }
 
 /* Header verde oscuro */
 header {
     background: rgba(6, 28, 16, 0.95);
-    border-bottom: 2px solid #2ecc71;
-    box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
+    border-bottom: 2px solid rgb(255, 0, 251);
+    box-shadow: 0 4px 20px rgba(44, 2, 255, 0.3);
 }
 
 .header-logo .lol-icon {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    background: linear-gradient(135deg, #ff00b7, #05f469);
 }
 
 .header-logo h1 {
-    color: #2ecc71;
+    color: #ff06fb;
 }
 
 .summoner-icon {
     border-color: #2ecc71;
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
+    border-bottom: 3px solid #2ecc71;
+    box-shadow: 0 0 20px rgb(232, 0, 248);
 }
 
 .summoner-name {
@@ -40,7 +41,7 @@ header {
 /* Nav verde */
 nav {
     background: rgba(6, 28, 16, 0.95);
-    border-bottom: 1px solid #1e5c3a;
+    border-bottom: 2px solid #1e5c3a;
     box-shadow: 0 4px 30px rgba(46, 204, 113, 0.25);
 }
 
@@ -69,21 +70,21 @@ aside {
 
 /* Footer */
 footer {
-    background: rgba(6, 28, 16, 0.95);
-    border-top: 1px solid #1e5c3a;
+    background: rgb(21, 20, 20);
+    border-top: 5px solid #f302fb;
 }
 
 footer a {
-    color: #2ecc71;
+    color: #f704f7;
 }
 
 footer a:hover {
-    color: #7dffa3;
+    color: #b77dff;
 }
 
 /* Títulos y cards de esta página */
 .section-title {
-    color: #2ecc71;
+    color: #f406ec;
     border-bottom-color: #1e5c3a;
 }
 
