@@ -15,20 +15,20 @@ body::before {
 header {
     background: rgba(0, 0, 0, 0.95);
     border-bottom: 2px solid #c89b3c;
-    box-shadow: 0 4px 20px rgba(200, 155, 60, 0.25);
+    box-shadow: 0 4px 20px rgba(200, 123, 60, 0.25);
 }
 
 /* NAV */
 nav {
     background: rgba(0, 0, 0, 0.95);
-    border-bottom: 1px solid #222;
+    border-bottom: 2px solid #222222;
 }
 
 /* MAIN Y ASIDE - NEGRO */
 main {
     background: rgba(10, 10, 10, 0.92);
-    border: 1px solid #222;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    border: 2px solid #fd0303;
+    box-shadow: 0 8px 32px rgba(235, 201, 8, 0.6);
 }
 
 aside {
@@ -96,14 +96,14 @@ footer a {
 
 .pf-name {
     font-size: 1.6rem;
-    color: #fff;
+    color: #f0c75e;
     margin-bottom: 0.2rem;
     font-weight: 700;
 }
 
 .pf-tag {
     font-size: 0.85rem;
-    color: #aaa;
+    color: #fff;
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -117,12 +117,12 @@ footer a {
 
 .pf-ladder {
     font-size: 0.7rem;
-    color: #aaa;
+    color: #fff;
 }
 
 .pf-status {
     font-size: 0.8rem;
-    color: #ccc;
+    color: #fff;
     margin-top: 0.4rem;
     font-style: italic;
 }
@@ -137,7 +137,7 @@ footer a {
     gap: 0.4rem;
     padding: 0.3rem 0.8rem;
     background: rgba(231, 76, 60, 0.15);
-    border: 1px solid #e74c3c;
+    border: 2px solid #e74c3c;
     border-radius: 20px;
     font-size: 0.7rem;
     color: #e74c3c;
