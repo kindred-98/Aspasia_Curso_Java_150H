@@ -1,0 +1,175 @@
+/* =============================================
+   ESTADISTICAS.CSS - Solo se carga en estadisticas.html
+   Tema: azul / cian (datos y números)
+   Sobreescribe header, nav, footer y cards de style.css
+   ============================================= */
+
+/* Capa azul encima del fondo */
+body::before {
+    background: linear-gradient(180deg, rgba(6, 16, 32, 0.88) 0%, rgba(6, 16, 32, 0.95) 100%);
+}
+
+/* Header azul */
+header {
+    background: rgba(8, 20, 42, 0.95);
+    border-bottom: 2px solid #3498db;
+    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.35);
+}
+
+.header-logo .lol-icon {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+.header-logo h1 {
+    color: #5dade2;
+}
+
+.summoner-icon {
+    border-color: #3498db;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
+}
+
+.summoner-name {
+    color: #5dade2;
+}
+
+/* Nav azul */
+nav {
+    background: rgba(8, 20, 42, 0.95);
+    border-bottom: 1px solid #1a3a5c;
+    box-shadow: 0 4px 30px rgba(52, 152, 219, 0.25);
+}
+
+nav a:hover {
+    color: #5dade2;
+    background: rgba(52, 152, 219, 0.15);
+}
+
+nav a.active {
+    color: #5dade2;
+    background: rgba(52, 152, 219, 0.2);
+    border-bottom: 2px solid #3498db;
+}
+
+/* Main y aside */
+main {
+    background: rgba(8, 18, 38, 0.92);
+    box-shadow: 0 8px 40px rgba(52, 152, 219, 0.3);
+}
+
+aside {
+    background: rgba(8, 18, 38, 0.92);
+    border: 1px solid #1a3a5c;
+    box-shadow: 0 8px 40px rgba(52, 152, 219, 0.25);
+}
+
+/* Footer */
+footer {
+    background: rgba(8, 20, 42, 0.95);
+    border-top: 1px solid #1a3a5c;
+}
+
+footer a {
+    color: #3498db;
+}
+
+footer a:hover {
+    color: #85c1e9;
+}
+
+/* Títulos y cards */
+.section-title {
+    color: #5dade2;
+    border-bottom-color: #1a3a5c;
+}
+
+.card {
+    background: rgba(12, 28, 52, 0.75);
+    border: 1px solid #1a3a5c;
+}
+
+.card:hover {
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.25);
+}
+
+.stat-box {
+    background: rgba(12, 28, 52, 0.7);
+    border: 1px solid #1a3a5c;
+}
+
+.stat-value {
+    color: #5dade2;
+}
+
+/* Tabla de temporadas */
+.season-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.season-table th {
+    text-align: left;
+    padding: 0.7rem;
+    font-size: 0.7rem;
+    color: #7fb3d5;
+    text-transform: uppercase;
+    border-bottom: 1px solid #1a3a5c;
+}
+
+.season-table td {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    color: #d0d5dc;
+    border-bottom: 1px solid #1a3a5c;
+}
+
+.season-table tr:hover {
+    background: rgba(52, 152, 219, 0.12);
+}
+
+/* Gráfico de barras de actividad */
+.activity-chart {
+    display: flex;
+    gap: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.activity-bar {
+    flex: 1;
+    height: 30px;
+    background: #12263a;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #8899aa;
+    transition: all 0.3s;
+}
+
+.activity-bar:hover {
+    background: #3498db;
+    color: #0a0e1a;
+}
+
+.activity-bar .fill {
+    width: 100%;
+    background: linear-gradient(180deg, #5dade2, #2980b9);
+    border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+    .season-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .season-table th,
+    .season-table td {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}

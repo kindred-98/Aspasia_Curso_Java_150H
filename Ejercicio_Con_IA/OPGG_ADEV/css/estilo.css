@@ -1,0 +1,123 @@
+/* =============================================
+   ESTILO.CSS - Solo se carga en estilo.html
+   Tema: morado / magenta (playstyle)
+   Sobreescribe header, nav, footer y cards de style.css
+   ============================================= */
+
+/* Capa morada encima del fondo */
+body::before {
+    background: linear-gradient(180deg, rgba(22, 8, 32, 0.88) 0%, rgba(22, 8, 32, 0.95) 100%);
+}
+
+/* Header morado */
+header {
+    background: rgba(28, 10, 42, 0.95);
+    border-bottom: 2px solid #9b59b6;
+    box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35);
+}
+
+.header-logo .lol-icon {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+}
+
+.header-logo h1 {
+    color: #c39bd3;
+}
+
+.summoner-icon {
+    border-color: #9b59b6;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.6);
+}
+
+.summoner-name {
+    color: #c39bd3;
+}
+
+/* Nav morado */
+nav {
+    background: rgba(28, 10, 42, 0.95);
+    border-bottom: 1px solid #4a1f5c;
+    box-shadow: 0 4px 30px rgba(155, 89, 182, 0.25);
+}
+
+nav a:hover {
+    color: #c39bd3;
+    background: rgba(155, 89, 182, 0.15);
+}
+
+nav a.active {
+    color: #c39bd3;
+    background: rgba(155, 89, 182, 0.2);
+    border-bottom: 2px solid #9b59b6;
+}
+
+/* Main y aside */
+main {
+    background: rgba(24, 10, 36, 0.92);
+    box-shadow: 0 8px 40px rgba(155, 89, 182, 0.3);
+}
+
+aside {
+    background: rgba(24, 10, 36, 0.92);
+    border: 1px solid #4a1f5c;
+    box-shadow: 0 8px 40px rgba(155, 89, 182, 0.25);
+}
+
+/* Footer */
+footer {
+    background: rgba(28, 10, 42, 0.95);
+    border-top: 1px solid #4a1f5c;
+}
+
+footer a {
+    color: #9b59b6;
+}
+
+footer a:hover {
+    color: #d2b4de;
+}
+
+/* Títulos y cards */
+.section-title {
+    color: #c39bd3;
+    border-bottom-color: #4a1f5c;
+}
+
+.card {
+    background: rgba(40, 16, 56, 0.75);
+    border: 1px solid #4a1f5c;
+}
+
+.card:hover {
+    border-color: #9b59b6;
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.25);
+}
+
+.stat-box {
+    background: rgba(40, 16, 56, 0.7);
+    border: 1px solid #4a1f5c;
+}
+
+.stat-value {
+    color: #c39bd3;
+}
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .compare-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .compare-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+}
