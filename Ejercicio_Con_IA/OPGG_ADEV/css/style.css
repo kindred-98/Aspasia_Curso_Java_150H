@@ -299,8 +299,8 @@ footer a:hover {
 
 /* Avatar de campeón (se usa en varias páginas) */
 .champion-avatar {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     border: 3px solid #2a3a4d;
     overflow: hidden;

@@ -171,7 +171,7 @@ footer a:hover {
     align-items: center;
     gap: 0.8rem;
     padding: 0.7rem;
-    background: rgba(12, 40, 24, 0.75);
+    background: rgba(0, 0, 0, 0.75);
     border: 1px solid #1e5c3a;
     border-radius: 8px;
     transition: border-color 0.3s;
@@ -186,14 +186,14 @@ footer a:hover {
 }
 
 .pf-mastery-name {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #fff;
     font-weight: 600;
 }
 
 .pf-mastery-pts {
-    font-size: 0.65rem;
-    color: #8fbb9a;
+    font-size: 0.80rem;
+    color: #f406ec;
 }
 
 .pf-mastery-stats {
@@ -207,14 +207,14 @@ footer a:hover {
 
 .pf-mastery-games {
     font-size: 0.75rem;
-    color: #2ecc71;
+    color: #f406ec;
     font-weight: 700;
     white-space: nowrap;
 }
 
 .pf-mastery-wl {
     font-size: 0.7rem;
-    color: #8fbb9a;
+    color: #f7f9f7;
     white-space: nowrap;
 }
 
@@ -243,8 +243,8 @@ footer a:hover {
     height: 35px;
     border-radius: 50%;
     background: rgba(46, 204, 113, 0.15);
-    border: 2px solid #2ecc71;
-    color: #2ecc71;
+    border: 3px solid #0ded6a;
+    color: #f406ec;
     display: flex;
     align-items: center;
     justify-content: center;
