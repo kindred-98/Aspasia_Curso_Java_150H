@@ -50,6 +50,7 @@ nav a.active {
 main {
     background: rgba(6, 28, 38, 0.92);
     box-shadow: 0 8px 40px rgba(46, 204, 113, 0.25);
+    width: 100%;
 }
 
 aside {

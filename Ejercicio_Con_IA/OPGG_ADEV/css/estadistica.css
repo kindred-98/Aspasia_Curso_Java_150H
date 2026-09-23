@@ -58,15 +58,16 @@ main {
 }
 
 aside {
-    background: rgba(24, 10, 36, 0.92);
+    background: rgba(0, 0, 0, 0);
     border: 0px solid #4a1f5c;
-    box-shadow: 0 8px 40px rgba(155, 89, 182, 0.25);
+    box-shadow: 0 8px 50px rgb(1, 93, 253);
 }
 
 /* Footer */
 footer {
-    background: rgba(28, 10, 42, 0.95);
+    background: rgba(17, 10, 42, 0.95);
     border-top: 3px solid #fdfcfd;
+    box-shadow: 0 8px 50px rgb(233, 234, 236);
 }
 
 footer a {
