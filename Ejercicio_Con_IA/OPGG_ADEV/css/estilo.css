@@ -11,33 +11,33 @@ body::before {
 
 /* Header morado */
 header {
-    background: rgba(28, 10, 42, 0.95);
-    border-bottom: 2px solid #9b59b6;
-    box-shadow: 0 4px 20px rgba(155, 89, 182, 0.35);
+    background: rgba(2, 51, 248, 0.53);
+    border-bottom: 4px solid #f7f4f8;
+    box-shadow: 0 4px 30px rgb(255, 255, 255);
 }
 
 .header-logo .lol-icon {
-    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    background: linear-gradient(135deg, #1a00ff, #ffffff);
 }
 
 .header-logo h1 {
-    color: #c39bd3;
+    color: #ffffff;
 }
 
 .summoner-icon {
-    border-color: #9b59b6;
-    box-shadow: 0 0 20px rgba(155, 89, 182, 0.6);
+    border-color: #ffffff;
+    box-shadow: 0 0 50px rgb(253, 253, 253);
 }
 
 .summoner-name {
-    color: #c39bd3;
+    color: #ffffff;
 }
 
 /* Nav morado */
 nav {
-    background: rgba(28, 10, 42, 0.95);
-    border-bottom: 1px solid #4a1f5c;
-    box-shadow: 0 4px 30px rgba(155, 89, 182, 0.25);
+    background: rgba(2, 51, 248, 0.53);
+    border-bottom: 2px solid #4a1f5c;
+    box-shadow: 0 4px 30px rgba(2, 10, 255, 0.856);
 }
 
 nav a:hover {
