@@ -1,0 +1,95 @@
+/*HTML tamaño base: 1rem = 20px*/
+html{
+    font-size: 20px;
+}
+
+/*BOX-SIZZING el padding y el borde se incluyen dentro del ancho y alto del elemento*/
+*{
+    box-sizing: border-box;
+}
+
+/*ESTILOS PARA EL BODY*/
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+}
+
+/*ESTILOS PARA EL HEADER*/
+header{
+    width: 100%;/*ancho 100% de la pantalla*/
+    height: 150px;/*alto fijo de 150px*/
+    background-color: azure;/*color de fondo*/
+    border: 2px solid grey;
+    text-align: center;
+    padding: 1rem;
+}
+
+/*ESTILOS PARA EL NAV*/
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: paleturquoise;
+    border: 2px solid grey;
+    text-align: center;
+    padding: 0.75rem;/*0.75rem = 15px*/
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    margin: 1rem;
+    cursor: pointer;
+    transition: 0.3s;/*suaviza el cambio de color*/
+}
+
+nav a:hover{
+    color: white;
+    background-color: #2c3e50;
+}
+
+/*ESTILOS PARA EL DIV*/
+.contenedor{
+    width: 90%;
+    margin: 1rem auto; /*1rem son 20px arriba y abajo y auto centra el contenedor horizontalmente*/
+    font-size: 0;
+}
+
+/*ESTILOS PARA EL MAIN*/
+main{
+    width: 70%;
+    height: 50vh;
+    background-color: white;
+    border: 2px solid black;
+    display: inline-block;/*permite colocar el main y el aside uno al lado del otro*/
+    vertical-align: top;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/*ESTILOS PARA EL ASIDE*/
+aside{
+    width: 30%;
+    height: 50vh;
+    background-color: bisque;
+    border: 2px solid black;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/*ESTILOS PARA EL FOOTER*/
+footer{
+    width: 100%;/*ancho completo*/
+    height: 12vh;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    text-align: center;
+    padding: 1rem;/*1rem = 20px*/
+}
+
+footer h2,
+footer p{
+    margin: 0.5rem;
+}

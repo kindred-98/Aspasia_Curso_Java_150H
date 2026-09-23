@@ -1,0 +1,105 @@
+/*Box-sizzing hace que el padding y el borde estén incluidos dentro del ancho del elemento*/
+*{
+    box-sizing: border-box;
+}
+
+/*Definimos el tamaño base de la fuente
+ahora 
+1rem = 20px
+0.5rem = 10px
+1.5rem = 30 px
+2rem = 40px*/
+
+html{
+    font-size: 20px;
+}
+
+
+/*BODY Estilos generales de toda la página*/
+body{
+    /*Tipo de letra que se utiliza en toda la web*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*Elimina el margen que pone el navegador por defecto*/
+    margin: 0;
+    /*Color de fondo de la página*/
+    background-color: #a1b304;
+}
+
+/*HEADER Estilos para la cabecera de la página*/
+header{
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    /*1rem = 20px*/
+    padding: 1rem;
+    /*20vh = 20% de la altura visible de la pantalla*/
+    min-height: 200px;
+
+}
+
+/*Estilos para el menú de navegación*/
+nav{
+    background-color: #34495e;
+    text-align: center;    
+    /*1rem = 20px*/
+    /*0.75rem = 15px*/
+    padding: 0.75rem;
+    
+}
+
+/*enlaces del menú*/
+nav a{
+    text-decoration: none;
+    color: aliceblue;
+    /*0.75rem = 15px*/
+    margin: 0.75rem;
+    font-size: 1rem;
+}
+
+/*MAIN estilos para el contenedor principal*/
+main{
+    width: 80%;
+    /*1rem = 20px*/
+    margin: 1rem auto;
+    /*ocupa como minimo el 50% de la pantalla*/
+    min-height: 50vh;
+}
+
+/*SECTION estilos para  contenedor que agrupa contenido relacionado*/
+section{
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*ARTICLE estilos para bloque independiente de contenido*/
+article{
+    background-color: #eeeeee;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    /*Aquí usamos px porque queremos un grosor fijo para el borde*/
+    border-left: 5px solid #3498db;
+}
+
+/*ASIDE estilos para la información secundaria*/
+aside{
+    background-color: beige;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*enlaces dentro del ASIDE*/
+aside a{
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+/*FOOTER estilos para el pie de página*/
+footer{
+    background-color: #2c3e50 ;
+    color: antiquewhite;
+    text-align: center;
+    padding: 0.75rem;
+    min-height: 10vh;
+}
