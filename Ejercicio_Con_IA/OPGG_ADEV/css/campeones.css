@@ -89,7 +89,7 @@ footer a:hover {
 }
 
 .card {
-    background: rgba(12, 40, 24, 0.75);
+    background: rgba(0, 0, 0, 0.75);
     border: 1px solid #1e5c3a;
 }
 
@@ -99,7 +99,7 @@ footer a:hover {
 }
 
 .stat-box {
-    background: rgba(12, 40, 24, 0.7);
+    background: rgba(0, 0, 0, 0.7);
     border: 1px solid #1e5c3a;
 }
 

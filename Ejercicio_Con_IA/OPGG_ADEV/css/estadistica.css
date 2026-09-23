@@ -11,7 +11,7 @@ body::before {
 
 /* Header morado */
 header {
-    background: rgba(2, 51, 248, 0.53);
+    background: #0233f887;
     border-bottom: 4px solid #f7f4f8;
     box-shadow: 0 4px 30px rgb(255, 255, 255);
 }
@@ -36,8 +36,8 @@ header {
 /* Nav morado */
 nav {
     background: rgba(2, 51, 248, 0.53);
-    border-bottom: 2px solid #4a1f5c;
-    box-shadow: 0 4px 30px rgba(2, 10, 255, 0.856);
+    border-bottom: 3px solid #ffffff;
+    box-shadow: 0 4px 30px #fdfdfdda;
 }
 
 nav a:hover {
