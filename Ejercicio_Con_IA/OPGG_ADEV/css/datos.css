@@ -9,31 +9,31 @@ body::before {
 
 header {
     background: rgba(6, 32, 42, 0.95);
-    border-bottom: 2px solid #2ecc71;
+    border-bottom: 4px solid #000000;
     box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
 }
 
 .header-logo .lol-icon {
-    background: linear-gradient(135deg, #1abc9c, #2ecc71);
+    background: linear-gradient(135deg, #f80101, #07f46a);
 }
 
 .header-logo h1 {
-    color: #5ef0a8;
+    color: #ffffff;
 }
 
 .summoner-icon {
     border-color: #2ecc71;
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.55);
+    box-shadow: 0 0 50px rgba(7, 217, 38, 0.69);
 }
 
 .summoner-name {
-    color: #5ef0a8;
+    color: #fdfefe;
 }
 
 nav {
     background: rgba(6, 32, 42, 0.95);
-    border-bottom: 1px solid #1a4a3a;
-    box-shadow: 0 4px 30px rgba(46, 204, 113, 0.2);
+    border-bottom: 4px solid #000200;
+    box-shadow: 0 4px 30px rgb(255, 0, 0);
 }
 
 nav a:hover {
@@ -61,11 +61,12 @@ aside {
 
 footer {
     background: rgba(6, 32, 42, 0.95);
-    border-top: 1px solid #1a4a3a;
+    border-top: 1px solid #c9ddd7fc;
 }
 
 footer a {
-    color: #2ecc71;
+    color: #ff0202; font-weight: bold; 
+    text-shadow: 0 0 10px rgb(6, 0, 0);
 }
 
 footer a:hover {
@@ -73,13 +74,15 @@ footer a:hover {
 }
 
 .section-title {
-    color: #5ef0a8;
-    border-bottom-color: #1a4a3a;
+    color: #fdfdfd;
+    border-bottom-color: #f20808;
+    text-shadow: 0 0 10px rgb(255, 0, 0);
 }
 
 .card {
     background: rgba(10, 44, 56, 0.75);
-    border: 1px solid #1a4a3a;
+    border: 3px solid #000000;
+    box-shadow: 0 0 50px rgba(236, 15, 15, 0.579);
 }
 
 .card:hover {
@@ -317,7 +320,7 @@ footer a:hover {
 
 .dt-table td {
     padding: 0.45rem 0.5rem;
-    color: #c3c7d0;
+    color: #fdfdff;
     border-bottom: 1px solid rgba(26, 74, 58, 0.5);
 }
 
@@ -327,8 +330,8 @@ footer a:hover {
 
 /* ===== NOTA ===== */
 .dt-note {
-    font-size: 0.6rem;
-    color: #7b8a9e;
+    font-size: 0.8rem;
+    color: #000000; font-weight: bold;
     line-height: 1.5;
     padding: 0.7rem;
     background: rgba(10, 44, 56, 0.5);
