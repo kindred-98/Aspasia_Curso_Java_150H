@@ -27,6 +27,7 @@
         <a href="campeones.html">Campeones</a>
         <a href="estadisticas.html">Estadísticas</a>
         <a href="estilo.html">Estilo</a>
+        <a href="datos.html">Datos</a>
     </nav>
 
     <div class="contenedor">
@@ -263,72 +264,58 @@
                 </div>
             </div>
 
-            <!-- ACTIVIDAD -->
-            <h3 class="pf-title">Actividad por Hora</h3>
+            <!-- LADO AZUL VS ROJO -->
+            <h3 class="pf-title">Lado Azul vs Rojo</h3>
             <div class="pf-card">
-                <div class="pf-hourly">
-                    <div class="pf-hour-item" title="17:00 - 17 games - 41%">
-                        <div class="pf-hour-bar"><div style="height: 26%;"></div></div>
-                        <span>17</span>
+                <div style="display: flex; gap: 0.8rem; align-items: stretch;">
+                    <div style="flex: 1; text-align: center; padding: 0.8rem 0.4rem; background: rgba(30,60,120,0.25); border: 1px solid #3a5a8a; border-radius: 8px;">
+                        <div style="font-size: 0.6rem; color: #f9fcff; text-transform: uppercase;">Azul</div>
+                        <div style="font-size: 1.15rem; color: #0379f8; font-weight: bold; margin: 0.2rem 0;">44.7%</div>
+                        <div style="font-size: 0.70rem; color: #ffffff;">58.1% de partidas</div>
                     </div>
-                    <div class="pf-hour-item" title="18:00 - 11 games - 45%">
-                        <div class="pf-hour-bar"><div style="height: 17%;"></div></div>
-                        <span>18</span>
-                    </div>
-                    <div class="pf-hour-item" title="19:00 - 16 games - 56%">
-                        <div class="pf-hour-bar"><div style="height: 25%;"></div></div>
-                        <span>19</span>
-                    </div>
-                    <div class="pf-hour-item" title="20:00 - 25 games - 52%">
-                        <div class="pf-hour-bar"><div style="height: 38%;"></div></div>
-                        <span>20</span>
-                    </div>
-                    <div class="pf-hour-item" title="21:00 - 34 games - 47%">
-                        <div class="pf-hour-bar"><div style="height: 52%;"></div></div>
-                        <span>21</span>
-                    </div>
-                    <div class="pf-hour-item" title="22:00 - 65 games - 46%">
-                        <div class="pf-hour-bar"><div style="height: 100%;"></div></div>
-                        <span>22</span>
-                    </div>
-                    <div class="pf-hour-item" title="23:00 - 81 games - 52%">
-                        <div class="pf-hour-bar"><div style="height: 85%;"></div></div>
-                        <span>23</span>
+                    <div style="align-self: center; font-size: 0.7rem; color: #7b8a9e;">vs</div>
+                    <div style="flex: 1; text-align: center; padding: 0.8rem 0.4rem; background: rgba(120,30,30,0.25); border: 1px solid #8a3a3a; border-radius: 8px;">
+                        <div style="font-size: 0.6rem; color: #faf6f6; text-transform: uppercase;">Rojo</div>
+                        <div style="font-size: 1.15rem; color: #f10808; font-weight: bold; margin: 0.2rem 0;">51.6%</div>
+                        <div style="font-size: 0.70rem; color: #f5f7f8;">41.9% de partidas</div>
                     </div>
                 </div>
             </div>
 
-            <!-- CLASES PREFERIDAS -->
-            <h3 class="pf-title">Clases Preferidas</h3>
+            <!-- LOGROS RECIENTES -->
+            <h3 class="pf-title">Logros Recientes</h3>
             <div class="pf-card">
-                <div class="pf-class-item">
-                    <span class="pf-class-name">Tirador</span>
-                    <div class="pf-progress" style="flex: 1;">
-                        <div class="pf-progress-fill pf-progress-gold" style="width: 44%;"></div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.9rem;">🏆</span>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #f0c75e;">MVP x3</div>
+                            <div style="font-size: 0.6rem; color: #8899aa;">Mejor jugador de la partida</div>
+                        </div>
                     </div>
-                    <span class="pf-class-pct">44%</span>
-                </div>
-                <div class="pf-class-item">
-                    <span class="pf-class-name">Luchador</span>
-                    <div class="pf-progress" style="flex: 1;">
-                        <div class="pf-progress-fill pf-progress-gold" style="width: 23%;"></div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.9rem;">⭐</span>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #f0c75e;">ACE x1</div>
+                            <div style="font-size: 0.6rem; color: #8899aa;">Mejor KDA de la partida</div>
+                        </div>
                     </div>
-                    <span class="pf-class-pct">23%</span>
-                </div>
-                <div class="pf-class-item">
-                    <span class="pf-class-name">Mago</span>
-                    <div class="pf-progress" style="flex: 1;">
-                        <div class="pf-progress-fill pf-progress-gold" style="width: 17%;"></div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 0.9rem;">🎯</span>
+                        <div>
+                            <div style="font-size: 0.75rem; color: #f0c75e;">OP Score Promedio: 5.7</div>
+                            <div style="font-size: 0.6rem; color: #8899aa;">Rank promedio: 5.1</div>
+                        </div>
                     </div>
-                    <span class="pf-class-pct">17%</span>
                 </div>
             </div>
 
             <!-- ENLACES -->
             <h3 class="pf-title">Enlaces</h3>
             <div class="pf-card">
-                <a href="https://op.gg/lol/summoners/euw/HKG%20Minato-Adev" target="_blank" class="pf-link">Ver en OP.GG ↗</a>
-                <a href="https://www.leagueoflegends.com/es-es/" target="_blank" class="pf-link">League of Legends ↗</a>
+                <a href="https://www.leagueofgraphs.com/es/summoner/euw/HKG+Minato-Adev" target="_blank" class="pf-link">Perfil de LeagueOfGraphs.com ↗</a>
+                <a href="https://op.gg/lol/summoners/euw/HKG%20Minato-Adev" target="_blank" class="pf-link">Perfil de OP.GG ↗</a>
+                <a href="https://www.leagueoflegends.com/es-es/" target="_blank" class="pf-link">Página de Riot Games oficial ↗</a>
             </div>
         </aside>
     </div>

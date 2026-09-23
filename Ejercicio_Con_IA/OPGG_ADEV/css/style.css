@@ -297,6 +297,11 @@ footer a:hover {
     color: #0a0e1a;
 }
 
+.badge-iron {
+    background: linear-gradient(135deg, #3a3a3a, #6b6b6b);
+    color: #fff;
+}
+
 /* Avatar de campeón (se usa en varias páginas) */
 .champion-avatar {
     width: 90px;
