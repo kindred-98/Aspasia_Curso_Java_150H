@@ -11,7 +11,7 @@ body::before {
 
 /* Header morado */
 header {
-    background: #0233f887;
+    background: #0233f852;
     border-bottom: 4px solid #f7f4f8;
     box-shadow: 0 4px 30px rgb(255, 255, 255);
 }
@@ -35,7 +35,7 @@ header {
 
 /* Nav morado */
 nav {
-    background: rgba(2, 51, 248, 0.53);
+    background: rgba(2, 51, 248, 0.319);
     border-bottom: 3px solid #ffffff;
     box-shadow: 0 4px 30px #fdfdfdda;
 }
@@ -46,31 +46,31 @@ nav a:hover {
 }
 
 nav a.active {
-    color: #c39bd3;
-    background: rgba(155, 89, 182, 0.2);
-    border-bottom: 2px solid #9b59b6;
+    color: #000000;
+    background: rgba(89, 100, 182, 0.2);
+    border-bottom: 2px solid #000000;
 }
 
 /* Main y aside */
 main {
-    background: rgba(24, 10, 36, 0.92);
-    box-shadow: 0 8px 40px rgba(155, 89, 182, 0.3);
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 50px rgb(1, 93, 253);
 }
 
 aside {
     background: rgba(24, 10, 36, 0.92);
-    border: 1px solid #4a1f5c;
+    border: 0px solid #4a1f5c;
     box-shadow: 0 8px 40px rgba(155, 89, 182, 0.25);
 }
 
 /* Footer */
 footer {
     background: rgba(28, 10, 42, 0.95);
-    border-top: 1px solid #4a1f5c;
+    border-top: 3px solid #fdfcfd;
 }
 
 footer a {
-    color: #9b59b6;
+    color: #0224ff; font-weight: bold;
 }
 
 footer a:hover {
@@ -79,13 +79,13 @@ footer a:hover {
 
 /* Títulos y cards */
 .section-title {
-    color: #c39bd3;
-    border-bottom-color: #4a1f5c;
+    color: #ffffff;
+    border-bottom-color: #fffeff;
 }
 
 .card {
-    background: rgba(40, 16, 56, 0.75);
-    border: 1px solid #4a1f5c;
+    background: #17115e60;
+    border: 4px solid #1ad4d5;
 }
 
 .card:hover {
@@ -94,12 +94,13 @@ footer a:hover {
 }
 
 .stat-box {
-    background: rgba(40, 16, 56, 0.7);
-    border: 1px solid #4a1f5c;
+    background: #17115e60;
+    border: 1px solid #fbf9fb;
+    box-shadow: 0 0 155px rgba(247, 249, 247, 0.25);
 }
 
 .stat-value {
-    color: #c39bd3;
+    color: #1ad4d5;
 }
 
 .compare-grid {
