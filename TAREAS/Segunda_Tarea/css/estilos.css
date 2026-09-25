@@ -1,0 +1,192 @@
+/* ============================================================
+   EJERCICIO 2 - ESTRUCTURA WEB CON TABLA E IMÁGENES
+   Tema: Galería de Naruto
+   ============================================================ */
+
+html {
+    font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1b2a4a;
+    background-color: #f6f1e7;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+    width: 100%;
+    height: 150px;
+    background-color: #ef7d1a;
+    color: #ffffff;
+    border: 3px solid #7a3b0f;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 0 #7a3b0f;
+}
+
+.header p {
+    margin: 0.4rem 0 0 0;
+    font-size: 0.8rem;
+    color: #ffe9d2;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+    width: 100%;
+    height: 70px;
+    background-color: #1b2a4a;
+    border: 3px solid #0d1730;
+    border-top: none;
+    text-align: center;
+    line-height: 64px;
+}
+
+.nav a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1.4rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: #ef7d1a;
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* ---------- MAIN ---------- */
+.main {
+    width: 70%;
+    min-height: 50vh;
+    background-color: #fffaf3;
+    border: 3px solid #1b2a4a;
+    border-top: none;
+    padding: 1rem;
+}
+
+.main h2 {
+    margin-top: 0.3rem;
+    font-size: 1.2rem;
+    color: #ef7d1a;
+    border-bottom: 2px solid #1b2a4a;
+    padding-bottom: 0.3rem;
+}
+
+.main p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ---------- TABLA ---------- */
+.tabla-galeria {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+}
+
+.tabla-galeria td {
+    border: 2px solid #1b2a4a;
+    text-align: center;
+    padding: 0.6rem;
+    background-color: #ffffff;
+}
+
+.tabla-galeria img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.tabla-galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- ASIDE ---------- */
+.aside {
+    width: 30%;
+    min-height: 50vh;
+    background-color: #ffe3c7;
+    border: 3px solid #1b2a4a;
+    border-top: none;
+    border-left: none;
+    padding: 1rem;
+}
+
+.aside h2 {
+    margin-top: 0.3rem;
+    font-size: 1.1rem;
+    color: #7a3b0f;
+    border-bottom: 2px solid #1b2a4a;
+    padding-bottom: 0.3rem;
+}
+
+.aside h3 {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #1b2a4a;
+}
+
+.aside p,
+.aside li {
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.aside ul {
+    margin-top: 0.3rem;
+    padding-left: 1.2rem;
+}
+
+.aside a {
+    color: #c1440e;
+    cursor: pointer;
+}
+
+.aside a:hover {
+    color: #1b2a4a;
+    background-color: #ef7d1a;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    width: 100%;
+    min-height: 120px;
+    background-color: #1b2a4a;
+    color: #ffffff;
+    border: 3px solid #0d1730;
+    border-top: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
