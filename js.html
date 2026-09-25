@@ -1,23 +1,104 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test JS</title>
 </head>
 <body>
-    <script>
- /* Crea una variable llamada ciudad y asígnale el nombre de una ciudad luego intenta declarar la misma variable y observa que sucede. Muestra el resultado en la consola. */
+    
+<script>
+    /* Ejercicio 1: crea una variable llamada edad, muestra su valor en la consola, actualízalo y vuelve a mostrarlo. */
 
-        let ciudad = "Madrid";
-        console.log(ciudad); // Muestra "Madrid" en la consola
+// DECLARACIÓN DE VARIABLES: let permite declarar una variable cuyo valor puede cambiar.
+let edad = 45;	// Declara edad y le asigna inicialmente el número 45.
 
-        // Intentando declarar la misma variable nuevamente
-        let ciudad = "Barcelona"; // Esto generará un error porque 'ciudad' ya ha sido declarada
-        console.log(ciudad);
-        
-    </script>
+// Mostrar el resultado en la consola.
+console.log(edad);	// console.log() escribe el valor de edad en la consola del navegador.
+
+// Modificación del valor de la variable edad.
+edad = 45;	// Reasigna el valor sin volver a escribir let; prueba con 46 para ver un cambio.
+
+// Mostrar de nuevo el resultado en la consola.
+console.log(edad);	// Comprueba el valor actual de edad después de la reasignación.
+
+/* Ejercicio 2: crea tres variables: esEstudiante (booleano), promedio (número decimal) y apellido (cadena de texto o string). */
+
+// DECLARACIÓN DE VARIABLES.
+let esEstudiante = true;	// Booleano: solo puede tener el valor true o false.
+let promedio = 8.5;	// Number: representa un número; en este caso, con decimales.
+let apellido = "Perez";	// String: representa una cadena de texto.
+
+// Mostrar el resultado en la consola.
+console.log(esEstudiante, promedio, apellido);	// Muestra los tres valores en una sola llamada.
+
+/* Ejercicio 3: crea una constante llamada PI, asígnale 3.14159 y observa qué ocurre si intentas cambiar su valor. */
+
+// DECLARACIÓN DE CONSTANTES: const crea un valor que no puede reasignarse.
+const PI = 3.14159;	// Declara PI y le asigna su valor inicial.
+
+// Mostrar el resultado en la consola.
+console.log(PI);	// Muestra el valor de PI; PI = 3.14 provocaría un error.
+
+/* Ejercicio 4: crea una variable llamada ciudad, asígnale una ciudad y observa la diferencia entre reasignar y redeclarar. */
+
+// DECLARACIÓN DE VARIABLES.
+let ciudad = "Madrid";	// Declara ciudad y le asigna el texto "Madrid".
+
+// Mostrar el resultado en la consola.
+console.log(ciudad);	// Muestra el valor inicial de ciudad.
+
+ciudad = "Gijón";	// Reasigna ciudad; no se escribe let otra vez.
+
+// Mostrar el resultado actualizado en la consola.
+console.log(ciudad);	// Muestra el nuevo valor de ciudad.
+
+/* Ejercicio 5: crea una variable para cada uno de los siguientes tipos de datos:
+- guarda el nombre de una persona
+- guarda su edad
+- guarda la altura en decimales
+- indica si tiene carnet de conducir
+- crea una variable sin asignarle ningún valor
+- crea una variable cuyo valor sea null
+- guarda en una variable 3 lenguajes de programación
+- guarda los datos de una persona: nombre y edad
+- muestra los datos en la consola
+- además, utiliza typeof para comprobar el tipo de datos de cada variable. */
+
+// DECLARACIÓN DE VARIABLES.
+let nombre = "David";	/* String: guarda una cadena de texto, en este caso un nombre. */
+let edad2 = 45;	/* Number: guarda un número entero. */
+let altura = 1.71;	/* Number: guarda un número decimal; JavaScript usa el tipo Number para ambos. */
+let tieneCarnet = true;	/* Boolean: solo puede tener los valores true o false. */
+let datoSinDefinir;	/* Undefined: la variable está declarada, pero no tiene ningún valor asignado. */
+let datoVacio = null;	/* Null: indica intencionadamente que la variable no tiene ningún valor. */
+let lenguajes = ["JavaScript", "Python", "Java"];	/* Array: almacena varios valores en un orden determinado. Hemos creado una variable llamada lenguajes que contiene un array, sirve para guardar varios valores dentro de una misma variable, cada valor ocupa una posición dentro del array, la posición en el array EMPIEZA A CONTAR DESDE CERO, NUNCA DESDE UNO. */
+let persona = {nombre: "David", edad: 45};	/* Object: agrupa datos relacionados mediante propiedades. Aquí hemos creador un objeto que sirve para agrupar varios datos que pertenecen a un objeto, en este caso "name" es una propiedad del objeto y "David" es el valor de esa propiedad. */
+
+// Mostrar el resultado en la consola.
+// Muestra todos los valores para poder inspeccionarlos.
+console.log(
+"Nombre:", nombre, "- Tipo:", typeof nombre,
+"\nEdad:", edad2, "- Tipo:", typeof edad2,
+"\nAltura:", altura, "- Tipo:", typeof altura,
+"\nTiene carnet:", tieneCarnet, "- Tipo:", typeof tieneCarnet,
+"\nTiene coche:", datoSinDefinir, "- Tipo:", typeof datoSinDefinir,
+"\nTiene motor:", datoVacio, "- Tipo:", typeof datoVacio,
+"\nLenguajes:", lenguajes, "- Tipo:", typeof lenguajes,
+"\nPersona:", persona, "- Tipo:", typeof persona
+);
+
+/* Declara una variable dentro de una función y trata de acceder a ella fuera de la función */
+//declaración de la función
+function miFunction(){
+    let mensaje = "Pene brutal";
+    console.log(mensaje);
+}
+
+//ejecución de la función
+miFunction();
+
+</script>
 
 </body>
 </html>
