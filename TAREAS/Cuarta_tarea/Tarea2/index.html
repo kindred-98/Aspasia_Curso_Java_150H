@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- declara el documento como HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, lang="es" indica que el idioma es español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+<head>
+    <!-- codificación de caracteres, permite tildes y Ñ -->
+    <meta charset="UTF-8">
+
+    <!-- hace que la página se adapte al tamaño de la pantalla (móvil/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
+    <title>JavaScript - Variables y document.write()</title>
+
+    <!-- conecta este HTML con su hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+<!-- todo lo visible de la página empieza aquí -->
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <!-- cabecera de la página, la clase "header" es la que recibe los estilos -->
+        <h1>Variables y document.write()</h1>
+        <!-- título principal de la página -->
+        <p>5 ejercicios progresivos de JavaScript</p>
+        <!-- subtítulo que describe el enunciado -->
+    </header>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav">
+        <!-- menú de navegación horizontal, la clase "nav" recibe los estilos -->
+        <a href="#ejercicio1">Ejercicio 1</a>
+        <!-- enlace que salta a la sección del ejercicio 1 -->
+        <a href="#ejercicio2">Ejercicio 2</a>
+        <!-- enlace que salta a la sección del ejercicio 2 -->
+        <a href="#ejercicio3">Ejercicio 3</a>
+        <!-- enlace que salta a la sección del ejercicio 3 -->
+        <a href="#ejercicio4">Ejercicio 4</a>
+        <!-- enlace que salta a la sección del ejercicio 4 -->
+        <a href="#ejercicio5">Ejercicio 5</a>
+        <!-- enlace que salta a la sección del ejercicio 5 -->
+    </nav>
+
+    <!-- ============ CONTENEDOR PRINCIPAL ============ -->
+    <div class="contenedor">
+        <!-- caja que agrupa MAIN y ASIDE y los pone uno al lado del otro (flex) -->
+
+        <!-- ============ MAIN: ENUNCIADOS ============ -->
+        <main class="main">
+            <!-- contenido principal, aquí se escriben las consignas de cada ejercicio -->
+            <h2>Enunciados</h2>
+            <!-- título de la zona de enunciados -->
+
+            <!-- ---- EJERCICIO 1 - DATOS PERSONALES ---- -->
+            <section class="ejercicio" id="ejercicio1">
+                <!-- bloque del ejercicio 1, el id permite enlazarlo desde el nav -->
+                <h3>Ejercicio 1 - Datos personales</h3>
+                <!-- título del ejercicio 1 -->
+                <p>
+                    Crea tres variables llamadas <code>nombre</code>,
+                    <code>edad</code> y <code>ciudad</code>. Asigna un valor a cada
+                    variable. Muestra los tres datos en la página utilizando
+                    <code>document.write()</code>.
+                    <em>Nombre: Laura / Edad: 25 / Ciudad: Gijón</em>
+                </p>
+                <!-- enunciado del ejercicio 1: declarar y mostrar 3 variables -->
+            </section>
+
+            <!-- ---- EJERCICIO 2 - DATOS DE UN PRODUCTO ---- -->
+            <section class="ejercicio" id="ejercicio2">
+                <!-- bloque del ejercicio 2 -->
+                <h3>Ejercicio 2 - Datos de un producto</h3>
+                <!-- título del ejercicio 2 -->
+                <p>
+                    Crea las variables <code>producto</code>, <code>precio</code> y
+                    <code>cantidad</code>. Crea una nueva variable
+                    <code>total</code> que multiplique el precio por la cantidad y
+                    muestra todos los datos con <code>document.write()</code>.
+                    <em>Producto: Teclado / Precio: 30 EUR / Cantidad: 2 / Total: 60 EUR</em>
+                </p>
+                <!-- enunciado del ejercicio 2: primera operación aritmética -->
+            </section>
+
+            <!-- ---- EJERCICIO 3 - CÁLCULO DE EDAD ---- -->
+            <section class="ejercicio" id="ejercicio3">
+                <!-- bloque del ejercicio 3 -->
+                <h3>Ejercicio 3 - Cálculo de edad</h3>
+                <!-- título del ejercicio 3 -->
+                <p>
+                    Crea <code>nombre</code>, <code>anioNacimiento</code>,
+                    <code>anioActual</code> (2026) y una variable <code>edad</code>
+                    que reste el año de nacimiento al año actual. Muestra una frase
+                    completa con <code>document.write()</code>.
+                    <em>Ana nació en 1990 y tiene aproximadamente 36 años.</em>
+                </p>
+                <!-- enunciado del ejercicio 3: resta dentro de una frase -->
+            </section>
+
+            <!-- ---- EJERCICIO 4 - PRECIO CON DESCUENTO ---- -->
+            <section class="ejercicio" id="ejercicio4">
+                <!-- bloque del ejercicio 4 -->
+                <h3>Ejercicio 4 - Precio con descuento</h3>
+                <!-- título del ejercicio 4 -->
+                <p>
+                    Producto <em>Monitor</em> con precio de 200 EUR y descuento del
+                    15 %. Guarda el dinero descontado en una variable y calcula el
+                    precio final. Muestra todo con <code>document.write()</code>:
+                    <em>Precio final: 170 EUR</em>
+                </p>
+                <!-- enunciado del ejercicio 4: porcentajes -->
+            </section>
+
+            <!-- ---- EJERCICIO 5 - COMPRA COMPLETA ---- -->
+            <section class="ejercicio" id="ejercicio5">
+                <!-- bloque del ejercicio 5 -->
+                <h3>Ejercicio 5 - Compra completa</h3>
+                <!-- título del ejercicio 5 -->
+                <p>
+                    Variables: <em>Portátil, 650 EUR, 2 unidades, 10 % de
+                    descuento y 15 EUR de envío</em>. Calcula subtotal, descuento
+                    aplicado, precio después del descuento y precio final. Usa
+                    etiquetas HTML dentro de <code>document.write()</code> para
+                    organizar el resumen en varias líneas: <em>TOTAL: 1185 EUR</em>
+                </p>
+                <!-- enunciado del ejercicio 5: el más completo (varias variables y HTML) -->
+            </section>
+
+        </main>
+
+        <!-- ============ ASIDE: RECORDATORIO ============ -->
+        <aside class="aside">
+            <!-- barra lateral con teoría rápida de variables -->
+            <h2>Recordatorio</h2>
+            <!-- título de la barra lateral -->
+
+            <h3>Declarar una variable</h3>
+            <!-- subtítulo del primer concepto -->
+            <p>
+                Con <code>var nombre = valor;</code> guardamos un dato que
+                podremos usar en cualquier parte del script.
+            </p>
+            <!-- explicación breve de cómo se declara una variable -->
+
+            <h3>Tipos de datos</h3>
+            <!-- subtítulo del segundo concepto -->
+            <ul>
+                <li>Cadena de texto: "Laura" (entre comillas)</li>
+                <!-- string: siempre va entre comillas -->
+                <li>Número: 25 (sin comillas, permite operar)</li>
+                <!-- number: permite sumar, restar y multiplicar -->
+            </ul>
+
+            <h3>Operadores</h3>
+            <!-- subtítulo del tercer concepto -->
+            <p>
+                <code>+</code> suma, <code>-</code> resta,
+                <code>*</code> multiplica y <code>/</code> divide.
+            </p>
+            <!-- los cuatro operadores aritméticos básicos -->
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS (aquí escribe el JavaScript) ============ -->
+    <section class="resultados">
+        <!-- zona donde se mostrará la salida de los ejercicios -->
+        <h2>Resultados</h2>
+        <!-- título de la zona de resultados -->
+
+        <!-- el navegador pausa aquí para ejecutar script.js y
+             lo que pinte document.write() aparece dentro de esta sección -->
+        <script src="script.js"></script>
+        <!-- carga y ejecuta el archivo JavaScript con los 5 ejercicios -->
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <!-- pie de página -->
+        <p>Variables y document.write() &copy; 2026</p>
+        <!-- copyright al final de la página -->
+    </footer>
+
+</body>
+</html>

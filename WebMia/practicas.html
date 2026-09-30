@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña -->
+    <title>Kindred.Java | Prácticas</title>
+
+    <!-- tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido + CSS de esta página -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/practicas.css">
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+</head>
+
+<body>
+
+    <!-- elementos de los efectos -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html" class="active">Prácticas</a>
+            <!-- esta es la página actual: enlace activo -->
+            <a href="clase.html">Clase</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="practicas.html" class="active">Prácticas</a>
+        <a href="clase.html">Clase</a>
+    </div>
+
+    <main>
+
+        <!-- ============ CABECERA DE LA PÁGINA ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-badge badge badge-neon">Prácticas manuales</span>
+                <h1 class="page-title">Mis <span class="accent">prácticas</span></h1>
+                <p class="page-sub">
+                    Los ejercicios que hago en casa a mano: una página semántica,
+                    pruebas de JavaScript en consola y mi hoja de estilos CSS.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ REJILLA DE PRÁCTICAS ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="practicas-grid">
+
+                    <!-- ---- PRÁCTICA 1: HTML ---- -->
+                    <article class="glass-card practica-card reveal">
+                        <div class="practica-icon">&#60;/&#62;</div>
+                        <!-- icono HTML con las flechas < > -->
+                        <div class="practica-body">
+                            <div class="practica-head">
+                                <h3>Mi primera página semántica</h3>
+                                <span class="badge badge-done">Abierta</span>
+                            </div>
+                            <p>
+                                Página hecha a mano con las etiquetas semánticas de
+                                HTML5 (header, nav, main, aside y footer) y un fondo
+                                de Kindred.
+                            </p>
+                            <div class="tags">
+                                <span class="tag tag-html">HTML</span>
+                            </div>
+                            <a class="btn btn-primary"
+                               href="../Practicas_Manuales_De_La_Tareas/HTML-Practice/Proyecto1.html">
+                                Ver práctica
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ---- PRÁCTICA 2: JAVASCRIPT ---- -->
+                    <article class="glass-card practica-card reveal">
+                        <div class="practica-icon practica-icon-js">JS</div>
+                        <!-- icono JS -->
+                        <div class="practica-body">
+                            <div class="practica-head">
+                                <h3>Test de JavaScript</h3>
+                                <span class="badge badge-done">Abierto</span>
+                            </div>
+                            <p>
+                                Ejercicios de variables con <code>let</code>,
+                                <code>const</code> y tipos de datos. Los resultados
+                                se ven en la consola del navegador (pulsa F12).
+                            </p>
+                            <div class="tags">
+                                <span class="tag tag-js">JS</span>
+                            </div>
+                            <a class="btn btn-primary"
+                               href="../Practicas_Manuales_De_La_Tareas/JS-Practice/js.html">
+                                Ver práctica
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ---- PRÁCTICA 3: CSS ---- -->
+                    <article class="glass-card practica-card reveal">
+                        <div class="practica-icon practica-icon-css">#</div>
+                        <!-- icono CSS -->
+                        <div class="practica-body">
+                            <div class="practica-head">
+                                <h3>Hoja de estilos CSS</h3>
+                                <span class="badge badge-gold">Código</span>
+                            </div>
+                            <p>
+                                Mi archivo de estilos manual: reset con
+                                <code>box-sizing</code>, base de 20px y estilos
+                                generales del body, con comentarios explicando cada línea.
+                            </p>
+                            <div class="tags">
+                                <span class="tag tag-css">CSS</span>
+                            </div>
+                            <a class="btn btn-secondary"
+                               href="../Practicas_Manuales_De_La_Tareas/CSS-Practice/Style.css">
+                                Ver código
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- ---- AVISO ---- -->
+                <div class="practica-aviso glass-card reveal">
+                    <strong>Consejo:</strong> si abres la práctica de JavaScript y no
+                    ves nada en pantalla, es normal: su salida va a la consola.
+                    Pulsa <span class="tecla">F12</span> y entra en la pestaña
+                    <span class="tecla">Console</span>.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html">Clase</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- efectos de la web -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

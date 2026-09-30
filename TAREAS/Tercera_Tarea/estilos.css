@@ -3,33 +3,36 @@
    Tema: Venezuela Natural (turismo en Venezuela)
    ============================================================ */
 
+
+/* ---------- AJUSTES GENERALES ---------- */
+
 html {
-    font-size: 20px;
+    font-size: 20px;   /* tamaño base: 1rem = 20px en todo el documento */
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  /* aplica a todos los elementos; padding y border entran dentro del ancho */
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1f2a23;
-    background-color: #f4f7f4;
+    margin: 0;                              /* elimina el margen por defecto del navegador */
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía general de la página */
+    color: #1f2a23;                         /* color del texto: verde muy oscuro */
+    background-color: #f4f7f4;              /* fondo de la página: verde muy claro */
 }
 
 h2 {
-    font-size: 1.2rem;
-    color: #14532d;
-    border-bottom: 3px solid #f6c518;
-    padding-bottom: 0.3rem;
-    margin-top: 1rem;
+    font-size: 1.2rem;                      /* tamaño de todos los títulos h2 (1.2 x 20px = 24px) */
+    color: #14532d;                         /* verde oscuro */
+    border-bottom: 3px solid #f6c518;       /* línea amarilla de 3px bajo cada título */
+    padding-bottom: 0.3rem;                 /* deja aire entre el texto y la línea */
+    margin-top: 1rem;                       /* separa el título de lo que tiene encima */
 }
 
 h3 {
-    font-size: 0.95rem;
-    color: #166534;
-    margin-bottom: 0.3rem;
+    font-size: 0.95rem;                     /* tamaño de los subtítulos h3 */
+    color: #166534;                         /* verde medio */
+    margin-bottom: 0.3rem;                  /* separa el subtítulo de su contenido */
 }
 
 p,
@@ -37,418 +40,446 @@ li,
 label,
 td,
 th {
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.8rem;                      /* tamaño común para párrafos, listas, etiquetas y celdas */
+    line-height: 1.5;                       /* interlineado: 1.5 veces el tamaño de la letra */
 }
 
+
 /* ============ HEADER ============ */
+/* cabecera verde de 180px con logo y texto */
+
 .header {
-    width: 100%;
-    height: 180px;
-    background-color: #14532d;
-    color: #ffffff;
-    border: 3px solid #0b2e1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 180px;                  /* altura fija de 180 píxeles */
+    background-color: #14532d;      /* fondo verde oscuro */
+    color: #ffffff;                 /* color del texto: blanco */
+    border: 3px solid #0b2e1a;      /* borde verde aún más oscuro */
+    display: flex;                  /* activa flexbox para colocar logo y texto en fila */
+    align-items: center;            /* centra los hijos en vertical */
+    justify-content: center;        /* centra los hijos en horizontal */
+    gap: 1.5rem;                    /* separación de 1.5rem entre el logo y el texto */
 }
 
 .header .logo {
-    width: 120px;
-    height: 120px;
-    border: 3px solid #f6c518;
-    border-radius: 12px;
+    width: 120px;                   /* ancho del logotipo */
+    height: 120px;                  /* alto del logotipo (cuadrado) */
+    border: 3px solid #f6c518;      /* borde amarillo alrededor de la foto */
+    border-radius: 12px;            /* esquinas redondeadas 12px */
 }
 
 .header-texto {
-    text-align: left;
+    text-align: left;               /* el título y el subtítulo alineados a la izquierda */
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 1.7rem;
-    color: #f6c518;
+    margin: 0;                      /* quita el margen por defecto del título */
+    font-size: 1.7rem;              /* tamaño grande para el nombre de la empresa */
+    color: #f6c518;                 /* amarillo sobre fondo verde */
 }
 
 .header p {
-    margin: 0.4rem 0 0 0;
-    font-size: 0.85rem;
-    color: #d8ecdc;
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en el resto */
+    font-size: 0.85rem;             /* tamaño del subtítulo */
+    color: #d8ecdc;                 /* verde muy claro para el subtítulo */
 }
 
+
 /* ============ NAV ============ */
+/* menú de botones verdes con efecto amarillo al pasar el ratón */
+
 .nav {
-    width: 100%;
-    background-color: #166534;
-    border: 3px solid #0b2e1a;
-    border-top: none;
-    text-align: center;
-    padding: 0.4rem 0;
+    width: 100%;                    /* ancho completo */
+    background-color: #166534;      /* fondo verde medio */
+    border: 3px solid #0b2e1a;      /* borde verde oscuro */
+    border-top: none;               /* sin borde arriba para unirlo con el header */
+    text-align: center;             /* centra los enlaces */
+    padding: 0.4rem 0;              /* 0.4rem arriba y abajo, 0 a los lados */
 }
 
 .nav a {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0.2rem;
-    padding: 0.5rem 1.2rem;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.85rem;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.25s, color 0.25s;
+    display: inline-block;          /* convierte los enlaces en cajas para darles relleno */
+    vertical-align: middle;         /* alinea los enlaces por su centro */
+    margin: 0 0.2rem;               /* 0.2rem de separación entre enlaces */
+    padding: 0.5rem 1.2rem;         /* espacio interior para que parezcan botones */
+    color: #ffffff;                 /* texto blanco */
+    text-decoration: none;          /* quita el subrayado de los enlaces */
+    font-size: 0.85rem;             /* tamaño del texto del menú */
+    cursor: pointer;                /* cursor de mano al pasar el ratón */
+    border-radius: 6px;             /* esquinas redondeadas de 6px */
+    transition: background-color 0.25s, color 0.25s;  /* anima fondo y color durante 0.25s */
 }
 
 .nav a:hover {
-    background-color: #f6c518;
-    color: #14532d;
+    background-color: #f6c518;      /* fondo amarillo cuando el ratón está encima */
+    color: #14532d;                 /* el texto se vuelve verde oscuro */
 }
+
 
 /* ============ CONTENEDOR PRINCIPAL ============ */
+
 .contenedor {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
+    width: 90%;                     /* 90% del ancho, deja 5% libre a cada lado */
+    margin: 0 auto;                 /* auto a los lados = centrado en la página */
+    display: flex;                  /* main (70%) y aside (30%) quedan en la misma fila */
 }
 
+
 /* ============ MAIN ============ */
+
 .main {
-    width: 70%;
-    min-height: 60vh;
-    background-color: #ffffff;
-    border: 3px solid #14532d;
-    border-top: none;
-    padding: 1.2rem;
+    width: 70%;                     /* ocupa el 70% del contenedor */
+    min-height: 60vh;               /* altura mínima del 60% de la pantalla */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #14532d;      /* borde verde oscuro */
+    border-top: none;               /* sin borde arriba (debajo está el nav) */
+    padding: 1.2rem;                /* 1.2rem de espacio interior */
 }
 
 .main p {
-    margin-top: 0.6rem;
+    margin-top: 0.6rem;             /* separa cada párrafo de lo que tiene encima */
 }
+
 
 /* --- Sección 1: Presentación --- */
+
 .imagen-portada {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
-    border: 3px solid #166534;
-    border-radius: 12px;
+    display: block;                 /* la imagen se comporta como un bloque (ocupa su línea) */
+    width: 100%;                    /* ancho completo dentro del main */
+    max-width: 100%;                /* nunca más ancha que su contenedor */
+    height: auto;                   /* la altura se calcula sola para no deformarla */
+    margin-top: 1rem;               /* separa la foto del último párrafo */
+    border: 3px solid #166534;      /* borde verde alrededor de la foto */
+    border-radius: 12px;            /* esquinas redondeadas */
 }
 
+
 /* --- Sección 2: Alojamientos --- */
+
 .alojamientos {
-    font-size: 0;
+    font-size: 0;                   /* truco: quita el espacio entre los inline-block
+                                       (si no, las 3 tarjetas no caben en una fila) */
 }
 
 .alojamiento {
-    display: inline-block;
-    vertical-align: top;
-    width: 32.5%;
-    margin-top: 1rem;
-    margin-right: 0.4rem;
-    padding: 0.8rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    font-size: 0.8rem;
+    display: inline-block;          /* convierte la tarjeta en caja en línea para alinearlas */
+    vertical-align: top;            /* las alinea por la parte superior */
+    width: 32.5%;                   /* tres tarjetas por fila (3 x 32.5% + márgenes = 100%) */
+    margin-top: 1rem;               /* separa las tarjetas de lo que hay encima */
+    margin-right: 0.4rem;           /* separación entre tarjetas */
+    padding: 0.8rem;                /* espacio interior de la tarjeta */
+    background-color: #ffffff;      /* fondo blanco */
+    border-radius: 8px;             /* esquinas redondeadas */
+    font-size: 0.8rem;              /* vuelve a poner el tamaño de texto (se heredó 0 del padre) */
 }
 
 .alojamiento:last-child {
-    margin-right: 0;
+    margin-right: 0;                /* a la última tarjeta no le queda margen a la derecha */
 }
 
 .alojamiento img {
-    display: block;
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 0.5rem;
+    display: block;                 /* la imagen se comporta como bloque */
+    width: 100%;                    /* ancho completo de la tarjeta */
+    height: 150px;                  /* altura fija de 150 píxeles */
+    object-fit: cover;              /* recorta la foto para que llene el hueco sin deformarse */
+    border-radius: 6px;             /* esquinas redondeadas */
+    margin-bottom: 0.5rem;          /* separa la foto del título */
 }
 
 .alojamiento h3 {
-    margin-top: 0.4rem;
+    margin-top: 0.4rem;             /* separa el nombre del alojamiento de la foto */
 }
 
 .alojamiento .precio {
-    font-weight: bold;
-    color: #14532d;
-    font-size: 0.9rem;
+    font-weight: bold;              /* el precio en negrita */
+    color: #14532d;                 /* verde oscuro */
+    font-size: 0.9rem;              /* un poco más grande que el resto del texto */
 }
 
 .alojamiento a {
-    display: inline-block;
-    margin-top: 0.4rem;
-    padding: 0.4rem 0.8rem;
-    background-color: #166534;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.75rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.25s, color 0.25s;
+    display: inline-block;          /* caja en línea para poder darle relleno */
+    margin-top: 0.4rem;             /* separa el botón del precio */
+    padding: 0.4rem 0.8rem;         /* espacio interior: forma de botón */
+    background-color: #166534;      /* fondo verde */
+    color: #ffffff;                 /* texto blanco */
+    text-decoration: none;          /* sin subrayado */
+    font-size: 0.75rem;             /* texto pequeño */
+    border-radius: 6px;             /* esquinas redondeadas */
+    cursor: pointer;                /* cursor de mano */
+    transition: background-color 0.25s, color 0.25s;  /* animación al pasar el ratón */
 }
 
 .alojamiento a:hover {
-    background-color: #f6c518;
-    color: #14532d;
+    background-color: #f6c518;      /* el botón se pone amarillo al hacer hover */
+    color: #14532d;                 /* el texto se vuelve verde oscuro */
 }
 
 /* Los tres artículos se diferencian con borde, fondo y sombra */
+
 .alojamiento-1 {
-    border: 3px solid #166534;
+    border: 3px solid #166534;      /* tarjeta 1: borde verde */
 }
 
 .alojamiento-2 {
-    background-color: #eaf4ec;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    background-color: #eaf4ec;      /* tarjeta 2: fondo verde muy claro */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);  /* sombra: 5px derecha, 5px abajo,
+                                                      10px de desenfoque y 25% de opacidad */
 }
 
 .alojamiento-3 {
-    background-color: #fff8e1;
-    border: 3px dashed #f6c518;
+    background-color: #fff8e1;      /* tarjeta 3: fondo crema */
+    border: 3px dashed #f6c518;     /* borde amarillo discontinuo (dashed) */
 }
 
+
 /* --- Sección 3: Tabla de precios --- */
+
 .tabla-precios {
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid #14532d;
-    margin-top: 0.8rem;
+    width: 100%;                    /* la tabla ocupa todo el ancho del main */
+    border-collapse: collapse;      /* une los bordes (evita líneas dobles) */
+    border: 2px solid #14532d;      /* borde exterior de la tabla */
+    margin-top: 0.8rem;             /* separa la tabla del título */
 }
 
 .tabla-precios th,
 .tabla-precios td {
-    border: 2px solid #14532d;
-    padding: 0.6rem;
-    text-align: left;
+    border: 2px solid #14532d;      /* borde de 2px en todas las celdas */
+    padding: 0.6rem;                /* espacio interior de las celdas */
+    text-align: left;               /* texto alineado a la izquierda por defecto */
 }
 
 .tabla-precios thead th {
-    background-color: #14532d;
-    color: #ffffff;
-    font-size: 0.85rem;
-    text-align: center;
+    background-color: #14532d;      /* cabecera con fondo verde oscuro */
+    color: #ffffff;                 /* texto blanco en la cabecera */
+    font-size: 0.85rem;             /* tamaño del texto de la cabecera */
+    text-align: center;             /* cabecera centrada */
 }
 
 .tabla-precios tbody td {
-    text-align: center;
-    background-color: #ffffff;
-    transition: background-color 0.25s;
+    text-align: center;             /* datos centrados en las celdas */
+    background-color: #ffffff;      /* fondo blanco para los datos */
+    transition: background-color 0.25s;  /* anima el cambio de fondo */
 }
 
 .tabla-precios tbody tr:hover td {
-    background-color: #dceee1;
+    background-color: #dceee1;      /* al pasar el ratón, la fila entera se pone verde claro */
 }
 
+
 /* ============ ASIDE ============ */
+/* columna lateral con actividades, horarios y enlaces */
+
 .aside {
-    width: 30%;
-    min-height: 60vh;
-    background-color: #e7f3e9;
-    border: 3px solid #14532d;
-    border-top: none;
-    border-left: none;
-    padding: 1.2rem;
+    width: 30%;                     /* 30% del contenedor */
+    min-height: 60vh;               /* misma altura mínima que el main */
+    background-color: #e7f3e9;      /* fondo verde muy claro */
+    border: 3px solid #14532d;      /* borde verde oscuro */
+    border-top: none;               /* sin borde arriba */
+    border-left: none;              /* sin borde izquierdo (el main ya lleva borde derecho) */
+    padding: 1.2rem;                /* espacio interior de 1.2rem */
 }
 
 .aside h2 {
-    margin-top: 1rem;
+    margin-top: 1rem;               /* separa el título del borde superior */
 }
 
 .actividades {
-    list-style: none;
-    padding: 0;
-    margin: 0.6rem 0 1rem 0;
+    list-style: none;               /* quita las viñetas de la lista */
+    padding: 0;                     /* sin espacio interior (se quita la sangría) */
+    margin: 0.6rem 0 1rem 0;        /* 0.6rem arriba, 1rem abajo y 0 a los lados */
 }
 
 .actividades li {
-    background-color: #ffffff;
-    border: 2px solid #166534;
-    border-radius: 6px;
-    padding: 0.5rem 0.7rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.25s;
+    background-color: #ffffff;      /* fondo blanco de cada actividad */
+    border: 2px solid #166534;      /* borde verde */
+    border-radius: 6px;             /* esquinas redondeadas (parece un botón) */
+    padding: 0.5rem 0.7rem;         /* espacio interior */
+    margin-bottom: 0.5rem;          /* separa una actividad de la siguiente */
+    cursor: pointer;                /* cursor de mano */
+    transition: background-color 0.25s;  /* animación del fondo */
 }
 
 .actividades li:hover {
-    background-color: #f6c518;
+    background-color: #f6c518;      /* la actividad se pone amarilla al pasar el ratón */
 }
 
 .aside p {
-    margin-top: 0.4rem;
+    margin-top: 0.4rem;             /* separa el párrafo de lo que tiene encima */
 }
 
 .enlaces {
-    padding-left: 1.2rem;
-    margin-top: 0.4rem;
+    padding-left: 1.2rem;           /* sangría para que se vean las viñetas */
+    margin-top: 0.4rem;             /* separa la lista de su título */
 }
 
 .enlaces li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.3rem;          /* separa un enlace del siguiente */
 }
 
 .enlaces a {
-    color: #14532d;
-    cursor: pointer;
-    transition: color 0.25s;
+    color: #14532d;                 /* enlaces en verde oscuro */
+    cursor: pointer;                /* cursor de mano */
+    transition: color 0.25s;        /* animación del color */
 }
 
 .enlaces a:hover {
-    color: #c1440e;
+    color: #c1440e;                 /* al pasar el ratón, el enlace se pone rojo cálido */
 }
 
+
 /* ============ GALERÍA DE IMÁGENES ============ */
+
 .galeria {
-    width: 90%;
-    margin: 1.2rem auto 0 auto;
-    background-color: #ffffff;
-    border: 3px solid #14532d;
-    padding: 1.2rem;
-    text-align: center;
+    width: 90%;                     /* 90% del ancho de la página */
+    margin: 1.2rem auto 0 auto;     /* centrada (auto izq/der) y 1.2rem arriba, 0 abajo */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #14532d;      /* borde verde oscuro */
+    padding: 1.2rem;                /* espacio interior */
+    text-align: center;             /* centra las fotos */
 }
 
 .galeria h2 {
-    text-align: left;
+    text-align: left;               /* el título de la galería va a la izquierda (no centrado) */
 }
 
 .galeria-cuadro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: flex;                  /* activa flexbox para colocar las fotos en fila */
+    flex-wrap: wrap;                /* si no caben, pasan a la siguiente línea */
+    justify-content: space-between; /* reparte el espacio: 3 fotos arriba y 3 abajo */
+    gap: 1rem;                      /* separación de 1rem entre fotos */
+    margin-top: 1rem;               /* separa las fotos del título */
 }
 
 .galeria figure {
-    margin: 0;
-    width: calc(33.333% - 0.7rem);
-    text-align: center;
+    margin: 0;                      /* quita el margen por defecto de los figure */
+    width: calc(33.333% - 0.7rem);  /* ancho de un tercio menos la mitad del gap (cálculo con calc) */
+    text-align: center;             /* centra el pie de foto */
 }
 
 .galeria img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border: 2px solid #166534;
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;                    /* ancho completo de su columna */
+    height: 180px;                  /* altura fija de 180 píxeles */
+    object-fit: cover;              /* recorta la foto para llenar sin deformarse */
+    border: 2px solid #166534;      /* borde verde */
+    border-radius: 8px;             /* esquinas redondeadas */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);  /* sombra suave debajo de la foto */
+    cursor: pointer;                /* cursor de mano */
+    transition: transform 0.3s, box-shadow 0.3s;   /* anima tamaño y sombra durante 0.3s */
 }
 
 .galeria img:hover {
-    transform: scale(1.05);
-    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);
+    transform: scale(1.05);         /* la foto crece un 5% al pasar el ratón */
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);  /* la sombra se hace más grande y marcada */
 }
 
 .galeria figcaption {
-    font-size: 0.75rem;
-    color: #14532d;
-    margin-top: 0.4rem;
+    font-size: 0.75rem;             /* tamaño del texto bajo la foto */
+    color: #14532d;                 /* verde oscuro */
+    margin-top: 0.4rem;             /* separa el pie de la foto */
 }
 
+
 /* ============ FORMULARIO DE CONTACTO ============ */
+
 .formulario {
-    width: 90%;
-    margin: 1.2rem auto;
-    background-color: #ffffff;
-    border: 3px solid #14532d;
-    padding: 1.2rem;
+    width: 90%;                     /* 90% del ancho de la página */
+    margin: 1.2rem auto;            /* centrado y con 1.2rem arriba y abajo */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #14532d;      /* borde verde oscuro */
+    padding: 1.2rem;                /* espacio interior */
 }
 
 .formulario-texto {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem;             /* separa el texto introductorio del título */
 }
 
 .formulario form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: flex;                  /* activa flexbox: los campos se colocan en filas */
+    flex-wrap: wrap;                /* los campos que no caben pasan a la siguiente fila */
+    justify-content: space-between; /* reparte los dos campos de cada fila (izq y der) */
+    gap: 1rem;                      /* 1rem de separación entre campos */
+    margin-top: 1rem;               /* separa el formulario del texto */
 }
 
 .campo {
-    width: 48%;
+    width: 48%;                     /* dos campos por fila (48% + 48% + hueco) */
 }
 
 .campo-ancho {
-    width: 100%;
+    width: 100%;                    /* este campo ocupa la fila completa */
 }
 
 .campo label {
-    display: block;
-    font-weight: bold;
-    color: #14532d;
-    margin-bottom: 0.3rem;
+    display: block;                 /* la etiqueta ocupa su propia línea */
+    font-weight: bold;              /* etiqueta en negrita */
+    color: #14532d;                 /* verde oscuro */
+    margin-bottom: 0.3rem;          /* separa la etiqueta del campo */
 }
 
 .campo input,
 .campo select,
 .campo textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 2px solid #166534;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f9fcf9;
+    width: 100%;                    /* todos los campos ocupan todo el ancho de su caja */
+    padding: 0.5rem;                /* espacio interior para que no se pegue el texto al borde */
+    border: 2px solid #166534;      /* borde verde */
+    border-radius: 6px;             /* esquinas redondeadas */
+    font-size: 0.8rem;              /* tamaño del texto escrito */
+    font-family: Arial, Helvetica, sans-serif;  /* misma tipografía que la página */
+    background-color: #f9fcf9;      /* fondo verde muy claro */
 }
 
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-    outline: none;
-    border-color: #f6c518;
+    outline: none;                  /* quita el contorno azul por defecto del navegador */
+    border-color: #f6c518;          /* el borde se pone amarillo al escribir dentro */
 }
 
 .campo button {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0.7rem 1.6rem;
-    background-color: #166534;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.25s, color 0.25s;
+    display: inline-block;          /* caja en línea para darle relleno */
+    vertical-align: middle;         /* alinea el botón en el centro */
+    padding: 0.7rem 1.6rem;         /* botón grande: más ancho que alto */
+    background-color: #166534;      /* fondo verde */
+    color: #ffffff;                 /* texto blanco */
+    border: none;                   /* sin borde */
+    border-radius: 6px;             /* esquinas redondeadas */
+    font-size: 0.9rem;              /* tamaño del texto */
+    cursor: pointer;                /* cursor de mano */
+    transition: background-color 0.25s, color 0.25s;  /* animación al pasar el ratón */
 }
 
 .campo button:hover {
-    background-color: #f6c518;
-    color: #14532d;
+    background-color: #f6c518;      /* el botón se pone amarillo al hacer hover */
+    color: #14532d;                 /* el texto se vuelve verde oscuro */
 }
 
+
 /* ============ FOOTER ============ */
+
 .footer {
-    width: 100%;
-    min-height: 120px;
-    background-color: #0f2e1e;
-    color: #ffffff;
-    border: 3px solid #08190f;
-    border-top: none;
-    text-align: center;
-    padding: 1rem;
+    width: 100%;                    /* ancho completo */
+    min-height: 120px;              /* altura mínima de 120 píxeles */
+    background-color: #0f2e1e;      /* fondo verde muy oscuro */
+    color: #ffffff;                 /* texto blanco */
+    border: 3px solid #08190f;      /* borde casi negro */
+    border-top: none;               /* sin borde arriba */
+    text-align: center;             /* centra todo el texto */
+    padding: 1rem;                  /* espacio interior */
 }
 
 .footer p {
-    margin: 0.3rem 0;
-    font-size: 0.75rem;
-    color: #d8ecdc;
+    margin: 0.3rem 0;               /* separación vertical entre líneas del pie */
+    font-size: 0.75rem;             /* texto pequeño */
+    color: #d8ecdc;                 /* verde muy claro */
 }
 
 .footer .footer-nombre {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #f6c518;
+    font-size: 1.1rem;              /* el nombre de la empresa más grande */
+    font-weight: bold;              /* en negrita */
+    color: #f6c518;                 /* amarillo */
 }
 
 .footer .copyright {
-    margin-top: 0.6rem;
-    font-size: 0.7rem;
-    color: #a9c7b3;
+    margin-top: 0.6rem;             /* separa la línea de copyright del resto */
+    font-size: 0.7rem;              /* el texto más pequeño del pie */
+    color: #a9c7b3;                 /* verde apagado */
 }

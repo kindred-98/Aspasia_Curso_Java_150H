@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña -->
+    <title>Kindred.Java | Tareas</title>
+
+    <!-- tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido + CSS de esta página -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tareas.css">
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+</head>
+
+<body>
+
+    <!-- elementos de los efectos -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html" class="active">Tareas</a>
+            <!-- esta es la página actual: enlace activo -->
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html">Clase</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="tareas.html" class="active">Tareas</a>
+        <a href="practicas.html">Prácticas</a>
+        <a href="clase.html">Clase</a>
+    </div>
+
+    <main>
+
+        <!-- ============ CABECERA DE LA PÁGINA ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-badge badge badge-gold">4 entregas / 5 ejercicios</span>
+                <h1 class="page-title">Mis <span class="accent">tareas</span></h1>
+                <p class="page-sub">
+                    Aquí están todas las tareas del curso. Pulsa <strong>Ver tarea</strong>
+                    para abrirla en el navegador y <strong>Enunciado</strong> para ver el PDF original.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ REJILLA DE TARJETAS ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="tareas-grid">
+
+                    <!-- ---- TAREA 1 ---- -->
+                    <article class="glass-card tarea-card reveal">
+                        <div class="tarea-top">
+                            <span class="tarea-num">01</span>
+                            <span class="badge badge-done">Completada</span>
+                        </div>
+                        <h3>Mi Gym y Mi Vida Diaria</h3>
+                        <p>
+                            Estructura básica de una página web con las etiquetas
+                            semánticas de HTML5: header, nav, main, aside y footer,
+                            organizadas con Flexbox en CSS.
+                        </p>
+                        <div class="tags">
+                            <span class="tag tag-html">HTML</span>
+                            <span class="tag tag-css">CSS</span>
+                        </div>
+                        <div class="tarea-btns">
+                            <a class="btn btn-primary" href="../TAREAS/Primera_Tarea/index.html">Ver tarea</a>
+                            <!-- abre la tarea real en el navegador -->
+                            <a class="btn btn-secondary" href="../TAREAS/Primera_Tarea/PrimerEjecicio.md">Enunciado</a>
+                            <!-- abre el enunciado (archivo .md) -->
+                        </div>
+                    </article>
+
+                    <!-- ---- TAREA 2 ---- -->
+                    <article class="glass-card tarea-card reveal">
+                        <div class="tarea-top">
+                            <span class="tarea-num">02</span>
+                            <span class="badge badge-done">Completada</span>
+                        </div>
+                        <h3>Galería de Naruto</h3>
+                        <p>
+                            Página con tabla de imágenes: 6 fotos de personajes
+                            colocadas en filas y columnas, con efecto hover que
+                            amplía y gira la imagen.
+                        </p>
+                        <div class="tags">
+                            <span class="tag tag-html">HTML</span>
+                            <span class="tag tag-css">CSS</span>
+                        </div>
+                        <div class="tarea-btns">
+                            <a class="btn btn-primary" href="../TAREAS/Segunda_Tarea/index.html">Ver tarea</a>
+                            <a class="btn btn-secondary" href="../TAREAS/Segunda_Tarea/ejercicio_estructura_web_tabla_imagenes.pdf">Enunciado</a>
+                        </div>
+                    </article>
+
+                    <!-- ---- TAREA 3 ---- -->
+                    <article class="glass-card tarea-card reveal">
+                        <div class="tarea-top">
+                            <span class="tarea-num">03</span>
+                            <span class="badge badge-done">Completada</span>
+                        </div>
+                        <h3>Venezuela Natural</h3>
+                        <p>
+                            Web completa de turismo rural: galería de paisajes,
+                            tabla de precios, formulario de contacto y enlaces
+                            internos con identificadores (id).
+                        </p>
+                        <div class="tags">
+                            <span class="tag tag-html">HTML</span>
+                            <span class="tag tag-css">CSS</span>
+                        </div>
+                        <div class="tarea-btns">
+                            <a class="btn btn-primary" href="../TAREAS/Tercera_Tarea/index.html">Ver tarea</a>
+                            <a class="btn btn-secondary" href="../TAREAS/Tercera_Tarea/enunciado_web_completa_html_css_final.pdf">Enunciado</a>
+                        </div>
+                    </article>
+
+                    <!-- ---- TAREA 4 ---- -->
+                    <article class="glass-card tarea-card reveal">
+                        <div class="tarea-top">
+                            <span class="tarea-num">04</span>
+                            <span class="badge badge-done">Completada</span>
+                        </div>
+                        <h3>Funciones JavaScript</h3>
+                        <p>
+                            5 ejercicios de funciones: saludar, mostrar un nombre,
+                            sumar, calcular el doble con <em>return</em> y calcular
+                            el precio total de una compra.
+                        </p>
+                        <div class="tags">
+                            <span class="tag tag-html">HTML</span>
+                            <span class="tag tag-js">JS</span>
+                        </div>
+                        <div class="tarea-btns">
+                            <a class="btn btn-primary" href="../TAREAS/Cuarta_tarea/Tarea1/index.html">Ver tarea</a>
+                            <a class="btn btn-secondary" href="../TAREAS/Cuarta_tarea/Tarea1/ejercicios_funciones_javascript.pdf">Enunciado</a>
+                        </div>
+                    </article>
+
+                    <!-- ---- TAREA 5 ---- -->
+                    <article class="glass-card tarea-card reveal">
+                        <div class="tarea-top">
+                            <span class="tarea-num">05</span>
+                            <span class="badge badge-done">Completada</span>
+                        </div>
+                        <h3>Variables y document.write()</h3>
+                        <p>
+                            5 ejercicios de variables: datos personales, cálculo de
+                            un producto, edad, precio con descuento y resumen de
+                            compra completo.
+                        </p>
+                        <div class="tags">
+                            <span class="tag tag-html">HTML</span>
+                            <span class="tag tag-js">JS</span>
+                        </div>
+                        <div class="tarea-btns">
+                            <a class="btn btn-primary" href="../TAREAS/Cuarta_tarea/Tarea2/index.html">Ver tarea</a>
+                            <a class="btn btn-secondary" href="../TAREAS/Cuarta_tarea/Tarea2/ejercicios_javascript%20(1).pdf">Enunciado</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html">Clase</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- efectos de la web -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

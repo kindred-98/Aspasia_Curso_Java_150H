@@ -1,0 +1,89 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PÁGINA DE TAREAS (tareas.html)
+   Rejilla de tarjetas con las 5 tareas del curso.
+   ============================================================ */
+
+
+/* ============ REJILLA DE TARJETAS ============ */
+
+.tareas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas por fila en PC */
+    gap: 1.5rem;                            /* hueco entre tarjetas */
+}
+
+
+/* ============ TARJETA DE TAREA ============ */
+
+.tarea-card {
+    display: flex;
+    flex-direction: column;   /* los hijos se apilan para poder empujar los botones abajo */
+}
+
+/* Fila superior: número + badge de estado */
+.tarea-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* número a la izquierda, badge a la derecha */
+    margin-bottom: 0.8rem;
+}
+
+.tarea-num {
+    font-family: var(--font-code);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+/* Título de la tarea */
+.tarea-card h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+}
+
+/* Descripción */
+.tarea-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    flex: 1;                /* estira para que los botones siempre queden abajo */
+}
+
+.tarea-card p em {
+    color: var(--neon);
+    font-style: normal;
+}
+
+/* Botones: Ver tarea + Enunciado */
+.tarea-btns {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+    flex-wrap: wrap;         /* en pantallas pequeñas pasan a otra línea */
+}
+
+.tarea-btns .btn {
+    flex: 1;                 /* los dos botones comparten el ancho por igual */
+    justify-content: center; /* centra el texto dentro del botón */
+    min-width: 120px;
+    font-size: 0.75rem;
+    padding: 0.6rem 0.8rem;
+}
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 1000px) {
+    .tareas-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 tarjetas por fila en tablet */
+    }
+}
+
+@media (max-width: 640px) {
+    .tareas-grid {
+        grid-template-columns: 1fr;             /* 1 tarjeta por fila en móvil */
+    }
+
+    .page-title { font-size: 1.7rem; }
+}

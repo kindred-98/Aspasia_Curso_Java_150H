@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD (no se ve en pantalla) ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla (móvil/tablet/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña del navegador -->
+    <title>Kindred.Java | Inicio</title>
+
+    <!-- descarga las tipografías de Google Fonts (Orbitron, Rajdhani, JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido de todas las páginas -->
+    <link rel="stylesheet" href="css/base.css">
+
+    <!-- CSS específico de esta página (portada) -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+</head>
+
+<body>
+
+    <!-- elementos de los efectos (cursor, estela y fondo de estrellas) -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <!-- cabecera fija con logo y menú -->
+
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+        <!-- logo con efecto glitch: data-text es el texto que copian las capas ::before y ::after -->
+
+        <nav>
+            <!-- menú de escritorio -->
+            <a href="index.html" class="active">Inicio</a>
+            <!-- enlace a la portada (la página actual) -->
+            <a href="tareas.html">Tareas</a>
+            <!-- enlace a la página de tareas -->
+            <a href="practicas.html">Prácticas</a>
+            <!-- enlace a la página de prácticas -->
+            <a href="clase.html">Clase</a>
+            <!-- enlace a la página de recursos de clase -->
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <!-- botón del menú móvil: 3 barritas que el JS convierte en cruz -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- menú desplegable solo visible en móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="practicas.html">Prácticas</a>
+        <a href="clase.html">Clase</a>
+    </div>
+
+    <main>
+
+        <!-- ============ HERO (zona principal de la portada) ============ -->
+        <section class="hero">
+            <div class="hero-content">
+
+                <!-- ---- FOTO Y DISPONIBILIDAD ---- -->
+                <div class="hero-avatar-wrap">
+                    <img class="hero-avatar" src="img/icono.jpg" alt="Foto de perfil de Kindred.Java">
+                    <!-- avatar circular -->
+                    <span class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Estudiando Desarrollo Web
+                    </span>
+                    <!-- badge con punto verde parpadeando -->
+                </div>
+
+                <!-- ---- TÍTULO CON MÁQUINA DE ESCRIBIR ---- -->
+                <p class="hero-hola">Hola, soy</p>
+                <h1 class="hero-title">Kindred<span class="dot">.Java</span></h1>
+                <h2 class="hero-subtitle">
+                    <span id="typing-text"></span><span class="caret">|</span>
+                </h2>
+                <!-- el JS va escribiendo y borrando textos dentro de #typing-text -->
+
+                <!-- ---- DESCRIPCIÓN ---- -->
+                <p class="hero-desc">
+                    Este es mi rincón donde dejo constancia de todo lo que hago en
+                    clase: mis <strong>tareas</strong>, mis <strong>prácticas
+                    manuales</strong> y todos los <strong>recursos</strong> que
+                    guardo de HTML, CSS y JavaScript.
+                </p>
+
+                <!-- ---- BOTONES ---- -->
+                <div class="hero-cta">
+                    <a href="tareas.html" class="btn btn-primary">Ver mis tareas</a>
+                    <!-- botón principal: lleva a la página de tareas -->
+                    <a href="clase.html" class="btn btn-secondary">Recursos de clase</a>
+                    <!-- botón secundario: lleva a los recursos -->
+                </div>
+
+                <!-- ---- CONTADORES ANIMADOS ---- -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Tareas</span>
+                    </div>
+                    <!-- data-target es el número final hasta el que cuenta el JS -->
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Prácticas</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat">
+                        <span class="stat-number" data-target="21">0</span>
+                        <span class="stat-label">Recursos</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 01 - SOBRE MÍ ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <!-- cabecera numerada que aparece al hacer scroll -->
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">Sobre <span class="accent">mí</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+
+                    <!-- ---- TARJETA 1 ---- -->
+                    <div class="glass-card reveal">
+                        <div class="card-icon">&lt;/&gt;</div>
+                        <!-- icono de código escrito con texto -->
+                        <h3>Quién soy</h3>
+                        <p>
+                            Soy <strong>Angel Echenique</strong>, alumno de Desarrollo
+                            Web. Aprendo <strong>HTML</strong> para la estructura,
+                            <strong>CSS</strong> para el diseño y
+                            <strong>JavaScript</strong> para dar vida a las páginas.
+                        </p>
+                    </div>
+
+                    <!-- ---- TARJETA 2 ---- -->
+                    <div class="glass-card reveal">
+                        <div class="card-icon">&#9733;</div>
+                        <!-- icono de estrella -->
+                        <h3>Para qué sirve esta web</h3>
+                        <p>
+                            Para dejar constancia de mi trabajo: aquí guardo todas mis
+                            prácticas con sus enunciados, mis páginas hechas en clase y
+                            la documentación que voy recopilando durante el curso.
+                        </p>
+                    </div>
+
+                    <!-- ---- TARJETA 3 ---- -->
+                    <div class="glass-card reveal">
+                        <div class="card-icon">&#9654;</div>
+                        <!-- icono de play -->
+                        <h3>Mi canal</h3>
+                        <p>
+                            Subo mis ejercicios y avances a YouTube como
+                            <strong>ElTioMinato</strong>. También me verás jugando:
+                            main de <strong>Jungle</strong> y <strong>ADC</strong>.
+                        </p>
+                        <a class="btn btn-secondary card-btn"
+                           href="https://www.youtube.com/@ElTioMinato" target="_blank" rel="noopener noreferrer">
+                            Ver canal
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 02 - MI PROGRESO ============ -->
+        <section class="section section-progress">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Mi <span class="accent">progreso</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="progress-grid">
+
+                    <!-- ---- BARRAS DE PROGRESO ---- -->
+                    <div class="glass-card reveal">
+                        <h3 class="progress-title">Curso HTML - CSS - JS</h3>
+                        <!-- título de la tarjeta de barras -->
+
+                        <div class="progress-item">
+                            <div class="progress-head">
+                                <span>HTML5</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="90"></div>
+                                <!-- el JS rellena la barra hasta el 90% -->
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-head">
+                                <span>CSS3</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="75"></div>
+                                <!-- rellena hasta el 75% -->
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-head">
+                                <span>JavaScript</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="45"></div>
+                                <!-- rellena hasta el 45% -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ---- RESUMEN NUMÉRICO ---- -->
+                    <div class="glass-card reveal">
+                        <h3 class="progress-title">Resumen del curso</h3>
+
+                        <ul class="resumen">
+                            <li>
+                                <span class="resumen-num">5</span>
+                                <span class="resumen-txt">tareas entregadas (HTML, CSS y JS)</span>
+                            </li>
+                            <li>
+                                <span class="resumen-num">3</span>
+                                <span class="resumen-txt">prácticas manuales en casa</span>
+                            </li>
+                            <li>
+                                <span class="resumen-num">15</span>
+                                <span class="resumen-txt">PDF y apuntes descargados</span>
+                            </li>
+                            <li>
+                                <span class="resumen-num">4</span>
+                                <span class="resumen-txt">análisis y páginas de apoyo</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 03 - MIS ESPACIOS ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Mis <span class="accent">espacios</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="spaces-grid">
+
+                    <!-- ---- TARJETA DE ACCESO: TAREAS ---- -->
+                    <a href="tareas.html" class="glass-card space-card reveal">
+                        <span class="space-num">01</span>
+                        <h3>Tareas</h3>
+                        <p>Las 5 tareas del curso, cada una con su enunciado y su botón para verla en el navegador.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                    <!-- ---- TARJETA DE ACCESO: PRÁCTICAS ---- -->
+                    <a href="practicas.html" class="glass-card space-card reveal">
+                        <span class="space-num">02</span>
+                        <h3>Prácticas</h3>
+                        <p>Los ejercicios manuales que hago en casa: mi página semántica, pruebas de CSS y de JavaScript.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                    <!-- ---- TARJETA DE ACCESO: CLASE ---- -->
+                    <a href="clase.html" class="glass-card space-card reveal">
+                        <span class="space-num">03</span>
+                        <h3>Clase</h3>
+                        <p>Todo lo que guardo de clase: PDF, cheatsheets, apuntes, fotos y páginas externas de consulta.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html">Clase</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- JavaScript de todos los efectos (al final para que el HTML ya esté cargado) -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

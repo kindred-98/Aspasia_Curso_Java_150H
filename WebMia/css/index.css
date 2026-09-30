@@ -1,0 +1,317 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PORTADA (index.html)
+   Estilos del hero, sobre mí, progreso y espacios.
+   ============================================================ */
+
+
+/* ============ HERO ============ */
+/* Zona principal: foto, títulos, botones y contadores */
+
+.hero {
+    min-height: calc(100vh - 70px);   /* ocupa casi toda la pantalla (menos la cabecera) */
+    display: flex;
+    align-items: center;              /* centra el contenido en vertical */
+    justify-content: center;          /* y en horizontal */
+    text-align: center;
+    padding: 3rem 5%;
+}
+
+.hero-content {
+    max-width: 800px;                 /* ancho máximo del texto */
+}
+
+/* --- Foto y badge --- */
+
+.hero-avatar-wrap {
+    position: relative;
+    display: inline-block;            /* para poder colocar el badge encima */
+    margin-bottom: 1.5rem;
+}
+
+.hero-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;               /* forma circular */
+    object-fit: cover;                /* recorta sin deformar */
+    border: 3px solid var(--neon);    /* borde cian */
+    box-shadow: 0 0 30px var(--neon-dim);  /* brillo alrededor */
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);      /* centrado horizontal exacto */
+    white-space: nowrap;              /* que no se parta en dos líneas */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(10, 10, 15, 0.95);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;    /* late como un corazón */
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }    /* lleno y tamaño normal */
+    50%      { opacity: 0.4; transform: scale(0.7); } /* más pequeño y apagado */
+}
+
+/* --- Títulos --- */
+
+.hero-hola {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-dim);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text);
+    margin: 0.3rem 0;
+    text-shadow: 0 0 25px var(--neon-dim);  /* brillo cian detrás del texto */
+}
+
+.hero-title .dot {
+    color: var(--neon);               /* el ".Java" en cian */
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--purple);
+    min-height: 1.8rem;               /* altura fija para que no salte al escribir */
+}
+
+.caret {
+    color: var(--neon);
+    animation: blink 0.8s infinite;    /* el cursor parpadea */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
+}
+
+.hero-desc {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.6;                 /* interlineado cómodo */
+    margin: 1.2rem auto 1.8rem;
+    max-width: 620px;
+}
+
+.hero-desc strong {
+    color: var(--neon);               /* las palabras clave en cian */
+}
+
+/* --- Botones --- */
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;                  /* en móvil pasan a otra línea */
+}
+
+/* --- Contadores --- */
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);  /* línea que separa los contadores */
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--neon);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border);         /* línea vertical entre números */
+}
+
+
+/* ============ SECCIÓN 01 - SOBRE MÍ ============ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas en fila */
+    gap: 1.5rem;
+}
+
+.card-icon {
+    font-family: var(--font-code);
+    font-size: 1.6rem;
+    color: var(--neon);
+    margin-bottom: 0.8rem;
+}
+
+.glass-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+}
+
+.glass-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.glass-card strong {
+    color: var(--text);
+}
+
+.card-btn {
+    margin-top: 1rem;                 /* separa el botón del texto */
+}
+
+
+/* ============ SECCIÓN 02 - PROGRESO ============ */
+
+.section-progress {
+    background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.05), transparent);
+    /* tenue degradado morado que da profundidad a la sección */
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* dos tarjetas en fila */
+    gap: 1.5rem;
+}
+
+.progress-title {
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+    color: var(--neon);
+}
+
+/* --- Lista resumen --- */
+
+.resumen {
+    list-style: none;                 /* quita las viñetas */
+}
+
+.resumen li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--border);  /* línea discontinua entre filas */
+}
+
+.resumen li:last-child {
+    border-bottom: none;              /* la última sin línea */
+}
+
+.resumen-num {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--purple);
+    min-width: 40px;                  /* ancho fijo para que las filas alineen */
+}
+
+.resumen-txt {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+
+/* ============ SECCIÓN 03 - MIS ESPACIOS ============ */
+
+.spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas en fila */
+    gap: 1.5rem;
+}
+
+.space-card {
+    display: block;                   /* para poder aplicar márgenes internos */
+    padding-top: 2rem;
+    position: relative;
+}
+
+.space-num {
+    font-family: var(--font-code);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.06); /* número gigante muy tenue detrás */
+    position: absolute;
+    top: 10px;
+    right: 16px;
+}
+
+.space-card h3 {
+    font-size: 1.1rem;
+    color: var(--neon);
+    margin-bottom: 0.6rem;
+}
+
+.space-card p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.space-arrow {
+    font-size: 1.3rem;
+    color: var(--purple);
+    transition: transform 0.3s;       /* la flecha se desplaza al hacer hover */
+}
+
+.space-card:hover .space-arrow {
+    transform: translateX(8px);       /* se mueve a la derecha */
+}
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 820px) {
+    .hero-title { font-size: 2.2rem; }      /* título más pequeño */
+    .hero-subtitle { font-size: 1.1rem; }
+
+    .hero-stats { gap: 1rem; }
+    .stat-number { font-size: 1.6rem; }
+
+    .about-grid,
+    .spaces-grid { grid-template-columns: 1fr; }  /* tarjetas una debajo de otra */
+
+    .progress-grid { grid-template-columns: 1fr; }
+}

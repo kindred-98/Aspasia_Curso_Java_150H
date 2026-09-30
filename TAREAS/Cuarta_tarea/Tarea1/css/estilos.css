@@ -1,0 +1,252 @@
+/* ============================================================
+   TAREA 1 - JAVASCRIPT: FUNCIONES
+   Tema: 5 ejercicios de funciones (HTML + JS)
+   ============================================================ */
+
+
+/* ---------- AJUSTES GENERALES ---------- */
+
+html {
+    font-size: 20px;   /* tamaño base de la página; a partir de aquí se calculan los rem */
+}
+
+* {
+    box-sizing: border-box;  /* los bordes y el padding se calculan DENTRO del ancho, no lo ensanchan */
+}
+
+body {
+    margin: 0;                              /* elimina el margen por defecto del navegador */
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía de la página (sans-serif) */
+    color: #222222;                         /* color del texto: casi negro */
+    background-color: #f2f2f2;              /* fondo de la página: gris claro */
+}
+
+
+/* ---------- HEADER ---------- */
+
+.header {
+    width: 100%;                    /* ocupa todo el ancho disponible */
+    height: 150px;                  /* altura fija de 150 píxeles */
+    background-color: #2f3640;      /* color de fondo: gris oscuro */
+    color: #ffffff;                 /* color del texto: blanco */
+    border: 3px solid #1b1e24;      /* borde de 3 px sólido y oscuro: aquí se cambia tamaño y color */
+    text-align: center;             /* centra el texto horizontalmente */
+    display: flex;                  /* activa el modo flexbox para centrar con propiedades avanzadas */
+    flex-direction: column;         /* los hijos se apilan de arriba a abajo */
+    justify-content: center;        /* centra los hijos en sentido vertical */
+}
+
+.header h1 {
+    margin: 0;                      /* quita el margen por defecto de los títulos */
+    font-size: 1.6rem;              /* tamaño del título (1.6 x 20px = 32px) */
+}
+
+.header p {
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en los otros tres lados */
+    font-size: 0.8rem;              /* tamaño del subtítulo */
+    color: #dcdcdc;                 /* color del texto: gris claro */
+}
+
+
+/* ---------- NAV ---------- */
+
+.nav {
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 70px;                   /* altura de 70 píxeles */
+    background-color: #40556b;      /* fondo azul grisáceo */
+    border: 3px solid #1b1e24;      /* mismo borde que el header para que encajen */
+    border-top: none;               /* quita el borde de arriba (evita la doble línea con el header) */
+    text-align: center;             /* centra los enlaces */
+    line-height: 64px;              /* sube el texto con la altura de línea para centrarlo verticalmente */
+}
+
+.nav a {
+    display: inline-block;          /* permite aplicar margen vertical a los enlaces */
+    vertical-align: middle;         /* alinea los enlaces por el centro */
+    margin: 0 1.2rem;               /* separación de 1.2rem a izquierda y derecha */
+    color: #ffffff;                 /* texto blanco */
+    text-decoration: none;          /* elimina el subrayado de los enlaces */
+    font-size: 0.9rem;              /* tamaño del texto del menú */
+    cursor: pointer;                /* el ratón se convierte en mano al pasar */
+    transition: color 0.2s;         /* anima el cambio de color durante 0.2 segundos */
+}
+
+.nav a:hover {
+    color: #ffd97d;                 /* color dorado cuando el ratón pasa por encima */
+}
+
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+
+.contenedor {
+    width: 90%;                     /* ocupa el 90% del ancho de la página */
+    margin: 0 auto;                 /* auto a los lados = centrado horizontal */
+    display: flex;                  /* activa flexbox: MAIN y ASIDE quedan uno al lado del otro */
+}
+
+
+/* ---------- MAIN ---------- */
+
+.main {
+    width: 70%;                     /* ocupa el 70% del contenedor */
+    height: 400px;                  /* altura fija de 400 píxeles */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #1b1e24;      /* borde de 3 px */
+    border-top: none;               /* sin borde arriba, ya que debajo del nav no hace falta */
+    padding: 1rem;                  /* 1rem de espacio interior para que el texto no toque el borde */
+    overflow: auto;                 /* si el contenido no cabe, aparece la barra de scroll */
+}
+
+.main h2 {
+    margin: 0.3rem 0;               /* 0.3rem arriba y abajo, 0 a los lados */
+    font-size: 1.1rem;              /* tamaño de los subtítulos */
+    color: #2f3640;                 /* texto gris oscuro */
+    border-bottom: 2px solid #40556b;  /* línea inferior de 2 px bajo el título */
+    padding-bottom: 0.3rem;         /* deja 0.3rem de aire entre el texto y la línea */
+}
+
+.main p,
+.main li {
+    font-size: 0.8rem;              /* tamaño del texto de párrafos y listas */
+    line-height: 1.4;               /* interlineado: 1.4 veces el tamaño de la letra */
+}
+
+.main p {
+    margin: 0.4rem 0;               /* separación vertical de los párrafos */
+}
+
+.main ul {
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en el resto */
+    padding-left: 1.4rem;           /* sangría de la lista para que las viñetas se vean */
+}
+
+
+/* ---------- ASIDE ---------- */
+
+.aside {
+    width: 30%;                     /* ocupa el 30% del contenedor (junto al 70% del main) */
+    height: 400px;                  /* misma altura que el main para que queden parejos */
+    background-color: #e4e6e9;      /* fondo gris claro para diferenciarlo */
+    border: 3px solid #1b1e24;      /* borde de 3 px */
+    border-top: none;               /* sin borde arriba */
+    border-left: none;              /* sin borde izquierdo: no se duplica con el borde derecho del main */
+    padding: 1rem;                  /* espacio interior de 1rem */
+    overflow: auto;                 /* scroll automático si se desborda el contenido */
+}
+
+.aside h2 {
+    margin: 0.3rem 0;               /* márgenes verticales del título */
+    font-size: 1.1rem;              /* tamaño del título */
+    color: #2f3640;                 /* color del texto */
+    border-bottom: 2px solid #40556b;  /* línea inferior bajo el título */
+    padding-bottom: 0.3rem;         /* aire entre texto y línea */
+}
+
+.aside h3 {
+    margin: 0.5rem 0 0.2rem 0;      /* más espacio arriba que abajo para agrupar con su texto */
+    font-size: 0.9rem;              /* tamaño de los subtítulos */
+    color: #40556b;                 /* azul grisáceo para diferenciarlos */
+}
+
+.aside p,
+.aside li {
+    font-size: 0.75rem;             /* texto más pequeño que en el main */
+    line-height: 1.4;               /* interlineado cómodo de lectura */
+}
+
+.aside p {
+    margin: 0.2rem 0;               /* separación pequeña entre párrafos */
+}
+
+.aside ul {
+    margin: 0.2rem 0 0 0;           /* margen superior mínimo */
+    padding-left: 1.2rem;           /* sangría para las viñetas */
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 120px;                  /* altura de 120 píxeles */
+    background-color: #2f3640;      /* mismo fondo que el header para que la página combine */
+    color: #ffffff;                 /* texto blanco */
+    border: 3px solid #1b1e24;      /* borde de 3 px */
+    border-top: none;               /* sin borde arriba (continúa con el contenedor) */
+    text-align: center;             /* centra el texto */
+    display: flex;                  /* flexbox para centrar el párrafo en ambos ejes */
+    align-items: center;            /* centra en vertical */
+    justify-content: center;        /* centra en horizontal */
+}
+
+.footer p {
+    margin: 0;                      /* quita el margen por defecto del párrafo */
+    font-size: 0.9rem;              /* tamaño del texto del pie */
+}
+
+
+/* ---------- ZONA DE RESULTADOS (salida del JavaScript) ---------- */
+
+.resultados {
+    width: 90%;                     /* igual de ancha que el contenedor */
+    margin: 1.2rem auto;            /* centrada y separada 1.2rem de arriba y abajo */
+    background-color: #ffffff;      /* fondo blanco para que destaque */
+    border: 3px solid #1b1e24;      /* borde igual al resto de bloques */
+    padding: 1rem;                  /* espacio interior de 1rem */
+}
+
+.resultados h2 {
+    margin: 0 0 0.6rem 0;           /* solo separación inferior bajo el título */
+    font-size: 1.2rem;              /* tamaño del título */
+    color: #2f3640;                 /* texto gris oscuro */
+    border-bottom: 2px solid #40556b;  /* línea inferior decorativa */
+    padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
+}
+
+.resultados h3 {
+    margin: 0.9rem 0 0.3rem 0;      /* separa cada ejercicio del anterior */
+    font-size: 1rem;                /* tamaño de los títulos de cada ejercicio */
+    color: #40556b;                 /* azul grisáceo */
+}
+
+.resultados p {
+    margin: 0.2rem 0;               /* separación entre las líneas de salida */
+    font-size: 0.85rem;             /* tamaño del texto de resultados */
+    line-height: 1.4;               /* interlineado para leer mejor */
+}
+
+
+/* ---------- EJERCICIOS (enunciados del main) ---------- */
+
+.ejercicio {
+    margin-bottom: 0.8rem;          /* separa un enunciado del siguiente */
+    padding: 0.6rem;                /* espacio interior de la tarjeta */
+    background-color: #f7f8f9;      /* fondo gris muy claro para diferenciar cada bloque */
+    border-left: 4px solid #40556b; /* barra lateral izquierda que marca el bloque */
+}
+
+.ejercicio h3 {
+    margin: 0 0 0.3rem 0;           /* solo separación inferior */
+    font-size: 0.95rem;             /* tamaño del título del ejercicio */
+    color: #2f3640;                 /* texto gris oscuro */
+}
+
+.ejercicio p {
+    margin: 0;                      /* quita márgenes para que la tarjeta quede compacta */
+    font-size: 0.8rem;              /* tamaño del enunciado */
+    line-height: 1.5;               /* interlineado cómodo */
+}
+
+code {
+    background-color: #e8eaed;      /* fondo gris para resaltar el código */
+    padding: 0 0.25rem;             /* pequeño espacio a los lados del texto */
+    border-radius: 3px;             /* esquinas redondeadas */
+    font-family: Consolas, monospace;  /* tipografía de código */
+    font-size: 0.85rem;             /* tamaño del texto de código */
+}
+
+em {
+    color: #b34700;                 /* color naranja para resaltar la salida esperada */
+    font-style: normal;             /* quita la cursiva por defecto de <em> */
+    font-weight: bold;              /* lo pone en negrita */
+}

@@ -3,191 +3,213 @@
    Tema: Galería de Naruto
    ============================================================ */
 
+
+/* ---------- AJUSTES GENERALES ---------- */
+
 html {
-    font-size: 20px;
+    font-size: 20px;   /* tamaño base: 1rem = 20px en todo el documento */
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  /* aplica a todos los elementos; padding y border entran dentro del ancho */
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1b2a4a;
-    background-color: #f6f1e7;
+    margin: 0;                              /* elimina el margen por defecto del navegador */
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía general de la página */
+    color: #1b2a4a;                         /* color del texto: azul marino oscuro */
+    background-color: #f6f1e7;              /* fondo de la página: crema claro */
 }
 
+
 /* ---------- HEADER ---------- */
+/* cabecera naranja de 150px (este bloque es el ejemplo del enunciado) */
+
 .header {
-    width: 100%;
-    height: 150px;
-    background-color: #ef7d1a;
-    color: #ffffff;
-    border: 3px solid #7a3b0f;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;                    /* ocupa el 100% del ancho */
+    height: 150px;                  /* altura fija de 150 píxeles */
+    background-color: #ef7d1a;      /* color de fondo naranja; aquí se cambia el color */
+    color: #ffffff;                 /* color del texto: blanco */
+    border: 3px solid #7a3b0f;      /* borde marrón: modifica el tamaño (3px) y el color (#7a3b0f) */
+    text-align: center;             /* centra el h1 y el p horizontalmente */
+    display: flex;                  /* activa flexbox para centrar también en vertical */
+    flex-direction: column;         /* los hijos se apilan de arriba hacia abajo */
+    justify-content: center;        /* centra los hijos dentro de los 150px */
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 1.6rem;
-    text-shadow: 2px 2px 0 #7a3b0f;
+    margin: 0;                      /* quita el margen por defecto del título */
+    font-size: 1.6rem;              /* tamaño del título: 1.6 x 20px = 32px */
+    text-shadow: 2px 2px 0 #7a3b0f; /* sombra del texto: 2px a la derecha y 2px abajo, sin desenfoque */
 }
 
 .header p {
-    margin: 0.4rem 0 0 0;
-    font-size: 0.8rem;
-    color: #ffe9d2;
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba, 0 en abajo e izquierda y derecha */
+    font-size: 0.8rem;              /* tamaño del subtítulo */
+    color: #ffe9d2;                 /* color del subtítulo: tono claro anaranjado */
 }
 
+
 /* ---------- NAV ---------- */
+/* menú de 70px con fondo azul marino */
+
 .nav {
-    width: 100%;
-    height: 70px;
-    background-color: #1b2a4a;
-    border: 3px solid #0d1730;
-    border-top: none;
-    text-align: center;
-    line-height: 64px;
+    width: 100%;                    /* ancho completo */
+    height: 70px;                   /* altura de 70 píxeles */
+    background-color: #1b2a4a;      /* fondo azul marino */
+    border: 3px solid #0d1730;      /* borde más oscuro que el fondo */
+    border-top: none;               /* borde superior eliminado para unirlo con el header */
+    text-align: center;             /* centra los enlaces */
+    line-height: 64px;              /* altura de línea para centrar el texto en el menú */
 }
 
 .nav a {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 1.4rem;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: color 0.2s;
+    display: inline-block;          /* permite aplicar márgenes verticales a los enlaces */
+    vertical-align: middle;         /* alinea los enlaces por su centro */
+    margin: 0 1.4rem;               /* 1.4rem de separación a izquierda y derecha */
+    color: #ffffff;                 /* texto blanco */
+    text-decoration: none;          /* quita el subrayado de los enlaces */
+    font-size: 0.9rem;              /* tamaño del texto del menú */
+    cursor: pointer;                /* cursor de mano al pasar el ratón */
+    transition: color 0.2s;         /* transición suave del color durante 0.2s */
 }
 
 .nav a:hover {
-    color: #ef7d1a;
+    color: #ef7d1a;                 /* color naranja al pasar el ratón por encima */
 }
+
 
 /* ---------- CONTENEDOR PRINCIPAL ---------- */
+
 .contenedor {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
+    width: 90%;                     /* 90% del ancho, deja 5% libre a cada lado */
+    margin: 0 auto;                 /* auto a los lados = centrado en la página */
+    display: flex;                  /* main y aside se colocan uno al lado del otro */
 }
 
+
 /* ---------- MAIN ---------- */
+/* columna izquierda con la tabla de imágenes */
+
 .main {
-    width: 70%;
-    min-height: 50vh;
-    background-color: #fffaf3;
-    border: 3px solid #1b2a4a;
-    border-top: none;
-    padding: 1rem;
+    width: 70%;                     /* ocupa el 70% del contenedor */
+    min-height: 50vh;               /* altura mínima del 50% de la pantalla (vh = viewport height) */
+    background-color: #fffaf3;      /* fondo blanco con tono cálido */
+    border: 3px solid #1b2a4a;      /* borde azul marino de 3px */
+    border-top: none;               /* sin borde arriba (debajo está el nav) */
+    padding: 1rem;                  /* 1rem de espacio interior */
 }
 
 .main h2 {
-    margin-top: 0.3rem;
-    font-size: 1.2rem;
-    color: #ef7d1a;
-    border-bottom: 2px solid #1b2a4a;
-    padding-bottom: 0.3rem;
+    margin-top: 0.3rem;             /* solo margen superior (el resto lo pone el navegador) */
+    font-size: 1.2rem;              /* tamaño del título */
+    color: #ef7d1a;                 /* título en naranja de la galería */
+    border-bottom: 2px solid #1b2a4a;  /* línea azul bajo el título */
+    padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
 }
 
 .main p {
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.8rem;              /* tamaño del párrafo introductorio */
+    line-height: 1.5;               /* interlineado: 1.5 veces el tamaño de la letra */
 }
 
+
 /* ---------- TABLA ---------- */
+/* tabla que organiza las 6 fotos en 2 filas x 3 columnas */
+
 .tabla-galeria {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 0.8rem;
+    width: 100%;                    /* la tabla ocupa todo el ancho del main */
+    border-collapse: collapse;      /* une los bordes de las celdas (sin dobles líneas) */
+    margin-top: 0.8rem;             /* separa la tabla del párrafo de arriba */
 }
 
 .tabla-galeria td {
-    border: 2px solid #1b2a4a;
-    text-align: center;
-    padding: 0.6rem;
-    background-color: #ffffff;
+    border: 2px solid #1b2a4a;      /* borde de 2px en cada celda */
+    text-align: center;             /* centra las imágenes dentro de la celda */
+    padding: 0.6rem;                /* espacio alrededor de cada foto */
+    background-color: #ffffff;      /* fondo blanco en las celdas */
 }
 
 .tabla-galeria img {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    cursor: pointer;
-    transition: transform 0.3s;
+    width: 200px;                   /* ancho fijo de 200 píxeles para cada foto */
+    max-width: 100%;                /* nunca más ancha que su celda (evita que se desborde) */
+    height: auto;                   /* la altura se calcula sola para no deformar la imagen */
+    vertical-align: middle;         /* alinea la foto en el centro vertical */
+    cursor: pointer;                /* cursor de mano al pasar sobre la foto */
+    transition: transform 0.3s;     /* anima la transformación durante 0.3 segundos */
 }
 
 .tabla-galeria img:hover {
-    transform: scale(2) rotate(360deg);
-    
+    transform: scale(2) rotate(360deg);  /* al hacer hover: duplica el tamaño y gira una vuelta completa */
 }
 
+
 /* ---------- ASIDE ---------- */
+/* columna lateral derecha con listas y enlaces */
+
 .aside {
-    width: 30%;
-    min-height: 50vh;
-    background-color: #ffe3c7;
-    border: 3px solid #1b2a4a;
-    border-top: none;
-    border-left: none;
-    padding: 1rem;
+    width: 30%;                     /* 30% del contenedor (junto al 70% del main) */
+    min-height: 50vh;               /* altura mínima igual que el main para que parezcan parejos */
+    background-color: #ffe3c7;      /* fondo tono melocotón */
+    border: 3px solid #1b2a4a;      /* borde azul marino */
+    border-top: none;               /* sin borde arriba */
+    border-left: none;              /* sin borde izquierdo: el main ya lleva borde derecho */
+    padding: 1rem;                  /* espacio interior de 1rem */
 }
 
 .aside h2 {
-    margin-top: 0.3rem;
-    font-size: 1.1rem;
-    color: #7a3b0f;
-    border-bottom: 2px solid #1b2a4a;
-    padding-bottom: 0.3rem;
+    margin-top: 0.3rem;             /* separación superior del título */
+    font-size: 1.1rem;              /* tamaño del título */
+    color: #7a3b0f;                 /* título en marrón oscuro */
+    border-bottom: 2px solid #1b2a4a;  /* línea azul bajo el título */
+    padding-bottom: 0.3rem;         /* aire entre texto y línea */
 }
 
 .aside h3 {
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    color: #1b2a4a;
+    margin-bottom: 0.3rem;          /* separación inferior de los subtítulos */
+    font-size: 0.9rem;              /* tamaño de los subtítulos */
+    color: #1b2a4a;                 /* azul marino */
 }
 
 .aside p,
 .aside li {
-    font-size: 0.75rem;
-    line-height: 1.6;
+    font-size: 0.75rem;             /* texto pequeño: 0.75 x 20px = 15px */
+    line-height: 1.6;               /* interlineado amplio para leer mejor */
 }
 
 .aside ul {
-    margin-top: 0.3rem;
-    padding-left: 1.2rem;
+    margin-top: 0.3rem;             /* separa la lista de su título */
+    padding-left: 1.2rem;           /* sangría para que se vean las viñetas */
 }
 
 .aside a {
-    color: #c1440e;
-    cursor: pointer;
+    color: #c1440e;                 /* color de los enlaces: rojo cálido */
+    cursor: pointer;                /* cursor de mano */
 }
 
 .aside a:hover {
-    color: #1b2a4a;
-    background-color: #ef7d1a;
+    color: #1b2a4a;                 /* al pasar el ratón, el texto se vuelve azul marino */
+    background-color: #ef7d1a;       /* y el fondo del enlace se pone naranja */
 }
 
+
 /* ---------- FOOTER ---------- */
+/* pie de página del mismo color que el nav */
+
 .footer {
-    width: 100%;
-    min-height: 120px;
-    background-color: #1b2a4a;
-    color: #ffffff;
-    border: 3px solid #0d1730;
-    border-top: none;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;                    /* ancho completo */
+    min-height: 120px;              /* altura mínima de 120 píxeles */
+    background-color: #1b2a4a;      /* fondo azul marino */
+    color: #ffffff;                 /* texto blanco */
+    border: 3px solid #0d1730;      /* borde más oscuro que el fondo */
+    border-top: none;               /* sin borde superior */
+    text-align: center;             /* centra el texto */
+    display: flex;                  /* flexbox para centrar el párrafo en los dos ejes */
+    align-items: center;            /* centra en vertical */
+    justify-content: center;        /* centra en horizontal */
 }
 
 .footer p {
-    margin: 0;
-    font-size: 0.9rem;
+    margin: 0;                      /* quita el margen por defecto del párrafo */
+    font-size: 0.9rem;              /* tamaño del texto del pie */
 }

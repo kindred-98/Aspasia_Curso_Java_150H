@@ -1,0 +1,121 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PÁGINA DE PRÁCTICAS (practicas.html)
+   Tarjetas con icono grande a la izquierda y texto a la derecha.
+   ============================================================ */
+
+
+/* ============ REJILLA DE PRÁCTICAS ============ */
+
+.practicas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 tarjetas por fila en PC */
+    gap: 1.5rem;
+}
+
+
+/* ============ TARJETA DE PRÁCTICA ============ */
+
+.practica-card {
+    display: flex;
+    gap: 1rem;                 /* hueco entre el icono y el texto */
+    align-items: flex-start;   /* todo alineado arriba */
+}
+
+/* Icono grande de la tecnología */
+.practica-icon {
+    font-family: var(--font-code);
+    font-size: 1.3rem;
+    font-weight: 700;
+    min-width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(227, 79, 38, 0.15);   /* fondo naranja HTML */
+    color: #e44f26;
+    border: 1px solid rgba(227, 79, 38, 0.5);
+}
+
+.practica-icon-js {
+    background: rgba(240, 219, 79, 0.15); /* fondo amarillo JS */
+    color: #f0db4f;
+    border-color: rgba(240, 219, 79, 0.5);
+}
+
+.practica-icon-css {
+    background: rgba(21, 114, 182, 0.15); /* fondo azul CSS */
+    color: #4fa3ff;
+    border-color: rgba(21, 114, 182, 0.5);
+}
+
+/* Cuerpo de la tarjeta */
+.practica-body { flex: 1; }    /* ocupa el espacio que sobra */
+
+.practica-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* título a la izquierda, badge a la derecha */
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.practica-head h3 {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.practica-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 0.3rem;
+}
+
+/* Palabras de código dentro del texto */
+.practica-card code {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    background: rgba(0, 240, 255, 0.08);
+    color: var(--neon);
+    padding: 0 0.3rem;
+    border-radius: 4px;
+}
+
+.practica-card .btn {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+}
+
+
+/* ============ AVISO / CONSEJO ============ */
+
+.practica-aviso {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    border-left: 3px solid var(--gold);   /* barritas doradas a la izquierda */
+}
+
+.practica-aviso strong { color: var(--gold); }
+
+.tecla {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom-width: 3px;             /* imita el borde de abajo de un teclado */
+    border-radius: 5px;
+    padding: 0.1rem 0.45rem;
+    color: var(--neon);
+}
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 1000px) {
+    .practicas-grid {
+        grid-template-columns: 1fr;       /* tarjetas apiladas */
+    }
+}

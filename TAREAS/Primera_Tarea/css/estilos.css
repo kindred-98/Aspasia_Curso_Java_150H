@@ -3,168 +3,189 @@
    Tema: Mi gym y mi vida diaria
    ============================================================ */
 
+
+/* ---------- AJUSTES GENERALES ---------- */
+
 html {
-    font-size: 20px;
+    font-size: 20px;   /* tamaño base de la página; con esto 1rem = 20px */
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  /* * selecciona TODOS los elementos; border-box hace que padding y border entren en el ancho */
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #222222;
-    background-color: #f2f2f2;
+    margin: 0;                                  /* quita el margen por defecto que pone el navegador */
+    font-family: Arial, Helvetica, sans-serif;   /* tipografía de la página (siempre pone la primera que encuentre) */
+    color: #222222;                             /* color de todo el texto: gris casi negro */
+    background-color: #f2f2f2;                  /* color de fondo de la página: gris claro */
 }
 
+
 /* ---------- HEADER ---------- */
+/* bloque de la cabecera: ocupa todo el ancho y 150px de altura */
+
 .header {
-    width: 100%;
-    height: 150px;
-    background-color: #2f3640;
-    color: #ffffff;
-    border: 3px solid #1b1e24;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;                    /* ancho completo (100% del padre = body) */
+    height: 150px;                  /* altura fija de 150 píxeles */
+    background-color: #2f3640;      /* color de fondo: gris oscuro */
+    color: #ffffff;                 /* color del texto dentro del header: blanco */
+    border: 3px solid #1b1e24;      /* borde de 3px sólido; aquí cambia el tamaño y el color */
+    text-align: center;             /* centra horizontalmente el h1 y el p */
+    display: flex;                  /* activa flexbox para poder centrar con flex */
+    flex-direction: column;         /* coloca los hijos (h1, p) uno debajo del otro */
+    justify-content: center;        /* centra los hijos en sentido vertical */
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 1.6rem;
+    margin: 0;                      /* elimina el margen por defecto de los títulos */
+    font-size: 1.6rem;              /* tamaño del título: 1.6 x 20px = 32px */
 }
 
 .header p {
-    margin: 0.4rem 0 0 0;
-    font-size: 0.8rem;
-    color: #dcdcdc;
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba, 0 abajo, 0 izquierda, 0 derecha */
+    font-size: 0.8rem;              /* tamaño del subtítulo: 0.8 x 20px = 16px */
+    color: #dcdcdc;                 /* color del subtítulo: gris muy claro */
 }
 
+
 /* ---------- NAV ---------- */
+/* bloque del menú: 70px de altura, justo debajo del header */
+
 .nav {
-    width: 100%;
-    height: 70px;
-    background-color: #40556b;
-    border: 3px solid #1b1e24;
-    border-top: none;
-    text-align: center;
-    line-height: 64px;
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 70px;                   /* altura de 70 píxeles */
+    background-color: #40556b;      /* fondo azul grisáceo */
+    border: 3px solid #1b1e24;      /* mismo borde que el header para que se vea unido */
+    border-top: none;               /* borde de arriba eliminado: si no, se vería doble */
+    text-align: center;             /* centra los enlaces horizontalmente */
+    line-height: 64px;              /* sube el texto con la altura de línea para centrarlo en los 70px */
 }
 
 .nav a {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 1.2rem;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: color 0.2s;
+    display: inline-block;          /* convierte los enlaces en cajas para poder darles margen vertical */
+    vertical-align: middle;         /* alinea todos los enlaces por el centro */
+    margin: 0 1.2rem;               /* 0 arriba/abajo y 1.2rem a los lados (separación entre enlaces) */
+    color: #ffffff;                 /* color del texto del enlace: blanco */
+    text-decoration: none;          /* quita el subrayado por defecto de los enlaces */
+    font-size: 0.9rem;              /* tamaño del texto del menú */
+    cursor: pointer;                /* el cursor se convierte en mano al pasar sobre el enlace */
+    transition: color 0.2s;         /* anima el cambio de color durante 0.2 segundos */
 }
 
 .nav a:hover {
-    color: #ffd97d;
+    color: #ffd97d;                 /* color dorado cuando el ratón está encima (hover = encima) */
 }
+
 
 /* ---------- CONTENEDOR PRINCIPAL ---------- */
+/* caja que junta el main y el aside en la misma fila */
+
 .contenedor {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
+    width: 90%;                     /* ocupa el 90% de la página para que sobren los lados */
+    margin: 0 auto;                 /* auto a izquierda y derecha = centrado horizontal */
+    display: flex;                  /* activa flex: main y aside se ponen uno al lado del otro */
 }
 
+
 /* ---------- MAIN ---------- */
+/* columna izquierda con el contenido principal (70%) */
+
 .main {
-    width: 70%;
-    height: 400px;
-    background-color: #ffffff;
-    border: 3px solid #1b1e24;
-    border-top: none;
-    padding: 1rem;
-    overflow: auto;
+    width: 70%;                     /* 70% del contenedor (el aside ocupa el 30%) */
+    height: 400px;                  /* altura fija de 400 píxeles */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #1b1e24;      /* borde de 3px */
+    border-top: none;               /* sin borde arriba: ahí está el nav */
+    padding: 1rem;                  /* 1rem de espacio interior para que el texto no toque el borde */
+    overflow: auto;                 /* si el contenido no cabe, aparece la barra de scroll */
 }
 
 .main h2 {
-    margin: 0.3rem 0;
-    font-size: 1.1rem;
-    color: #2f3640;
-    border-bottom: 2px solid #40556b;
-    padding-bottom: 0.3rem;
+    margin: 0.3rem 0;               /* 0.3rem arriba y abajo, 0 a los lados */
+    font-size: 1.1rem;              /* tamaño de los subtítulos */
+    color: #2f3640;                 /* color de los subtítulos: gris oscuro */
+    border-bottom: 2px solid #40556b;  /* línea de 2px debajo del título */
+    padding-bottom: 0.3rem;         /* deja 0.3rem de aire entre el texto y la línea */
 }
 
 .main p,
 .main li {
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.8rem;              /* aplica el mismo tamaño a los párrafos y a las listas */
+    line-height: 1.4;               /* interlineado: 1.4 veces el tamaño de letra */
 }
 
 .main p {
-    margin: 0.4rem 0;
+    margin: 0.4rem 0;               /* separación vertical entre párrafos */
 }
 
 .main ul {
-    margin: 0.4rem 0 0 0;
-    padding-left: 1.4rem;
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en el resto de lados */
+    padding-left: 1.4rem;           /* sangría interior: sin esto las viñetas no se ven */
 }
 
+
 /* ---------- ASIDE ---------- */
+/* columna derecha con información secundaria (30%) */
+
 .aside {
-    width: 30%;
-    height: 400px;
-    background-color: #e4e6e9;
-    border: 3px solid #1b1e24;
-    border-top: none;
-    border-left: none;
-    padding: 1rem;
-    overflow: auto;
+    width: 30%;                     /* 30% del contenedor, junto al 70% del main */
+    height: 400px;                  /* misma altura que el main para que queden parejos */
+    background-color: #e4e6e9;      /* fondo gris claro para diferenciarlo del main */
+    border: 3px solid #1b1e24;      /* borde de 3px */
+    border-top: none;               /* sin borde arriba */
+    border-left: none;              /* sin borde izquierdo: el main ya tiene borde derecho y se duplicaría */
+    padding: 1rem;                  /* espacio interior de 1rem */
+    overflow: auto;                 /* scroll automático si el contenido es más alto que 400px */
 }
 
 .aside h2 {
-    margin: 0.3rem 0;
-    font-size: 1.1rem;
-    color: #2f3640;
-    border-bottom: 2px solid #40556b;
-    padding-bottom: 0.3rem;
+    margin: 0.3rem 0;               /* márgenes verticales del título */
+    font-size: 1.1rem;              /* tamaño del título */
+    color: #2f3640;                 /* color del texto */
+    border-bottom: 2px solid #40556b;  /* línea inferior bajo el título */
+    padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
 }
 
 .aside h3 {
-    margin: 0.5rem 0 0.2rem 0;
-    font-size: 0.9rem;
-    color: #40556b;
+    margin: 0.5rem 0 0.2rem 0;      /* más espacio arriba que abajo para agruparlo con su párrafo */
+    font-size: 0.9rem;              /* tamaño de los subtítulos */
+    color: #40556b;                 /* azul grisáceo para diferenciarlo de los títulos */
 }
 
 .aside p,
 .aside li {
-    font-size: 0.75rem;
-    line-height: 1.4;
+    font-size: 0.75rem;             /* texto más pequeño que en el main (0.75 x 20px = 15px) */
+    line-height: 1.4;               /* interlineado cómodo */
 }
 
 .aside p {
-    margin: 0.2rem 0;
+    margin: 0.2rem 0;               /* separación pequeña entre párrafos */
 }
 
 .aside ul {
-    margin: 0.2rem 0 0 0;
-    padding-left: 1.2rem;
+    margin: 0.2rem 0 0 0;           /* margen superior mínimo */
+    padding-left: 1.2rem;           /* sangría para que se vean las viñetas */
 }
 
+
 /* ---------- FOOTER ---------- */
+/* pie de página: mismo color que el header para que la página combine */
+
 .footer {
-    width: 100%;
-    height: 120px;
-    background-color: #2f3640;
-    color: #ffffff;
-    border: 3px solid #1b1e24;
-    border-top: none;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;                    /* ancho completo */
+    height: 120px;                  /* altura de 120 píxeles */
+    background-color: #2f3640;      /* fondo gris oscuro (igual que el header) */
+    color: #ffffff;                 /* texto blanco */
+    border: 3px solid #1b1e24;      /* borde de 3px */
+    border-top: none;               /* sin borde arriba, para que encaje con el contenedor */
+    text-align: center;             /* centra el texto horizontalmente */
+    display: flex;                  /* activa flexbox para centrar el párrafo */
+    align-items: center;            /* centra el contenido en vertical */
+    justify-content: center;        /* centra el contenido en horizontal */
 }
 
 .footer p {
-    margin: 0;
-    font-size: 0.9rem;
+    margin: 0;                      /* quita el margen por defecto del párrafo */
+    font-size: 0.9rem;              /* tamaño del texto del pie */
 }

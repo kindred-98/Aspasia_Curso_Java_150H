@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- define el documento como HTML5 (versión actual del lenguaje de marcas) -->
+
+<html lang="es">
+<!-- raíz de la página, lang="es" indica que el idioma del contenido es español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+<head>
+    <!-- codificación de caracteres, permite tildes y Ñ -->
+    <meta charset="UTF-8">
+
+    <!-- hace que la página se adapte al tamaño de la pantalla (móvil/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
+    <title>JavaScript - Ejercicios de funciones</title>
+
+    <!-- conecta este HTML con su hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+<!-- todo lo visible de la página empieza aquí -->
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <!-- cabecera de la página, la clase "header" es la que recibe los estilos -->
+        <h1>Ejercicios de funciones JavaScript</h1>
+        <!-- título principal de la página -->
+        <p>5 ejercicios sencillos de dificultad progresiva</p>
+        <!-- subtítulo que describe el enunciado -->
+    </header>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav">
+        <!-- menú de navegación horizontal, la clase "nav" recibe los estilos -->
+        <a href="#ejercicio1">Ejercicio 1</a>
+        <!-- enlace que salta a la sección del ejercicio 1 -->
+        <a href="#ejercicio2">Ejercicio 2</a>
+        <!-- enlace que salta a la sección del ejercicio 2 -->
+        <a href="#ejercicio3">Ejercicio 3</a>
+        <!-- enlace que salta a la sección del ejercicio 3 -->
+        <a href="#ejercicio4">Ejercicio 4</a>
+        <!-- enlace que salta a la sección del ejercicio 4 -->
+        <a href="#ejercicio5">Ejercicio 5</a>
+        <!-- enlace que salta a la sección del ejercicio 5 -->
+    </nav>
+
+    <!-- ============ CONTENEDOR PRINCIPAL ============ -->
+    <div class="contenedor">
+        <!-- caja que agrupa MAIN y ASIDE y los pone uno al lado del otro (flex) -->
+
+        <!-- ============ MAIN: ENUNCIADOS ============ -->
+        <main class="main">
+            <!-- contenido principal, aquí se escriben las consignas de cada ejercicio -->
+            <h2>Enunciados</h2>
+            <!-- título de la zona de enunciados -->
+
+            <!-- ---- EJERCICIO 1 - SALUDO ---- -->
+            <section class="ejercicio" id="ejercicio1">
+                <!-- bloque del ejercicio 1, el id permite enlazarlo desde el nav -->
+                <h3>Ejercicio 1 - Saludo</h3>
+                <!-- título del ejercicio 1 -->
+                <p>
+                    Crea una función llamada <code>saludar()</code> que muestre en la
+                    página el siguiente mensaje utilizando <code>document.write()</code>:
+                    <em>Hola, bienvenido a JavaScript</em>.
+                    Después, llama a la función para comprobar que funciona.
+                </p>
+                <!-- enunciado completo del ejercicio 1 -->
+            </section>
+
+            <!-- ---- EJERCICIO 2 - MOSTRAR UN NOMBRE ---- -->
+            <section class="ejercicio" id="ejercicio2">
+                <!-- bloque del ejercicio 2 -->
+                <h3>Ejercicio 2 - Mostrar un nombre</h3>
+                <!-- título del ejercicio 2 -->
+                <p>
+                    Crea una función llamada <code>mostrarNombre(nombre)</code>.
+                    La función debe recibir un nombre como parámetro y mostrar un saludo
+                    con <code>document.write()</code>: <em>Hola Patricia</em>.
+                    Llama a la función pasando un nombre como argumento.
+                </p>
+                <!-- enunciado del ejercicio 2 (función con 1 parámetro) -->
+            </section>
+
+            <!-- ---- EJERCICIO 3 - SUMAR DOS NÚMEROS ---- -->
+            <section class="ejercicio" id="ejercicio3">
+                <!-- bloque del ejercicio 3 -->
+                <h3>Ejercicio 3 - Sumar dos números</h3>
+                <!-- título del ejercicio 3 -->
+                <p>
+                    Crea una función llamada <code>sumar(numero1, numero2)</code>.
+                    La función debe recibir dos números, sumarlos y mostrar el resultado
+                    con <code>document.write()</code>: <em>La suma es: 15</em>.
+                </p>
+                <!-- enunciado del ejercicio 3 (función con 2 parámetros) -->
+            </section>
+
+            <!-- ---- EJERCICIO 4 - CALCULAR EL DOBLE ---- -->
+            <section class="ejercicio" id="ejercicio4">
+                <!-- bloque del ejercicio 4 -->
+                <h3>Ejercicio 4 - Calcular el doble</h3>
+                <!-- título del ejercicio 4 -->
+                <p>
+                    Crea una función llamada <code>doble(numero)</code>. La función debe
+                    recibir un número y devolver su doble utilizando <code>return</code>.
+                    Después, guarda el resultado en una variable y muéstralo con
+                    <code>document.write()</code>: <em>El doble de 8 es 16</em>.
+                </p>
+                <!-- enunciado del ejercicio 4 (primer uso de return) -->
+            </section>
+
+            <!-- ---- EJERCICIO 5 - CALCULAR PRECIO TOTAL ---- -->
+            <section class="ejercicio" id="ejercicio5">
+                <!-- bloque del ejercicio 5 -->
+                <h3>Ejercicio 5 - Calcular precio total</h3>
+                <!-- título del ejercicio 5 -->
+                <p>
+                    Crea una función llamada <code>calcularTotal(precio, cantidad)</code>.
+                    La función debe multiplicar el precio por la cantidad y devolver el
+                    resultado utilizando <code>return</code>. Después, guarda el resultado
+                    en una variable y muestra con <code>document.write()</code> el precio,
+                    la cantidad y el total: <em>Precio: 20 € / Cantidad: 3 / Total: 60 €</em>.
+                </p>
+                <!-- enunciado del ejercicio 5 (función con return y dos parámetros) -->
+            </section>
+
+        </main>
+
+        <!-- ============ ASIDE: AYUDA / CONCEPTOS ============ -->
+        <aside class="aside">
+            <!-- barra lateral con teoría rápida de funciones -->
+            <h2>Recordatorio</h2>
+            <!-- título de la barra lateral -->
+
+            <h3>¿Qué es una función?</h3>
+            <!-- subtítulo del primer concepto -->
+            <p>
+                Bloque de código con nombre que se puede ejecutar tantas veces
+                como necesitemos con <code>nombre()</code>.
+            </p>
+            <!-- explicación breve de qué es una función -->
+
+            <h3>Parámetro y argumento</h3>
+            <!-- subtítulo del segundo concepto -->
+            <ul>
+                <li>Parámetro: el hueco que recibe la función en su definición.</li>
+                <!-- primera viñeta: el parámetro se define en la función -->
+                <li>Argumento: el valor real que le pasamos al llamarla.</li>
+                <!-- segunda viñeta: el argumento se pasa al llamarla -->
+            </ul>
+
+            <h3>return</h3>
+            <!-- subtítulo del tercer concepto -->
+            <p>
+                Devuelve un valor al lugar donde se llamó la función.
+                Sin <code>return</code> la función devuelve <code>undefined</code>.
+            </p>
+            <!-- explicación de para qué sirve return -->
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS (aquí escribe el JavaScript) ============ -->
+    <section class="resultados">
+        <!-- zona donde se mostrará la salida de las funciones -->
+        <h2>Resultados</h2>
+        <!-- título de la zona de resultados -->
+
+        <!-- el navegador pausa aquí para ejecutar script.js y
+             lo que pinte document.write() aparece dentro de esta sección -->
+        <script src="script.js"></script>
+        <!-- carga y ejecuta el archivo JavaScript con las 5 funciones -->
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <!-- pie de página -->
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+        <!-- copyright al final de la página -->
+    </footer>
+
+</body>
+</html>

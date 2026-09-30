@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- documento HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña -->
+    <title>Kindred.Java | Clase</title>
+
+    <!-- tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido + CSS de esta página -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/clase.css">
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+</head>
+
+<body>
+
+    <!-- elementos de los efectos -->
+    <div id="cursor"></div>
+    <div id="cursor-trail"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <div class="logo" data-text="Kindred.Java">Kindred.Java</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html" class="active">Clase</a>
+            <!-- esta es la página actual: enlace activo -->
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="practicas.html">Prácticas</a>
+        <a href="clase.html" class="active">Clase</a>
+    </div>
+
+    <main>
+
+        <!-- ============ CABECERA DE LA PÁGINA ============ -->
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-badge badge badge-neon">21 recursos guardados</span>
+                <h1 class="page-title">Recursos de <span class="accent">clase</span></h1>
+                <p class="page-sub">
+                    Todo lo que voy guardando durante el curso: PDF, cheatsheets,
+                    apuntes, fotos y páginas externas de consulta. Todo se abre
+                    directamente desde aquí.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 01 - DOCUMENTACIÓN ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">Documentación <span class="accent">PDF</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="recurso-grid">
+
+                    <!-- ---- GRUPO: HTML ---- -->
+                    <div class="glass-card recurso-card reveal">
+                        <div class="recurso-head">
+                            <span class="recurso-icon icon-html">&#60;/&#62;</span>
+                            <div>
+                                <h3>HTML5</h3>
+                                <span class="recurso-count">6 archivos</span>
+                            </div>
+                        </div>
+                        <ul class="recurso-list">
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_HTML5.pdf">HTML5 (inicial)</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_Organizacion%20de%20un%20sitio%20web.pdf">Organización de un sitio web</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html-cheatsheet-2026.pdf">HTML cheatsheet 2026</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html5-cheatsheet-lite.pdf">HTML5 cheatsheet lite</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/estructura_html.pdf">Estructura HTML</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/tutorial-emmet1.pdf">Tutorial Emmet</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ---- GRUPO: CSS ---- -->
+                    <div class="glass-card recurso-card reveal">
+                        <div class="recurso-head">
+                            <span class="recurso-icon icon-css">{ }</span>
+                            <div>
+                                <h3>CSS3</h3>
+                                <span class="recurso-count">5 archivos</span>
+                            </div>
+                        </div>
+                        <ul class="recurso-list">
+                            <li>
+                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css-cheatsheet-2026.pdf">CSS cheatsheet 2026</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css3-cheatsheet-lite.pdf">CSS3 cheatsheet lite</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/box-sizing-border-box-explicacion.pdf">box-sizing: border-box</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/propiedadesbordersmarginspaddings.pdf">Borders, margins y paddings</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/unidades-css-px-rem-vh.pdf">Unidades: px, rem y vh</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ---- GRUPO: MANUAL HTML + CSS ---- -->
+                    <div class="glass-card recurso-card reveal">
+                        <div class="recurso-head">
+                            <span class="recurso-icon icon-manual">&#128214;</span>
+                            <div>
+                                <h3>Manual completo</h3>
+                                <span class="recurso-count">1 archivo</span>
+                            </div>
+                        </div>
+                        <ul class="recurso-list">
+                            <li>
+                                <a href="../Informacion_De_Clase/HTML_Y_CSS-Informacion/MANUAL-HTML-Y-CSS.pdf">Manual HTML y CSS (juntos)</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ---- GRUPO: VSCODE ---- -->
+                    <div class="glass-card recurso-card reveal">
+                        <div class="recurso-head">
+                            <span class="recurso-icon icon-vscode">&#9653;</span>
+                            <div>
+                                <h3>Visual Studio Code</h3>
+                                <span class="recurso-count">3 archivos</span>
+                            </div>
+                        </div>
+                        <ul class="recurso-list">
+                            <li>
+                                <a href="../Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf">Extensiones esenciales</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/VsCODE-Informacion/HTML%20y%20CSS_El%20editor%20Visual%20Studio%20Code.pdf">El editor Visual Studio Code</a>
+                            </li>
+                            <li>
+                                <a href="../Informacion_De_Clase/VsCODE-Informacion/Navegadores%20principales.pdf">Navegadores principales</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 02 - ANÁLISIS Y APUNTES ============ -->
+        <section class="section section-dark">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Análisis y <span class="accent">apuntes</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="notas-grid">
+
+                    <!-- ---- NOTA 1 ---- -->
+                    <a class="glass-card nota-card reveal"
+                       href="../Informacion_De_Clase/Analisis_de_la_infomacion_de_clase_con_IA/analisis-Del-Profesor.md">
+                        <span class="nota-ext">.MD</span>
+                        <h3>Análisis de la información del profesor</h3>
+                        <p>Resumen de los apuntes de clase analizados con IA.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                    <!-- ---- NOTA 2 ---- -->
+                    <a class="glass-card nota-card reveal"
+                       href="../Informacion_De_Clase/Analisis_de_la_infomacion_de_clase_con_IA/AnalisisCompleto.md">
+                        <span class="nota-ext">.MD</span>
+                        <h3>Análisis completo</h3>
+                        <p>Documento completo con todo lo visto en clase, ordenado por temas.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                    <!-- ---- NOTA 3 ---- -->
+                    <a class="glass-card nota-card reveal"
+                       href="../Informacion_De_Clase/Paginas-Externa/paginas.md">
+                        <span class="nota-ext">.MD</span>
+                        <h3>Mis páginas de apoyo</h3>
+                        <p>Lista guardada de las páginas externas que uso para practicar.</p>
+                        <span class="space-arrow">&rarr;</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 03 - FOTOS DE CLASE ============ -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Fotos de <span class="accent">clase</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="fotos-grid reveal">
+                    <figure class="foto-item">
+                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-17%20at%2009.58.40.jpeg"
+                             alt="Apunte de clase sobre CSS">
+                        <figcaption>Apunte CSS - 17/09</figcaption>
+                    </figure>
+                    <figure class="foto-item">
+                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-17%20at%2009.59.23.jpeg"
+                             alt="Apunte de clase sobre CSS (2)">
+                        <figcaption>Apunte CSS - 17/09 (2)</figcaption>
+                    </figure>
+                    <figure class="foto-item">
+                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-23%20at%2009.38.49.jpeg"
+                             alt="Apunte de clase sobre CSS">
+                        <figcaption>Apunte CSS - 23/09</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============ SECCIÓN 04 - PÁGINAS EXTERNAS ============ -->
+        <section class="section section-dark">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Páginas <span class="accent">externas</span></h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="externas-grid">
+
+                    <!-- ---- ENLACE 1: validador ---- -->
+                    <a class="glass-card externa-card reveal"
+                       href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">
+                        <h3>Validador W3C</h3>
+                        <p>Comprueba si mi HTML está bien escrito.</p>
+                        <span class="externa-go">Abrir &nearr;</span>
+                    </a>
+
+                    <!-- ---- ENLACE 2: responsively ---- -->
+                    <a class="glass-card externa-card reveal"
+                       href="https://responsively.app/" target="_blank" rel="noopener noreferrer">
+                        <h3>Responsively App</h3>
+                        <p>Para ver cómo se ve mi web en móvil, tablet y PC.</p>
+                        <span class="externa-go">Abrir &nearr;</span>
+                    </a>
+
+                    <!-- ---- ENLACE 3: juego de CSS ---- -->
+                    <a class="glass-card externa-card reveal"
+                       href="https://flukeout.github.io/" target="_blank" rel="noopener noreferrer">
+                        <h3>CSS Diner</h3>
+                        <p>Juego para practicar los selectores de CSS.</p>
+                        <span class="externa-go">Abrir &nearr;</span>
+                    </a>
+
+                    <!-- ---- ENLACE 4: cdmon ---- -->
+                    <a class="glass-card externa-card reveal"
+                       href="http://ww.cdmon.com/es/" target="_blank" rel="noopener noreferrer">
+                        <h3>cdmon</h3>
+                        <p>Tutoriales de HTML y CSS en español.</p>
+                        <span class="externa-go">Abrir &nearr;</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="footer-logo">KINDRED.JAVA</div>
+        <p>Web personal de prácticas y apuntes de clase</p>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tareas.html">Tareas</a>
+            <a href="practicas.html">Prácticas</a>
+            <a href="clase.html">Clase</a>
+        </div>
+        <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <!-- ============ LIGHTBOX (visor de fotos ampliadas) ============ -->
+    <!-- Se muestra oculto; el JavaScript lo abre al hacer clic en una foto -->
+    <div class="lightbox" id="lightbox">
+        <!-- fondo oscuro: si haces clic fuera de la foto, se cierra -->
+
+        <button class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Cerrar">
+            &times;
+        </button>
+        <!-- botón de cierre (X) arriba a la derecha -->
+
+        <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Foto anterior">
+            &#10094;
+        </button>
+        <!-- flecha izquierda: foto anterior -->
+
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" id="lightbox-img" alt="Foto de clase ampliada">
+            <!-- aquí se pone la foto grande (la src la copia el JavaScript) -->
+            <figcaption class="lightbox-caption" id="lightbox-caption"></figcaption>
+            <!-- pie de foto de la imagen que está abierta -->
+            <a class="lightbox-open" id="lightbox-open" href="#" target="_blank" rel="noopener noreferrer">
+                Abrir tamaño original &#8599;
+            </a>
+            <!-- enlace que abre la foto en una pestaña nueva -->
+        </figure>
+
+        <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Foto siguiente">
+            &#10095;
+        </button>
+        <!-- flecha derecha: foto siguiente -->
+    </div>
+
+    <!-- efectos de la web -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

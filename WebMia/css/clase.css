@@ -1,0 +1,391 @@
+/* ============================================================
+   KINDRED.JAVA - CSS DE LA PÁGINA DE CLASE (clase.html)
+   Tarjetas de recursos, notas, fotos y páginas externas.
+   ============================================================ */
+
+/* Fondo alternado para algunas secciones */
+.section-dark {
+    background: rgba(0, 0, 0, 0.25);   /* capa negra muy suave */
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* ============ SECCIÓN 01 - RECURSOS PDF ============ */
+
+.recurso-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   /* 2 tarjetas por fila */
+    gap: 1.5rem;
+}
+
+/* Cabecera de la tarjeta: icono + nombre + contador */
+.recurso-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);  /* línea que separa del listado */
+}
+
+.recurso-icon {
+    font-family: var(--font-code);
+    font-size: 1rem;
+    font-weight: 700;
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.icon-html {
+    background: rgba(227, 79, 38, 0.15);
+    color: #e44f26;
+    border: 1px solid rgba(227, 79, 38, 0.5);
+}
+
+.icon-css {
+    background: rgba(21, 114, 182, 0.15);
+    color: #4fa3ff;
+    border: 1px solid rgba(21, 114, 182, 0.5);
+}
+
+.icon-manual,
+.icon-vscode {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--purple);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+}
+
+.recurso-head h3 {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.recurso-count {
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+/* Lista de archivos */
+.recurso-list {
+    list-style: none;                     /* quita las viñetas */
+}
+
+.recurso-list li {
+    border-bottom: 1px dashed var(--border);  /* línea discontinua entre filas */
+}
+
+.recurso-list li:last-child {
+    border-bottom: none;                  /* la última sin línea */
+}
+
+.recurso-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    padding: 0.6rem 0.4rem;
+    border-radius: 6px;
+    transition: color 0.25s, background 0.25s, padding 0.25s;
+    position: relative;
+}
+
+/* La flecha que aparece al pasar el ratón */
+.recurso-list a::after {
+    content: '\2197';                     /* &nearr; en CSS: flecha ↗ */
+    color: var(--neon);
+    opacity: 0;                           /* oculta al principio */
+    transform: translate(-5px, 5px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.recurso-list a:hover {
+    color: var(--neon);
+    background: var(--neon-dim);
+    padding-left: 0.8rem;                 /* se desplaza un poco a la derecha */
+}
+
+.recurso-list a:hover::after {
+    opacity: 1;                           /* aparece la flecha */
+    transform: translate(0, 0);
+}
+
+
+/* ============ SECCIÓN 02 - NOTAS .MD ============ */
+
+.notas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 tarjetas en fila */
+    gap: 1.5rem;
+}
+
+.nota-card {
+    display: block;
+    position: relative;
+    padding-right: 3rem;                 /* hueco para la flecha */
+}
+
+.nota-ext {
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    background: rgba(244, 114, 182, 0.1);
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.nota-card h3 {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.nota-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.nota-card .space-arrow {
+    position: absolute;
+    right: 1.4rem;
+    bottom: 1.4rem;
+    color: var(--neon);
+    transition: transform 0.3s;
+}
+
+.nota-card:hover .space-arrow {
+    transform: translateX(6px);
+}
+
+
+/* ============ SECCIÓN 03 - FOTOS DE CLASE ============ */
+
+.fotos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 fotos en fila */
+    gap: 1.5rem;
+}
+
+.foto-item {
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;                    /* recorta lo que sobresalga */
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.foto-item:hover {
+    transform: translateY(-6px);         /* la foto sube al pasar el ratón */
+    border-color: var(--neon);
+}
+
+.foto-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;                   /* recorta sin deformar */
+}
+
+.foto-item figcaption {
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ============ SECCIÓN 04 - PÁGINAS EXTERNAS ============ */
+
+.externas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* 4 tarjetas en fila */
+    gap: 1.2rem;
+}
+
+.externa-card h3 {
+    font-size: 0.9rem;
+    color: var(--neon);
+    margin-bottom: 0.5rem;
+}
+
+.externa-card p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.externa-go {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--purple);
+    transition: color 0.25s;
+}
+
+.externa-card:hover .externa-go {
+    color: var(--neon);
+}
+
+
+/* ============ LIGHTBOX (visor de fotos) ============ */
+/* Sugerencia de zoom al pasar el ratón sobre la foto */
+
+.foto-item {
+    position: relative;    /* necesario para colocar la pista encima */
+    cursor: zoom-in;       /* cursor de lupa */
+}
+
+.foto-item::after {
+    content: '+';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 15, 0.85);
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    opacity: 0;                        /* oculta al principio */
+    transform: scale(0.6);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.foto-item:hover::after {
+    opacity: 1;                        /* aparece la pista con el + */
+    transform: scale(1);
+}
+
+/* Capa oscura que cubre toda la pantalla */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(5, 5, 10, 0.94);
+    backdrop-filter: blur(6px);        /* difumina lo que hay detrás */
+    z-index: 2000;                     /* por encima de todo (header incluido) */
+    opacity: 0;                        /* invisible al principio */
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.lightbox.open {
+    opacity: 1;                        /* se muestra al abrirlo */
+    visibility: visible;
+}
+
+/* Foto grande del visor */
+.lightbox-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: 80vw;
+}
+
+.lightbox-img {
+    max-width: 75vw;
+    max-height: 72vh;                  /* nunca más alto que la pantalla */
+    object-fit: contain;
+    border: 2px solid var(--neon);
+    border-radius: 12px;
+    box-shadow: 0 0 50px var(--neon-dim);   /* brillo cian alrededor */
+    background: var(--bg-card);
+    transform: scale(0.9);             /* entra un poco más pequeña... */
+    transition: transform 0.3s;
+}
+
+.lightbox.open .lightbox-img {
+    transform: scale(1);               /* ...y crece hasta su tamaño */
+}
+
+.lightbox-caption {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.lightbox-open {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    padding: 0.35rem 0.9rem;
+    border-radius: 6px;
+    transition: color 0.25s, background 0.25s;
+}
+
+.lightbox-open:hover {
+    background: var(--purple);
+    color: var(--bg-dark);
+}
+
+/* Botones circulares del visor */
+.lightbox-btn {
+    background: rgba(17, 17, 24, 0.8);
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;                    /* no se encogen */
+    transition: background 0.25s, transform 0.25s;
+}
+
+.lightbox-btn:hover {
+    background: var(--neon);
+    color: var(--bg-dark);
+    transform: scale(1.1);             /* crece un poco al pasar el ratón */
+}
+
+.lightbox-close {
+    position: absolute;                /* esquina superior derecha */
+    top: 20px;
+    right: 24px;
+    font-size: 1.6rem;
+    width: 50px;
+    height: 50px;
+}
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 1000px) {
+    .recurso-grid { grid-template-columns: 1fr; }
+    .notas-grid { grid-template-columns: 1fr; }
+    .fotos-grid { grid-template-columns: 1fr; }
+    .externas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .externas-grid { grid-template-columns: 1fr; }
+
+    /* Visor de fotos en móvil: foto más estrecha y botones más pequeños */
+    .lightbox { gap: 0.4rem; padding: 0.5rem; }
+    .lightbox-img { max-width: 68vw; max-height: 60vh; }
+    .lightbox-btn { width: 38px; height: 38px; font-size: 1rem; }
+    .lightbox-close { top: 10px; right: 10px; width: 40px; height: 40px; }
+}

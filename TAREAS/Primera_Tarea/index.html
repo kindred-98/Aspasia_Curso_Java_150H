@@ -1,81 +1,132 @@
 <!DOCTYPE html>
+<!-- declara que este documento es HTML5 (la versión actual de HTML) -->
+
 <html lang="es">
+<!-- etiqueta raíz de la página; lang="es" indica que el idioma es español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO (no se ve en pantalla) ============ -->
 <head>
+    <!-- define la codificación de caracteres: permite tildes, ñ y símbolos -->
     <meta charset="UTF-8">
+
+    <!-- hace que la página se adapte al ancho de la pantalla (móvil, tablet, PC) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
     <title>Mi Gym y Mi Vida Diaria</title>
+
+    <!-- conecta este HTML con la hoja de estilos externa (misma carpeta que el index) -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
+<!-- ============ BODY: TODO LO QUE SE VE EN PANTALLA ============ -->
 <body>
 
-    <!-- HEADER -->
+    <!-- ---------- HEADER (cabecera) ---------- -->
     <header class="header">
+        <!-- contenedor de la cabecera; la clase "header" es la que recibe los estilos CSS -->
         <h1>Mi Gym y Mi Vida Diaria</h1>
+        <!-- h1 = título principal de la página (el más importante) -->
         <p>Mi rutina, mis hábitos y mi día a día</p>
+        <!-- p = párrafo, aquí va el subtítulo de la cabecera -->
     </header>
 
-    <!-- NAV -->
+    <!-- ---------- NAV (menú de navegación) ---------- -->
     <nav class="nav">
+        <!-- barra de menú; la clase "nav" aplica el fondo azul y la altura de 70px -->
         <a href="#">Inicio</a>
+        <!-- a = enlace; href="#" es un enlace "vacío" (no sale de la página) -->
         <a href="#">Productos</a>
+        <!-- segundo enlace del menú -->
         <a href="#">Nosotros</a>
+        <!-- tercer enlace del menú -->
         <a href="#">Contacto</a>
+        <!-- cuarto enlace del menú -->
     </nav>
 
-    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- ---------- CONTENEDOR PRINCIPAL (agrupa main + aside) ---------- -->
     <div class="contenedor">
+        <!-- div = caja genérica; con display:flex pone el main y el aside uno al lado del otro -->
 
-        <!-- MAIN -->
+        <!-- ---------- MAIN (contenido principal, 70%) ---------- -->
         <main class="main">
+            <!-- zona del contenido principal de la página -->
             <h2>Mi rutina de gimnasio</h2>
+            <!-- h2 = subtítulo de primer nivel dentro del contenido -->
             <p>
                 Entreno cuatro días a la semana. El lunes y el jueves trabajo
                 pecho y tríceps, el martes y el viernes espalda y bíceps,
                 el miércoles piernas y el sábado hago un poco de cardio.
             </p>
+            <!-- párrafo con la descripción de la rutina semanal -->
             <h2>Mi vida diaria</h2>
+            <!-- segundo subtítulo del main -->
             <p>
                 Entre el gimnasio, las clases y los quehaceres de casa,
                 intento cuidar la alimentación y mantener el orden.
             </p>
+            <!-- párrafo con la descripción del día a día -->
             <ul>
+                <!-- ul = lista desordenada (con viñetas) -->
                 <li>06:30 - Me levanto y me ducho</li>
+                <!-- li = cada elemento de la lista (aquí, hora del día) -->
                 <li>07:00 - Desayuno (avena, huevos y fruta)</li>
+                <!-- segundo elemento de la lista -->
                 <li>08:00 - Clases y estudio</li>
+                <!-- tercer elemento de la lista -->
                 <li>17:00 - Entreno en el gimnasio</li>
+                <!-- cuarto elemento de la lista -->
                 <li>21:00 - Cena y descanso</li>
+                <!-- quinto elemento de la lista -->
             </ul>
         </main>
 
-        <!-- ASIDE -->
+        <!-- ---------- ASIDE (columna lateral, 30%) ---------- -->
         <aside class="aside">
+            <!-- información secundaria; ocupa el 30% del contenedor -->
             <h2>Información secundaria</h2>
+            <!-- título de la columna lateral -->
 
             <h3>Horario del gimnasio</h3>
+            <!-- h3 = subtítulo de segundo nivel -->
             <p>
                 Lunes a viernes de 6:00 a 23:00.<br>
+                <!-- br = salto de línea dentro del párrafo -->
                 Sábados y domingos de 8:00 a 14:00.
             </p>
+            <!-- párrafo con el horario de apertura -->
 
             <h3>Consejos</h3>
+            <!-- subtítulo de la lista de consejos -->
             <ul>
+                <!-- lista con viñetas de consejos -->
                 <li>Beber agua durante todo el día</li>
+                <!-- primer consejo -->
                 <li>Dormir al menos 8 horas</li>
+                <!-- segundo consejo -->
                 <li>Comer proteínas después de entrenar</li>
+                <!-- tercer consejo -->
             </ul>
 
             <h3>Mis marcas</h3>
+            <!-- subtítulo de la lista de marcas personales -->
             <ul>
+                <!-- lista con las marcas de fuerza -->
                 <li>Press de banca: 70 kg</li>
+                <!-- primera marca -->
                 <li>Sentadilla: 90 kg</li>
+                <!-- segunda marca -->
             </ul>
         </aside>
 
     </div>
+    <!-- fin del contenedor principal -->
 
-    <!-- FOOTER -->
+    <!-- ---------- FOOTER (pie de página) ---------- -->
     <footer class="footer">
+        <!-- pie de página; la clase "footer" le da fondo oscuro y 120px de altura -->
         <p>Mi Gym y Mi Vida Diaria &copy; 2026</p>
+        <!-- &copy; es el símbolo © de copyright escrito con entidad HTML -->
     </footer>
 
 </body>

@@ -1,0 +1,599 @@
+/* ============================================================
+   KINDRED.JAVA - CSS BASE COMPARTIDO
+   Lo usan TODAS las páginas: index, tareas, practicas y clase.
+   (Mismo patrón que el CSS base de tu clon OP.GG)
+   ============================================================ */
+
+
+/* ============ VARIABLES DE DISEÑO ============ */
+/* Aquí se guardan los colores y tipografías.
+   Si cambias un color aquí, cambia en TODA la web. */
+
+:root {
+    --neon: #00f0ff;            /* cian neón: color principal */
+    --neon-dim: #00f0ff33;      /* el mismo cian al 20% de opacidad */
+    --purple: #a855f7;          /* morado: segundo color */
+    --pink: #f472b6;            /* rosa: color de acento */
+    --gold: #f0c75e;            /* dorado: badges (estilo OP.GG) */
+    --green: #2ecc71;           /* verde: estado "completada" */
+    --bg-dark: #0a0a0f;         /* fondo casi negro */
+    --bg-card: #111118;         /* fondo de las tarjetas */
+    --bg-glass: rgba(17, 17, 24, 0.7);  /* fondo transparente de las tarjetas glass */
+    --text: #e2e8f0;            /* color del texto */
+    --text-dim: #94a3b8;        /* texto apagado (secundario) */
+    --border: #1e293b;          /* color de los bordes */
+    --font-title: 'Orbitron', sans-serif;      /* tipografía de títulos */
+    --font-text: 'Rajdhani', sans-serif;       /* tipografía de texto */
+    --font-code: 'JetBrains Mono', monospace;  /* tipografía de código */
+}
+
+
+/* ============ RESET ============ */
+/* Quita los márgenes y rellenos por defecto del navegador */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /* padding y border entran dentro del ancho */
+}
+
+html {
+    scroll-behavior: smooth;  /* al pulsar un enlace, la página baja suavemente */
+}
+
+body {
+    min-height: 100vh;                        /* al menos toda la altura de pantalla */
+    font-family: var(--font-text);            /* tipografía Rajdhani para todo el texto */
+    background-color: var(--bg-dark);         /* fondo negro */
+    color: var(--text);                       /* texto gris claro */
+    overflow-x: hidden;                       /* corta el scroll horizontal */
+    position: relative;
+}
+
+/* Capa oscura encima de la foto de fondo para que el texto se lea */
+body::before {
+    content: '';
+    position: fixed;                          /* se queda fija al hacer scroll */
+    inset: 0;                                 /* atajo para top/right/bottom/left = 0 */
+    background:
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.15), transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.12), transparent 45%),
+        linear-gradient(180deg, rgba(10, 10, 15, 0.92) 0%, rgba(10, 10, 15, 0.97) 100%);
+    z-index: -2;                              /* detrás de todo el contenido */
+}
+
+/* Foto de fondo fija (la misma que usa tu clon de OP.GG) */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('../img/bg-kindred.jpg') center top / cover no-repeat fixed;
+    z-index: -3;                              /* la capa más profunda */
+}
+
+/* Lienzo de partículas (estrellas animadas del JS) */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;                              /* encima del fondo, detrás del texto */
+    pointer-events: none;                     /* no intercepta los clics */
+}
+
+img {
+    max-width: 100%;                          /* las imágenes nunca desbordan */
+    display: block;
+}
+
+a {
+    text-decoration: none;                    /* quita el subrayado */
+    color: inherit;                           /* los enlaces heredan el color del texto */
+}
+
+
+/* ============ TIPOGRAFÍAS DE TÍTULOS ============ */
+
+h1, h2, h3 {
+    font-family: var(--font-title);           /* Orbitron para los títulos */
+    letter-spacing: 1px;                      /* separación entre letras */
+}
+
+
+/* ============ HEADER ============ */
+/* Cabecera fija arriba con el logo y el menú */
+
+header {
+    position: fixed;                          /* se queda pegada arriba al hacer scroll */
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(10, 10, 15, 0.85);       /* negro transparente */
+    backdrop-filter: blur(10px);              /* efecto cristal esmerilado detrás */
+    border-bottom: 1px solid var(--border);   /* línea inferior */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 1000;                            /* siempre por encima de todo */
+}
+
+/* Logo con efecto glitch (dos capas de texto desplazadas) */
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--neon);
+    position: relative;
+    cursor: pointer;
+}
+
+.logo::before,
+.logo::after {
+    content: attr(data-text);                 /* copia el texto del atributo data-text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.logo::before {
+    color: var(--pink);
+    animation: glitch-a 2.5s infinite steps(2);  /* capa rosa moviéndose */
+    clip-path: inset(0 0 60% 0);              /* solo se ve la parte de arriba */
+}
+
+.logo::after {
+    color: var(--purple);
+    animation: glitch-b 3s infinite steps(2);   /* capa morada moviéndose */
+    clip-path: inset(60% 0 0 0);              /* solo se ve la parte de abajo */
+}
+
+@keyframes glitch-a {
+    0%, 90%, 100% { transform: translate(0, 0); }       /* quieto la mayor parte */
+    92% { transform: translate(-3px, -1px); }           /* pequeño salto */
+    96% { transform: translate(2px, 1px); }
+}
+
+@keyframes glitch-b {
+    0%, 88%, 100% { transform: translate(0, 0); }
+    90% { transform: translate(3px, 1px); }
+    94% { transform: translate(-2px, -1px); }
+}
+
+
+/* ============ NAV ============ */
+/* Menú de navegación (las páginas de la web) */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;                              /* separación entre enlaces */
+}
+
+nav a {
+    font-family: var(--font-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;                /* texto en mayúsculas */
+    color: var(--text-dim);
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;                       /* esquinas redondeadas */
+    position: relative;
+    transition: color 0.25s, background-color 0.25s;  /* anima el cambio */
+}
+
+nav a:hover {
+    color: var(--neon);                       /* el texto se pone cian */
+    background: var(--neon-dim);              /* y un fondo cian muy transparente */
+}
+
+nav a.active {
+    color: var(--bg-dark);
+    background: linear-gradient(135deg, var(--neon), var(--purple));  /* degradado cian-morado */
+    font-weight: 700;
+}
+
+
+/* ============ MENÚ MÓVIL (hamburguesa) ============ */
+
+.hamburger {
+    display: none;                            /* en PC está oculto */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--neon);
+    border-radius: 3px;
+    transition: transform 0.3s, opacity 0.3s;  /* anima al abrir/cerrar */
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }      /* la barra del medio desaparece */
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.97);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 5%;
+    gap: 0.5rem;
+    transform: translateY(-150%);             /* escondido arriba */
+    transition: transform 0.35s ease;         /* baja suavemente */
+    z-index: 999;
+}
+
+.mobile-menu.open {
+    transform: translateY(0);                 /* se muestra */
+}
+
+.mobile-menu a {
+    padding: 0.7rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--text-dim);
+    border-left: 3px solid transparent;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a.active {
+    color: var(--neon);
+    background: var(--neon-dim);
+    border-left-color: var(--neon);           /* barritas cian a la izquierda */
+}
+
+
+/* ============ CONTENEDOR Y SECCIONES ============ */
+
+main {
+    padding-top: 70px;                        /* deja hueco para la cabecera fija */
+    min-height: calc(100vh - 70px);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;                           /* centrado horizontal */
+}
+
+.section {
+    padding: 4rem 0;                          /* espacio arriba y abajo */
+}
+
+/* Cabecera de sección: número 01 + título + línea */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-number {
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.section-title .accent {
+    color: var(--neon);                       /* una palabra del título en cian */
+}
+
+.section-line {
+    flex: 1;                                  /* ocupa el resto del ancho */
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);  /* se va difuminando */
+}
+
+
+/* ============ TARJETAS DE CRISTAL (GLASS) ============ */
+
+.glass-card {
+    background: var(--bg-glass);              /* fondo transparente */
+    border: 1px solid var(--border);          /* borde fino */
+    border-radius: 14px;                      /* esquinas redondeadas */
+    padding: 1.6rem;
+    backdrop-filter: blur(12px);              /* efecto cristal */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);  /* línea superior */
+    transition: left 0.5s;                    /* se ilumina al pasar el ratón */
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);              /* la tarjeta sube un poco */
+    border-color: var(--neon);                /* borde cian */
+    box-shadow: 0 0 25px var(--neon-dim);     /* brillo cian alrededor */
+}
+
+.glass-card:hover::before {
+    left: 100%;                               /* la línea recorre la tarjeta */
+}
+
+
+/* ============ BOTONES ============ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--neon), var(--purple));  /* degradado principal */
+    color: #05050a;                          /* texto casi negro para que contraste */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);              /* sube al pasar el ratón */
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.35);  /* brillo cian */
+}
+
+.btn-secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+    transform: translateY(-3px);
+}
+
+
+/* ============ BADGES Y ETIQUETAS (estilo OP.GG) ============ */
+
+.badge {
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;                      /* forma de píldora */
+    text-transform: uppercase;
+}
+
+.badge-done {
+    background: rgba(46, 204, 113, 0.15);    /* verde muy transparente */
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.badge-gold {
+    background: rgba(240, 199, 94, 0.15);    /* dorado transparente */
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+
+.badge-neon {
+    background: var(--neon-dim);
+    color: var(--neon);
+    border: 1px solid var(--neon);
+}
+
+/* Etiquetas de tecnología: HTML, CSS, JS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;                          /* pasan a otra línea si no caben */
+    gap: 0.4rem;
+    margin: 0.8rem 0;
+}
+
+.tag {
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--purple);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.tag-html { background: rgba(227, 79, 38, 0.12); color: #e44f26; border-color: rgba(227, 79, 38, 0.5); }
+.tag-css  { background: rgba(21, 114, 182, 0.12); color: #4fa3ff; border-color: rgba(21, 114, 182, 0.5); }
+.tag-js   { background: rgba(240, 219, 79, 0.12); color: #f0db4f; border-color: rgba(240, 219, 79, 0.5); }
+
+
+/* ============ BARRAS DE PROGRESO ============ */
+
+.progress-item { margin-bottom: 1.2rem; }
+
+.progress-head {
+    display: flex;
+    justify-content: space-between;           /* nombre a la izquierda y % a la derecha */
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.progress-head span:last-child {
+    font-family: var(--font-code);
+    color: var(--neon);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;                                 /* empieza en 0, el JS lo rellena */
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--neon), var(--purple));
+    transition: width 1.4s ease;              /* se rellena suavemente */
+}
+
+
+/* ============ ANIMACIONES AL HACER SCROLL (REVEAL) ============ */
+
+.reveal {
+    opacity: 0;                              /* invisible al principio */
+    transform: translateY(30px);             /* 30px más abajo de su sitio */
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;                              /* aparece... */
+    transform: translateY(0);                /* ...subiendo a su sitio */
+}
+
+
+/* ============ FOOTER ============ */
+
+footer {
+    border-top: 1px solid var(--border);
+    background: rgba(10, 10, 15, 0.9);
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-title);
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--neon);
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin: 0.2rem 0;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+}
+
+footer .footer-links a {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    transition: color 0.25s;
+}
+
+footer .footer-links a:hover {
+    color: var(--neon);
+}
+
+
+/* ============ CURSOR PERSONALIZADO ============ */
+
+#cursor, #cursor-trail {
+    position: fixed;                          /* fijos en pantalla */
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;                     /* no estorban a los clics */
+    z-index: 9999;
+}
+
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neon);
+    transform: translate(-50%, -50%);         /* centrado sobre el ratón */
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+#cursor.big {
+    width: 45px;                              /* crece al pasar sobre enlaces */
+    height: 45px;
+    background: var(--neon-dim);
+}
+
+#cursor-trail {
+    width: 6px;
+    height: 6px;
+    background: var(--purple);
+    transform: translate(-50%, -50%);
+}
+
+
+/* ============ CABECERA DE LAS PÁGINAS INTERNAS ============ */
+/* La usan tareas, prácticas y clase: badge + título + descripción */
+
+.page-hero {
+    padding: 3rem 0 1rem;
+    border-bottom: 1px solid var(--border);  /* línea que separa del contenido */
+    background: radial-gradient(ellipse at top, rgba(0, 240, 255, 0.06), transparent 60%);
+}
+
+.page-badge { margin-bottom: 0.8rem; }
+
+.page-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.page-title .accent {
+    color: var(--neon);               /* una palabra del título en cian */
+}
+
+.page-sub {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.page-sub strong { color: var(--text); }
+
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 820px) {
+    nav { display: none; }                    /* el menú normal se oculta */
+    .hamburger { display: flex; }             /* y aparece la hamburguesa */
+
+    .section-title { font-size: 1.3rem; }
+
+    .section-header { flex-wrap: wrap; }      /* los elementos pueden pasar de línea */
+}

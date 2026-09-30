@@ -1,130 +1,212 @@
 <!DOCTYPE html>
+<!-- declara el documento como HTML5 -->
+
 <html lang="es">
+<!-- raíz de la página, idioma español -->
+
+<!-- ============ HEAD (no se ve en pantalla) ============ -->
 <head>
+    <!-- codificación de caracteres: permite tildes, ñ y símbolos -->
     <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla (móvil, tablet, PC) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto de la pestaña del navegador -->
     <title>Venezuela Natural - Turismo Rural</title>
+
+    <!-- enlaza la hoja de estilos (estilos.css está en la misma carpeta que el index) -->
     <link rel="stylesheet" href="estilos.css">
 </head>
+
+<!-- ============ BODY (todo lo visible) ============ -->
 <body>
 
     <!-- ============ HEADER ============ -->
     <header class="header" id="inicio">
+        <!-- cabecera; la clase "header" da fondo verde y 180px de alto,
+             el id="inicio" es el destino del enlace "Inicio" del menú -->
         <img class="logo" src="img/logo.png" alt="Logotipo de Venezuela Natural">
+        <!-- img = imagen; src es la ruta del archivo y alt el texto si la imagen no carga -->
         <div class="header-texto">
+            <!-- caja que agrupa el título y el subtítulo para alinearlos juntos -->
             <h1>Venezuela Natural</h1>
+            <!-- título principal de la página -->
             <p>Tu aventura por los rincones más hermosos de Venezuela</p>
+            <!-- subtítulo de la cabecera -->
         </div>
     </header>
 
     <!-- ============ NAV ============ -->
     <nav class="nav">
+        <!-- menú de navegación; los href="#..." saltan a las secciones con ese id -->
         <a href="#inicio">Inicio</a>
+        <!-- enlace a la cabecera (id="inicio") -->
         <a href="#alojamientos">Alojamientos</a>
+        <!-- enlace a la sección de alojamientos -->
         <a href="#actividades">Actividades</a>
+        <!-- enlace al aside (id="actividades") -->
         <a href="#galeria">Galería</a>
+        <!-- enlace a la galería de imágenes -->
         <a href="#contacto">Contacto</a>
+        <!-- enlace al formulario de contacto -->
     </nav>
 
     <!-- ============ CONTENEDOR PRINCIPAL ============ -->
     <div class="contenedor">
+        <!-- caja flex: mete el main (70%) y el aside (30%) en la misma fila -->
 
         <!-- ============ MAIN ============ -->
         <main class="main">
+            <!-- columna izquierda con todo el contenido principal -->
 
-            <!-- SECCIÓN 1 - Presentación -->
+            <!-- ---- SECCIÓN 1 - Presentación ---- -->
             <section class="presentacion">
+                <!-- section = sección temática del contenido (etiqueta semántica de HTML5) -->
                 <h2>Bienvenidos a Venezuela Natural</h2>
+                <!-- título de la presentación -->
                 <p>
                     En <strong>Venezuela Natural</strong> organizamos viajes y
+                    <!-- strong = texto en negrita (aquí, el nombre de la empresa) -->
                     escapadas por los destinos más impresionantes del país:
                     el Salto Ángel en Canaima, las playas de Los Roques, los
                     Andes de Mérida, los médanos de Coro y el lago de Maracaibo.
                     Trabajamos con guías locales y alojamientos rurales para que
                     conozcas el país con seguridad y comodidad.
                 </p>
+                <!-- primer párrafo: qué ofrece la empresa -->
                 <p>
                     Ofrecemos rutas de senderismo, paseos a caballo, visitas
                     guiadas, observación de aves y paquetes para familias o
                     grupos de amigos. Nos encargamos del transporte, las
                     reservas y el itinerario: tú solo tienes que disfrutar.
                 </p>
+                <!-- segundo párrafo: actividades incluidas -->
                 <img class="imagen-portada"
                      src="img/portada.jpg"
                      alt="Salto Ángel, la cascada más alta del mundo, en Canaima, Venezuela">
+                <!-- imagen de portada; el atributo está en varias líneas solo por legibilidad -->
             </section>
 
-            <!-- SECCIÓN 2 - Alojamientos -->
+            <!-- ---- SECCIÓN 2 - Alojamientos ---- -->
             <section class="alojamientos" id="alojamientos">
+                <!-- sección con id="alojamientos" para poder enlazarla desde el menú -->
                 <h2>Nuestros alojamientos</h2>
+                <!-- título de la sección -->
 
+                <!-- ---- TARJETA 1 ---- -->
                 <article class="alojamiento alojamiento-1">
+                    <!-- article = bloque independiente y autónomo (cada alojamiento) -->
                     <img src="img/alojamiento1.jpg" alt="Posada en los Andes de Mérida, Venezuela">
+                    <!-- foto del alojamiento -->
                     <h3>Posada Mérida</h3>
+                    <!-- nombre del alojamiento -->
                     <p>
                         Posada en los Andes, a pocos minutos del teleférico.
                         Habitaciones calentas, desayuno casero y vistas a las
                         montañas.
                     </p>
+                    <!-- descripción del alojamiento -->
                     <p class="precio">90 € por noche</p>
+                    <!-- precio; la clase "precio" lo pone en negrita y verde -->
                     <a href="#contacto">Más información</a>
+                    <!-- botón-enlace que salta al formulario de contacto -->
                 </article>
 
+                <!-- ---- TARJETA 2 ---- -->
                 <article class="alojamiento alojamiento-2">
+                    <!-- segundo alojamiento (le entra el estilo alojamiento-2) -->
                     <img src="img/alojamiento2.jpg" alt="Cabaña junto al salto en el parque nacional Canaima">
+                    <!-- foto de la cabaña -->
                     <h3>Cabaña Canaima</h3>
+                    <!-- nombre del alojamiento -->
                     <p>
                         Cabaña junto al salto, en pleno parque nacional.
                         Ideal para visitar el Salto Ángel y las lagunas de
                         Canaima.
                     </p>
+                    <!-- descripción del alojamiento -->
                     <p class="precio">75 € por noche</p>
+                    <!-- precio por noche -->
                     <a href="#contacto">Más información</a>
+                    <!-- enlace al formulario -->
                 </article>
 
+                <!-- ---- TARJETA 3 ---- -->
                 <article class="alojamiento alojamiento-3">
+                    <!-- tercer alojamiento (le entra el estilo alojamiento-3) -->
                     <img src="img/alojamiento3.jpg" alt="Casa colonial en el centro histórico de Maracaibo">
+                    <!-- foto de la casa colonial -->
                     <h3>Casa Colonial</h3>
+                    <!-- nombre del alojamiento -->
                     <p>
                         Casa colonial de tres plantas en el centro histórico,
                         con patio interior y habitaciones amplias para grupos
                         grandes.
                     </p>
+                    <!-- descripción del alojamiento -->
                     <p class="precio">120 € por noche</p>
+                    <!-- precio por noche -->
                     <a href="#contacto">Más información</a>
+                    <!-- enlace al formulario -->
                 </article>
             </section>
 
-            <!-- SECCIÓN 3 - Tabla de precios -->
+            <!-- ---- SECCIÓN 3 - Tabla de precios ---- -->
             <section class="precios">
+                <!-- sección con la tabla comparativa -->
                 <h2>Tabla de precios</h2>
+                <!-- título de la tabla -->
                 <table class="tabla-precios">
+                    <!-- table = tabla con filas y columnas -->
                     <thead>
+                        <!-- thead = cabecera de la tabla (las columnas) -->
                         <tr>
+                            <!-- tr = fila de la tabla -->
                             <th>Alojamiento</th>
+                            <!-- th = celda de cabecera (aparece en negrita) -->
                             <th>Capacidad</th>
+                            <!-- segunda columna -->
                             <th>Precio/noche</th>
+                            <!-- tercera columna -->
                             <th>Desayuno</th>
+                            <!-- cuarta columna -->
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- tbody = cuerpo de la tabla (los datos) -->
                         <tr>
+                            <!-- primera fila de datos -->
                             <td>Posada Mérida</td>
+                            <!-- td = celda normal con datos -->
                             <td>4 personas</td>
+                            <!-- capacidad -->
                             <td>90 €</td>
+                            <!-- precio -->
                             <td>Incluido</td>
+                            <!-- desayuno incluido -->
                         </tr>
                         <tr>
+                            <!-- segunda fila de datos -->
                             <td>Cabaña Canaima</td>
+                            <!-- nombre -->
                             <td>2 personas</td>
+                            <!-- capacidad -->
                             <td>75 €</td>
+                            <!-- precio -->
                             <td>Incluido</td>
+                            <!-- desayuno incluido -->
                         </tr>
                         <tr>
+                            <!-- tercera fila de datos -->
                             <td>Casa Colonial</td>
+                            <!-- nombre -->
                             <td>6 personas</td>
+                            <!-- capacidad -->
                             <td>120 €</td>
+                            <!-- precio -->
                             <td>No incluido</td>
+                            <!-- aquí el desayuno no está incluido -->
                         </tr>
                     </tbody>
                 </table>
@@ -134,128 +216,214 @@
 
         <!-- ============ ASIDE ============ -->
         <aside class="aside" id="actividades">
+            <!-- columna derecha; el id="actividades" es el destino del enlace del menú -->
             <h2>Actividades recomendadas</h2>
+            <!-- título del aside -->
             <ul class="actividades">
+                <!-- lista de actividades (la clase la estiliza como botones) -->
                 <li>Senderismo</li>
+                <!-- primera actividad -->
                 <li>Rutas en bicicleta</li>
+                <!-- segunda actividad -->
                 <li>Paseos a caballo</li>
+                <!-- tercera actividad -->
                 <li>Visitas guiadas</li>
+                <!-- cuarta actividad -->
                 <li>Observación de aves</li>
+                <!-- quinta actividad -->
             </ul>
 
             <h3>Horarios</h3>
+            <!-- subtítulo de horarios -->
             <p>
                 Oficina: de lunes a sábado, de 8:00 a 18:00.<br>
+                <!-- br = salto de línea dentro del mismo párrafo -->
                 Salidas guiadas: todos los días a las 7:00.<br>
+                <!-- segundo salto de línea -->
                 Recepción de alojamientos: 24 horas.
             </p>
+            <!-- párrafo con los tres horarios -->
 
             <h3>Enlaces relacionados</h3>
+            <!-- subtítulo de enlaces externos -->
             <ul class="enlaces">
+                <!-- lista de enlaces a Wikipedia -->
                 <li><a href="https://es.wikipedia.org/wiki/Venezuela">Venezuela en Wikipedia</a></li>
+                <!-- enlace externo a la página de Venezuela -->
                 <li><a href="https://es.wikipedia.org/wiki/Parque_nacional_Canaima">Parque nacional Canaima</a></li>
+                <!-- enlace externo al parque nacional -->
                 <li><a href="https://es.wikipedia.org/wiki/Salto_%C3%81ngel">Salto Ángel</a></li>
+                <!-- enlace externo al Salto Ángel (%C3%81 = letra Á con acento) -->
             </ul>
         </aside>
 
     </div>
+    <!-- fin del contenedor principal -->
 
-    <!-- ============ GALERÍA DE IMÁGENES ============ -->
+    <!-- ============ GALERÍA DE IMÁGENES (fuera del contenedor: a todo el ancho) ============ -->
     <section class="galeria" id="galeria">
+        <!-- sección de galería con id para enlazarla desde el menú -->
         <h2>Galería de imágenes</h2>
+        <!-- título de la galería -->
         <div class="galeria-cuadro">
+            <!-- caja flex que coloca las fotos en filas de 3 -->
             <figure>
+                <!-- figure = imagen con pie de foto -->
                 <img src="img/paisaje1.jpg" alt="El Gran Roque en el archipiélago de Los Roques">
+                <!-- primera foto -->
                 <figcaption>Los Roques</figcaption>
+                <!-- figcaption = texto explicativo bajo la foto -->
             </figure>
             <figure>
                 <img src="img/paisaje2.jpg" alt="Monte Roraima, tepuy fronterizo de Venezuela">
+                <!-- segunda foto -->
                 <figcaption>Monte Roraima</figcaption>
+                <!-- pie de la segunda foto -->
             </figure>
             <figure>
                 <img src="img/paisaje3.jpg" alt="Teleférico de Mérida en los Andes venezolanos">
+                <!-- tercera foto -->
                 <figcaption>Teleférico de Mérida</figcaption>
+                <!-- pie de la tercera foto -->
             </figure>
             <figure>
                 <img src="img/paisaje4.jpg" alt="Médanos de Coro, dunas del parque nacional en Falcón">
+                <!-- cuarta foto -->
                 <figcaption>Médanos de Coro</figcaption>
+                <!-- pie de la cuarta foto -->
             </figure>
             <figure>
                 <img src="img/paisaje5.jpg" alt="Lago de Maracaibo al amanecer">
+                <!-- quinta foto -->
                 <figcaption>Lago de Maracaibo</figcaption>
+                <!-- pie de la quinta foto -->
             </figure>
             <figure>
                 <img src="img/paisaje6.jpg" alt="Cerro El Ávila sobre la ciudad de Caracas">
+                <!-- sexta foto -->
                 <figcaption>El Ávila, Caracas</figcaption>
+                <!-- pie de la sexta foto -->
             </figure>
         </div>
     </section>
 
     <!-- ============ FORMULARIO DE CONTACTO ============ -->
     <section class="formulario" id="contacto">
+        <!-- sección con el formulario, destino del enlace "Contacto" -->
         <h2>Formulario de contacto</h2>
+        <!-- título del formulario -->
         <p class="formulario-texto">
             Rellena el formulario y te enviaremos una propuesta personalizada.
         </p>
+        <!-- texto introductorio del formulario -->
 
         <form action="#" method="post">
+            <!-- form = formulario; action="#" (no se envía a ningún servidor)
+                 y method="post" (modo de envío de los datos) -->
+
+            <!-- ---- CAMPO: NOMBRE ---- -->
             <div class="campo">
+                <!-- div con la clase "campo" que ocupa el 48% (dos por fila) -->
                 <label for="nombre">Nombre</label>
+                <!-- label = etiqueta del campo; "for" la une al input con ese id -->
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <!-- input de texto; id coincide con el label, name es el nombre del dato
+                     que se enviaría, placeholder es el texto de ayuda
+                     y required hace el campo obligatorio -->
             </div>
 
+            <!-- ---- CAMPO: APELLIDOS ---- -->
             <div class="campo">
+                <!-- segunda columna de la fila -->
                 <label for="apellidos">Apellidos</label>
+                <!-- etiqueta del campo apellidos -->
                 <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+                <!-- campo de texto obligatorio -->
             </div>
 
+            <!-- ---- CAMPO: CORREO ELECTRÓNICO ---- -->
             <div class="campo">
+                <!-- primera columna de la segunda fila -->
                 <label for="correo">Correo electrónico</label>
+                <!-- etiqueta del campo correo -->
                 <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                <!-- type="email" valida que el texto tenga forma de correo (@ y dominio) -->
             </div>
 
+            <!-- ---- CAMPO: TELÉFONO ---- -->
             <div class="campo">
+                <!-- segunda columna de la segunda fila -->
                 <label for="telefono">Teléfono</label>
+                <!-- etiqueta del campo teléfono -->
                 <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+                <!-- type="tel" abre el teclado numérico en el móvil; no es obligatorio -->
             </div>
 
+            <!-- ---- CAMPO: TIPO DE ALOJAMIENTO ---- -->
             <div class="campo">
+                <!-- primera columna de la tercera fila -->
                 <label for="tipo">Tipo de alojamiento</label>
+                <!-- etiqueta del desplegable -->
                 <select id="tipo" name="tipo">
+                    <!-- select = menú desplegable -->
                     <option value="posada">Posada Mérida</option>
+                    <!-- option = una opción del desplegable; value es el valor que se enviaría -->
                     <option value="cabana">Cabaña Canaima</option>
+                    <!-- segunda opción -->
                     <option value="casa">Casa Colonial</option>
+                    <!-- tercera opción -->
                 </select>
             </div>
 
+            <!-- ---- CAMPO: FECHA DE ENTRADA ---- -->
             <div class="campo">
+                <!-- segunda columna de la tercera fila -->
                 <label for="entrada">Fecha de entrada</label>
+                <!-- etiqueta del campo de fecha -->
                 <input type="date" id="entrada" name="entrada">
+                <!-- type="date" muestra un calendario para elegir la fecha -->
             </div>
 
+            <!-- ---- CAMPO: NÚMERO DE PERSONAS ---- -->
             <div class="campo">
+                <!-- primera columna de la cuarta fila -->
                 <label for="personas">Número de personas</label>
+                <!-- etiqueta del campo numérico -->
                 <input type="number" id="personas" name="personas" min="1" max="12" value="2">
+                <!-- type="number" solo acepta números; min y max limitan el rango
+                     y value pone el valor por defecto (2) -->
             </div>
 
+            <!-- ---- CAMPO: OBSERVACIONES (a todo el ancho) ---- -->
             <div class="campo campo-ancho">
+                <!-- la clase "campo-ancho" hace que ocupe el 100% de la fila -->
                 <label for="observaciones">Observaciones</label>
+                <!-- etiqueta del área de texto -->
                 <textarea id="observaciones" name="observaciones" rows="4"
                           placeholder="Cuéntanos qué te gustaría hacer..."></textarea>
+                <!-- textarea = campo de varias líneas; rows="4" son 4 líneas de alto -->
             </div>
 
+            <!-- ---- BOTÓN DE ENVÍO ---- -->
             <div class="campo campo-ancho">
+                <!-- bloque a todo el ancho para el botón -->
                 <button type="submit">Enviar solicitud</button>
+                <!-- button type="submit" envía el formulario (aquí a "#") -->
             </div>
         </form>
     </section>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
+        <!-- pie de página con fondo verde oscuro -->
         <p class="footer-nombre">Venezuela Natural</p>
+        <!-- nombre de la empresa (la clase lo pone grande y amarillo) -->
         <p>Av. Libertador, Edificio Altamar, piso 5 - Caracas, Venezuela</p>
+        <!-- dirección -->
         <p>Teléfono: +58 212 555 0123 | Correo: info@venezuelanatural.com</p>
+        <!-- teléfono y correo de contacto -->
         <p class="copyright">&copy; 2026 Venezuela Natural. Todos los derechos reservados.</p>
+        <!-- &copy; es el símbolo ©; línea de copyright -->
     </footer>
 
 </body>
