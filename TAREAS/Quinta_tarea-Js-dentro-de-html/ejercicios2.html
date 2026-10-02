@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- declara el documento como HTML5 -->
+
+<html lang="en">
+<!-- raíz de la página (aquí el idioma es "en": inglés) -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+
+<head>
+    <!-- codificación de caracteres, permite tildes y Ñ -->
+    <meta charset="UTF-8">
+
+    <!-- hace que la página se adapte al tamaño de la pantalla (móvil/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
+    <title>Document</title>
+</head>
+
+<!-- ============ BODY: TODO LO QUE SE VE EN PANTALLA ============ -->
+
+<body>
+    <script>
+        /* ============================================================
+           QUINTA TAREA - JAVASCRIPT DENTRO DE HTML
+           5 ejercicios de funciones: parámetros, return y document.write()
+           ============================================================ */
+
+
+        /* ============ EJERCICIO 1 - SALUDA ============ */
+
+        document.write("<h3>Ejercicio 1</h3>");   /* título del ejercicio */
+        //Creamos una funcion llamada saludar esta función no recibe ningún parámetro
+        function saludar() {
+            // los paréntesis () vacíos = la función no recibe datos
+            document.write("Hola bienvenido a JavaScript<br>");   /* escribe el saludo en la página */
+        }
+        //llamamos a la función para que se ejecute
+        saludar();   /* escribir saludar() con paréntesis EJECUTA el código de dentro de las llaves */
+        document.write("<hr>");   /* separador entre ejercicios */
+
+
+        /* ============ EJERCICIO 2 - MOSTRAR UN NOMBRE ============ */
+
+        document.write("<h3>Ejercicio 2</h3>");   /* título del ejercicio */
+        //Creamos una función llamada mostrarnombre la funcion recibe un parámetro llamado nombre, el parametro permite enviar un dato a la función
+        function mostrarNombre(nombre) {
+            // "nombre" es el PARÁMETRO: el hueco que espera recibir el dato
+            document.write("hola " + nombre + "<br>");   /* concatenamos el texto con el dato recibido */
+        }
+
+        mostrarNombre("Patricia");   /* "Patricia" es el ARGUMENTO: el dato que entra en la variable nombre */
+        document.write("<hr>");   /* separador */
+
+
+        /* ============ EJERCICIO 3 - SUMA DE DOS NÚMEROS ============ */
+
+        document.write("<h3>Ejercicio 3</h3>");   /* título del ejercicio */
+        //Creamos una función llamada sumar la función recibe dos parámetros llamados num1 y num2, los parámetros permiten enviar datos a la función
+        function sumar(num1, num2) {
+            let resultado = num1 + num2;   /* calculamos la suma dentro de la función */
+            document.write("El resultado de la suma es: " + resultado + "<br>");   /* mostramos el resultado */
+        }
+        //llamamos a la funcion
+        sumar(5, 10);   /* 5 entra en num1 y 10 entra en num2: 5 + 10 = 15 */
+        document.write("<hr>");   /* separador */
+
+
+        /* ============ EJERCICIO 4 - CALCULAR EL DOBLE ============ */
+
+        document.write("<h3>Ejercicio 4</h3>");   /* título del ejercicio */
+        //Creamos una función llamada calcularDoble la función recibe un parámetro llamado numero, el parámetro permite enviar un dato a la función
+        function calcularDoble(numero) {
+            let resultado = numero * 2;   /* multiplicamos por 2 con el operador * */
+            document.write("El doble de " + numero + " es: " + resultado + "<br>");   /* 5 * 2 = 10 */
+        }
+        //llamamos a la función
+        calcularDoble(5);   /* 5 entra en el parámetro numero */
+        document.write("<hr>");   /* separador */
+
+
+        /* ============ EJERCICIO 5 - CALCULAR PRECIO TOTAL ============ */
+
+        //Creamos una funcion que reciba dos parametros haga el calculo de la operacion y nos devuelva el resultado
+        function calcularPrecioTotal(precio, cantidad) {
+            let total = precio * cantidad;   /* multiplicamos precio por cantidad */
+            document.write("El precio total es: " + total + "<br>");   /* 10 * 5 = 50 */
+        }
+        //creamos las variables con los datos
+        let precio = 10;   /* precio unitario */
+        let cantidad = 5;  /* unidades */
+
+        //llamamos a la funcion, la funcion hara el calculo y guardamos el resultado en la variable total
+        calcularPrecioTotal(precio, cantidad);   /* le pasamos las dos variables como argumentos */
+        document.write("<hr>");   /* separador final */
+
+
+        document.write("<h3>Ejercicio 5</h3>");   /* título del ejercicio 5 */
+        document.write("Precio: " + precio + "<br>");   /* precio unitario */
+        document.write("Cantidad: " + cantidad + "<br>");   /* cantidad */
+        document.write("Total: " + (precio * cantidad) + "€<br>");   /* total calculado + símbolo del euro */
+        document.write("<hr>");   /* separador final */
+
+
+    </script>
+</body>
+
+</html>

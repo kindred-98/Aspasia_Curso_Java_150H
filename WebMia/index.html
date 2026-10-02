@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- documento HTML5 -->
 
 <html lang="es">
@@ -25,7 +25,7 @@
     <!-- CSS específico de esta página (portada) -->
     <link rel="stylesheet" href="css/index.css">
     <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
-    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
 
 </head>
 
@@ -72,6 +72,8 @@
     </div>
 
     <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver las tarjetas de trabajos.</p>
 
         <!-- ============ HERO (zona principal de la portada) ============ -->
         <section class="hero">
@@ -115,22 +117,24 @@
                 <!-- ---- CONTADORES ANIMADOS ---- -->
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-label">Tareas</span>
+                        <span class="stat-number" data-dato="tareas">0</span>
+                        <span class="stat-label">Trabajos</span>
                     </div>
-                    <!-- data-target es el número final hasta el que cuenta el JS -->
+                    <!-- data-dato dice QUÉ número se cuenta; el valor real lo pone
+                         js\datos.js al ejecutar ACTUALIZAR.bat (así los números
+                         se actualizan solos y nunca se quedan viejos) -->
 
                     <div class="stat-divider"></div>
 
                     <div class="stat">
-                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-number" data-dato="practicas">0</span>
                         <span class="stat-label">Prácticas</span>
                     </div>
 
                     <div class="stat-divider"></div>
 
                     <div class="stat">
-                        <span class="stat-number" data-target="21">0</span>
+                        <span class="stat-number" data-dato="recursos">0</span>
                         <span class="stat-label">Recursos</span>
                     </div>
                 </div>
@@ -251,24 +255,10 @@
                     <div class="glass-card reveal">
                         <h3 class="progress-title">Resumen del curso</h3>
 
-                        <ul class="resumen">
-                            <li>
-                                <span class="resumen-num">5</span>
-                                <span class="resumen-txt">tareas entregadas (HTML, CSS y JS)</span>
-                            </li>
-                            <li>
-                                <span class="resumen-num">3</span>
-                                <span class="resumen-txt">prácticas manuales en casa</span>
-                            </li>
-                            <li>
-                                <span class="resumen-num">15</span>
-                                <span class="resumen-txt">PDF y apuntes descargados</span>
-                            </li>
-                            <li>
-                                <span class="resumen-num">4</span>
-                                <span class="resumen-txt">análisis y páginas de apoyo</span>
-                            </li>
-                        </ul>
+                        <!-- Esta lista la pinta js\render.js con los números reales
+                             que hay en js\datos.js, así que no hay que actualizarla
+                             a mano cuando añadas trabajos nuevos -->
+                        <ul class="resumen" id="lista-resumen"></ul>
                     </div>
 
                 </div>
@@ -291,7 +281,7 @@
                     <a href="tareas.html" class="glass-card space-card reveal">
                         <span class="space-num">01</span>
                         <h3>Tareas</h3>
-                        <p>Las 5 tareas del curso, cada una con su enunciado y su botón para verla en el navegador.</p>
+                        <p>Las 6 tareas del curso, cada una con su enunciado y su botón para verla en el navegador.</p>
                         <span class="space-arrow">&rarr;</span>
                     </a>
 
@@ -330,7 +320,14 @@
         <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
     </footer>
 
-    <!-- JavaScript de todos los efectos (al final para que el HTML ya esté cargado) -->
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas y los números usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
     <script src="js/main.js"></script>
 
 </body>

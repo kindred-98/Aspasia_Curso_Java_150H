@@ -35,6 +35,22 @@
     color: var(--purple);
 }
 
+/* Etiqueta de la entrega ("Cuarta Tarea"): dice a qué tarea pertenece
+   la tarjeta, para que se vean agrupadas */
+.tarea-entrega {
+    display: inline-block;
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--purple);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
 /* Título de la tarea */
 .tarea-card h3 {
     font-size: 1rem;
@@ -64,9 +80,9 @@
 }
 
 .tarea-btns .btn {
-    flex: 1;                 /* los dos botones comparten el ancho por igual */
+    flex: 1;                 /* los botones comparten el ancho por igual */
     justify-content: center; /* centra el texto dentro del botón */
-    min-width: 120px;
+    min-width: 100px;        /* ancho mínimo: así caben 3 botones en una tarjeta */
     font-size: 0.75rem;
     padding: 0.6rem 0.8rem;
 }

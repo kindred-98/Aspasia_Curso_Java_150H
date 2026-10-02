@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>    
+    
+    //Declaración de variables(Pedmos al usuario que introduzca un número)
+    let numero = prompt("Introduce un número: ");       
+
+    //comprobamos si el resto al dividir entre 2 es igual a 0, si es así es par, si no es impar
+    if (numero %2 === 0) {
+        document.write("<h2>El número " + numero + " es par</h2>");
+    } else {
+        document.write("<h2>El número " + numero + " es impar</h2>");
+    }
+
+    //crea un programa que pida al usuario una contraseña mediante un prompt y que compruebe si la contraseña es correcta. La contraseña correcta será “1234”. Si la contraseña es correcta, mostrará un mensaje de bienvenida, si no lo es, mostrará un mensaje de error.
+
+    let contraseña = prompt("Introduce la contraseña: ");
+    if (contraseña === "1234") {
+        document.write("<h2>Bienvenido</h2>");
+    } else {
+        document.write("<h2>Contraseña incorrecta</h2>");
+    }
+
+    </script>
+    
+</body>
+</html>

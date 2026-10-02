@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/clase.css">
     <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
-    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
 
 </head>
 
@@ -60,11 +60,13 @@
     </div>
 
     <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver las tarjetas de trabajos.</p>
 
         <!-- ============ CABECERA DE LA PÁGINA ============ -->
         <section class="page-hero">
             <div class="container">
-                <span class="page-badge badge badge-neon">21 recursos guardados</span>
+                <span class="page-badge badge badge-neon" id="badge-recursos">Cargando...</span>
                 <h1 class="page-title">Recursos de <span class="accent">clase</span></h1>
                 <p class="page-sub">
                     Todo lo que voy guardando durante el curso: PDF, cheatsheets,
@@ -92,29 +94,10 @@
                             <span class="recurso-icon icon-html">&#60;/&#62;</span>
                             <div>
                                 <h3>HTML5</h3>
-                                <span class="recurso-count">6 archivos</span>
+                                <span class="recurso-count"><span id="cont-html">Cargando...</span></span>
                             </div>
                         </div>
-                        <ul class="recurso-list">
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_HTML5.pdf">HTML5 (inicial)</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_Organizacion%20de%20un%20sitio%20web.pdf">Organización de un sitio web</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html-cheatsheet-2026.pdf">HTML cheatsheet 2026</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html5-cheatsheet-lite.pdf">HTML5 cheatsheet lite</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/estructura_html.pdf">Estructura HTML</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/tutorial-emmet1.pdf">Tutorial Emmet</a>
-                            </li>
-                        </ul>
+                        <ul class="recurso-list" id="lista-recursos-html"></ul>
                     </div>
 
                     <!-- ---- GRUPO: CSS ---- -->
@@ -123,26 +106,10 @@
                             <span class="recurso-icon icon-css">{ }</span>
                             <div>
                                 <h3>CSS3</h3>
-                                <span class="recurso-count">5 archivos</span>
+                                <span class="recurso-count"><span id="cont-css">Cargando...</span></span>
                             </div>
                         </div>
-                        <ul class="recurso-list">
-                            <li>
-                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css-cheatsheet-2026.pdf">CSS cheatsheet 2026</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css3-cheatsheet-lite.pdf">CSS3 cheatsheet lite</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/box-sizing-border-box-explicacion.pdf">box-sizing: border-box</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/propiedadesbordersmarginspaddings.pdf">Borders, margins y paddings</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/unidades-css-px-rem-vh.pdf">Unidades: px, rem y vh</a>
-                            </li>
-                        </ul>
+                        <ul class="recurso-list" id="lista-recursos-css"></ul>
                     </div>
 
                     <!-- ---- GRUPO: MANUAL HTML + CSS ---- -->
@@ -151,14 +118,10 @@
                             <span class="recurso-icon icon-manual">&#128214;</span>
                             <div>
                                 <h3>Manual completo</h3>
-                                <span class="recurso-count">1 archivo</span>
+                                <span class="recurso-count"><span id="cont-manual">Cargando...</span></span>
                             </div>
                         </div>
-                        <ul class="recurso-list">
-                            <li>
-                                <a href="../Informacion_De_Clase/HTML_Y_CSS-Informacion/MANUAL-HTML-Y-CSS.pdf">Manual HTML y CSS (juntos)</a>
-                            </li>
-                        </ul>
+                        <ul class="recurso-list" id="lista-recursos-manual"></ul>
                     </div>
 
                     <!-- ---- GRUPO: VSCODE ---- -->
@@ -167,20 +130,10 @@
                             <span class="recurso-icon icon-vscode">&#9653;</span>
                             <div>
                                 <h3>Visual Studio Code</h3>
-                                <span class="recurso-count">3 archivos</span>
+                                <span class="recurso-count"><span id="cont-vscode">Cargando...</span></span>
                             </div>
                         </div>
-                        <ul class="recurso-list">
-                            <li>
-                                <a href="../Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf">Extensiones esenciales</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/VsCODE-Informacion/HTML%20y%20CSS_El%20editor%20Visual%20Studio%20Code.pdf">El editor Visual Studio Code</a>
-                            </li>
-                            <li>
-                                <a href="../Informacion_De_Clase/VsCODE-Informacion/Navegadores%20principales.pdf">Navegadores principales</a>
-                            </li>
-                        </ul>
+                        <ul class="recurso-list" id="lista-recursos-vscode"></ul>
                     </div>
 
                 </div>
@@ -197,36 +150,8 @@
                     <div class="section-line"></div>
                 </div>
 
-                <div class="notas-grid">
-
-                    <!-- ---- NOTA 1 ---- -->
-                    <a class="glass-card nota-card reveal"
-                       href="../Informacion_De_Clase/Analisis_de_la_infomacion_de_clase_con_IA/analisis-Del-Profesor.md">
-                        <span class="nota-ext">.MD</span>
-                        <h3>Análisis de la información del profesor</h3>
-                        <p>Resumen de los apuntes de clase analizados con IA.</p>
-                        <span class="space-arrow">&rarr;</span>
-                    </a>
-
-                    <!-- ---- NOTA 2 ---- -->
-                    <a class="glass-card nota-card reveal"
-                       href="../Informacion_De_Clase/Analisis_de_la_infomacion_de_clase_con_IA/AnalisisCompleto.md">
-                        <span class="nota-ext">.MD</span>
-                        <h3>Análisis completo</h3>
-                        <p>Documento completo con todo lo visto en clase, ordenado por temas.</p>
-                        <span class="space-arrow">&rarr;</span>
-                    </a>
-
-                    <!-- ---- NOTA 3 ---- -->
-                    <a class="glass-card nota-card reveal"
-                       href="../Informacion_De_Clase/Paginas-Externa/paginas.md">
-                        <span class="nota-ext">.MD</span>
-                        <h3>Mis páginas de apoyo</h3>
-                        <p>Lista guardada de las páginas externas que uso para practicar.</p>
-                        <span class="space-arrow">&rarr;</span>
-                    </a>
-
-                </div>
+                <!-- Las notas las pinta js\render.js con los datos de js\datos.js -->
+                <div class="notas-grid" id="lista-notas"></div>
             </div>
         </section>
 
@@ -240,23 +165,8 @@
                     <div class="section-line"></div>
                 </div>
 
-                <div class="fotos-grid reveal">
-                    <figure class="foto-item">
-                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-17%20at%2009.58.40.jpeg"
-                             alt="Apunte de clase sobre CSS">
-                        <figcaption>Apunte CSS - 17/09</figcaption>
-                    </figure>
-                    <figure class="foto-item">
-                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-17%20at%2009.59.23.jpeg"
-                             alt="Apunte de clase sobre CSS (2)">
-                        <figcaption>Apunte CSS - 17/09 (2)</figcaption>
-                    </figure>
-                    <figure class="foto-item">
-                        <img src="../Informacion_De_Clase/CSS-Informacion/CSS-INFO-2/WhatsApp%20Image%202026-09-23%20at%2009.38.49.jpeg"
-                             alt="Apunte de clase sobre CSS">
-                        <figcaption>Apunte CSS - 23/09</figcaption>
-                    </figure>
-                </div>
+                <!-- Las fotos las pinta js\render.js y el visor de fotos las abre al hacer clic -->
+                <div class="fotos-grid reveal" id="lista-fotos"></div>
 
             </div>
         </section>
@@ -271,41 +181,8 @@
                     <div class="section-line"></div>
                 </div>
 
-                <div class="externas-grid">
-
-                    <!-- ---- ENLACE 1: validador ---- -->
-                    <a class="glass-card externa-card reveal"
-                       href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">
-                        <h3>Validador W3C</h3>
-                        <p>Comprueba si mi HTML está bien escrito.</p>
-                        <span class="externa-go">Abrir &nearr;</span>
-                    </a>
-
-                    <!-- ---- ENLACE 2: responsively ---- -->
-                    <a class="glass-card externa-card reveal"
-                       href="https://responsively.app/" target="_blank" rel="noopener noreferrer">
-                        <h3>Responsively App</h3>
-                        <p>Para ver cómo se ve mi web en móvil, tablet y PC.</p>
-                        <span class="externa-go">Abrir &nearr;</span>
-                    </a>
-
-                    <!-- ---- ENLACE 3: juego de CSS ---- -->
-                    <a class="glass-card externa-card reveal"
-                       href="https://flukeout.github.io/" target="_blank" rel="noopener noreferrer">
-                        <h3>CSS Diner</h3>
-                        <p>Juego para practicar los selectores de CSS.</p>
-                        <span class="externa-go">Abrir &nearr;</span>
-                    </a>
-
-                    <!-- ---- ENLACE 4: cdmon ---- -->
-                    <a class="glass-card externa-card reveal"
-                       href="http://ww.cdmon.com/es/" target="_blank" rel="noopener noreferrer">
-                        <h3>cdmon</h3>
-                        <p>Tutoriales de HTML y CSS en español.</p>
-                        <span class="externa-go">Abrir &nearr;</span>
-                    </a>
-
-                </div>
+                <!-- Las paginas externas se leen de datos\meta.js -->
+                <div class="externas-grid" id="lista-externas"></div>
             </div>
         </section>
 
@@ -356,7 +233,14 @@
         <!-- flecha derecha: foto siguiente -->
     </div>
 
-    <!-- efectos de la web -->
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
     <script src="js/main.js"></script>
 
 </body>

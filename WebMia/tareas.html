@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/tareas.css">
     <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
-    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
 
 </head>
 
@@ -60,11 +60,13 @@
     </div>
 
     <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver las tarjetas de trabajos.</p>
 
         <!-- ============ CABECERA DE LA PÁGINA ============ -->
         <section class="page-hero">
             <div class="container">
-                <span class="page-badge badge badge-gold">4 entregas / 5 ejercicios</span>
+                <span class="page-badge badge badge-gold" id="badge-tareas">Cargando...</span>
                 <h1 class="page-title">Mis <span class="accent">tareas</span></h1>
                 <p class="page-sub">
                     Aquí están todas las tareas del curso. Pulsa <strong>Ver tarea</strong>
@@ -77,121 +79,10 @@
         <section class="section">
             <div class="container">
 
-                <div class="tareas-grid">
-
-                    <!-- ---- TAREA 1 ---- -->
-                    <article class="glass-card tarea-card reveal">
-                        <div class="tarea-top">
-                            <span class="tarea-num">01</span>
-                            <span class="badge badge-done">Completada</span>
-                        </div>
-                        <h3>Mi Gym y Mi Vida Diaria</h3>
-                        <p>
-                            Estructura básica de una página web con las etiquetas
-                            semánticas de HTML5: header, nav, main, aside y footer,
-                            organizadas con Flexbox en CSS.
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-html">HTML</span>
-                            <span class="tag tag-css">CSS</span>
-                        </div>
-                        <div class="tarea-btns">
-                            <a class="btn btn-primary" href="../TAREAS/Primera_Tarea/index.html">Ver tarea</a>
-                            <!-- abre la tarea real en el navegador -->
-                            <a class="btn btn-secondary" href="../TAREAS/Primera_Tarea/PrimerEjecicio.md">Enunciado</a>
-                            <!-- abre el enunciado (archivo .md) -->
-                        </div>
-                    </article>
-
-                    <!-- ---- TAREA 2 ---- -->
-                    <article class="glass-card tarea-card reveal">
-                        <div class="tarea-top">
-                            <span class="tarea-num">02</span>
-                            <span class="badge badge-done">Completada</span>
-                        </div>
-                        <h3>Galería de Naruto</h3>
-                        <p>
-                            Página con tabla de imágenes: 6 fotos de personajes
-                            colocadas en filas y columnas, con efecto hover que
-                            amplía y gira la imagen.
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-html">HTML</span>
-                            <span class="tag tag-css">CSS</span>
-                        </div>
-                        <div class="tarea-btns">
-                            <a class="btn btn-primary" href="../TAREAS/Segunda_Tarea/index.html">Ver tarea</a>
-                            <a class="btn btn-secondary" href="../TAREAS/Segunda_Tarea/ejercicio_estructura_web_tabla_imagenes.pdf">Enunciado</a>
-                        </div>
-                    </article>
-
-                    <!-- ---- TAREA 3 ---- -->
-                    <article class="glass-card tarea-card reveal">
-                        <div class="tarea-top">
-                            <span class="tarea-num">03</span>
-                            <span class="badge badge-done">Completada</span>
-                        </div>
-                        <h3>Venezuela Natural</h3>
-                        <p>
-                            Web completa de turismo rural: galería de paisajes,
-                            tabla de precios, formulario de contacto y enlaces
-                            internos con identificadores (id).
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-html">HTML</span>
-                            <span class="tag tag-css">CSS</span>
-                        </div>
-                        <div class="tarea-btns">
-                            <a class="btn btn-primary" href="../TAREAS/Tercera_Tarea/index.html">Ver tarea</a>
-                            <a class="btn btn-secondary" href="../TAREAS/Tercera_Tarea/enunciado_web_completa_html_css_final.pdf">Enunciado</a>
-                        </div>
-                    </article>
-
-                    <!-- ---- TAREA 4 ---- -->
-                    <article class="glass-card tarea-card reveal">
-                        <div class="tarea-top">
-                            <span class="tarea-num">04</span>
-                            <span class="badge badge-done">Completada</span>
-                        </div>
-                        <h3>Funciones JavaScript</h3>
-                        <p>
-                            5 ejercicios de funciones: saludar, mostrar un nombre,
-                            sumar, calcular el doble con <em>return</em> y calcular
-                            el precio total de una compra.
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-html">HTML</span>
-                            <span class="tag tag-js">JS</span>
-                        </div>
-                        <div class="tarea-btns">
-                            <a class="btn btn-primary" href="../TAREAS/Cuarta_tarea/Tarea1/index.html">Ver tarea</a>
-                            <a class="btn btn-secondary" href="../TAREAS/Cuarta_tarea/Tarea1/ejercicios_funciones_javascript.pdf">Enunciado</a>
-                        </div>
-                    </article>
-
-                    <!-- ---- TAREA 5 ---- -->
-                    <article class="glass-card tarea-card reveal">
-                        <div class="tarea-top">
-                            <span class="tarea-num">05</span>
-                            <span class="badge badge-done">Completada</span>
-                        </div>
-                        <h3>Variables y document.write()</h3>
-                        <p>
-                            5 ejercicios de variables: datos personales, cálculo de
-                            un producto, edad, precio con descuento y resumen de
-                            compra completo.
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-html">HTML</span>
-                            <span class="tag tag-js">JS</span>
-                        </div>
-                        <div class="tarea-btns">
-                            <a class="btn btn-primary" href="../TAREAS/Cuarta_tarea/Tarea2/index.html">Ver tarea</a>
-                            <a class="btn btn-secondary" href="../TAREAS/Cuarta_tarea/Tarea2/ejercicios_javascript%20(1).pdf">Enunciado</a>
-                        </div>
-                    </article>
-
-                </div>
+                <!-- Las tarjetas las pinta js\render.js con los datos de js\datos.js.
+     Así, cuando añadas un trabajo y ejecutes ACTUALIZAR.bat, esta lista
+     se actualiza sola y no hay que tocar este archivo. -->
+                <div class="tareas-grid" id="lista-tareas"></div>
             </div>
         </section>
 
@@ -210,7 +101,14 @@
         <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
     </footer>
 
-    <!-- efectos de la web -->
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
     <script src="js/main.js"></script>
 
 </body>

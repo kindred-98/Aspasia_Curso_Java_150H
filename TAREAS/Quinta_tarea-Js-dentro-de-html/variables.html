@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- declara el documento como HTML5 -->
+
+<html lang="es">
+<!-- raíz de la página, lang="es" indica que el idioma es español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+<head>
+    <!-- codificación de caracteres, permite tildes y Ñ -->
+    <meta charset="UTF-8">
+
+    <!-- hace que la página se adapte al tamaño de la pantalla (móvil/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
+    <title>Variables</title>
+</head>
+
+<!-- ============ BODY: TODO LO QUE SE VE EN PANTALLA ============ -->
+<body>
+    <h1>Esto es aprender JAVASCRIPT</h1>
+    <!-- h1 = título principal de la página -->
+
+    <nav></nav>
+    <!-- nav = menú de navegación; aquí lo dejo vacío porque no hace falta en este ejercicio -->
+
+    <script>
+        /* ============================================================
+           QUINTA TAREA - JAVASCRIPT DENTRO DE HTML
+           Variables: let, const, tipos de dato, typeof y ámbito (scope)
+           En este ejercicio la salida se ve en la CONSOLA del
+           navegador (púlsalo con F12 > Console), no en la página.
+           ============================================================ */
+
+
+        /* ============ EJERCICIO 1 - VARIABLE EDAD ============ */
+        /*Crea una variable llamada edad y asignale tu edad. Muestra el resultado a través de la consola y luego actualiza el valor de edad y vuelve a mostrar el valor a través de la consola*/
+
+        //declaración de variables
+        /* let edad = 49;
+           let declara una variable cuyo valor puede cambiar.
+           Lo dejo comentado porque en el ejercicio 3 creamos otra variable
+           llamada "edad" y no podemos repetir el mismo nombre. */
+
+        //mostrar el resultado en la consola
+        /* console.log(edad);
+           console.log() escribe el valor en la consola del navegador (F12). */
+
+        //modificación del valor de la variable
+        /* edad = 45;
+           reasignamos el valor SIN volver a escribir let. */
+
+        //mostrar el resultado en la consola
+        /* console.log(edad);
+           comprobamos el nuevo valor en la consola. */
+
+
+        /* ============ EJERCICIO 2 - VARIABLES CON TIPOS DE DATO ============ */
+        /*Crea tres variables: esEstudiante (boleano), promedio(número con decimal) y apellido (cadena de texto o string) muestra el resultado en la consola*/
+
+        //declaración de variables
+        let esEstudiante = true;   /* BOOLEAN: solo puede ser true o false */
+        let promedio = 8.5;        /* NUMBER: número con decimales */
+        let apellido = "Pérez";    /* STRING: cadena de texto, SIEMPRE entre comillas */
+
+        //mostrar el resultado en la consola
+        console.log(esEstudiante, promedio, apellido);   /* muestra los 3 valores en una sola llamada */
+
+
+        /* ============ EJERCICIO 3 - CONSTANTE PI ============ */
+        /*Crea una constante llamada PI y asignale el valor de 3.14159 Luego intenta cambiar el valor de la misma y observa el resultado en la consola*/
+
+        //declaración de variables
+        const PI = 3.14159;   /* const crea un valor que NO se puede reasignar */
+
+        //mostrar el resultado en la consola
+        console.log(PI);   /* si intentamos PI = 3.14, la consola da error */
+
+
+        /* ============ EJERCICIO 4 - VARIABLES Y TIPOS DE DATO ============ */
+        /*Crea una variable llamada ciudad y asígnale el nombre de una ciudad luego intenta declarar la misma variable y observa que sucede. Muestra el resultado en la consola*/
+
+        /*Crea una variable para cada uno de los siguientes tipos de datos
+        - guarda el nombre de una persona
+        - guarda su edad
+        - guarda su altura en decimales
+        - indica si tiene carnet de conducir
+        - crea una variable sin asignarle ningún valor
+        - crea una variable cuyo valor sea null
+        - guarda en una variable tres lenguajes de programación
+        - guarda los datos de una persona: nombre y edad
+        - muestra los datos en la consola
+        - además utiliza typeof para comprobar el tipo de dato de cada variable*/
+
+        //Declaración de variables
+
+        //STRING guarda una cadena de texto
+        let nombre = "Ana";   /* el tipo de dato de un texto entre comillas es string */
+
+        //NUMBER guarda un número entero
+        let edad = 45;   /* tipo number sin decimales */
+
+        //NUMBER (JAVASCRIPT UTILIZA EL TIPO NUMBER TANTO PARA ENTEROS COMO PARA DECIMALES) guarda un número decimal
+        let altura = 1.75;   /* en JavaScript no hay int y double: existe un único tipo number */
+
+        //BOLEANO solo puede tener dos valores (true o false)
+        let tieneCarnet = true;   /* tipo boolean */
+
+        //UNDEFINED declaramos la variable pero no le asignamos ningún valor
+        let datoSinDefinir;   /* sin valor: su tipo es undefined (typeof devuelve "undefined") */
+
+        //NULL indica intencionadamente que la variable no tiene ningún valor
+        let datoVacio = null;   /* null = vacío a propósito; typeof devuelve "object" (es un comportamiento antiguo de JS) */
+
+        //ARRAY permite almacenar varios valores
+        let lenguajes = ["HTML", "CSS", "JAVASCRIPT"];   /* array = lista de valores;
+                                                             typeof devuelve "object" */
+        //aqui hemos creado una variable llamada lenguajes que contiene un array, sirve para guardar varios valores dentro de una misma variable cada valor ocupa una posición dentro del array, la posición en el array EMPIEZA A CONTAR DESDE CERO, NUNCA DESDE UNO
+
+        //OBJECT permite agrupar varios datos relacionados
+        let persona = {
+            name : "maria",   /* name = propiedad (clave) y "maria" = su valor */
+            age : 12          /* segunda propiedad del objeto */
+        }
+        //aquí hemos creado un objeto sirve para agrupar varios datos que pertenecen a un objeto en este caso name es una propiedad del objeto y maria es el valor de esa propiedad
+
+        //SALIDA POR CONSOLA
+        console.log(
+            "Nombre:", nombre, "- Tipo:", typeof nombre,   /* typeof devuelve el TIPO de dato de la variable */
+            "\nEdad:", edad, "- Tipo:", typeof edad,
+            "\nAltura:", altura, "- Tipo:", typeof altura,
+            "\nTiene carnet:", tieneCarnet, "- Tipo:", typeof tieneCarnet,
+            "\nDato sin definir:", datoSinDefinir, "- Tipo:", typeof datoSinDefinir,
+            "\nDato vacío:", datoVacio, "- Tipo:", typeof datoVacio,
+            "\nLenguajes:", lenguajes, "- Tipo:", typeof lenguajes,
+            "\nPersona:", persona, "- Tipo:", typeof persona
+        );   /* el \n es un salto de línea; así la consola muestra cada dato en su línea */
+
+
+        /* ============ EJERCICIO 5 - ÁMBITO DE UNA VARIABLE (SCOPE) ============ */
+        /*Declara una variable dentro de una función y trata de acceder a ella fuera de la función*/
+
+        //declaración de la función
+        function miFuncion(){
+            let mensaje = "Hola dentro de la función";   /* variable LOCAL: solo existe dentro de la función */
+            console.log(mensaje);   /* aquí dentro sí se puede leer */
+        }
+
+        //invocamos la función
+        miFuncion();   /* al ejecutarla imprime el mensaje una sola vez */
+
+        /* Si escribiéramos console.log(mensaje) aquí fuera,
+           la consola daría error: "mensaje is not defined".
+           Esa es la diferencia entre una variable local (let dentro de la función)
+           y una global (declarada fuera de cualquier función). */
+
+    </script>
+
+</body>
+</html>

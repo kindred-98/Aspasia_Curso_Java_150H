@@ -4,7 +4,7 @@
 <html lang="es">
 <!-- raíz de la página, idioma español -->
 
-<!-- ============ HEAD ============ -->
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
 <head>
     <!-- codificación: permite tildes, ñ y símbolos -->
     <meta charset="UTF-8">
@@ -22,9 +22,9 @@
     <!-- CSS compartido + CSS de esta página -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/practicas.css">
-    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
-    <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 
+    <!-- si JS está desactivado, el contenido .reveal se muestra igualmente -->
+    <noscript><style>.reveal{opacity:1 !important;transform:none !important}.aviso-js{display:block !important}</style></noscript>
 </head>
 
 <body>
@@ -60,6 +60,8 @@
     </div>
 
     <main>
+    <!-- Aviso que solo se ve si el navegador tiene JavaScript desactivado -->
+    <p class="aviso-js">Activa JavaScript en tu navegador para ver las tarjetas de trabajos.</p>
 
         <!-- ============ CABECERA DE LA PÁGINA ============ -->
         <section class="page-hero">
@@ -77,81 +79,10 @@
         <section class="section">
             <div class="container">
 
-                <div class="practicas-grid">
-
-                    <!-- ---- PRÁCTICA 1: HTML ---- -->
-                    <article class="glass-card practica-card reveal">
-                        <div class="practica-icon">&#60;/&#62;</div>
-                        <!-- icono HTML con las flechas < > -->
-                        <div class="practica-body">
-                            <div class="practica-head">
-                                <h3>Mi primera página semántica</h3>
-                                <span class="badge badge-done">Abierta</span>
-                            </div>
-                            <p>
-                                Página hecha a mano con las etiquetas semánticas de
-                                HTML5 (header, nav, main, aside y footer) y un fondo
-                                de Kindred.
-                            </p>
-                            <div class="tags">
-                                <span class="tag tag-html">HTML</span>
-                            </div>
-                            <a class="btn btn-primary"
-                               href="../Practicas_Manuales_De_La_Tareas/HTML-Practice/Proyecto1.html">
-                                Ver práctica
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- ---- PRÁCTICA 2: JAVASCRIPT ---- -->
-                    <article class="glass-card practica-card reveal">
-                        <div class="practica-icon practica-icon-js">JS</div>
-                        <!-- icono JS -->
-                        <div class="practica-body">
-                            <div class="practica-head">
-                                <h3>Test de JavaScript</h3>
-                                <span class="badge badge-done">Abierto</span>
-                            </div>
-                            <p>
-                                Ejercicios de variables con <code>let</code>,
-                                <code>const</code> y tipos de datos. Los resultados
-                                se ven en la consola del navegador (pulsa F12).
-                            </p>
-                            <div class="tags">
-                                <span class="tag tag-js">JS</span>
-                            </div>
-                            <a class="btn btn-primary"
-                               href="../Practicas_Manuales_De_La_Tareas/JS-Practice/js.html">
-                                Ver práctica
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- ---- PRÁCTICA 3: CSS ---- -->
-                    <article class="glass-card practica-card reveal">
-                        <div class="practica-icon practica-icon-css">#</div>
-                        <!-- icono CSS -->
-                        <div class="practica-body">
-                            <div class="practica-head">
-                                <h3>Hoja de estilos CSS</h3>
-                                <span class="badge badge-gold">Código</span>
-                            </div>
-                            <p>
-                                Mi archivo de estilos manual: reset con
-                                <code>box-sizing</code>, base de 20px y estilos
-                                generales del body, con comentarios explicando cada línea.
-                            </p>
-                            <div class="tags">
-                                <span class="tag tag-css">CSS</span>
-                            </div>
-                            <a class="btn btn-secondary"
-                               href="../Practicas_Manuales_De_La_Tareas/CSS-Practice/Style.css">
-                                Ver código
-                            </a>
-                        </div>
-                    </article>
-
-                </div>
+                <!-- Las tarjetas las pinta js\render.js con los datos de js\datos.js.
+                     Cada HTML o CSS que haya en ..\Practicas_Manuales_De_La_Tareas
+                     aparece como una tarjeta, sin tocar este archivo. -->
+                <div class="practicas-grid" id="lista-practicas"></div>
 
                 <!-- ---- AVISO ---- -->
                 <div class="practica-aviso glass-card reveal">
@@ -179,7 +110,14 @@
         <p>&copy; 2026 Angel Echenique - Kindred.Java. Hecho con HTML, CSS y JavaScript.</p>
     </footer>
 
-    <!-- efectos de la web -->
+    <!-- ============ SCRIPTS ============ -->
+    <!-- 1. datos.js: los datos que genera ACTUALIZAR.bat (NO se edita a mano) -->
+    <script src="js/datos.js"></script>
+
+    <!-- 2. render.js: pinta las tarjetas usando esos datos -->
+    <script src="js/render.js"></script>
+
+    <!-- 3. main.js: los efectos (contadores, animaciones, cursor, estrellas) -->
     <script src="js/main.js"></script>
 
 </body>
