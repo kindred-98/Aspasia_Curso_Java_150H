@@ -31,7 +31,8 @@ var ORDEN_TAREAS = [
     "Segunda_Tarea",
     "Tercera_Tarea",
     "Cuarta_tarea",
-    "Quinta_tarea-Js-dentro-de-html"
+    "Quinta_tarea-Js-dentro-de-html",
+    "Sexta-tarea"
 ];
 
 
@@ -123,6 +124,15 @@ var META_TAREAS = {
             "ejercicios.html": "Ejercicios",
             "ejercicios2.html": "Funciones"
         }
+    },
+
+    // Programa que pide la edad, el carnet y los años de experiencia
+    "Sexta-tarea": {
+        "nombre": "Sexta Tarea - ¿Puedo conducir?",
+        "titulo": "¿Puedo conducir? (if / else)",
+        "desc": "Programa con if / else y botones: primero pides la edad, luego eliges con botones Sí / No si tienes carnet, y solo si lo tienes te pregunta los años de experiencia. Con menos de 18 años o sin carnet no puede conducir y el programa se detiene; con carnet y de 2 a 5 años de experiencia es de nivel medio, y con más de 5 años, experimentado.",
+        "tags": ["HTML", "JS"],
+        "badge": "Completada"
     }
 
 };

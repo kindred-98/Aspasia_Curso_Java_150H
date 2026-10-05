@@ -8,7 +8,7 @@
    y vuelve a ejecutar ACTUALIZAR.bat.
 
    Se ha generado con:
-   02/10/2026 13:57
+   05/10/2026 11:57
    ============================================================ */
 
 var DATOS = {
@@ -77,6 +77,15 @@ var DATOS = {
       badge: "Completada",
       botones: [["../TAREAS/Quinta_tarea-Js-dentro-de-html/variables.html", "Variables"], ["../TAREAS/Quinta_tarea-Js-dentro-de-html/bucles.html", "Bucles"]],
       enunciados: []
+    },
+        {
+      entrega: "Sexta Tarea - ¿Puedo conducir?",
+      titulo: "¿Puedo conducir? (if / else)",
+      desc: "Programa con if / else y botones: primero pides la edad, luego eliges con botones Sí / No si tienes carnet, y solo si lo tienes te pregunta los años de experiencia. Con menos de 18 años o sin carnet no puede conducir y el programa se detiene; con carnet y de 2 a 5 años de experiencia es de nivel medio, y con más de 5 años, experimentado.",
+      tags: ["HTML", "JS"],
+      badge: "Completada",
+      botones: [["../TAREAS/Sexta-tarea/index.html", "Ver tarea"]],
+      enunciados: [["../TAREAS/Sexta-tarea/enunciado.md", "Enunciado", "enunciado.md"]]
     }
   ],
 
@@ -152,7 +161,7 @@ var DATOS = {
 
 /* Numeros que se ven en la portada (se cuentan solos) */
 DATOS.resumenes = {
-  tareas: 7,
+  tareas: 8,
   practicas: 3,
   pdf: 15,
   notas: 3,
