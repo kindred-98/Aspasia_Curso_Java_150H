@@ -1,215 +1,394 @@
 /* ============================================================
-   EJERCICIO 2 - ESTRUCTURA WEB CON TABLA E IMÁGENES
-   Tema: Galería de Naruto
+   EJERCICIO 2 - ESTILOS MODERNOS RESPONSIVE
+   Batallas Épicas de Naruto
    ============================================================ */
-
 
 /* ---------- AJUSTES GENERALES ---------- */
 
 html {
-    font-size: 20px;   /* tamaño base: 1rem = 20px en todo el documento */
+  font-size: 20px;   /* tamaño base: 1rem = 20px */
 }
 
 * {
-    box-sizing: border-box;  /* aplica a todos los elementos; padding y border entran dentro del ancho */
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;                              /* elimina el margen por defecto del navegador */
-    font-family: Arial, Helvetica, sans-serif;  /* tipografía general de la página */
-    color: #1b2a4a;                         /* color del texto: azul marino oscuro */
-    background-color: #f6f1e7;              /* fondo de la página: crema claro */
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1b2a4a;
+  background-color: #f6f1e7;
+  line-height: 1.6;
 }
 
+/* Variables de color */
+:root {
+  --header-bg: #ef7d1a;
+  --nav-bg: #1b2a4a;
+  --main-bg: #fffaf3;
+  --aside-bg: #ffe3c7;
+  --footer-bg: #1b2a4a;
+  --text-color: #1b2a4a;
+  --text-muted: #64748b;
+  --border-color: #1b2a4a;
+  --accent-orange: #ef7d1a;
+  --accent-blue: #2563eb;
+  --accent-green: #16a34a;
+}
 
 /* ---------- HEADER ---------- */
-/* cabecera naranja de 150px (este bloque es el ejemplo del enunciado) */
 
 .header {
-    width: 100%;                    /* ocupa el 100% del ancho */
-    height: 150px;                  /* altura fija de 150 píxeles */
-    background-color: #ef7d1a;      /* color de fondo naranja; aquí se cambia el color */
-    color: #ffffff;                 /* color del texto: blanco */
-    border: 3px solid #7a3b0f;      /* borde marrón: modifica el tamaño (3px) y el color (#7a3b0f) */
-    text-align: center;             /* centra el h1 y el p horizontalmente */
-    display: flex;                  /* activa flexbox para centrar también en vertical */
-    flex-direction: column;         /* los hijos se apilan de arriba hacia abajo */
-    justify-content: center;        /* centra los hijos dentro de los 150px */
+  width: 100%;
+  min-height: 150px;
+  background-color: var(--header-bg);
+  color: #ffffff;
+  border: 3px solid #7a3b0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.header .contenedor {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .header h1 {
-    margin: 0;                      /* quita el margen por defecto del título */
-    font-size: 1.6rem;              /* tamaño del título: 1.6 x 20px = 32px */
-    text-shadow: 2px 2px 0 #7a3b0f; /* sombra del texto: 2px a la derecha y 2px abajo, sin desenfoque */
+  margin: 0;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 0 #7a3b0f;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.header p {
-    margin: 0.4rem 0 0 0;           /* 0.4rem arriba, 0 en abajo e izquierda y derecha */
-    font-size: 0.8rem;              /* tamaño del subtítulo */
-    color: #ffe9d2;                 /* color del subtítulo: tono claro anaranjado */
+.header h1 .ninja {
+  color: #ffe9d2;
+  font-weight: bold;
 }
 
+.header h1 .kanji {
+  color: #1b2a4a;
+  font-style: italic;
+}
+
+.header .subtitle {
+  margin: 0.4rem 0 0 0;
+  font-size: 0.8rem;
+  color: #ffe9d2;
+}
 
 /* ---------- NAV ---------- */
-/* menú de 70px con fondo azul marino */
 
 .nav {
-    width: 100%;                    /* ancho completo */
-    height: 70px;                   /* altura de 70 píxeles */
-    background-color: #1b2a4a;      /* fondo azul marino */
-    border: 3px solid #0d1730;      /* borde más oscuro que el fondo */
-    border-top: none;               /* borde superior eliminado para unirlo con el header */
-    text-align: center;             /* centra los enlaces */
-    line-height: 64px;              /* altura de línea para centrar el texto en el menú */
+  min-height: 70px;
+  background-color: var(--nav-bg);
+  border: 3px solid #0d1730;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content center;
 }
 
 .nav a {
-    display: inline-block;          /* permite aplicar márgenes verticales a los enlaces */
-    vertical-align: middle;         /* alinea los enlaces por su centro */
-    margin: 0 1.4rem;               /* 1.4rem de separación a izquierda y derecha */
-    color: #ffffff;                 /* texto blanco */
-    text-decoration: none;          /* quita el subrayado de los enlaces */
-    font-size: 0.9rem;              /* tamaño del texto del menú */
-    cursor: pointer;                /* cursor de mano al pasar el ratón */
-    transition: color 0.2s;         /* transición suave del color durante 0.2s */
+  display: inline-block;
+  padding: 0 1.4rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 64px;
+  position: relative;
 }
 
 .nav a:hover {
-    color: #ef7d1a;                 /* color naranja al pasar el ratón por encima */
+  color: var(--accent-orange);
 }
 
-
-/* ---------- CONTENEDOR PRINCIPAL ---------- */
-
-.contenedor {
-    width: 90%;                     /* 90% del ancho, deja 5% libre a cada lado */
-    margin: 0 auto;                 /* auto a los lados = centrado en la página */
-    display: flex;                  /* main y aside se colocan uno al lado del otro */
+.nav a.active {
+  color: var(--accent-orange);
 }
 
+/* ---------- SECTIONS ---------- */
 
-/* ---------- MAIN ---------- */
-/* columna izquierda con la tabla de imágenes */
-
-.main {
-    width: 70%;                     /* ocupa el 70% del contenedor */
-    min-height: 50vh;               /* altura mínima del 50% de la pantalla (vh = viewport height) */
-    background-color: #fffaf3;      /* fondo blanco con tono cálido */
-    border: 3px solid #1b2a4a;      /* borde azul marino de 3px */
-    border-top: none;               /* sin borde arriba (debajo está el nav) */
-    padding: 1rem;                  /* 1rem de espacio interior */
+.section {
+  padding: 2rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.main h2 {
-    margin-top: 0.3rem;             /* solo margen superior (el resto lo pone el navegador) */
-    font-size: 1.2rem;              /* tamaño del título */
-    color: #ef7d1a;                 /* título en naranja de la galería */
-    border-bottom: 2px solid #1b2a4a;  /* línea azul bajo el título */
-    padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
+.section h2 {
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  color: var(--accent-orange);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
 }
 
-.main p {
-    font-size: 0.8rem;              /* tamaño del párrafo introductorio */
-    line-height: 1.5;               /* interlineado: 1.5 veces el tamaño de la letra */
+.section p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
 }
 
-
-/* ---------- TABLA ---------- */
-/* tabla que organiza las 6 fotos en 2 filas x 3 columnas */
-
-.tabla-galeria {
-    width: 100%;                    /* la tabla ocupa todo el ancho del main */
-    border-collapse: collapse;      /* une los bordes de las celdas (sin dobles líneas) */
-    margin-top: 0.8rem;             /* separa la tabla del párrafo de arriba */
+.section ul.resumen {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
-.tabla-galeria td {
-    border: 2px solid #1b2a4a;      /* borde de 2px en cada celda */
-    text-align: center;             /* centra las imágenes dentro de la celda */
-    padding: 0.6rem;                /* espacio alrededor de cada foto */
-    background-color: #ffffff;      /* fondo blanco en las celdas */
+.section ul.resumen li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0d5c0;
+  font-size: 0.85rem;
 }
 
-.tabla-galeria img {
-    width: 200px;                   /* ancho fijo de 200 píxeles para cada foto */
-    max-width: 100%;                /* nunca más ancha que su celda (evita que se desborde) */
-    height: auto;                   /* la altura se calcula sola para no deformar la imagen */
-    vertical-align: middle;         /* alinea la foto en el centro vertical */
-    cursor: pointer;                /* cursor de mano al pasar sobre la foto */
-    transition: transform 0.3s;     /* anima la transformación durante 0.3 segundos */
+.section ul.resumen li:last-child {
+  border-bottom: none;
 }
 
-.tabla-galeria img:hover {
-    transform: scale(2) rotate(360deg);  /* al hacer hover: duplica el tamaño y gira una vuelta completa */
+.section ul.resumen a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-
-/* ---------- ASIDE ---------- */
-/* columna lateral derecha con listas y enlaces */
-
-.aside {
-    width: 30%;                     /* 30% del contenedor (junto al 70% del main) */
-    min-height: 50vh;               /* altura mínima igual que el main para que parezcan parejos */
-    background-color: #ffe3c7;      /* fondo tono melocotón */
-    border: 3px solid #1b2a4a;      /* borde azul marino */
-    border-top: none;               /* sin borde arriba */
-    border-left: none;              /* sin borde izquierdo: el main ya lleva borde derecho */
-    padding: 1rem;                  /* espacio interior de 1rem */
+.section ul.resumen a:hover {
+  text-decoration: underline;
 }
 
-.aside h2 {
-    margin-top: 0.3rem;             /* separación superior del título */
-    font-size: 1.1rem;              /* tamaño del título */
-    color: #7a3b0f;                 /* título en marrón oscuro */
-    border-bottom: 2px solid #1b2a4a;  /* línea azul bajo el título */
-    padding-bottom: 0.3rem;         /* aire entre texto y línea */
+/* ---------- GALERÍA (FILTROS Y GRID) ---------- */
+
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.aside h3 {
-    margin-bottom: 0.3rem;          /* separación inferior de los subtítulos */
-    font-size: 0.9rem;              /* tamaño de los subtítulos */
-    color: #1b2a4a;                 /* azul marino */
+.filtro {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: all 0.2s;
+  font-family: inherit;
 }
 
-.aside p,
-.aside li {
-    font-size: 0.75rem;             /* texto pequeño: 0.75 x 20px = 15px */
-    line-height: 1.6;               /* interlineado amplio para leer mejor */
+.filtro:hover {
+  background: var(--accent-orange);
+  color: #ffffff;
 }
 
-.aside ul {
-    margin-top: 0.3rem;             /* separa la lista de su título */
-    padding-left: 1.2rem;           /* sangría para que se vean las viñetas */
+.filtro.activo {
+  background: var(--accent-orange);
+  color: #ffffff;
+  font-weight: 600;
 }
 
-.aside a {
-    color: #c1440e;                 /* color de los enlaces: rojo cálido */
-    cursor: pointer;                /* cursor de mano */
+/* Grid de personajes: 3 columnas desktop, 1 columna mobile */
+.grid-personajes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
-.aside a:hover {
-    color: #1b2a4a;                 /* al pasar el ratón, el texto se vuelve azul marino */
-    background-color: #ef7d1a;       /* y el fondo del enlace se pone naranja */
+/* Card de personaje */
+.card-personaje {
+  background: #ffffff;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-
-/* ---------- FOOTER ---------- */
-/* pie de página del mismo color que el nav */
-
-.footer {
-    width: 100%;                    /* ancho completo */
-    min-height: 120px;              /* altura mínima de 120 píxeles */
-    background-color: #1b2a4a;      /* fondo azul marino */
-    color: #ffffff;                 /* texto blanco */
-    border: 3px solid #0d1730;      /* borde más oscuro que el fondo */
-    border-top: none;               /* sin borde superior */
-    text-align: center;             /* centra el texto */
-    display: flex;                  /* flexbox para centrar el párrafo en los dos ejes */
-    align-items: center;            /* centra en vertical */
-    justify-content: center;        /* centra en horizontal */
+.card-personaje:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.footer p {
-    margin: 0;                      /* quita el margen por defecto del párrafo */
-    font-size: 0.9rem;              /* tamaño del texto del pie */
+.card-personaje img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #f0e6d2;
+}
+
+.card-personaje .info {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.card-personaje .info h3 {
+  margin: 0.2rem 0 0.1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.5ch;
+}
+
+.card-personaje .info .equipo {
+  font-size: 0.7rem;
+  color: var(--accent-orange);
+  margin-top: 0.2rem;
+}
+
+/* ---------- LUGARES GRID ---------- */
+
+.grid-lugares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card-lugar {
+  background: #fffaf3;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-lugar img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #f0e6d2;
+}
+
+.card-lugar .info {
+  padding: 0.8rem;
+  flex-grow: 1;
+}
+
+.card-lugar .info h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+  color: var(--accent-orange);
+}
+
+.card-lugar .info p {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ---------- BATALLAS GRID ---------- */
+
+.grid-batallas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-batalla {
+  background: #fffaf3;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-batalla .thumbnail {
+  width: 100%;
+  height: 180px;
+  background: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-batalla .thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.card-batalla .info {
+  padding: 0.8rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-batalla .info h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: var(--accent-orange);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-batalla .info .canal {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.card-batalla .info .duracion {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  align-self: flex-start;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 120px;
+    padding: 0.8rem;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .nav a {
+    padding: 0 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .filtro {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ---------- HERO SVG DECORATIVO (dentro de header) ---------- */
+
+.hero-svg {
+  position: absolute;
+  right: 2rem;
+  width: 80px;
+  height: 80px;
+}
+
+.hero-svg svg {
+  width: 100%;
+  height: 100%;
 }

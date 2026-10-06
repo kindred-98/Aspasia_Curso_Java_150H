@@ -1,6 +1,9 @@
 /* ============================================================
    EJERCICIO 3 - WEB COMPLETA DE TURISMO RURAL
    Tema: Venezuela Natural (turismo en Venezuela)
+   Esta hoja la comparten los 6 archivos HTML:
+   index.html, inicio.html, alojamiento.html, actividades.html,
+   galeria.html y contacto.html
    ============================================================ */
 
 
@@ -8,40 +11,57 @@
 
 html {
     font-size: 20px;   /* tamaño base: 1rem = 20px en todo el documento */
+    scroll-behavior: smooth;  /* el salto por los enlaces del menú es suave */
 }
 
 * {
-    box-sizing: border-box;  /* aplica a todos los elementos; padding y border entran dentro del ancho */
+    box-sizing: border-box;  /* padding y border entran dentro del ancho */
 }
 
 body {
-    margin: 0;                              /* elimina el margen por defecto del navegador */
-    font-family: Arial, Helvetica, sans-serif;  /* tipografía general de la página */
-    color: #1f2a23;                         /* color del texto: verde muy oscuro */
-    background-color: #f4f7f4;              /* fondo de la página: verde muy claro */
+    margin: 0;                              /* quita el margen del navegador */
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía general */
+    color: #1f2a23;                         /* texto verde muy oscuro */
+    background-color: #f4f7f4;              /* fondo verde muy claro */
+    line-height: 1.5;                       /* interlineado comodo */
+}
+
+img {
+    max-width: 100%;                        /* ninguna foto se sale de su caja */
 }
 
 h2 {
-    font-size: 1.2rem;                      /* tamaño de todos los títulos h2 (1.2 x 20px = 24px) */
+    font-size: 1.2rem;                      /* títulos de sección (24px) */
     color: #14532d;                         /* verde oscuro */
-    border-bottom: 3px solid #f6c518;       /* línea amarilla de 3px bajo cada título */
-    padding-bottom: 0.3rem;                 /* deja aire entre el texto y la línea */
-    margin-top: 1rem;                       /* separa el título de lo que tiene encima */
+    border-bottom: 3px solid #f6c518;       /* línea amarilla bajo el título */
+    padding-bottom: 0.3rem;
+    margin-top: 1rem;
 }
 
 h3 {
-    font-size: 0.95rem;                     /* tamaño de los subtítulos h3 */
+    font-size: 0.95rem;                     /* subtítulos */
     color: #166534;                         /* verde medio */
-    margin-bottom: 0.3rem;                  /* separa el subtítulo de su contenido */
+    margin-bottom: 0.3rem;
+}
+
+h4 {
+    font-size: 0.82rem;                     /* títulos de tarjeta */
+    color: #14532d;
+    margin: 0.5rem 0 0.2rem 0;
 }
 
 p,
 li,
 label,
 td,
-th {
-    font-size: 0.8rem;                      /* tamaño común para párrafos, listas, etiquetas y celdas */
-    line-height: 1.5;                       /* interlineado: 1.5 veces el tamaño de la letra */
+th,
+figcaption {
+    font-size: 0.8rem;                      /* tamaño común de texto */
+    line-height: 1.5;
+}
+
+a {
+    color: #14532d;                         /* enlaces en verde oscuro */
 }
 
 
@@ -49,359 +69,674 @@ th {
 /* cabecera verde de 180px con logo y texto */
 
 .header {
-    width: 100%;                    /* ocupa todo el ancho */
-    height: 180px;                  /* altura fija de 180 píxeles */
+    width: 100%;                    /* ocupa todo el ancho de la pantalla */
+    height: 180px;                  /* altura aproximada de 180 píxeles */
     background-color: #14532d;      /* fondo verde oscuro */
-    color: #ffffff;                 /* color del texto: blanco */
+    color: #ffffff;                 /* texto blanco */
     border: 3px solid #0b2e1a;      /* borde verde aún más oscuro */
-    display: flex;                  /* activa flexbox para colocar logo y texto en fila */
-    align-items: center;            /* centra los hijos en vertical */
-    justify-content: center;        /* centra los hijos en horizontal */
-    gap: 1.5rem;                    /* separación de 1.5rem entre el logo y el texto */
+    display: flex;                  /* flexbox: logo y texto en fila */
+    align-items: center;            /* centra en vertical */
+    justify-content: center;        /* centra en horizontal */
+    gap: 1.5rem;                    /* separación entre logo y texto */
+    text-align: center;             /* texto centrado por si el logo falta */
 }
 
 .header .logo {
-    width: 120px;                   /* ancho del logotipo */
-    height: 120px;                  /* alto del logotipo (cuadrado) */
-    border: 3px solid #f6c518;      /* borde amarillo alrededor de la foto */
-    border-radius: 12px;            /* esquinas redondeadas 12px */
+    width: 120px;
+    height: 120px;                  /* el logo es cuadrado */
+    border: 3px solid #f6c518;
+    border-radius: 12px;
+    flex-shrink: 0;                 /* el logo no se deforma ni se encoje */
 }
 
 .header-texto {
-    text-align: left;               /* el título y el subtítulo alineados a la izquierda */
+    text-align: left;
 }
 
 .header h1 {
-    margin: 0;                      /* quita el margen por defecto del título */
-    font-size: 1.7rem;              /* tamaño grande para el nombre de la empresa */
-    color: #f6c518;                 /* amarillo sobre fondo verde */
+    margin: 0;
+    font-size: 1.7rem;
+    color: #f6c518;                 /* amarillo sobre el verde */
 }
 
 .header p {
-    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en el resto */
-    font-size: 0.85rem;             /* tamaño del subtítulo */
-    color: #d8ecdc;                 /* verde muy claro para el subtítulo */
+    margin: 0.4rem 0 0 0;
+    font-size: 0.85rem;
+    color: #d8ecdc;                 /* verde muy claro */
+}
+
+.header .header-etiqueta {
+    display: inline-block;          /* caja en línea para poder centrarla */
+    vertical-align: middle;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.7rem;
+    background-color: #f6c518;
+    color: #14532d;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
 }
 
 
 /* ============ NAV ============ */
-/* menú de botones verdes con efecto amarillo al pasar el ratón */
+/* menú de botones verdes que se ponen amarillos al pasar el ratón */
 
 .nav {
-    width: 100%;                    /* ancho completo */
-    background-color: #166534;      /* fondo verde medio */
-    border: 3px solid #0b2e1a;      /* borde verde oscuro */
-    border-top: none;               /* sin borde arriba para unirlo con el header */
-    text-align: center;             /* centra los enlaces */
-    padding: 0.4rem 0;              /* 0.4rem arriba y abajo, 0 a los lados */
+    width: 100%;
+    background-color: #166534;
+    border: 3px solid #0b2e1a;
+    border-top: none;               /* sin borde arriba para unirlo al header */
+    text-align: center;
+    padding: 0.4rem 0;
 }
 
 .nav a {
-    display: inline-block;          /* convierte los enlaces en cajas para darles relleno */
+    display: inline-block;          /* caja en línea para poder darle relleno */
     vertical-align: middle;         /* alinea los enlaces por su centro */
-    margin: 0 0.2rem;               /* 0.2rem de separación entre enlaces */
-    padding: 0.5rem 1.2rem;         /* espacio interior para que parezcan botones */
-    color: #ffffff;                 /* texto blanco */
-    text-decoration: none;          /* quita el subrayado de los enlaces */
-    font-size: 0.85rem;             /* tamaño del texto del menú */
-    cursor: pointer;                /* cursor de mano al pasar el ratón */
-    border-radius: 6px;             /* esquinas redondeadas de 6px */
-    transition: background-color 0.25s, color 0.25s;  /* anima fondo y color durante 0.25s */
+    margin: 0 0.2rem;
+    padding: 0.5rem 1.2rem;
+    color: #ffffff;
+    text-decoration: none;          /* los enlaces NO llevan subrayado */
+    font-size: 0.85rem;
+    cursor: pointer;                /* cursor de mano */
+    border-radius: 6px;
+    transition: background-color 0.25s, color 0.25s;  /* anima fondo y texto */
 }
 
 .nav a:hover {
-    background-color: #f6c518;      /* fondo amarillo cuando el ratón está encima */
-    color: #14532d;                 /* el texto se vuelve verde oscuro */
+    background-color: #f6c518;      /* al pasar el ratón: fondo amarillo */
+    color: #14532d;                 /* y el texto se pone verde oscuro */
+}
+
+.nav a.activo {
+    background-color: #f6c518;
+    color: #14532d;
+    font-weight: bold;
 }
 
 
-/* ============ CONTENEDOR PRINCIPAL ============ */
+/* ============ ESTRUCTURA PRINCIPAL ============ */
+/* .contenedor = caja flex con el main (70%) y el aside (30%) */
 
 .contenedor {
     width: 90%;                     /* 90% del ancho, deja 5% libre a cada lado */
-    margin: 0 auto;                 /* auto a los lados = centrado en la página */
-    display: flex;                  /* main (70%) y aside (30%) quedan en la misma fila */
+    margin: 0 auto;                 /* "auto" a los lados = centrado */
+    display: flex;                  /* main y aside en la misma fila */
+    align-items: flex-start;        /* ambos empiezan arriba */
 }
 
-
-/* ============ MAIN ============ */
-
 .main {
-    width: 70%;                     /* ocupa el 70% del contenedor */
-    min-height: 60vh;               /* altura mínima del 60% de la pantalla */
-    background-color: #ffffff;      /* fondo blanco */
-    border: 3px solid #14532d;      /* borde verde oscuro */
-    border-top: none;               /* sin borde arriba (debajo está el nav) */
-    padding: 1.2rem;                /* 1.2rem de espacio interior */
+    width: 70%;                     /* el main ocupa el 70% del contenedor */
+    min-height: 60vh;
+    background-color: #ffffff;
+    border: 3px solid #14532d;
+    border-top: none;
+    padding: 1.2rem;
 }
 
 .main p {
-    margin-top: 0.6rem;             /* separa cada párrafo de lo que tiene encima */
+    margin-top: 0.6rem;
+}
+
+.aside {
+    width: 30%;                     /* el aside ocupa el 30% del contenedor */
+    min-height: 60vh;
+    background-color: #e7f3e9;
+    border: 3px solid #14532d;
+    border-top: none;
+    border-left: none;              /* el main ya pone el borde derecho */
+    padding: 1.2rem;
+}
+
+.aside h2 {
+    margin-top: 1rem;
+}
+
+.aside p {
+    margin-top: 0.4rem;
 }
 
 
-/* --- Sección 1: Presentación --- */
+/* --- Bloque de bienvenida (portada de cada página) --- */
+
+.portada {
+    background-color: #eaf4ec;
+    border-left: 6px solid #f6c518;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.portada strong {
+    color: #14532d;
+}
+
+
+/* --- Imagen grande de la sección de presentación --- */
 
 .imagen-portada {
-    display: block;                 /* la imagen se comporta como un bloque (ocupa su línea) */
-    width: 100%;                    /* ancho completo dentro del main */
-    max-width: 100%;                /* nunca más ancha que su contenedor */
-    height: auto;                   /* la altura se calcula sola para no deformarla */
-    margin-top: 1rem;               /* separa la foto del último párrafo */
-    border: 3px solid #166534;      /* borde verde alrededor de la foto */
-    border-radius: 12px;            /* esquinas redondeadas */
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;                   /* la altura se sola: no se deforma */
+    margin-top: 1rem;
+    border: 3px solid #166534;
+    border-radius: 12px;            /* bordes redondeados */
 }
 
 
-/* --- Sección 2: Alojamientos --- */
+/* ============ TARJETAS DE ALOJAMIENTO ============ */
 
 .alojamientos {
-    font-size: 0;                   /* truco: quita el espacio entre los inline-block
-                                       (si no, las 3 tarjetas no caben en una fila) */
+    font-size: 0;                   /* quita el hueco entre tarjetas inline-block */
 }
 
 .alojamiento {
-    display: inline-block;          /* convierte la tarjeta en caja en línea para alinearlas */
-    vertical-align: top;            /* las alinea por la parte superior */
-    width: 32.5%;                   /* tres tarjetas por fila (3 x 32.5% + márgenes = 100%) */
-    margin-top: 1rem;               /* separa las tarjetas de lo que hay encima */
-    margin-right: 0.4rem;           /* separación entre tarjetas */
-    padding: 0.8rem;                /* espacio interior de la tarjeta */
-    background-color: #ffffff;      /* fondo blanco */
-    border-radius: 8px;             /* esquinas redondeadas */
-    font-size: 0.8rem;              /* vuelve a poner el tamaño de texto (se heredó 0 del padre) */
+    display: inline-block;          /* caja en línea para alinearlas en fila */
+    vertical-align: top;            /* alineadas por arriba */
+    width: 32.5%;                   /* dos o tres tarjetas por fila */
+    margin-top: 1rem;
+    margin-right: 0.4rem;
+    padding: 0.8rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-size: 0.8rem;              /* recupera el tamaño de texto */
 }
 
 .alojamiento:last-child {
-    margin-right: 0;                /* a la última tarjeta no le queda margen a la derecha */
+    margin-right: 0;
 }
 
 .alojamiento img {
-    display: block;                 /* la imagen se comporta como bloque */
-    width: 100%;                    /* ancho completo de la tarjeta */
-    height: 150px;                  /* altura fija de 150 píxeles */
-    object-fit: cover;              /* recorta la foto para que llene el hueco sin deformarse */
-    border-radius: 6px;             /* esquinas redondeadas */
-    margin-bottom: 0.5rem;          /* separa la foto del título */
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;              /* recorta la foto sin deformarla */
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
 }
 
 .alojamiento h3 {
-    margin-top: 0.4rem;             /* separa el nombre del alojamiento de la foto */
+    margin-top: 0.4rem;
+    margin-bottom: 0.1rem;
+}
+
+.alojamiento .ubicacion {
+    display: inline-block;          /* caja en línea: la-etiqueta del estado */
+    vertical-align: middle;
+    margin-bottom: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    background-color: #e7f3e9;
+    border: 1px solid #166534;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    color: #14532d;
 }
 
 .alojamiento .precio {
-    font-weight: bold;              /* el precio en negrita */
-    color: #14532d;                 /* verde oscuro */
-    font-size: 0.9rem;              /* un poco más grande que el resto del texto */
+    font-weight: bold;
+    color: #14532d;
+    font-size: 0.95rem;
+}
+
+.alojamiento .detalle {
+    margin: 0.2rem 0;
+    font-size: 0.72rem;
+    color: #4a5c50;
 }
 
 .alojamiento a {
-    display: inline-block;          /* caja en línea para poder darle relleno */
-    margin-top: 0.4rem;             /* separa el botón del precio */
-    padding: 0.4rem 0.8rem;         /* espacio interior: forma de botón */
-    background-color: #166534;      /* fondo verde */
-    color: #ffffff;                 /* texto blanco */
-    text-decoration: none;          /* sin subrayado */
-    font-size: 0.75rem;             /* texto pequeño */
-    border-radius: 6px;             /* esquinas redondeadas */
-    cursor: pointer;                /* cursor de mano */
-    transition: background-color 0.25s, color 0.25s;  /* animación al pasar el ratón */
+    display: inline-block;          /* caja en línea para darle relleno */
+    margin-top: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #166534;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 .alojamiento a:hover {
-    background-color: #f6c518;      /* el botón se pone amarillo al hacer hover */
-    color: #14532d;                 /* el texto se vuelve verde oscuro */
+    background-color: #f6c518;
+    color: #14532d;
 }
 
-/* Los tres artículos se diferencian con borde, fondo y sombra */
+/* Las tarjetas se diferencian entre sí con borde, fondo o sombra */
 
 .alojamiento-1 {
-    border: 3px solid #166534;      /* tarjeta 1: borde verde */
+    border: 3px solid #166534;
 }
 
 .alojamiento-2 {
-    background-color: #eaf4ec;      /* tarjeta 2: fondo verde muy claro */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);  /* sombra: 5px derecha, 5px abajo,
-                                                      10px de desenfoque y 25% de opacidad */
+    background-color: #eaf4ec;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .alojamiento-3 {
-    background-color: #fff8e1;      /* tarjeta 3: fondo crema */
-    border: 3px dashed #f6c518;     /* borde amarillo discontinuo (dashed) */
+    background-color: #fff8e1;
+    border: 3px dashed #f6c518;
+}
+
+.alojamiento-4 {
+    background-color: #f4f7f4;
+    border-left: 6px solid #166534;
+}
+
+.alojamiento-5 {
+    background-color: #ffffff;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.18);
+}
+
+.alojamiento-6 {
+    background-color: #eef6f9;
+    border-top: 6px solid #166534;
 }
 
 
-/* --- Sección 3: Tabla de precios --- */
+/* ============ TABLA DE PRECIOS ============ */
 
 .tabla-precios {
-    width: 100%;                    /* la tabla ocupa todo el ancho del main */
-    border-collapse: collapse;      /* une los bordes (evita líneas dobles) */
-    border: 2px solid #14532d;      /* borde exterior de la tabla */
-    margin-top: 0.8rem;             /* separa la tabla del título */
+    width: 100%;                    /* la tabla ocupa el 100% del ancho */
+    border-collapse: collapse;      /* une los bordes, sin líneas dobles */
+    border: 2px solid #14532d;
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .tabla-precios th,
 .tabla-precios td {
-    border: 2px solid #14532d;      /* borde de 2px en todas las celdas */
-    padding: 0.6rem;                /* espacio interior de las celdas */
-    text-align: left;               /* texto alineado a la izquierda por defecto */
+    border: 2px solid #14532d;
+    padding: 0.6rem;
+    text-align: left;
 }
 
 .tabla-precios thead th {
-    background-color: #14532d;      /* cabecera con fondo verde oscuro */
-    color: #ffffff;                 /* texto blanco en la cabecera */
-    font-size: 0.85rem;             /* tamaño del texto de la cabecera */
-    text-align: center;             /* cabecera centrada */
+    background-color: #14532d;      /* la fila de encabezados se ve distinta */
+    color: #ffffff;
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .tabla-precios tbody td {
-    text-align: center;             /* datos centrados en las celdas */
-    background-color: #ffffff;      /* fondo blanco para los datos */
-    transition: background-color 0.25s;  /* anima el cambio de fondo */
+    text-align: center;
+    background-color: #ffffff;
+    transition: background-color 0.25s;  /* anima el cambio de color */
 }
 
 .tabla-precios tbody tr:hover td {
-    background-color: #dceee1;      /* al pasar el ratón, la fila entera se pone verde claro */
+    background-color: #dceee1;      /* al pasar el ratón la fila cambia de color */
 }
 
 
-/* ============ ASIDE ============ */
-/* columna lateral con actividades, horarios y enlaces */
-
-.aside {
-    width: 30%;                     /* 30% del contenedor */
-    min-height: 60vh;               /* misma altura mínima que el main */
-    background-color: #e7f3e9;      /* fondo verde muy claro */
-    border: 3px solid #14532d;      /* borde verde oscuro */
-    border-top: none;               /* sin borde arriba */
-    border-left: none;              /* sin borde izquierdo (el main ya lleva borde derecho) */
-    padding: 1.2rem;                /* espacio interior de 1.2rem */
-}
-
-.aside h2 {
-    margin-top: 1rem;               /* separa el título del borde superior */
-}
+/* ============ ACTIVIDADES Y DESTINOS ============ */
 
 .actividades {
-    list-style: none;               /* quita las viñetas de la lista */
-    padding: 0;                     /* sin espacio interior (se quita la sangría) */
-    margin: 0.6rem 0 1rem 0;        /* 0.6rem arriba, 1rem abajo y 0 a los lados */
+    list-style: none;               /* quita las viñetas */
+    padding: 0;
+    margin: 0.6rem 0 1rem 0;
 }
 
 .actividades li {
-    background-color: #ffffff;      /* fondo blanco de cada actividad */
-    border: 2px solid #166534;      /* borde verde */
-    border-radius: 6px;             /* esquinas redondeadas (parece un botón) */
-    padding: 0.5rem 0.7rem;         /* espacio interior */
-    margin-bottom: 0.5rem;          /* separa una actividad de la siguiente */
-    cursor: pointer;                /* cursor de mano */
-    transition: background-color 0.25s;  /* animación del fondo */
+    background-color: #ffffff;
+    border: 2px solid #166534;
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.25s, border-color 0.25s;
 }
 
 .actividades li:hover {
-    background-color: #f6c518;      /* la actividad se pone amarilla al pasar el ratón */
+    background-color: #f6c518;
+    border-color: #c1440e;
 }
 
-.aside p {
-    margin-top: 0.4rem;             /* separa el párrafo de lo que tiene encima */
+.destinos {
+    list-style: none;
+    padding: 0;
+    margin: 0.6rem 0;
+}
+
+.destino {
+    border: 3px solid #166534;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.destino header {
+    display: flex;                  /* nombre a la izquierda, etiqueta a la derecha */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;                /* si no caben, la etiqueta baja de línea */
+    gap: 0.4rem;
+    border-bottom: 2px solid #f6c518;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.destino h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #14532d;
+}
+
+.destino .estado {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.15rem 0.6rem;
+    background-color: #f6c518;
+    color: #14532d;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.destino img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.destino img.sin-foto {
+    height: auto;
+    box-shadow: none;
+    border: 2px dashed #b8cdbe;
+    padding: 1.5rem;
+    text-align: center;
+    color: #4a5c50;
+    font-size: 0.75rem;
+}
+
+.destino .datos {
+    margin: 0.3rem 0;
+    padding-left: 1.1rem;           /* sangría para las viñetas del resumen */
+}
+
+.destino .datos li {
+    margin-bottom: 0.2rem;
+    font-size: 0.78rem;
+}
+
+.destino .ficha {
+    display: inline-block;          /* caja en línea para los datos clave */
+    vertical-align: middle;
+    margin: 0.3rem 0.3rem 0.3rem 0;
+    padding: 0.25rem 0.6rem;
+    background-color: #e7f3e9;
+    border: 1px solid #166534;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    color: #14532d;
 }
 
 .enlaces {
-    padding-left: 1.2rem;           /* sangría para que se vean las viñetas */
-    margin-top: 0.4rem;             /* separa la lista de su título */
+    padding-left: 1.2rem;
+    margin-top: 0.4rem;
 }
 
 .enlaces li {
-    margin-bottom: 0.3rem;          /* separa un enlace del siguiente */
+    margin-bottom: 0.3rem;
 }
 
 .enlaces a {
-    color: #14532d;                 /* enlaces en verde oscuro */
-    cursor: pointer;                /* cursor de mano */
-    transition: color 0.25s;        /* animación del color */
+    color: #14532d;
+    cursor: pointer;
+    transition: color 0.25s;
 }
 
 .enlaces a:hover {
-    color: #c1440e;                 /* al pasar el ratón, el enlace se pone rojo cálido */
+    color: #c1440e;                 /* al pasar el ratón el enlace se pone rojo */
 }
 
 
 /* ============ GALERÍA DE IMÁGENES ============ */
 
 .galeria {
-    width: 90%;                     /* 90% del ancho de la página */
-    margin: 1.2rem auto 0 auto;     /* centrada (auto izq/der) y 1.2rem arriba, 0 abajo */
-    background-color: #ffffff;      /* fondo blanco */
-    border: 3px solid #14532d;      /* borde verde oscuro */
-    padding: 1.2rem;                /* espacio interior */
-    text-align: center;             /* centra las fotos */
+    width: 90%;
+    margin: 1.2rem auto 0 auto;     /* centrada */
+    background-color: #ffffff;
+    border: 3px solid #14532d;
+    padding: 1.2rem;
 }
 
 .galeria h2 {
-    text-align: left;               /* el título de la galería va a la izquierda (no centrado) */
+    text-align: left;
+}
+
+.galeria-intro {
+    margin-top: 0.5rem;
+    color: #4a5c50;
+}
+
+.galeria-bloque {
+    margin-top: 1.2rem;
+}
+
+.galeria-bloque h3 {
+    border-bottom: 2px solid #166534;
+    padding-bottom: 0.2rem;
 }
 
 .galeria-cuadro {
-    display: flex;                  /* activa flexbox para colocar las fotos en fila */
-    flex-wrap: wrap;                /* si no caben, pasan a la siguiente línea */
-    justify-content: space-between; /* reparte el espacio: 3 fotos arriba y 3 abajo */
-    gap: 1rem;                      /* separación de 1rem entre fotos */
-    margin-top: 1rem;               /* separa las fotos del título */
+    display: flex;                  /* las fotos se colocan en fila */
+    flex-wrap: wrap;                /* si no caben, bajan a la línea siguiente */
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .galeria figure {
-    margin: 0;                      /* quita el margen por defecto de los figure */
-    width: calc(33.333% - 0.7rem);  /* ancho de un tercio menos la mitad del gap (cálculo con calc) */
-    text-align: center;             /* centra el pie de foto */
+    margin: 0;
+    width: calc(33.333% - 0.7rem);  /* un tercio menos la mitad del hueco */
+    text-align: center;
+    border: 1px solid #dbe7de;
+    border-radius: 8px;
+    padding-bottom: 0.5rem;
+    background-color: #fbfdfb;
 }
 
 .galeria img {
-    width: 100%;                    /* ancho completo de su columna */
-    height: 180px;                  /* altura fija de 180 píxeles */
-    object-fit: cover;              /* recorta la foto para llenar sin deformarse */
-    border: 2px solid #166534;      /* borde verde */
-    border-radius: 8px;             /* esquinas redondeadas */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);  /* sombra suave debajo de la foto */
-    cursor: pointer;                /* cursor de mano */
-    transition: transform 0.3s, box-shadow 0.3s;   /* anima tamaño y sombra durante 0.3s */
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;              /* recorta la foto para llenar el hueco */
+    border-radius: 8px 8px 0 0;     /* redondeadas por arriba */
+    border: 2px solid #166534;
+    border-bottom: none;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);   /* sombra pequeña */
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;     /* anima tamaño y sombra */
 }
 
 .galeria img:hover {
     transform: scale(1.05);         /* la foto crece un 5% al pasar el ratón */
-    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);  /* la sombra se hace más grande y marcada */
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);
 }
 
 .galeria figcaption {
-    font-size: 0.75rem;             /* tamaño del texto bajo la foto */
-    color: #14532d;                 /* verde oscuro */
-    margin-top: 0.4rem;             /* separa el pie de la foto */
+    font-size: 0.75rem;
+    color: #14532d;
+    margin-top: 0.4rem;
+    padding: 0 0.3rem;
+}
+
+.galeria figcaption .cientifico {
+    display: block;
+    color: #4a5c50;
+    font-size: 0.68rem;
+    font-style: italic;
+}
+
+.creditos {
+    margin-top: 1.2rem;
+    padding: 0.8rem;
+    background-color: #f4f7f4;
+    border: 1px solid #b8cdbe;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    color: #4a5c50;
+}
+
+.creditos summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #14532d;
+    font-size: 0.8rem;
+}
+
+.creditos ul {
+    margin: 0.6rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.creditos li {
+    margin-bottom: 0.2rem;
+}
+
+
+/* ============ MAPA DE LA WEB (índice) ============ */
+
+.mapa-web {
+    font-size: 0;                   /* quita el hueco entre las tarjetas */
+}
+
+.mapa-web article {
+    display: inline-block;
+    vertical-align: top;
+    width: 48.5%;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 0.9rem;
+    background-color: #ffffff;
+    border: 3px solid #166534;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.mapa-web article:nth-child(2n) {
+    margin-right: 0;
+    background-color: #eaf4ec;
+}
+
+.mapa-web article h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.mapa-web article p {
+    margin: 0.4rem 0;
+}
+
+.mapa-web article a {
+    display: inline-block;
+    margin-top: 0.3rem;
+    padding: 0.4rem 0.9rem;
+    background-color: #166534;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.mapa-web article a:hover {
+    background-color: #f6c518;
+    color: #14532d;
 }
 
 
 /* ============ FORMULARIO DE CONTACTO ============ */
 
 .formulario {
-    width: 90%;                     /* 90% del ancho de la página */
-    margin: 1.2rem auto;            /* centrado y con 1.2rem arriba y abajo */
-    background-color: #ffffff;      /* fondo blanco */
-    border: 3px solid #14532d;      /* borde verde oscuro */
-    padding: 1.2rem;                /* espacio interior */
+    width: 90%;
+    margin: 1.2rem auto;
+    background-color: #ffffff;
+    border: 3px solid #14532d;
+    padding: 1.2rem;
 }
 
 .formulario-texto {
-    margin-top: 0.5rem;             /* separa el texto introductorio del título */
+    margin-top: 0.5rem;
 }
 
-.formulario form {
-    display: flex;                  /* activa flexbox: los campos se colocan en filas */
-    flex-wrap: wrap;                /* los campos que no caben pasan a la siguiente fila */
-    justify-content: space-between; /* reparte los dos campos de cada fila (izq y der) */
-    gap: 1rem;                      /* 1rem de separación entre campos */
-    margin-top: 1rem;               /* separa el formulario del texto */
+.contacto-cajas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.contacto-formulario {
+    width: 58%;
+}
+
+.contacto-datos {
+    width: 38%;
+    background-color: #f7fbf7;
+    border: 2px solid #166534;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.contacto-datos h3 {
+    margin-top: 0;
+}
+
+.dato {
+    border-bottom: 1px solid #dbe7de;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dato:last-child {
+    border-bottom: none;
+}
+
+.dato .dato-titulo {
+    display: block;
+    font-weight: bold;
+    color: #14532d;
+    font-size: 0.78rem;
+}
+
+.dato .dato-valor {
+    display: block;
+    font-size: 0.78rem;
+    color: #33463a;
+}
+
+.dato .dato-valor a {
+    color: #166534;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+.dato .dato-valor a:hover {
+    color: #c1440e;
+    text-decoration: underline;
+}
+
+form .form-rejilla {
+    display: flex;                  /* flexbox: los campos se colocan en filas */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .campo {
-    width: 48%;                     /* dos campos por fila (48% + 48% + hueco) */
+    width: 48%;                     /* dos campos por fila */
 }
 
 .campo-ancho {
@@ -410,76 +745,175 @@ th {
 
 .campo label {
     display: block;                 /* la etiqueta ocupa su propia línea */
-    font-weight: bold;              /* etiqueta en negrita */
-    color: #14532d;                 /* verde oscuro */
-    margin-bottom: 0.3rem;          /* separa la etiqueta del campo */
+    font-weight: bold;
+    color: #14532d;
+    margin-bottom: 0.3rem;
+}
+
+.campo .obligatorio {
+    color: #c1440e;
+    font-weight: normal;
 }
 
 .campo input,
 .campo select,
 .campo textarea {
-    width: 100%;                    /* todos los campos ocupan todo el ancho de su caja */
-    padding: 0.5rem;                /* espacio interior para que no se pegue el texto al borde */
-    border: 2px solid #166534;      /* borde verde */
-    border-radius: 6px;             /* esquinas redondeadas */
-    font-size: 0.8rem;              /* tamaño del texto escrito */
-    font-family: Arial, Helvetica, sans-serif;  /* misma tipografía que la página */
-    background-color: #f9fcf9;      /* fondo verde muy claro */
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #166534;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9fcf9;
 }
 
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
-    outline: none;                  /* quita el contorno azul por defecto del navegador */
-    border-color: #f6c518;          /* el borde se pone amarillo al escribir dentro */
+    outline: none;                  /* quita el contorno azul del navegador */
+    border-color: #f6c518;          /* el borde se pone amarillo al escribir */
+}
+
+.campo input[type="checkbox"] {
+    width: auto;                    /* la casilla no se estira */
+    margin-right: 0.4rem;
+    cursor: pointer;
+}
+
+.campo .ayuda {
+    display: block;
+    font-size: 0.68rem;
+    color: #4a5c50;
+    margin-top: 0.2rem;
 }
 
 .campo button {
-    display: inline-block;          /* caja en línea para darle relleno */
-    vertical-align: middle;         /* alinea el botón en el centro */
+    display: inline-block;
+    vertical-align: middle;
     padding: 0.7rem 1.6rem;         /* botón grande: más ancho que alto */
-    background-color: #166534;      /* fondo verde */
-    color: #ffffff;                 /* texto blanco */
-    border: none;                   /* sin borde */
-    border-radius: 6px;             /* esquinas redondeadas */
-    font-size: 0.9rem;              /* tamaño del texto */
-    cursor: pointer;                /* cursor de mano */
-    transition: background-color 0.25s, color 0.25s;  /* animación al pasar el ratón */
+    background-color: #166534;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
 }
 
 .campo button:hover {
-    background-color: #f6c518;      /* el botón se pone amarillo al hacer hover */
-    color: #14532d;                 /* el texto se vuelve verde oscuro */
+    background-color: #f6c518;
+    color: #14532d;
+}
+
+.envio-alternativo {
+    margin-top: 0.8rem;
+    padding: 0.6rem 0.8rem;
+    background-color: #e7f3e9;
+    border-left: 5px solid #166534;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+
+/* ============ AVISO / NOTA ============ */
+
+.aviso {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1rem;
+    background-color: #fff8e1;
+    border: 2px dashed #f6c518;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: #6b5410;
 }
 
 
 /* ============ FOOTER ============ */
 
 .footer {
-    width: 100%;                    /* ancho completo */
-    min-height: 120px;              /* altura mínima de 120 píxeles */
-    background-color: #0f2e1e;      /* fondo verde muy oscuro */
-    color: #ffffff;                 /* texto blanco */
-    border: 3px solid #08190f;      /* borde casi negro */
-    border-top: none;               /* sin borde arriba */
-    text-align: center;             /* centra todo el texto */
-    padding: 1rem;                  /* espacio interior */
+    width: 100%;
+    min-height: 120px;
+    background-color: #0f2e1e;
+    color: #ffffff;
+    border: 3px solid #08190f;
+    border-top: none;
+    text-align: center;
+    padding: 1rem;
 }
 
 .footer p {
-    margin: 0.3rem 0;               /* separación vertical entre líneas del pie */
-    font-size: 0.75rem;             /* texto pequeño */
-    color: #d8ecdc;                 /* verde muy claro */
+    margin: 0.3rem 0;
+    font-size: 0.75rem;
+    color: #d8ecdc;
 }
 
 .footer .footer-nombre {
-    font-size: 1.1rem;              /* el nombre de la empresa más grande */
-    font-weight: bold;              /* en negrita */
-    color: #f6c518;                 /* amarillo */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f6c518;
+}
+
+.footer .footer-menu {
+    margin: 0.5rem 0;
+}
+
+.footer .footer-menu a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.3rem;
+    color: #a9c7b3;
+    font-size: 0.72rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+.footer .footer-menu a:hover {
+    color: #f6c518;
 }
 
 .footer .copyright {
-    margin-top: 0.6rem;             /* separa la línea de copyright del resto */
-    font-size: 0.7rem;              /* el texto más pequeño del pie */
-    color: #a9c7b3;                 /* verde apagado */
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+    color: #a9c7b3;
+}
+
+
+/* ============ PANTALLAS PEQUEÑAS (móvil) ============ */
+/* en pantallas estrechas el main y el aside se apilan uno debajo del otro */
+
+@media (max-width: 760px) {
+    html {
+        font-size: 17px;             /* texto un poco más grande en móvil */
+    }
+
+    .header {
+        height: auto;                /* el alto fijo estorba en móvil */
+        padding: 1.2rem;
+        flex-direction: column;
+    }
+
+    .main,
+    .aside,
+    .contacto-formulario,
+    .contacto-datos {
+        width: 100%;                 /* cada caja ocupa todo el ancho */
+    }
+
+    .alojamiento,
+    .mapa-web article,
+    .galeria figure,
+    .campo {
+        width: 100%;                 /* todo en una sola columna */
+    }
+
+    .alojamiento,
+    .mapa-web article {
+        margin-right: 0;
+    }
+
+    .nav a {
+        display: block;              /* los enlaces del menú bajan de línea */
+        margin: 0.2rem 0.4rem;
+    }
 }

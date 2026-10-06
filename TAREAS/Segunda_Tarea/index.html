@@ -1,154 +1,57 @@
 <!DOCTYPE html>
-<!-- declara el documento como HTML5 -->
-
 <html lang="es">
-<!-- raíz de la página, idioma español -->
-
-<!-- ============ HEAD (no se ve en pantalla) ============ -->
 <head>
-    <!-- codificación de caracteres: permite tildes, ñ y símbolos -->
-    <meta charset="UTF-8">
-
-    <!-- adapta la página al ancho de la pantalla (responsive) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- texto de la pestaña del navegador -->
-    <title>Galería de Naruto</title>
-
-    <!-- enlaza la hoja de estilos de la carpeta css -->
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Batallas Épicas de Naruto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="img/naruto1.jpg" type="image/x-icon">
 </head>
-
-<!-- ============ BODY (todo lo visible) ============ -->
 <body>
 
-    <!-- ---------- HEADER ---------- -->
-    <header class="header">
-        <!-- cabecera; la clase "header" da el fondo naranja y 150px de alto -->
-        <h1>Galería de Naruto</h1>
-        <!-- título principal de la página -->
-        <p>El mundo ninja en imágenes</p>
-        <!-- subtítulo de la cabecera -->
-    </header>
-
-    <!-- ---------- NAV ---------- -->
-    <nav class="nav">
-        <!-- menú horizontal con fondo azul marino -->
-        <a href="#">Inicio</a>
-        <!-- primer enlace; href="#" no lleva a ninguna parte -->
-        <a href="#">Galería</a>
-        <!-- segundo enlace -->
-        <a href="#">Lugares</a>
-        <!-- tercer enlace -->
-        <a href="#">Contacto</a>
-        <!-- cuarto enlace -->
-    </nav>
-
-    <!-- ---------- CONTENEDOR PRINCIPAL ---------- -->
+  <header class="header">
     <div class="contenedor">
-        <!-- caja flex que pone main (70%) y aside (30%) en la misma fila -->
-
-        <!-- ---------- MAIN ---------- -->
-        <main class="main">
-            <!-- contenido principal: la tabla con las imágenes -->
-            <h2>Galería de personajes</h2>
-            <!-- título de la galería -->
-            <p>
-                En esta galería reúno imágenes de los personajes que más me
-                gustan de la serie: Naruto, Sasuke, Sakura, Kakashi, Shikamaru
-                y Gaara. Pasa el ratón por encima de las fotos para verlas mejor.
-            </p>
-            <!-- párrafo introductorio (también avisa del efecto hover) -->
-
-            <!-- ---------- TABLA DE IMÁGENES ---------- -->
-            <table class="tabla-galeria">
-                <!-- table = tabla; organiza las fotos en filas y columnas -->
-                <tr>
-                    <!-- tr = table row (fila de la tabla) -->
-                    <td>
-                        <!-- td = table data (celda de la tabla) -->
-                        <img src="img/naruto1.jpg" alt="Naruto Uzumaki">
-                        <!-- img = imagen; src es la ruta y alt el texto si la imagen no carga -->
-                    </td>
-                    <td>
-                        <img src="img/naruto2.jpg" alt="Sasuke Uchiha">
-                        <!-- segunda celda con la foto de Sasuke -->
-                    </td>
-                    <td>
-                        <img src="img/naruto3.jpg" alt="Sakura Haruno">
-                        <!-- tercera celda con la foto de Sakura -->
-                    </td>
-                </tr>
-                <tr>
-                    <!-- segunda fila de la tabla -->
-                    <td>
-                        <img src="img/naruto4.jpg" alt="Kakashi Hatake">
-                        <!-- primera celda de la segunda fila -->
-                    </td>
-                    <td>
-                        <img src="img/naruto5.jpg" alt="Shikamaru Nara">
-                        <!-- segunda celda de la segunda fila -->
-                    </td>
-                    <td>
-                        <img src="img/naruto6.jpg" alt="Gaara">
-                        <!-- tercera celda de la segunda fila -->
-                    </td>
-                </tr>
-            </table>
-            <!-- fin de la tabla (2 filas x 3 columnas = 6 fotos) -->
-        </main>
-
-        <!-- ---------- ASIDE ---------- -->
-        <aside class="aside">
-            <!-- columna lateral con listas y enlaces -->
-            <h2>Lugares recomendados</h2>
-            <!-- título de la primera lista -->
-            <ul>
-                <!-- lista desordenada de lugares de la serie -->
-                <li>Aldea Oculta de la Hoja (Konoha)</li>
-                <!-- primer lugar -->
-                <li>Valle del Fin</li>
-                <!-- segundo lugar -->
-                <li>Monte Myoboku</li>
-                <!-- tercer lugar -->
-                <li>Isla Tortuga</li>
-                <!-- cuarto lugar -->
-                <li>Bosque de la Muerte</li>
-                <!-- quinto lugar -->
-            </ul>
-
-            <h3>Tipos de paisajes</h3>
-            <!-- subtítulo de la segunda lista -->
-            <ul>
-                <!-- lista de tipos de paisaje -->
-                <li>Bosques y montañas</li>
-                <!-- primer tipo -->
-                <li>Volcanes y desiertos</li>
-                <!-- segundo tipo -->
-                <li>Playas y cascadas</li>
-                <!-- tercer tipo -->
-            </ul>
-
-            <h3>Enlaces relacionados</h3>
-            <!-- subtítulo de la lista de enlaces -->
-            <ul>
-                <!-- lista con enlaces a páginas externas -->
-                <li><a href="https://es.wikipedia.org/wiki/Naruto">Naruto en Wikipedia</a></li>
-                <!-- enlace que abre Wikipedia en una pestaña del navegador -->
-                <li><a href="https://es.naruto.fandom.com/">Wiki de Naruto</a></li>
-                <!-- enlace a la wiki de la comunidad de Naruto -->
-            </ul>
-        </aside>
-
+      <h1><span class="ninja">NARUTO</span> <span class="kanji">BATTLES</span></h1>
+      <p class="subtitle">Las peleas más legendarias del mundo ninja</p>
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="batallas.html">Batallas Épicas</a>
+      </nav>
     </div>
-    <!-- fin del contenedor principal -->
+  </header>
 
-    <!-- ---------- FOOTER ---------- -->
-    <footer class="footer">
-        <!-- pie de página con fondo azul marino -->
-        <p>Angel Echenique - 2026</p>
-        <!-- nombre y año que aparecen en el pie -->
-    </footer>
+  <main>
+    <section class="section inicio">
+      <div class="contenido">
+        <h2>Bienvenido al universo Naruto</h2>
+        <p>Este es un homenaje al universo Naruto, recopilando sus personajes más icónicos, los lugares más míticos de la aldea oculta y las batallas que marcaron historia.</p>
+
+        <h2>Resumen de Todo lo Demás</h2>
+        <p>Usa los filtros de la galería para explorar por equipo, o visita las secciones de lugares legendarios y los enfrentamientos que definieron a los ninjas.</p>
+        <ul class="resumen">
+          <li><strong>Personajes:</strong> Más de 50 ninjas desde Naruto y Sasuke hasta los Hokages y la Akatsuki.</li>
+          <li><strong>Lugares:</strong> Konoha, Valle del Fin, Monte Myōboku, Sunagakure y más.</li>
+          <li><strong>Batallas:</strong> Madara vs Hashirama, Naruto vs Sasuke, Itachi vs Sasuke y más.</li>
+        </ul>
+
+        <h2>Explora las secciones</h2>
+        <ul class="resumen">
+          <li><a href="galeria.html">Galería de Personajes</a> - Conoce a los ninjas más poderosos</li>
+          <li><a href="lugares.html">Lugares Míticos</a> - Descubre los escenarios legendarios</li>
+          <li><a href="batallas.html">Batallas Épicas</a> - Revive los enfrentamientos inolvidables</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p>Angel Echenique - 2026</p>
+      <p>Proyecto Tarea 2 - Estructura Web con Galería Naruto</p>
+    </div>
+  </footer>
 
 </body>
 </html>

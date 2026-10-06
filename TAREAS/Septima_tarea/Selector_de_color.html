@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    EJERCICIO: SELECTOR DE COLOR
+    Tema: eventos, funciones y conversiones de color (HEX y RGB)
+    ============================================================
+
+    Crea una página con un selector de color que cumpla esto:
+
+    1. Un recuadro (la "previa") que va cambiando de color.
+
+    2. Un control para elegir el color:
+       - Un <input type="color"> para elegir cualquier color.
+       - Una paleta con 5 colores ya hechos, cada uno en su botón.
+
+    3. Al cambiar el color, debajo se muestran dos datos:
+       - El color en HEX:      #00F0FF
+       - El color en RGB:      rgb(0, 240, 255)
+
+    4. Dos botones más:
+       - "Color aleatorio": que elija un color al azar.
+       - "Copiar color": que copie el color al portapapeles.
+
+    ============================================================
+    ARCHIVOS DEL EJERCICIO
+    ============================================================
+
+       Selector_de_color.html   la estructura de la página
+       style.css                los estilos
+       script.js                la lógica (los eventos y funciones)
+
+    ============================================================
+    PISTAS
+    ============================================================
+
+    - Cada elemento tiene su id, y desde el JavaScript se localiza
+      con document.getElementById('id').
+
+    - addEventListener('change', ...) se dispara cuando el usuario
+      termina de elegir un color en el input type="color".
+
+    - El valor de un input type="color" viene en hexadecimal (#RRGGBB).
+
+    - Para pasar de HEX a RGB hay que partir el texto en trozos de dos
+      caracteres (con slice) y convertirlos con parseInt(..., 16),
+      porque el 16 es la base hexadecimal.
+
+    - Para un color al azar se generan 6 caracteres con Math.random(),
+      usando toString(16) para pasarlos a hexadecimal y padStart(2, '0')
+      para que siempre ocupen dos caracteres.
+
+    - La paleta usa querySelectorAll('.muestra') y forEach() para
+      recorrer los 5 botones, y el color de cada uno está en el
+      atributo data-color (se lee con boton.dataset.color).
+
+    ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<!-- raíz de la página, lang="es" indica que el idioma es español -->
+
+<!-- ============ HEAD: CABECERA DEL DOCUMENTO ============ -->
+<head>
+    <!-- codificación: permite tildes, ñ y símbolos -->
+    <meta charset="UTF-8">
+
+    <!-- adapta la página al ancho de la pantalla (móvil/PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- texto que aparece en la pestaña del navegador -->
+    <title>Selector de color</title>
+
+    <!-- conecta este HTML con su hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============ TÍTULO PRINCIPAL ============ -->
+    <h1>Selector de color</h1>
+
+    <!-- ============ SELECTOR DE COLOR (input type="color") ============ -->
+    <!-- type="color" abre el selector nativo del navegador -->
+    <label for="selector">Elige un color:</label>
+    <input type="color" id="selector" value="#00f0ff">
+    <!-- value="#00f0ff" establece el color inicial (cian) -->
+
+    <!-- ============ PALETA DE COLORES PREDEFINIDOS ============ -->
+    <!-- Cada botón tiene data-color con su valor hexadecimal -->
+    <div class="paleta" id="paleta">
+        <button class="muestra" data-color="#00f0ff" style="background:#00f0ff" title="Cian"></button>
+        <button class="muestra" data-color="#a855f7" style="background:#a855f7" title="Morado"></button>
+        <button class="muestra" data-color="#f472b6" style="background:#f472b6" title="Rosa"></button>
+        <button class="muestra" data-color="#2ecc71" style="background:#2ecc71" title="Verde"></button>
+        <button class="muestra" data-color="#f0c75e" style="background:#f0c75e" title="Dorado"></button>
+    </div>
+
+    <!-- ============ PREVIA DEL COLOR ============ -->
+    <!-- Este div cambiará su fondo al color seleccionado -->
+    <div class="previa" id="previa"></div>
+
+    <!-- ============ DATOS DEL COLOR (HEX Y RGB) ============ -->
+    <div class="datos">
+        <p><strong>HEX:</strong> <span id="hex">#00F0FF</span></p>
+        <p><strong>RGB:</strong> <span id="rgb">rgb(0, 240, 255)</span></p>
+    </div>
+
+    <!-- ============ BOTONES EXTRA ============ -->
+    <div class="botones">
+        <button id="aleatorio">Color aleatorio</button>
+        <button id="copiar">Copiar color</button>
+        <span id="aviso" class="aviso"></span>
+    </div>
+
+    <!-- ============ JAVASCRIPT EXTERNO ============ -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
    y vuelve a ejecutar ACTUALIZAR.bat.
 
    Se ha generado con:
-   05/10/2026 11:57
+   06/10/2026 12:56
    ============================================================ */
 
 var DATOS = {
@@ -26,7 +26,7 @@ var DATOS = {
     },
         {
       entrega: "Segunda Tarea",
-      titulo: "Galería de Naruto",
+      titulo: "Batallas Épicas de Naruto",
       desc: "Página con tabla de imágenes: 6 fotos de personajes colocadas en filas y columnas, con efecto hover que amplía y gira la imagen.",
       tags: ["HTML", "CSS"],
       badge: "Completada",
@@ -35,11 +35,11 @@ var DATOS = {
     },
         {
       entrega: "Tercera Tarea",
-      titulo: "Venezuela Natural - Turismo Rural",
+      titulo: "Actividades | Venezuela Natural",
       desc: "Web completa de turismo rural: galería de paisajes, tabla de precios, formulario de contacto y enlaces internos con identificadores (id).",
       tags: ["HTML", "CSS"],
       badge: "Completada",
-      botones: [["../TAREAS/Tercera_Tarea/index.html", "Ver tarea"]],
+      botones: [["../TAREAS/Tercera_Tarea/actividades.html", "Actividades"], ["../TAREAS/Tercera_Tarea/alojamiento.html", "Alojamiento"], ["../TAREAS/Tercera_Tarea/contacto.html", "Contacto"], ["../TAREAS/Tercera_Tarea/galeria.html", "Galeria"], ["../TAREAS/Tercera_Tarea/index.html", "Tercera_Tarea"], ["../TAREAS/Tercera_Tarea/inicio.html", "Inicio"]],
       enunciados: [["../TAREAS/Tercera_Tarea/enunciado_web_completa_html_css_final.pdf", "Enunciado", "enunciado_web_completa_html_css_final.pdf"]]
     },
         {
@@ -86,6 +86,15 @@ var DATOS = {
       badge: "Completada",
       botones: [["../TAREAS/Sexta-tarea/index.html", "Ver tarea"]],
       enunciados: [["../TAREAS/Sexta-tarea/enunciado.md", "Enunciado", "enunciado.md"]]
+    },
+        {
+      entrega: "Septima Tarea - Selector de color",
+      titulo: "Selector de color",
+      desc: "Selector de color con eventos y funciones: eliges un color con el input type=\"color\" o con una paleta de 5 botones, y la previa cambia de color mostrando su valor en HEX y en RGB. Incluye botón de color aleatorio y otro para copiarlo al portapapeles.",
+      tags: ["HTML", "CSS", "JS"],
+      badge: "Completada",
+      botones: [["../TAREAS/Septima_tarea/Selector_de_color.html", "Abrir selector"]],
+      enunciados: [["../TAREAS/Septima_tarea/enunciado.md", "Enunciado", "enunciado.md"]]
     }
   ],
 
@@ -161,7 +170,7 @@ var DATOS = {
 
 /* Numeros que se ven en la portada (se cuentan solos) */
 DATOS.resumenes = {
-  tareas: 8,
+  tareas: 9,
   practicas: 3,
   pdf: 15,
   notas: 3,

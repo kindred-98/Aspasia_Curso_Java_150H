@@ -19,6 +19,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;   /* tipografía de la página (siempre pone la primera que encuentre) */
     color: #222222;                             /* color de todo el texto: gris casi negro */
     background-color: #f2f2f2;                  /* color de fondo de la página: gris claro */
+    min-height: 100vh;                          /* altura mínima: todo el alto de la pantalla */
+    display: flex;                              /* activa flexbox para organizar las secciones */
+    flex-direction: column;                     /* coloca las secciones una debajo de la otra */
 }
 
 
@@ -77,6 +80,12 @@ body {
     color: #ffd97d;                 /* color dorado cuando el ratón está encima (hover = encima) */
 }
 
+.nav a.activo {
+    color: #ffd97d;                 /* color dorado para el enlace de la página actual */
+    font-weight: bold;              /* texto en negrita para resaltarlo */
+    border-bottom: 2px solid #ffd97d;  /* línea dorada debajo del enlace activo */
+}
+
 
 /* ---------- CONTENEDOR PRINCIPAL ---------- */
 /* caja que junta el main y el aside en la misma fila */
@@ -113,6 +122,10 @@ body {
 .main li {
     font-size: 0.8rem;              /* aplica el mismo tamaño a los párrafos y a las listas */
     line-height: 1.4;               /* interlineado: 1.4 veces el tamaño de letra */
+}
+
+.main strong {
+    color: #40556b;                 /* color azul grisáceo para el texto en negrita */
 }
 
 .main p {
@@ -159,6 +172,10 @@ body {
     line-height: 1.4;               /* interlineado cómodo */
 }
 
+.aside strong {
+    color: #40556b;                 /* color azul grisáceo para el texto en negrita */
+}
+
 .aside p {
     margin: 0.2rem 0;               /* separación pequeña entre párrafos */
 }
@@ -183,6 +200,7 @@ body {
     display: flex;                  /* activa flexbox para centrar el párrafo */
     align-items: center;            /* centra el contenido en vertical */
     justify-content: center;        /* centra el contenido en horizontal */
+    margin-top: auto;               /* empuja el footer hacia abajo */
 }
 
 .footer p {

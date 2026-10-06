@@ -32,7 +32,8 @@ var ORDEN_TAREAS = [
     "Tercera_Tarea",
     "Cuarta_tarea",
     "Quinta_tarea-Js-dentro-de-html",
-    "Sexta-tarea"
+    "Sexta-tarea",
+    "Septima_tarea"
 ];
 
 
@@ -133,6 +134,18 @@ var META_TAREAS = {
         "desc": "Programa con if / else y botones: primero pides la edad, luego eliges con botones Sí / No si tienes carnet, y solo si lo tienes te pregunta los años de experiencia. Con menos de 18 años o sin carnet no puede conducir y el programa se detiene; con carnet y de 2 a 5 años de experiencia es de nivel medio, y con más de 5 años, experimentado.",
         "tags": ["HTML", "JS"],
         "badge": "Completada"
+    },
+
+    // Selector de color con HTML, CSS y JavaScript en archivos separados
+    "Septima_tarea": {
+        "nombre": "Septima Tarea - Selector de color",
+        "titulo": "Selector de color",
+        "desc": "Selector de color con eventos y funciones: eliges un color con el input type=\"color\" o con una paleta de 5 botones, y la previa cambia de color mostrando su valor en HEX y en RGB. Incluye botón de color aleatorio y otro para copiarlo al portapapeles.",
+        "tags": ["HTML", "CSS", "JS"],
+        "badge": "Completada",
+        "botones": {
+            "Selector_de_color.html": "Abrir selector"
+        }
     }
 
 };

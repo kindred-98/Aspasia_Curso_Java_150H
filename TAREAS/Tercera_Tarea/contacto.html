@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Venezuela Natural</title>
+    <meta name="description"
+          content="Formulario de contacto y datos de la agencia Venezuela Natural: oficinas, teléfonos, correos y horarios de atención.">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <img class="logo" src="img/logo.png" alt="Logotipo de Venezuela Natural">
+        <div class="header-texto">
+            <h1>Venezuela Natural</h1>
+            <p>Turismo de naturaleza y aventura por los rincones más hermosos de Venezuela</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Portada</a>
+        <a href="inicio.html">Inicio</a>
+        <a href="alojamiento.html">Alojamiento</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+
+            <section class="formulario" id="contacto">
+                <h2>Formulario de contacto</h2>
+                <p class="formulario-texto">
+                    Rellena el formulario y te enviaremos una propuesta personalizada
+                    en un plazo máximo de 48 horas. Si prefieres contactarnos directamente,
+                    encontrarás todos los datos en el panel lateral.
+                </p>
+
+                <div class="contacto-cajas">
+
+                    <!-- ===== FORMULARIO ===== -->
+                    <div class="contacto-formulario">
+                        <form action="#" method="post">
+                            <div class="form-rejilla">
+
+                                <div class="campo">
+                                    <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="apellidos">Apellidos <span class="obligatorio">*</span></label>
+                                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="correo">Correo electrónico <span class="obligatorio">*</span></label>
+                                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="+58 412 000 0000">
+                                    <span class="ayuda">Incluye el prefijo del país</span>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="tipo">Tipo de alojamiento <span class="obligatorio">*</span></label>
+                                    <select id="tipo" name="tipo" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="waku">Waku Lodge — Gran Sabana</option>
+                                        <option value="canaima">Campamento Canaima</option>
+                                        <option value="andes">Posada Los Andes — Mérida</option>
+                                        <option value="roques">Posada Gran Roque — Los Roques</option>
+                                        <option value="morrocoy">Posada Morrocoy — Tucacas</option>
+                                        <option value="medanos">Hospedería Los Médanos</option>
+                                        <option value="catatumbo">Eco Lodge Catatumbo</option>
+                                        <option value="caracas">Cabañas Los Caracas</option>
+                                        <option value="terepaima">Rancho Terepaima — Apure</option>
+                                        <option value="selva">Posada Selva Nublada</option>
+                                    </select>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="entrada">Fecha de entrada</label>
+                                    <input type="date" id="entrada" name="entrada">
+                                </div>
+
+                                <div class="campo">
+                                    <label for="personas">Número de personas</label>
+                                    <input type="number" id="personas" name="personas" min="1" max="12" value="2">
+                                    <span class="ayuda">Mínimo 1, máximo 12</span>
+                                </div>
+
+                                <div class="campo">
+                                    <label for="salida">Fecha de salida</label>
+                                    <input type="date" id="salida" name="salida">
+                                </div>
+
+                                <div class="campo campo-ancho">
+                                    <label for="observaciones">Observaciones</label>
+                                    <textarea id="observaciones" name="observaciones" rows="4"
+                                              placeholder="Cuéntanos qué te gustaría hacer, si tienes alguna preferencia especial, restricciones alimentarias, etc."></textarea>
+                                </div>
+
+                                <div class="campo campo-ancho">
+                                    <label for="newsletter">
+                                        <input type="checkbox" id="newsletter" name="newsletter" value="si">
+                                        Deseo recibir ofertas y novedades por correo electrónico
+                                    </label>
+                                </div>
+
+                                <div class="campo campo-ancho">
+                                    <button type="submit">Enviar solicitud</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="envio-alternativo">
+                            <strong>¿Prefieres otro medio?</strong> Puedes escribirnos directamente a
+                            <a href="mailto:info@venezuelanatural.com">info@venezuelanatural.com</a>
+                            o llamarnos al <a href="tel:+582125550123">+58 212 555 0123</a>.
+                        </div>
+                    </div>
+
+                    <!-- ===== DATOS DE CONTACTO ===== -->
+                    <aside class="contacto-datos">
+                        <h3>Datos de contacto</h3>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Oficina central</span>
+                            <span class="dato-valor">Av. Libertador, Edificio Altamar, piso 5<br>Caracas, Venezuela</span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Teléfono</span>
+                            <span class="dato-valor"><a href="tel:+582125550123">+58 212 555 0123</a></span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">WhatsApp</span>
+                            <span class="dato-valor"><a href="https://wa.me/584125550123" target="_blank" rel="noopener">+58 412 555 0123</a></span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Correo electrónico</span>
+                            <span class="dato-valor"><a href="mailto:info@venezuelanatural.com">info@venezuelanatural.com</a></span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Reservas</span>
+                            <span class="dato-valor"><a href="mailto:reservas@venezuelanatural.com">reservas@venezuelanatural.com</a></span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Horario de atención</span>
+                            <span class="dato-valor">Lunes a sábado: 8:00 — 18:00<br>Domingos y festivos: cerrado</span>
+                        </div>
+
+                        <div class="dato">
+                            <span class="dato-titulo">Redes sociales</span>
+                            <span class="dato-valor">
+                                <a href="https://instagram.com/venezuelanatural" target="_blank" rel="noopener">Instagram</a> ·
+                                <a href="https://facebook.com/venezuelanatural" target="_blank" rel="noopener">Facebook</a> ·
+                                <a href="https://twitter.com/venezuelanatural" target="_blank" rel="noopener">Twitter</a>
+                            </span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- ===== OFICINAS REGIONALES ===== -->
+            <section>
+                <h2>Oficinas regionales</h2>
+
+                <table class="tabla-precios">
+                    <thead>
+                        <tr>
+                            <th>Ciudad</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caracas</td>
+                            <td>Av. Libertador, Edificio Altamar, piso 5</td>
+                            <td>+58 212 555 0123</td>
+                            <td>Lun-Sáb 8:00-18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Mérida</td>
+                            <td>Calle 24 entre avenidas 3 y 4, Los Próceres</td>
+                            <td>+58 274 555 0123</td>
+                            <td>Lun-Sáb 8:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Puerto Ordaz</td>
+                            <td>Av. Las Américas, Centro Comercial Alto Barinas</td>
+                            <td>+58 286 555 0123</td>
+                            <td>Lun-Sáb 8:00-17:00</td>
+                        </tr>
+                        <tr>
+                            <td>Maracaibo</td>
+                            <td>Av. 2 El Milagro, Edificio Lago Mar, piso 3</td>
+                            <td>+58 261 555 0123</td>
+                            <td>Lun-Sáb 8:00-17:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== PREGUNTAS FRECUENTES ===== -->
+            <section>
+                <h2>Preguntas frecuentes</h2>
+
+                <div class="destino">
+                    <header>
+                        <h3>¿Qué incluye el precio del viaje?</h3>
+                    </header>
+                    <p>
+                        El precio incluye alojamiento, desayuno (según la opción elegida),
+                        transporte terrestre y/o aéreo dentro del programa, guía local
+                        y entradas a los parques nacionales. No incluye vuelos
+                        internacionales ni seguro de viaje.
+                    </p>
+                </div>
+
+                <div class="destino">
+                    <header>
+                        <h3>¿Puedo cancelar o modificar mi reserva?</h3>
+                    </header>
+                    <p>
+                        Sí. Las cancelaciones con más de 30 días de antelación tienen un
+                        reembolso del 100%. Entre 15 y 30 días, el reembolso es del 50%.
+                        Menos de 15 días no hay reembolso, pero se puede cambiar la fecha
+                        sin coste adicional.
+                    </p>
+                </div>
+
+                <div class="destino">
+                    <header>
+                        <h3>¿Necesito seguro de viaje?</h3>
+                    </header>
+                    <p>
+                        Sí, es obligatorio. El seguro debe cubrir gastos médicos,
+                        evacuación y cancelación. Podemos ayudarte a contratar uno si
+                        lo necesitas.
+                    </p>
+                </div>
+
+                <div class="destino">
+                    <header>
+                        <h3>¿Cuál es la mejor época para viajar?</h3>
+                    </header>
+                    <p>
+                        La temporada seca (diciembre a abril) es la más recomendable para
+                        la mayoría de los destinos. Para los Relámpagos del Catatumbo,
+                        la mejor época es entre mayo y septiembre.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <aside class="aside">
+            <h2>Contacto rápido</h2>
+            <p>
+                Si tienes una consulta urgente durante tu viaje, puedes contactarnos
+                a nuestra línea de emergencia disponible 24 horas.
+            </p>
+
+            <h3>Emergencias 24 h</h3>
+            <p>
+                <strong>+58 412 555 0123</strong><br>
+                <a href="tel:+584125550123">Llamar ahora</a>
+            </p>
+
+            <h3>Horarios</h3>
+            <p>
+                Oficina: de lunes a sábado, de 8:00 a 18:00.<br>
+                Salidas guiadas: todos los días a las 7:00.<br>
+                Recepción de alojamientos: 24 horas.
+            </p>
+
+            <h3>Enlaces</h3>
+            <ul class="enlaces">
+                <li><a href="https://es.wikipedia.org/wiki/Venezuela">Venezuela en Wikipedia</a></li>
+                <li><a href="https://es.wikipedia.org/wiki/Turismo_en_Venezuela">Turismo en Venezuela</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <p class="footer-nombre">Venezuela Natural</p>
+        <p>Av. Libertador, Edificio Altamar, piso 5 - Caracas, Venezuela</p>
+        <p>Teléfono: +58 212 555 0123 | Correo: info@venezuelanatural.com</p>
+
+        <p class="footer-menu">
+            <a href="inicio.html">Inicio</a>
+            <a href="alojamiento.html">Alojamiento</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </p>
+
+        <p class="copyright">&copy; 2026 Venezuela Natural. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

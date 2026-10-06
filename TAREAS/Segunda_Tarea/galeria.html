@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Batallas Épicas de Naruto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="img/naruto1.jpg" type="image/x-icon">
+</head>
+<body>
+
+  <header class="header">
+    <div class="contenedor">
+      <h1><span class="ninja">NARUTO</span> <span class="kanji">BATTLES</span></h1>
+      <p class="subtitle">Las peleas más legendarias del mundo ninja</p>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html" class="active">Galería</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="batallas.html">Batallas Épicas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section galeria">
+      <h2>Galería de Personajes</h2>
+      <p>Explora a los ninjas más poderosos del universo Naruto. Usa los filtros para ver personajes por equipo o aldea.</p>
+      <div class="filtros">
+        <button class="filtro activo" data-filtro="todos">Todos</button>
+        <button class="filtro" data-filtro="equipo7">Equipo 7</button>
+        <button class="filtro" data-filtro="equipo8">Equipo 8</button>
+        <button class="filtro" data-filtro="equipo6">Equipo 6 (ANBU)</button>
+        <button class="filtro" data-filtro="akatsuki">Akatsuki</button>
+        <button class="filtro" data-filtro="hokage">Hokage</button>
+        <button class="filtro" data-filtro="sensei">Senseis</button>
+        <button class="filtro" data-filtro="konoha">Konoha</button>
+        <button class="filtro" data-filtro="arena">Arena</button>
+      </div>
+      <div class="grid-personajes" id="grid-personajes"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p>Angel Echenique - 2026</p>
+      <p>Proyecto Tarea 2 - Estructura Web con Galería Naruto</p>
+    </div>
+  </footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/filtros.js"></script>
+</body>
+</html>

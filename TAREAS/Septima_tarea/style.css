@@ -1,0 +1,200 @@
+/* ============================================================
+   SELECTOR DE COLOR - ESTILOS (style.css)
+   ------------------------------------------------------------
+   Estilos para el ejercicio "Selector de color".
+   ------------------------------------------------------------ */
+
+
+/* ============ AJUSTES GENERALES ============ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /* el padding y el borde entran dentro del ancho */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía de la página */
+    background-color: #f2f2f2;    /* fondo gris muy claro */
+    color: #222222;               /* color del texto: casi negro */
+    display: flex;
+    flex-direction: column;       /* los hijos se apilan en columna */
+    align-items: center;          /* centrados horizontalmente */
+    min-height: 100vh;            /* altura mínima = toda la pantalla */
+    padding: 3rem 1rem;           /* aire arriba/abajo y a los lados */
+}
+
+h1 {
+    margin-bottom: 1.5rem;        /* espacio debajo del título */
+    color: #222222;               /* color del título */
+    text-align: center;           /* centrado */
+}
+
+/* ============ SELECTOR DE COLOR (input type="color") ============ */
+
+label {
+    font-size: 0.95rem;
+    color: #222222;
+    margin-bottom: 0.5rem;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: 3px solid #111827;    /* borde oscuro */
+    border-radius: 10px;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border: 3px solid #111827;
+    border-radius: 10px;
+}
+
+/* ============ PALETA DE COLORES PREDEFINIDOS ============ */
+
+.paleta {
+    display: flex;
+    gap: 0.7rem;                  /* separación entre botones */
+    justify-content: center;      /* centrados horizontalmente */
+    flex-wrap: wrap;              /* si no caben, pasan a la siguiente línea */
+    margin-bottom: 1.5rem;
+}
+
+.muestra {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;          /* esquinas redondeadas */
+    border: 3px solid transparent;
+    cursor: pointer;              /* cursor de mano al pasar */
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.muestra:hover {
+    transform: scale(1.12);       /* crece un poco al pasar el ratón */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.muestra.seleccionada {
+    border-color: #111827;        /* borde oscuro para la seleccionada */
+    transform: scale(1.1);        /* un poco más grande */
+    box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.5);  /* brillo cian */
+}
+
+/* ============ PREVIA DEL COLOR ============ */
+
+.previa {
+    width: 100%;
+    max-width: 520px;
+    height: 220px;
+    border-radius: 16px;
+    border: 3px solid #111827;    /* borde oscuro */
+    background-color: #00f0ff;    /* color inicial (cian) */
+    margin-bottom: 1.5rem;
+    transition: background-color 0.4s ease;  /* transición suave */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ============ DATOS DEL COLOR (HEX Y RGB) ============ */
+
+.datos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;                    /* espacio entre HEX y RGB */
+    margin: 1rem 0 1.5rem;
+    font-family: Consolas, monospace;
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.datos strong {
+    color: #111827;               /* etiquetas en negro */
+}
+
+#hex, #rgb {
+    background: #111827;          /* fondo oscuro tipo terminal */
+    color: #00f0ff;               /* texto en cian */
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+    font-size: 1.1rem;
+}
+
+/* ============ BOTONES EXTRA ============ */
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+#aleatorio {
+    background: linear-gradient(135deg, #a855f7, #00f0ff);  /* degradado morado-cian */
+    color: #05050a;
+}
+
+#aleatorio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
+}
+
+#copiar {
+    background-color: #2ecc71;    /* verde */
+    color: #ffffff;
+}
+
+#copiar:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 204, 113, 0.35);
+}
+
+/* Mensaje de aviso (se muestra al copiar) */
+.aviso {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #2ecc71;
+    min-height: 1.2em;            /* reserva el espacio aunque esté vacío */
+}
+
+/* ============ RESPONSIVE (móvil) ============ */
+
+@media (max-width: 500px) {
+    .previa {
+        height: 160px;
+    }
+
+    .datos {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+}
