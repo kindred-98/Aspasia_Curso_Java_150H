@@ -39,7 +39,7 @@ var DATOS = {
       desc: "Web completa de turismo rural: galería de paisajes, tabla de precios, formulario de contacto y enlaces internos con identificadores (id).",
       tags: ["HTML", "CSS"],
       badge: "Completada",
-      botones: [["../TAREAS/Tercera_Tarea/actividades.html", "Actividades"], ["../TAREAS/Tercera_Tarea/alojamiento.html", "Alojamiento"], ["../TAREAS/Tercera_Tarea/contacto.html", "Contacto"], ["../TAREAS/Tercera_Tarea/galeria.html", "Galeria"], ["../TAREAS/Tercera_Tarea/index.html", "Tercera_Tarea"], ["../TAREAS/Tercera_Tarea/inicio.html", "Inicio"]],
+      botones: [["../TAREAS/Tercera_Tarea/actividades.html", "Actividades"]],
       enunciados: [["../TAREAS/Tercera_Tarea/enunciado_web_completa_html_css_final.pdf", "Enunciado", "enunciado_web_completa_html_css_final.pdf"]]
     },
         {

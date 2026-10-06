@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- declara el documento como HTML5 -->
 
 <!--
@@ -28,132 +28,148 @@
         ni por la experiencia.
       - Si dice que NO tiene carnet, no se le pregunta la experiencia.
 
-    ============================================================
+    ================================================================
 -->
 
 <html lang="es">
-<!-- raíz de la página, lang="es" indica que el idioma es español -->
+  <!-- raíz de la página, lang="es" indica que el idioma es español -->
 
-<!-- ============ HEAD ============ -->
-<head>
+  <!-- ============ HEAD ============ -->
+  <head>
     <!-- codificación de caracteres, permite tildes y Ñ -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <!-- adapta la página al ancho de la pantalla -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- texto de la pestaña del navegador -->
     <title>¿Puedo conducir? - Sexta Tarea</title>
 
     <style>
-        /* ===== POCOS ESTILOS, SOLO PARA QUE SE VEA CLARO ===== */
+      /* ===== POCOS ESTILOS, SOLO PARA QUE SE VEA CLARO ===== */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;  /* tipografía */
-            max-width: 620px;      /* la caja no ocupa más de 620px de ancho */
-            margin: 2rem auto;     /* centrada con espacio arriba y abajo */
-            padding: 0 1rem;
-        }
+      body {
+        font-family: Arial, Helvetica, sans-serif; /* tipografía */
+        max-width: 620px; /* la caja no ocupa más de 620px de ancho */
+        margin: 2rem auto; /* centrada con espacio arriba y abajo */
+        padding: 0 1rem;
+      }
 
-        h1 { color: #14532d; }     /* título en verde oscuro */
+      h1 {
+        color: #14532d;
+      } /* título en verde oscuro */
 
-        .paso {
-            border: 2px solid #14532d;              /* recuadro de cada paso */
-            border-radius: 10px;                   /* esquinas redondeadas */
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background-color: #f4f7f4;
-        }
+      .paso {
+        border: 2px solid #14532d; /* recuadro de cada paso */
+        border-radius: 10px; /* esquinas redondeadas */
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: #f4f7f4;
+      }
 
-        .oculto { display: none; }  /* clase para ESCONDER un paso (display:none lo desaparece) */
+      .oculto {
+        display: none;
+      } /* clase para ESCONDER un paso (display:none lo desaparece) */
 
-        input {
-            padding: 0.5rem;
-            font-size: 1rem;
-            border: 2px solid #14532d;
-            border-radius: 6px;
-            width: 8rem;
-        }
+      input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 2px solid #14532d;
+        border-radius: 6px;
+        width: 8rem;
+      }
 
-        button {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.95rem;
-            border: none;
-            border-radius: 6px;
-            background-color: #14532d;   /* fondo verde */
-            color: #ffffff;              /* texto blanco */
-            cursor: pointer;             /* el ratón se pone como mano */
-            margin-right: 0.5rem;
-        }
+      button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+        border: none;
+        border-radius: 6px;
+        background-color: #14532d; /* fondo verde */
+        color: #ffffff; /* texto blanco */
+        cursor: pointer; /* el ratón se pone como mano */
+        margin-right: 0.5rem;
+      }
 
-        button:hover { background-color: #166534; }   /* al pasar el ratón, verde más claro */
+      button:hover {
+        background-color: #166534;
+      } /* al pasar el ratón, verde más claro */
 
-        #btnNo { background-color: #c0392b; }          /* el botón "No" en rojo */
-        #btnNo:hover { background-color: #a93226; }
+      #btnNo {
+        background-color: #c0392b;
+      } /* el botón "No" en rojo */
+      #btnNo:hover {
+        background-color: #a93226;
+      }
 
-        #resultado {
-            border-radius: 10px;
-            padding: 1rem;
-            margin-top: 1rem;
-        }
+      #resultado {
+        border-radius: 10px;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
 
-        .ok    { background-color: #eaf4ec; border: 2px solid #27ae60; }  /* resultado positivo */
-        .error { background-color: #fdecea; border: 2px solid #c0392b; }  /* resultado negativo */
+      .ok {
+        background-color: #eaf4ec;
+        border: 2px solid #27ae60;
+      } /* resultado positivo */
+      .error {
+        background-color: #fdecea;
+        border: 2px solid #c0392b;
+      } /* resultado negativo */
     </style>
-</head>
+  </head>
 
-<!-- ============ BODY ============ -->
-<body>
+  <!-- ============ BODY ============ -->
+  <body>
     <h1>Programa: ¿puedo conducir?</h1>
     <!-- título principal -->
 
     <p>
-        El programa va haciendo preguntas. Si no puede conducir, se para:
-        <strong>no te preguntará lo siguiente</strong>.
+      El programa va haciendo preguntas. Si no puede conducir, se para:
+      <strong>no te preguntará lo siguiente</strong>.
     </p>
     <!-- explicación de cómo funciona la página -->
 
     <!-- ============ PASO 1: LA EDAD ============ -->
     <div class="paso" id="paso1">
-        <!-- recuadro del primer paso -->
+      <!-- recuadro del primer paso -->
 
-        <p><strong>1. ¿Qué edad tienes?</strong></p>
-        <!-- pregunta del primer paso -->
+      <p><strong>1. ¿Qué edad tienes?</strong></p>
+      <!-- pregunta del primer paso -->
 
-        <input type="number" id="edad" min="0" max="120" placeholder="18">
-        <!-- input de tipo number: solo deja escribir números.
-             min y max limitan el valor; placeholder es el texto de ayuda -->
+      <input type="number" id="edad" min="0" max="120" placeholder="18" />
+      <!-- input de tipo number: solo deja escribir números.
+        min y max limitan el valor; placeholder es el texto de ayuda esto -->
 
-        <button id="btnEdad">Siguiente</button>
-        <!-- botón que pasa al paso 2 -->
+      <button id="btnEdad">Siguiente</button>
+      <!-- botón que pasa al paso 2 -->
     </div>
 
     <!-- ============ PASO 2: EL CARNET (solo si tiene 18 o más) ============ -->
     <div class="paso oculto" id="paso2">
-        <!-- tiene la clase "oculto": no se ve hasta que el JavaScript lo quite -->
+      <!-- tiene la clase "oculto": no se ve hasta que el JavaScript lo quite -->
 
-        <p><strong>2. ¿Tienes carnet de conducir?</strong></p>
-        <!-- aquí se elige con botones, no escribiendo nada -->
+      <p><strong>2. ¿Tienes carnet de conducir?</strong></p>
+      <!-- aquí se elige con botones, no escribiendo nada -->
 
-        <button id="btnSi">Sí, tengo carnet</button>
-        <!-- si pulsa este botón, se le pregunta la experiencia -->
+      <button id="btnSi">Sí, tengo carnet</button>
+      <!-- si pulsa este botón, se le pregunta la experiencia -->
 
-        <button id="btnNo">No, no tengo carnet</button>
-        <!-- si pulsa este botón, el programa se para aquí y NO pregunta la experiencia -->
+      <button id="btnNo">No, no tengo carnet</button>
+      <!-- si pulsa este botón, el programa se para aquí y NO pregunta la experiencia -->
     </div>
 
     <!-- ============ PASO 3: LA EXPERIENCIA (solo si tiene carnet) ============ -->
     <div class="paso oculto" id="paso3">
-        <!-- también empieza oculto: solo aparece si ha dicho que tiene carnet -->
+      <!-- también empieza oculto: solo aparece si ha dicho que tiene carnet -->
 
-        <p><strong>3. ¿Cuántos años de experiencia tienes al volante?</strong></p>
-        <!-- tercera y última pregunta -->
+      <p><strong>3. ¿Cuántos años de experiencia tienes al volante?</strong></p>
+      <!-- tercera y última pregunta -->
 
-        <input type="number" id="experiencia" min="0" placeholder="3">
-        <!-- años de experiencia -->
+      <input type="number" id="experiencia" min="0" placeholder="3" />
+      <!-- años de experiencia -->
 
-        <button id="btnComprobar">Comprobar</button>
-        <!-- botón que calcula el resultado -->
+      <button id="btnComprobar">Comprobar</button>
+      <!-- botón que calcula el resultado -->
     </div>
 
     <!-- ============ RESULTADO ============ -->
@@ -161,7 +177,7 @@
     <!-- aquí se escribe el resultado; la clase ok / error le pone el color -->
 
     <script>
-        /* ============================================================
+      /* ============================================================
            ESTE ES EL ENUNCIADO DEL EJERCICIO
            Está comentado al principio de este archivo. Resumen rápido:
 
@@ -177,129 +193,147 @@
              - con carnet y menos de 2 . puede conducir, NOVEL
            ============================================================ */
 
+      /* ============ 1. GUARDAR LOS ELEMENTOS DE LA PÁGINA ============ */
+      /* Para no escribirlos siempre enteros, se guardan en variables */
 
-        /* ============ 1. GUARDAR LOS ELEMENTOS DE LA PÁGINA ============ */
-        /* Para no escribirlos siempre enteros, se guardan en variables */
+      var paso1 = document.getElementById("paso1");
+      var paso2 = document.getElementById("paso2"); /* el del carnet */
+      var paso3 = document.getElementById("paso3"); /* el de la experiencia */
 
-        var paso1 = document.getElementById('paso1');
-        var paso2 = document.getElementById('paso2');      /* el del carnet */
-        var paso3 = document.getElementById('paso3');      /* el de la experiencia */
+      var campoEdad = document.getElementById("edad");
+      var campoExperiencia = document.getElementById("experiencia");
 
-        var campoEdad = document.getElementById('edad');
-        var campoExperiencia = document.getElementById('experiencia');
+      var cajaResultado = document.getElementById("resultado");
 
-        var cajaResultado = document.getElementById('resultado');
+      var edad = null; /* guarda la edad que escribe el usuario */
 
-        var edad = null;   /* guarda la edad que escribe el usuario */
+      /* ============ 2. FUNCIONES DE AYUDA ============ */
 
-
-        /* ============ 2. FUNCIONES DE AYUDA ============ */
-
-        /* Muestra un paso quitándole (o poniéndole) la clase "oculto" */
-        function ver(elemento, mostrarlo) {
-            if (mostrarlo) {
-                elemento.classList.remove('oculto');   /* remove() quita la clase */
-            } else {
-                elemento.classList.add('oculto');      /* add() la pone */
-            }
+      /* Muestra un paso quitándole (o poniéndole) la clase "oculto" */
+      function ver(elemento, mostrarlo) {
+        if (mostrarlo) {
+          elemento.classList.remove("oculto"); /* remove() quita la clase */
+        } else {
+          elemento.classList.add("oculto"); /* add() la pone */
         }
+      }
 
-        /* Escribe el resultado en su caja y lo colorea */
-        function resultado(texto, clase) {
-            /* Como la página ya está cargada, NO se puede usar document.write()
+      /* Escribe el resultado en su caja y lo colorea */
+      function resultado(texto, clase) {
+        /* Como la página ya está cargada, NO se puede usar document.write()
                (document.write borraría toda la página). Se usa innerHTML,
                que escribe DENTRO del elemento que le digamos. */
-            cajaResultado.innerHTML = texto;
-            cajaResultado.className = clase;   /* "ok" (verde) o "error" (rojo) */
+        cajaResultado.innerHTML = texto;
+        cajaResultado.className = clase; /* "ok" (verde) o "error" (rojo) */
+      }
+
+      /* ============ 3. PASO 1 - LA EDAD ============ */
+
+      document.getElementById("btnEdad").addEventListener("click", function () {
+        /*.value es lo que hay escrito dentro del input.
+               parseInt() lo convierte a número entero */
+        edad = parseInt(campoEdad.value);
+
+        /* isNaN() comprueba si NO es un número (por ejemplo, si está vacío) */
+        if (isNaN(edad) || edad < 0) {
+          resultado(
+            "<h2>Faltan datos</h2><p>Escribe tu edad con números.</p>",
+            "error",
+          );
+          return; /* return corta el programa aquí */
         }
 
+        /* REGLA 1: con menos de 18 años no puede conducir y se para */
+        if (edad < 18) {
+          resultado(
+            "<h2>NO PUEDES CONDUCIR</h2>" +
+              "<p>Tienes " +
+              edad +
+              " años y hay que tener al menos 18.</p>",
+            "error",
+          );
 
-        /* ============ 3. PASO 1 - LA EDAD ============ */
+          ver(paso2, false); /* oculta el paso del carnet */
+          ver(paso3, false); /* oculta el de la experiencia */
+          return; /* aquí el programa termina */
+        }
 
-        document.getElementById('btnEdad').addEventListener('click', function () {
+        /* Si tiene 18 o más, se le pregunta por el carnet */
+        resultado(
+          "<p>Tienes " + edad + " años: puedes tener carnet.</p>",
+          "ok",
+        );
+        ver(paso2, true);
+      });
 
-            /*.value es lo que hay escrito dentro del input.
-               parseInt() lo convierte a número entero */
-            edad = parseInt(campoEdad.value);
+      /* ============ 4. PASO 2 - EL CARNET (botones Sí / No) ============ */
 
-            /* isNaN() comprueba si NO es un número (por ejemplo, si está vacío) */
-            if (isNaN(edad) || edad < 0) {
-                resultado("<h2>Faltan datos</h2><p>Escribe tu edad con números.</p>", "error");
-                return;   /* return corta el programa aquí */
-            }
+      /* --- botón SÍ: tiene carnet --- */
+      document.getElementById("btnSi").addEventListener("click", function () {
+        resultado("<p>Perfecto. Ahora dime tus años de experiencia.</p>", "ok");
+        ver(paso3, true); /* SOLO aquí se pregunta la experiencia */
+      });
 
-            /* REGLA 1: con menos de 18 años no puede conducir y se para */
-            if (edad < 18) {
-                resultado("<h2>NO PUEDES CONDUCIR</h2>"
-                        + "<p>Tienes " + edad + " años y hay que tener al menos 18.</p>", "error");
-
-                ver(paso2, false);   /* oculta el paso del carnet */
-                ver(paso3, false);   /* oculta el de la experiencia */
-                return;              /* aquí el programa termina */
-            }
-
-            /* Si tiene 18 o más, se le pregunta por el carnet */
-            resultado("<p>Tienes " + edad + " años: puedes tener carnet.</p>", "ok");
-            ver(paso2, true);
-        });
-
-
-        /* ============ 4. PASO 2 - EL CARNET (botones Sí / No) ============ */
-
-        /* --- botón SÍ: tiene carnet --- */
-        document.getElementById('btnSi').addEventListener('click', function () {
-            resultado("<p>Perfecto. Ahora dime tus años de experiencia.</p>", "ok");
-            ver(paso3, true);   /* SOLO aquí se pregunta la experiencia */
-        });
-
-        /* --- botón NO: no tiene carnet --- */
-        document.getElementById('btnNo').addEventListener('click', function () {
-            /* REGLA 2: es mayor de edad pero sin carnet -> no puede conducir
+      /* --- botón NO: no tiene carnet --- */
+      document.getElementById("btnNo").addEventListener("click", function () {
+        /* REGLA 2: es mayor de edad pero sin carnet -> no puede conducir
                y NO se le pregunta la experiencia */
-            resultado("<h2>NO PUEDES CONDUCIR</h2>"
-                    + "<p>Tienes " + edad + " años pero no tienes el carnet de conducir.</p>", "error");
+        resultado(
+          "<h2>NO PUEDES CONDUCIR</h2>" +
+            "<p>Tienes " +
+            edad +
+            " años pero no tienes el carnet de conducir.</p>",
+          "error",
+        );
 
-            ver(paso3, false);   /* la experiencia se queda oculta para siempre */
-        });
+        ver(paso3, false); /* la experiencia se queda oculta para siempre */
+      });
 
+      /* ============ 5. PASO 3 - LA EXPERIENCIA Y LA CLASIFICACIÓN ============ */
 
-        /* ============ 5. PASO 3 - LA EXPERIENCIA Y LA CLASIFICACIÓN ============ */
+      document
+        .getElementById("btnComprobar")
+        .addEventListener("click", function () {
+          var anios = parseInt(campoExperiencia.value);
 
-        document.getElementById('btnComprobar').addEventListener('click', function () {
+          if (isNaN(anios) || anios < 0) {
+            resultado(
+              "<h2>Faltan datos</h2><p>Escribe los años de experiencia con números.</p>",
+              "error",
+            );
+            return;
+          }
 
-            var anios = parseInt(campoExperiencia.value);
-
-            if (isNaN(anios) || anios < 0) {
-                resultado("<h2>Faltan datos</h2><p>Escribe los años de experiencia con números.</p>", "error");
-                return;
-            }
-
-            /* "año" en singular y "años" en plural:
+          /* "año" en singular y "años" en plural:
                con el operador ternario se elige una cosa u otra */
-            var palabra = anios === 1 ? "año" : "años";
+          var palabra = anios === 1 ? "año" : "años";
 
-            var texto = "<h2>PUEDES CONDUCIR</h2>"
-                      + "<p>Tienes " + edad + " años, tienes carnet y "
-                      + anios + " " + palabra + " de experiencia.</p>";
+          var texto =
+            "<h2>PUEDES CONDUCIR</h2>" +
+            "<p>Tienes " +
+            edad +
+            " años, tienes carnet y " +
+            anios +
+            " " +
+            palabra +
+            " de experiencia.</p>";
 
-            /* Clasificación por experiencia.
+          /* Clasificación por experiencia.
                && significa "Y": las dos condiciones tienen que cumplirse */
-            if (anios >= 2 && anios <= 5) {
-                texto += "<p><strong>Clasificación: conductor de experiencia MEDIA.</strong></p>";
-            }
-            else if (anios > 5) {
-                texto += "<p><strong>Clasificación: conductor EXPERIMENTADO.</strong></p>";
-            }
-            else {
-                /* este caso no estaba en el enunciado: lo añadí para que
+          if (anios >= 2 && anios <= 5) {
+            texto +=
+              "<p><strong>Clasificación: conductor de experiencia MEDIA.</strong></p>";
+          } else if (anios > 5) {
+            texto +=
+              "<p><strong>Clasificación: conductor EXPERIMENTADO.</strong></p>";
+          } else {
+            /* este caso no estaba en el enunciado: lo añadí para que
                    el programa siempre dé una respuesta */
-                texto += "<p><strong>Clasificación: conductor NOVEL.</strong></p>";
-            }
+            texto += "<p><strong>Clasificación: conductor NOVEL.</strong></p>";
+          }
 
-            resultado(texto, "ok");
+          resultado(texto, "ok");
         });
-
     </script>
-
-</body>
+  </body>
 </html>
