@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Variables con tipos de dato | Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Ejercicio 2 - Variables con tipos de dato</h1>
+        <p>Booleano, número decimal y texto</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html" class="activo">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 2 - Variables con tipos de dato</h3>
+                <p>
+                    Crea tres variables: <code>esEstudiante</code> (boleano),
+                    <code>promedio</code> (número con decimal) y <code>apellido</code>
+                    (cadena de texto o string). Muestra el resultado en la consola.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Un booleano solo puede ser <code>true</code> o <code>false</code>, sin comillas.</li>
+                <li>Un número va sin comillas: <code>8.5</code>. Con comillas sería texto.</li>
+                <li>Un texto va siempre entre comillas.</li>
+                <li><code>console.log()</code> puede mostrar varios valores en una sola llamada, separados por comas.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>BOOLEAN (booleano)</h3>
+            <p>
+                <code>true</code> o <code>false</code>. Sirve para responder
+                sí o no: <em>"¿tienes carnet? <code>true</code>"</em>.
+            </p>
+
+            <h3>NUMBER (número)</h3>
+            <p>
+                Con o sin decimales. En JavaScript no hay <code>int</code> ni
+                <code>double</code>: hay un único tipo <code>number</code>.
+            </p>
+
+            <h3>STRING (texto)</h3>
+            <p>
+                Entre comillas, simples <code>'Hola'</code> o dobles <code>"Hola"</code>.
+            </p>
+
+            <h3>Ojo</h3>
+            <p>
+                <code>"8.5"</code> es texto y <code>8.5</code> es número.
+                Con el texto no se puede sumar.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 2 - VARIABLES CON TIPOS DE DATO
+               Crea tres variables: esEstudiante (boleano), promedio
+               (número con decimal) y apellido (cadena de texto).
+               Muestra el resultado en la consola.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LAS VARIABLES --- */
+
+            /* BOOLEAN: solo puede ser true o false */
+            let esEstudiante = true;
+
+            /* NUMBER: número con decimales, SIN comillas */
+            let promedio = 8.5;
+
+            /* STRING: cadena de texto, SIEMPRE entre comillas */
+            let apellido = "Pérez";
+
+            /* --- MOSTRAR EL RESULTADO --- */
+            console.log("esEstudiante:", esEstudiante, "- tipo:", typeof esEstudiante);
+            console.log("promedio:", promedio, "- tipo:", typeof promedio);
+            console.log("apellido:", apellido, "- tipo:", typeof apellido);
+            /* tres llamadas, una por variable, para ver también su tipo
+               con typeof. También se puede pasar todo en una sola llamada: */
+
+            console.log(esEstudiante, promedio, apellido);
+            /* esta línea muestra los tres valores en una sola llamada */
+
+            /* --- EL MISMO RESULTADO EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 2 - Variables con tipos de dato</h3>");
+            document.write("<p>esEstudiante: <strong>" + esEstudiante + "</strong> (" + typeof esEstudiante + ")</p>");
+            document.write("<p>promedio: <strong>" + promedio + "</strong> (" + typeof promedio + ")</p>");
+            document.write("<p>apellido: <strong>" + apellido + "</strong> (" + typeof apellido + ")</p>");
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

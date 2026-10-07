@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Compra completa | Variables y document.write()</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 5 - Compra completa</h1>
+        <p>Muchas variables y HTML dentro del write()</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html" class="activo">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 5 - Compra completa</h3>
+                <p>
+                    Variables: <em>Portátil, 650 EUR, 2 unidades, 10 % de
+                    descuento y 15 EUR de envío</em>. Calcula subtotal, descuento
+                    aplicado, precio después del descuento y precio final. Usa
+                    etiquetas HTML dentro de <code>document.write()</code> para
+                    organizar el resumen en varias líneas: <em>TOTAL: 1185 EUR</em>
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Es el ejercicio 4 con una variable más: los gastos de envío.</li>
+                <li>El total final se calcula sumando el envío <em>después</em> del descuento.</li>
+                <li>Dentro de <code>document.write()</code> puedes escribir <code>&lt;h4&gt;</code> y <code>&lt;strong&gt;</code>.</li>
+                <li>Una variable por línea de cálculo, para no liarte.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Los 4 pasos del cálculo</h3>
+            <ul>
+                <li>1. Subtotal = precio x unidades</li>
+                <li>2. Descuento = subtotal x % / 100</li>
+                <li>3. Precio con descuento = subtotal - descuento</li>
+                <li>4. Total = precio con descuento + envío</li>
+            </ul>
+
+            <h3>HTML en el write()</h3>
+            <p>
+                Podemos escribir etiquetas dentro del texto:
+                <code>document.write("&lt;strong&gt;TOTAL: 1185 EUR&lt;/strong&gt;")</code>.
+            </p>
+
+            <h3>Ojo</h3>
+            <p>
+                El envío se suma <strong>después</strong> del descuento.
+                Si lo sumaras antes, el resultado sería distinto.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 5 - COMPRA COMPLETA
+               Portátil de 650 EUR, 2 unidades, 10 % de descuento y 15 EUR de
+               envío. Calcula subtotal, descuento aplicado, precio después del
+               descuento y precio final, y organízalo en varias líneas usando
+               etiquetas HTML dentro de document.write().
+               ============================================================ */
+
+            /* --- VARIABLES DE LA COMPRA --- */
+            var productoCompra = "Portátil";
+            /* producto comprado (texto) */
+
+            var precioUnidad = 650;
+            /* precio de una unidad en EUR (número) */
+
+            var unidades = 2;
+            /* número de unidades (número) */
+
+            var descuentoCompra = 10;
+            /* descuento del 10 % (número) */
+
+            var gastosEnvio = 15;
+            /* gastos de envío en EUR (número) */
+
+            /* --- PASO 1: SUBTOTAL --- */
+            var subtotal = precioUnidad * unidades;
+            /* 650 * 2 = 1300, el precio antes de aplicar el descuento */
+
+            /* --- PASO 2: DESCUENTO --- */
+            var descuentoAplicado = subtotal * descuentoCompra / 100;
+            /* dinero que se descuenta: 1300 * 10 / 100 = 130 */
+
+            /* --- PASO 3: PRECIO CON DESCUENTO --- */
+            var precioConDescuento = subtotal - descuentoAplicado;
+            /* 1300 - 130 = 1170 */
+
+            /* --- PASO 4: PRECIO FINAL --- */
+            var precioFinalCompra = precioConDescuento + gastosEnvio;
+            /* 1170 + 15 = 1185.
+               El envío se suma DESPUÉS de aplicar el descuento */
+
+            /* --- RESUMEN EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 5 - Compra completa</h3>");
+
+            document.write("<h4>RESUMEN DE COMPRA</h4>");
+            /* h4 = subtítulo pequeño para abrir el resumen */
+
+            document.write("<p>Producto: " + productoCompra + "</p>");
+
+            document.write("<p>Precio unidad: " + precioUnidad + " EUR</p>");
+
+            document.write("<p>Cantidad: " + unidades + "</p>");
+
+            document.write("<p>Subtotal: " + subtotal + " EUR</p>");
+            /* 1300 EUR antes del descuento */
+
+            document.write("<p>Descuento: " + descuentoCompra + " %</p>");
+
+            document.write("<p>Descuento aplicado: " + descuentoAplicado + " EUR</p>");
+            /* 130 EUR */
+
+            document.write("<p>Gastos de envío: " + gastosEnvio + " EUR</p>");
+
+            document.write("<p><strong>TOTAL: " + precioFinalCompra + " EUR</strong></p>");
+            /* el total final en negrita con la etiqueta <strong>: 1185 EUR */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y document.write() &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

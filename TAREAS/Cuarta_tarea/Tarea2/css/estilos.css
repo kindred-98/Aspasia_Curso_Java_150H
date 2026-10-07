@@ -17,8 +17,8 @@ html {
 body {
     margin: 0;                              /* elimina el margen por defecto del navegador */
     font-family: Arial, Helvetica, sans-serif;  /* tipografía de la página (sans-serif) */
-    color: #222222;                         /* color del texto: casi negro */
-    background-color: #f2f2f2;              /* fondo de la página: gris claro */
+    color: #1c1c1c;                         /* color del texto: casi negro */
+    background-color: #f7f4ef;              /* fondo de la página: crema */
 }
 
 
@@ -27,9 +27,9 @@ body {
 .header {
     width: 100%;                    /* ocupa todo el ancho disponible */
     height: 150px;                  /* altura fija de 150 píxeles */
-    background-color: #2f3640;      /* color de fondo: gris oscuro */
+    background-color: #3b1f5e;      /* color de fondo: morado profundo */
     color: #ffffff;                 /* color del texto: blanco */
-    border: 3px solid #1b1e24;      /* borde de 3 px sólido y oscuro: aquí se cambia tamaño y color */
+    border: 3px solid #1c1c1c;      /* borde de 3 px sólido y oscuro: aquí se cambia tamaño y color */
     text-align: center;             /* centra el texto horizontalmente */
     display: flex;                  /* activa el modo flexbox para centrar con propiedades avanzadas */
     flex-direction: column;         /* los hijos se apilan de arriba a abajo */
@@ -44,7 +44,7 @@ body {
 .header p {
     margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en los otros tres lados */
     font-size: 0.8rem;              /* tamaño del subtítulo */
-    color: #dcdcdc;                 /* color del texto: gris claro */
+    color: #e0d4f0;                 /* color del texto: lavanda */
 }
 
 
@@ -53,8 +53,8 @@ body {
 .nav {
     width: 100%;                    /* ocupa todo el ancho */
     height: 70px;                   /* altura de 70 píxeles */
-    background-color: #40556b;      /* fondo azul grisáceo */
-    border: 3px solid #1b1e24;      /* mismo borde que el header para que encajen */
+    background-color: #6a1b9a;      /* fondo morado */
+    border: 3px solid #1c1c1c;      /* mismo borde que el header para que encajen */
     border-top: none;               /* quita el borde de arriba (evita la doble línea con el header) */
     text-align: center;             /* centra los enlaces */
     line-height: 64px;              /* sube el texto con la altura de línea para centrarlo verticalmente */
@@ -75,6 +75,11 @@ body {
     color: #ffd97d;                 /* color dorado cuando el ratón pasa por encima */
 }
 
+.nav a.activo {
+    color: #ffd97d;                 /* el enlace de la página actual va en dorado */
+    font-weight: bold;              /* y en negrita para saber cuál estamos viendo */
+}
+
 
 /* ---------- CONTENEDOR PRINCIPAL ---------- */
 
@@ -89,19 +94,18 @@ body {
 
 .main {
     width: 70%;                     /* ocupa el 70% del contenedor */
-    height: 400px;                  /* altura fija de 400 píxeles */
+    min-height: 400px;               /* alto mínimo: si hay más contenido, la caja crece */
     background-color: #ffffff;      /* fondo blanco */
-    border: 3px solid #1b1e24;      /* borde de 3 px */
+    border: 3px solid #1c1c1c;      /* borde de 3 px */
     border-top: none;               /* sin borde arriba, ya que debajo del nav no hace falta */
     padding: 1rem;                  /* 1rem de espacio interior para que el texto no toque el borde */
-    overflow: auto;                 /* si el contenido no cabe, aparece la barra de scroll */
 }
 
 .main h2 {
     margin: 0.3rem 0;               /* 0.3rem arriba y abajo, 0 a los lados */
     font-size: 1.1rem;              /* tamaño de los subtítulos */
-    color: #2f3640;                 /* texto gris oscuro */
-    border-bottom: 2px solid #40556b;  /* línea inferior de 2 px bajo el título */
+    color: #3b1f5e;                 /* texto morado profundo */
+    border-bottom: 2px solid #6a1b9a;  /* línea inferior de 2 px bajo el título */
     padding-bottom: 0.3rem;         /* deja 0.3rem de aire entre el texto y la línea */
 }
 
@@ -125,27 +129,26 @@ body {
 
 .aside {
     width: 30%;                     /* ocupa el 30% del contenedor (junto al 70% del main) */
-    height: 400px;                  /* misma altura que el main para que queden parejos */
-    background-color: #e4e6e9;      /* fondo gris claro para diferenciarlo */
-    border: 3px solid #1b1e24;      /* borde de 3 px */
+    min-height: 400px;              /* mismo alto mínimo que el main para que queden parejos */
+    background-color: #e8f5e9;      /* verde muy claro para diferenciarlo */
+    border: 3px solid #1b5e20;      /* borde verde */
     border-top: none;               /* sin borde arriba */
     border-left: none;              /* sin borde izquierdo: no se duplica con el borde derecho del main */
     padding: 1rem;                  /* espacio interior de 1rem */
-    overflow: auto;                 /* scroll automático si se desborda el contenido */
 }
 
 .aside h2 {
     margin: 0.3rem 0;               /* márgenes verticales del título */
     font-size: 1.1rem;              /* tamaño del título */
-    color: #2f3640;                 /* color del texto */
-    border-bottom: 2px solid #40556b;  /* línea inferior bajo el título */
+    color: #3b1f5e;                 /* color del texto */
+    border-bottom: 2px solid #6a1b9a;  /* línea inferior bajo el título */
     padding-bottom: 0.3rem;         /* aire entre texto y línea */
 }
 
 .aside h3 {
     margin: 0.5rem 0 0.2rem 0;      /* más espacio arriba que abajo para agrupar con su texto */
     font-size: 0.9rem;              /* tamaño de los subtítulos */
-    color: #40556b;                 /* azul grisáceo para diferenciarlos */
+    color: #6a1b9a;                 /* morado claro para diferenciarlos */
 }
 
 .aside p,
@@ -169,9 +172,9 @@ body {
 .footer {
     width: 100%;                    /* ocupa todo el ancho */
     height: 120px;                  /* altura de 120 píxeles */
-    background-color: #2f3640;      /* mismo fondo que el header para que la página combine */
+    background-color: #1b5e20;      /* mismo fondo que el header para que la página combine */
     color: #ffffff;                 /* texto blanco */
-    border: 3px solid #1b1e24;      /* borde de 3 px */
+    border: 3px solid #1c1c1c;      /* borde de 3 px */
     border-top: none;               /* sin borde arriba (continúa con el contenedor) */
     text-align: center;             /* centra el texto */
     display: flex;                  /* flexbox para centrar el párrafo en ambos ejes */
@@ -191,22 +194,22 @@ body {
     width: 90%;                     /* igual de ancha que el contenedor */
     margin: 1.2rem auto;            /* centrada y separada 1.2rem de arriba y abajo */
     background-color: #ffffff;      /* fondo blanco para que destaque */
-    border: 3px solid #1b1e24;      /* borde igual al resto de bloques */
+    border: 3px solid #1c1c1c;      /* borde igual al resto de bloques */
     padding: 1rem;                  /* espacio interior de 1rem */
 }
 
 .resultados h2 {
     margin: 0 0 0.6rem 0;           /* solo separación inferior bajo el título */
     font-size: 1.2rem;              /* tamaño del título */
-    color: #2f3640;                 /* texto gris oscuro */
-    border-bottom: 2px solid #40556b;  /* línea inferior decorativa */
+    color: #3b1f5e;                 /* texto morado profundo */
+    border-bottom: 2px solid #6a1b9a;  /* línea inferior decorativa */
     padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
 }
 
 .resultados h3 {
     margin: 0.9rem 0 0.3rem 0;      /* separa cada ejercicio del anterior */
     font-size: 1rem;                /* tamaño de los títulos de cada ejercicio */
-    color: #40556b;                 /* azul grisáceo */
+    color: #6a1b9a;                 /* morado */
 }
 
 .resultados p {
@@ -221,14 +224,14 @@ body {
 .ejercicio {
     margin-bottom: 0.8rem;          /* separa un enunciado del siguiente */
     padding: 0.6rem;                /* espacio interior de la tarjeta */
-    background-color: #f7f8f9;      /* fondo gris muy claro para diferenciar cada bloque */
-    border-left: 4px solid #40556b; /* barra lateral izquierda que marca el bloque */
+    background-color: #fdf6e3;      /* fondo crema para diferenciar cada bloque */
+    border-left: 4px solid #6a1b9a; /* barra lateral izquierda que marca el bloque */
 }
 
 .ejercicio h3 {
     margin: 0 0 0.3rem 0;           /* solo separación inferior */
     font-size: 0.95rem;             /* tamaño del título del ejercicio */
-    color: #2f3640;                 /* texto gris oscuro */
+    color: #3b1f5e;                 /* texto morado profundo */
 }
 
 .ejercicio p {
@@ -237,8 +240,38 @@ body {
     line-height: 1.5;               /* interlineado cómodo */
 }
 
+
+/* ---------- TARJETAS DEL ÍNDICE (página de inicio) ---------- */
+
+/* línea que explica qué se practica en cada ejercicio */
+.ejercicio .concepto {
+    margin: 0.4rem 0 0 0;           /* un poco de aire respecto al enunciado */
+    font-size: 0.72rem;             /* texto más pequeño, es una nota secundaria */
+    color: #6b5b7b;                 /* morado apagado para que no compite con el enunciado */
+    font-style: italic;             /* en cursiva, como un comentario */
+}
+
+/* botón "Abrir ejercicio N" */
+.boton {
+    display: inline-block;          /* permite darle relleno y margen vertical */
+    margin-top: 0.5rem;             /* separa el botón del texto */
+    padding: 0.4rem 0.9rem;         /* espacio interior del botón */
+    background-color: #6a1b9a;      /* morado, el color de los botones */
+    color: #ffffff;                 /* texto blanco */
+    border-radius: 5px;             /* esquinas ligeramente redondeadas */
+    font-size: 0.75rem;             /* tamaño del texto del botón */
+    text-decoration: none;          /* sin subrayado */
+    cursor: pointer;                /* el ratón se convierte en mano */
+    transition: background-color 0.2s;  /* anima el cambio de color */
+}
+
+.boton:hover {
+    background-color: #ffd97d;      /* al pasar el ratón se pone dorado */
+    color: #3b1f5e;                 /* y el texto en morado oscuro */
+}
+
 code {
-    background-color: #e8eaed;      /* fondo gris para resaltar el código */
+    background-color: #f0e6f6;      /* fondo lavanda para resaltar el código */
     padding: 0 0.25rem;             /* pequeño espacio a los lados del texto */
     border-radius: 3px;             /* esquinas redondeadas */
     font-family: Consolas, monospace;  /* tipografía de código */
@@ -246,7 +279,7 @@ code {
 }
 
 em {
-    color: #b34700;                 /* color naranja para resaltar la salida esperada */
+    color: #1b5e20;                 /* color verde para resaltar la salida esperada */
     font-style: normal;             /* quita la cursiva por defecto de <em> */
     font-weight: bold;              /* lo pone en negrita */
 }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Datos personales | Variables y document.write()</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 1 - Datos personales</h1>
+        <p>Declarar variables y mostrarlas</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html" class="activo">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 1 - Datos personales</h3>
+                <p>
+                    Crea tres variables llamadas <code>nombre</code>,
+                    <code>edad</code> y <code>ciudad</code>. Asigna un valor a cada
+                    variable. Muestra los tres datos en la página utilizando
+                    <code>document.write()</code>.
+                    <em>Nombre: Laura / Edad: 25 / Ciudad: Gijón</em>
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Una variable se declara con <code>var nombre = valor;</code>.</li>
+                <li>Los textos van entre comillas: <code>"Laura"</code>.</li>
+                <li>Los números van sin comillas: <code>25</code>, para poder operar con ellos.</li>
+                <li>Para unir texto y variable usamos el signo <code>+</code>.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Sintaxis</h3>
+            <p>
+                <code>var nombre = "Laura";</code>
+            </p>
+
+            <h3>Texto o número</h3>
+            <ul>
+                <li><code>"25"</code> es texto: no se puede sumar.</li>
+                <li><code>25</code> es número: sí se puede sumar.</li>
+                <li>Las comillas cambian todo.</li>
+            </ul>
+
+            <h3>Unir con +</h3>
+            <p>
+                <code>"Nombre: " + nombre</code> produce
+                <code>Nombre: Laura</code>.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 1 - DATOS PERSONALES
+               Crea tres variables (nombre, edad, ciudad), asígnales un valor
+               y muéstralas en la página con document.write().
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE VARIABLES --- */
+            var nombre = "Laura";
+            /* "var" declara la variable, "nombre" es su nombre y "Laura" su valor.
+               Entre comillas = cadena de texto */
+
+            var edad = 25;
+            /* variable numérica: 25 NO lleva comillas para poder hacer cálculos */
+
+            var ciudad = "Gijón";
+            /* variable de texto con la ciudad */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 1 - Datos personales</h3>");
+            /* document.write() escribe HTML dentro de la página */
+
+            document.write("<p>Nombre: " + nombre + "</p>");
+            /* unimos con + el texto fijo y la variable:
+               "Nombre: " + "Laura"  ->  "Nombre: Laura" */
+
+            document.write("<p>Edad: " + edad + "</p>");
+            /* mostramos la edad */
+
+            document.write("<p>Ciudad: " + ciudad + "</p>");
+            /* mostramos la ciudad */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y document.write() &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

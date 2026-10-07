@@ -303,17 +303,40 @@ if (Test-Path -LiteralPath $carpetaTareas) {
         # --- caso normal: una tarjeta por carpeta ---
         if (-not ($meta -and $meta.tarjetas)) {
 
+            $paginasOrdenadas = @($g.html | Sort-Object FullName)
             if (-not $titulo -and @($g.html).Count -gt 0) {
-                $primera = @($g.html | Sort-Object FullName)[0]
+                $primera = $paginasOrdenadas[0]
                 $titulo = Get-TituloHtml $primera.FullName
                 if ($titulo -eq "") { $titulo = Get-TituloDesdeNombre $primera.Name }
             }
             if (-not $titulo) { $titulo = Get-TituloDesdeNombre ($g.grupo -replace '/', ' ') }
 
+            $paginaPrincipal = $null
+            $principalConfigurada = $null
+            if ($metaGrupo -and $metaGrupo.principal) { $principalConfigurada = $metaGrupo.principal }
+            elseif ($meta -and $meta.principal) { $principalConfigurada = $meta.principal }
+
+            if ($principalConfigurada) {
+                $paginaPrincipal = @($paginasOrdenadas | Where-Object {
+                    $_.Name -eq $principalConfigurada -or
+                    (Get-RutaRelativa $_).EndsWith("/" + $principalConfigurada)
+                }) | Select-Object -First 1
+                if (-not $paginaPrincipal) {
+                    Write-Host "  No encuentro la pagina principal '$principalConfigurada' para $clave" -ForegroundColor Red
+                    exit 1
+                }
+            }
+            else {
+                $paginaPrincipal = @($paginasOrdenadas | Where-Object { $_.Name -eq "index.html" } | Select-Object -First 1)
+                if ($paginaPrincipal.Count -eq 0 -and $paginasOrdenadas.Count -gt 0) {
+                    $paginaPrincipal = @($paginasOrdenadas[0])
+                }
+            }
+
             $tarjetas += @{
                 entrega = $nombreEntrega; titulo = $titulo; desc = $desc
                 tags = $tags; badge = $badge
-                html = @($g.html | Sort-Object FullName); docs = @($g.docs)
+                html = @($paginaPrincipal); docs = @($g.docs)
                 meta = $meta; metaGrupo = $metaGrupo
             }
         }
@@ -368,7 +391,7 @@ if (Test-Path -LiteralPath $carpetaTareas) {
             # si queda alguna pagina sin meter en una tarjeta, se crea una
             # tarjeta extra para que no se pierda ningun archivo
             $resto = @($g.html | Where-Object { $usados -notcontains $_.FullName } | Sort-Object FullName)
-            if ($resto.Count -gt 0) {
+            if ($resto.Count -gt 0 -and -not $meta.omitirNoListadas) {
                 $tituloR = "Otros ejercicios"
                 if ($meta.titulo) { $tituloR = $meta.titulo }
                 $tarjetas += @{
@@ -400,8 +423,7 @@ if (Test-Path -LiteralPath $carpetaTareas) {
             $textoBoton = Get-TituloDesdeNombre $f.Name
 
             if ($f.Name -eq "index.html") {
-                if ($cuantas -eq 1) { $textoBoton = "Ver tarea" }
-                else { $textoBoton = $f.Directory.Name }
+                $textoBoton = "Ver tarea"
             }
 
             # texto personalizado desde meta.js
@@ -514,7 +536,7 @@ if (Test-Path -LiteralPath $carpetaPracticas) {
 # ---------- 3. RECURSOS DE CLASE (..\Informacion_De_Clase) ----------
 
 $carpetaInfo = Join-Path $base "Informacion_De_Clase"
-$grupos = [ordered]@{ html = @(); css = @(); manual = @(); vscode = @() }
+$grupos = [ordered]@{ html = @(); css = @(); manual = @(); vscode = @(); java = @() }
 $listaNotas = @()
 $listaFotos = @()
 
@@ -533,6 +555,7 @@ if (Test-Path -LiteralPath $carpetaInfo) {
         $grupo = "html"
         if ($a.Directory.Name -match "HTML_Y_CSS") { $grupo = "manual" }
         elseif ($a.Directory.Name -match "VsCODE") { $grupo = "vscode" }
+        elseif ($a.Directory.Name -match "JAVA") { $grupo = "java" }
         elseif ($a.Directory.Name -match "CSS") { $grupo = "css" }
 
         $grupos[$grupo] += (Q-Array @((Get-Href $ruta), $titulo))
@@ -581,7 +604,7 @@ foreach ($x in $EXTERNAS) {
 
 # ---------- 5. ESCRIBIR EL ARCHIVO js\datos.js ----------
 
-$totalRecursos = $grupos.html.Count + $grupos.css.Count + $grupos.manual.Count + $grupos.vscode.Count
+$totalRecursos = $grupos.html.Count + $grupos.css.Count + $grupos.manual.Count + $grupos.vscode.Count + $grupos.java.Count
 
 $L = @()
 $L += "/* ============================================================"
@@ -614,7 +637,8 @@ $L += "  recursos: {"
 $L += "    html:   [" + ($grupos.html -join ", ") + "],"
 $L += "    css:    [" + ($grupos.css -join ", ") + "],"
 $L += "    manual: [" + ($grupos.manual -join ", ") + "],"
-$L += "    vscode: [" + ($grupos.vscode -join ", ") + "]"
+$L += "    vscode: [" + ($grupos.vscode -join ", ") + "],"
+$L += "    java:   [" + ($grupos.java -join ", ") + "]"
 $L += "  },"
 $L += ""
 $L += "  /* Notas y analisis (.md). Formato: [ruta, titulo, desc, extension] */"

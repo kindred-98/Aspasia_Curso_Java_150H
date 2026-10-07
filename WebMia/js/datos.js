@@ -8,7 +8,7 @@
    y vuelve a ejecutar ACTUALIZAR.bat.
 
    Se ha generado con:
-   06/10/2026 12:56
+   07/10/2026 13:14
    ============================================================ */
 
 var DATOS = {
@@ -17,7 +17,7 @@ var DATOS = {
   tareas: [
         {
       entrega: "Primera Tarea",
-      titulo: "Mi Gym y Mi Vida Diaria",
+      titulo: "Gym - Mi Gym y Mi Vida Diaria",
       desc: "Estructura básica de una página web con las etiquetas semánticas de HTML5 (header, nav, main, aside y footer) maquetadas con Flexbox.",
       tags: ["HTML", "CSS"],
       badge: "Completada",
@@ -26,7 +26,7 @@ var DATOS = {
     },
         {
       entrega: "Segunda Tarea",
-      titulo: "Batallas Épicas de Naruto",
+      titulo: "Batallas Épicas - Batallas Épicas de Naruto",
       desc: "Página con tabla de imágenes: 6 fotos de personajes colocadas en filas y columnas, con efecto hover que amplía y gira la imagen.",
       tags: ["HTML", "CSS"],
       badge: "Completada",
@@ -66,16 +66,16 @@ var DATOS = {
       desc: "Los mismos 10 ejercicios de la Cuarta Tarea (5 de variables y 5 de funciones), pero con el JavaScript escrito <em>dentro</em> de la propia etiqueta <em>&lt;script&gt;</em> en vez de en un archivo externo.",
       tags: ["HTML", "JS"],
       badge: "Completada",
-      botones: [["../TAREAS/Quinta_tarea-Js-dentro-de-html/ejercicios.html", "Ejercicios"], ["../TAREAS/Quinta_tarea-Js-dentro-de-html/ejercicios2.html", "Funciones"]],
+      botones: [["../TAREAS/Quinta_tarea-Js-dentro-de-html/inicio-variables-funciones.html", "Ver tarea"]],
       enunciados: []
     },
         {
       entrega: "Quinta Tarea - JavaScript en el HTML",
       titulo: "Variables, condicionales y bucles",
-      desc: "Tipos de variables con let, const, array, object y typeof. Después, condicionales con if / else: pide un número con prompt y dice si es par o impar, y luego comprueba una contraseña.",
+      desc: "Ejercicios interactivos de variables, bucles y condicionales: utiliza un bucle for para contar hasta un número elegido y comprueba con if / else si un número es par o impar.",
       tags: ["HTML", "JS"],
       badge: "Completada",
-      botones: [["../TAREAS/Quinta_tarea-Js-dentro-de-html/variables.html", "Variables"], ["../TAREAS/Quinta_tarea-Js-dentro-de-html/bucles.html", "Bucles"]],
+      botones: [["../TAREAS/Quinta_tarea-Js-dentro-de-html/variables.html", "Ver tarea"]],
       enunciados: []
     },
         {
@@ -134,7 +134,8 @@ var DATOS = {
     html:   [["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_HTML5.pdf", "HTML5 (inicial)"], ["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-1/HTML%20y%20CSS_Organizacion%20de%20un%20sitio%20web.pdf", "Organización de un sitio web"], ["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html5-cheatsheet-lite.pdf", "HTML5 cheatsheet lite"], ["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-2/html-cheatsheet-2026.pdf", "HTML cheatsheet 2026"], ["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/estructura_html.pdf", "Estructura HTML"], ["../Informacion_De_Clase/HTML-Informacion/HTML-INFO-3/tutorial-emmet1.pdf", "Tutorial Emmet"]],
     css:    [["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css3-cheatsheet-lite.pdf", "CSS3 cheatsheet lite"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-1/css-cheatsheet-2026.pdf", "CSS cheatsheet 2026"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/box-sizing-border-box-explicacion.pdf", "box-sizing: border-box"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/propiedadesbordersmarginspaddings.pdf", "Borders, margins y paddings"], ["../Informacion_De_Clase/CSS-Informacion/CSS-INFO-3/unidades-css-px-rem-vh.pdf", "Unidades: px, rem y vh"]],
     manual: [["../Informacion_De_Clase/HTML_Y_CSS-Informacion/MANUAL-HTML-Y-CSS.pdf", "Manual HTML y CSS (juntos)"]],
-    vscode: [["../Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf", "Extensiones esenciales"], ["../Informacion_De_Clase/VsCODE-Informacion/HTML%20y%20CSS_El%20editor%20Visual%20Studio%20Code.pdf", "El editor Visual Studio Code"], ["../Informacion_De_Clase/VsCODE-Informacion/Navegadores%20principales.pdf", "Navegadores principales"]]
+    vscode: [["../Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf", "Extensiones esenciales"], ["../Informacion_De_Clase/VsCODE-Informacion/HTML%20y%20CSS_El%20editor%20Visual%20Studio%20Code.pdf", "El editor Visual Studio Code"], ["../Informacion_De_Clase/VsCODE-Informacion/Navegadores%20principales.pdf", "Navegadores principales"]],
+    java:   [["../Informacion_De_Clase/TEORIA%20JAVA/1-sintaxis-java.pdf", "Sintaxis Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/2-presentacion_variables_operadores_java_25_paginas.pdf", "Variables y operadores"], ["../Informacion_De_Clase/TEORIA%20JAVA/3-presentacion_condicionales_validacion_java_25_paginas_v2.pdf", "Condicionales y validación"], ["../Informacion_De_Clase/TEORIA%20JAVA/4-bucles_depuracion_java_25_paginas_v2.pdf", "Bucles y depuración"], ["../Informacion_De_Clase/TEORIA%20JAVA/5-presentacion_metodos_descomposicion_java_25_paginas.pdf", "Métodos y descomposición"], ["../Informacion_De_Clase/TEORIA%20JAVA/6-presentacion_arrays_colecciones_java_25_paginas_ampliada.pdf", "Arrays y colecciones"], ["../Informacion_De_Clase/TEORIA%20JAVA/7-presentacion_poo_java_35_paginas_ampliada.pdf", "Programación orientada a objetos"], ["../Informacion_De_Clase/TEORIA%20JAVA/Bloque1_Introduccion_a_Java.pdf", "Introducción a Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/empezando.pdf", "Empezando con Java"], ["../Informacion_De_Clase/TEORIA%20JAVA/Guia_Java_Terminal_VSCode.pdf", "Guía Java, Terminal y VS Code"], ["../Informacion_De_Clase/TEORIA%20JAVA/instalacion_jdk_java.pdf", "Instalación del JDK"]]
   },
 
   /* Notas y analisis (.md). Formato: [ruta, titulo, desc, extension] */
@@ -172,8 +173,8 @@ var DATOS = {
 DATOS.resumenes = {
   tareas: 9,
   practicas: 3,
-  pdf: 15,
+  pdf: 26,
   notas: 3,
   fotos: 3,
-  recursos: 21
+  recursos: 32
 };

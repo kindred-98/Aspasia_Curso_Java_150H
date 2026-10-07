@@ -71,6 +71,16 @@ var META_TAREAS = {
 
     "Tercera_Tarea": {
         "nombre": "Tercera Tarea",
+        "tarjetas": [
+            {
+                "titulo": "Actividades | Venezuela Natural",
+                "botones": ["actividades.html"]
+            }
+        ],
+        "omitirNoListadas": true,
+        "botones": {
+            "actividades.html": "Actividades"
+        },
         "desc": "Web completa de turismo rural: galería de paisajes, tabla de precios, formulario de contacto y enlaces internos con identificadores (id).",
         "tags": ["HTML", "CSS"],
         "badge": "Completada"
@@ -84,10 +94,12 @@ var META_TAREAS = {
         "badge": "Completada",
         "grupos": {
             "Tarea1": {
+                "titulo": "JavaScript - Ejercicios de funciones",
                 "desc": "5 ejercicios de funciones: saludar, mostrar un nombre, sumar, calcular el doble con return y calcular el precio total de una compra.",
                 "botones": { "index.html": "Ver tarea" }
             },
             "Tarea2": {
+                "titulo": "JavaScript - Variables y document.write()",
                 "desc": "5 ejercicios de variables: datos personales, cálculo de un producto, edad, precio con descuento y resumen de compra completo.",
                 "botones": { "index.html": "Ver tarea" }
             }
@@ -109,21 +121,20 @@ var META_TAREAS = {
             {
                 "titulo": "Ejercicios de variables y funciones",
                 "desc": "Los mismos 10 ejercicios de la Cuarta Tarea (5 de variables y 5 de funciones), pero con el JavaScript escrito <em>dentro</em> de la propia etiqueta <em>&lt;script&gt;</em> en vez de en un archivo externo.",
-                "botones": ["ejercicios.html", "ejercicios2.html"]
+                "botones": ["inicio-variables-funciones.html"]
             },
             {
                 "titulo": "Variables, condicionales y bucles",
-                "desc": "Tipos de variables con let, const, array, object y typeof. Después, condicionales con if / else: pide un número con prompt y dice si es par o impar, y luego comprueba una contraseña.",
-                "botones": ["variables.html", "bucles.html"]
+                "desc": "Ejercicios interactivos de variables, bucles y condicionales: utiliza un bucle for para contar hasta un número elegido y comprueba con if / else si un número es par o impar.",
+                "botones": ["variables.html"]
             }
         ],
+        "omitirNoListadas": true,
 
         // texto de los botones: la clave es el nombre del archivo
         "botones": {
-            "variables.html": "Variables",
-            "bucles.html": "Bucles",
-            "ejercicios.html": "Ejercicios",
-            "ejercicios2.html": "Funciones"
+            "variables.html": "Ver tarea",
+            "inicio-variables-funciones.html": "Ver tarea"
         }
     },
 
@@ -239,7 +250,20 @@ var META_RECURSOS = {
     // ---- Visual Studio Code ----
     "Informacion_De_Clase/VsCODE-Informacion/Extensiones-esenciales-para-Visual-Studio-Code.pdf": { "titulo": "Extensiones esenciales" },
     "Informacion_De_Clase/VsCODE-Informacion/HTML y CSS_El editor Visual Studio Code.pdf": { "titulo": "El editor Visual Studio Code" },
-    "Informacion_De_Clase/VsCODE-Informacion/Navegadores principales.pdf": { "titulo": "Navegadores principales" }
+    "Informacion_De_Clase/VsCODE-Informacion/Navegadores principales.pdf": { "titulo": "Navegadores principales" },
+
+    // ---- Java ----
+    "Informacion_De_Clase/TEORIA JAVA/1-sintaxis-java.pdf": { "titulo": "Sintaxis Java" },
+    "Informacion_De_Clase/TEORIA JAVA/2-presentacion_variables_operadores_java_25_paginas.pdf": { "titulo": "Variables y operadores" },
+    "Informacion_De_Clase/TEORIA JAVA/3-presentacion_condicionales_validacion_java_25_paginas_v2.pdf": { "titulo": "Condicionales y validación" },
+    "Informacion_De_Clase/TEORIA JAVA/4-bucles_depuracion_java_25_paginas_v2.pdf": { "titulo": "Bucles y depuración" },
+    "Informacion_De_Clase/TEORIA JAVA/5-presentacion_metodos_descomposicion_java_25_paginas.pdf": { "titulo": "Métodos y descomposición" },
+    "Informacion_De_Clase/TEORIA JAVA/6-presentacion_arrays_colecciones_java_25_paginas_ampliada.pdf": { "titulo": "Arrays y colecciones" },
+    "Informacion_De_Clase/TEORIA JAVA/7-presentacion_poo_java_35_paginas_ampliada.pdf": { "titulo": "Programación orientada a objetos" },
+    "Informacion_De_Clase/TEORIA JAVA/Bloque1_Introduccion_a_Java.pdf": { "titulo": "Introducción a Java" },
+    "Informacion_De_Clase/TEORIA JAVA/Guia_Java_Terminal_VSCode.pdf": { "titulo": "Guía Java, Terminal y VS Code" },
+    "Informacion_De_Clase/TEORIA JAVA/empezando.pdf": { "titulo": "Empezando con Java" },
+    "Informacion_De_Clase/TEORIA JAVA/instalacion_jdk_java.pdf": { "titulo": "Instalación del JDK" }
 
 };
 

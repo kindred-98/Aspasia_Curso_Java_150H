@@ -51,5 +51,5 @@
       distinguir claramente su tamaño.
     - MAIN y ASIDE deberán aparecer uno al lado del otro.
 
-    ============================================================
-    -->
+    =====================================================
+   -->

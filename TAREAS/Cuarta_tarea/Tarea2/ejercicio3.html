@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Cálculo de edad | Variables y document.write()</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 3 - Cálculo de edad</h1>
+        <p>Resta dentro de una frase</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html" class="activo">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 3 - Cálculo de edad</h3>
+                <p>
+                    Crea <code>nombre</code>, <code>anioNacimiento</code>,
+                    <code>anioActual</code> (2026) y una variable <code>edad</code>
+                    que reste el año de nacimiento al año actual. Muestra una frase
+                    completa con <code>document.write()</code>.
+                    <em>Ana nació en 1990 y tiene aproximadamente 36 años.</em>
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>El operador <code>-</code> resta: 2026 - 1990 = 36.</li>
+                <li>Los años van sin comillas para que se pueda restar.</li>
+                <li>Para escribir una frase larga, une muchos trozos con <code>+</code>.</li>
+                <li>El enunciado dice "aproximadamente" porque no tiene en cuenta el mes y el día.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>El operador -</h3>
+            <p>
+                Resta el valor de la derecha al de la izquierda:
+                <code>anioActual - anioNacimiento</code>.
+            </p>
+
+            <h3>Frase con varias variables</h3>
+            <p>
+                Unimos textos y variables alternando el signo <code>+</code>:
+                <code>"Ana" + " nació en " + anioNacimiento + ...</code>
+            </p>
+
+            <h3>Comillas</h3>
+            <ul>
+                <li><code>"2026"</code> es texto y no se puede restar.</li>
+                <li><code>2026</code> es número y sí se puede restar.</li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 3 - CÁLCULO DE EDAD
+               Crea nombre, anioNacimiento, anioActual (2026) y una variable
+               edad que reste el año de nacimiento al año actual. Muestra una
+               frase completa con document.write().
+               ============================================================ */
+
+            /* --- VARIABLES --- */
+            var nombre = "Ana";
+            /* nombre de la persona (texto) */
+
+            var anioNacimiento = 1990;
+            /* año de nacimiento (número) */
+
+            var anioActual = 2026;
+            /* año actual, el enunciado lo fija con el valor 2026 (número) */
+
+            /* --- VARIABLE CALCULADA --- */
+            var edadCalculada = anioActual - anioNacimiento;
+            /* el operador - resta: 2026 - 1990 = 36.
+               El resultado se guarda en una nueva variable */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 3 - Cálculo de edad</h3>");
+
+            document.write("<p>" + nombre + " nació en " + anioNacimiento +
+                           " y tiene aproximadamente " + edadCalculada + " años.</p>");
+            /* frase completa uniendo varios textos y variables en una sola
+               llamada a document.write():
+               "Ana" + " nació en " + "1990" + " y tiene aproximadamente "
+               + "36" + " años." */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y document.write() &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

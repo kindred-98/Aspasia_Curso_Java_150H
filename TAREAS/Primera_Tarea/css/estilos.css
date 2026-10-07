@@ -102,7 +102,7 @@ body {
 
 .main {
     width: 70%;                     /* 70% del contenedor (el aside ocupa el 30%) */
-    height: 400px;                  /* altura fija de 400 píxeles */
+    height: 450px;                  /* altura fija de 400 píxeles */
     background-color: #ffffff;      /* fondo blanco */
     border: 3px solid #1b1e24;      /* borde de 3px */
     border-top: none;               /* sin borde arriba: ahí está el nav */
@@ -143,7 +143,7 @@ body {
 
 .aside {
     width: 30%;                     /* 30% del contenedor, junto al 70% del main */
-    height: 400px;                  /* misma altura que el main para que queden parejos */
+    height: 450px;                  /* misma altura que el main para que queden parejos */
     background-color: #e4e6e9;      /* fondo gris claro para diferenciarlo del main */
     border: 3px solid #1b1e24;      /* borde de 3px */
     border-top: none;               /* sin borde arriba */

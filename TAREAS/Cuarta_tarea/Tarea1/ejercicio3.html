@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Sumar dos números | Ejercicios de funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 3 - Sumar dos números</h1>
+        <p>Funciones con dos parámetros</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html" class="activo">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 3 - Sumar dos números</h3>
+                <p>
+                    Crea una función llamada <code>sumar(numero1, numero2)</code>.
+                    La función debe recibir dos números, sumarlos y mostrar el resultado
+                    con <code>document.write()</code>: <em>La suma es: 15</em>.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Los dos parámetros se separan con una coma: <code>sumar(numero1, numero2)</code>.</li>
+                <li>El orden importa: el primer argumento entra en el primer parámetro.</li>
+                <li>Para sumar se usa <code>+</code>, pero entre dos números.</li>
+                <li>Guarda el cálculo en una variable antes de mostrarlo.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Dos parámetros</h3>
+            <p>
+                <code>function sumar(numero1, numero2) { ... }</code>
+            </p>
+
+            <h3>Orden de los argumentos</h3>
+            <ul>
+                <li><code>sumar(7, 8)</code> → <code>numero1</code> vale 7.</li>
+                <li>En esa misma llamada, <code>numero2</code> vale 8.</li>
+                <li>El orden de los parámetros y el de los argumentos debe coincidir.</li>
+            </ul>
+
+            <h3>+ o concatenar</h3>
+            <p>
+                <code>+</code> suma si los dos lados son números y
+                junta textos si alguno es una cadena.
+            </p>
+
+            <h3>Resultado</h3>
+            <p>
+                <code>7 + 8 = 15</code>, que es el resultado que pide el enunciado.
+            </p>
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 3 - SUMAR DOS NÚMEROS
+               Crea una función llamada sumar(numero1, numero2) que reciba
+               dos números, los sume y muestre "La suma es: 15" con
+               document.write().
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function sumar(numero1, numero2) {
+                /* numero1 y numero2 son los dos PARÁMETROS de la función.
+                   Los separamos con una coma dentro de los paréntesis */
+
+                var resultado = numero1 + numero2;
+                /* guardamos la suma en la variable "resultado".
+                   Aquí el signo + SUMA porque los dos valores son números */
+
+                document.write("<h3>Ejercicio 3 - Sumar dos números</h3>");
+                /* pintamos el título del ejercicio */
+
+                document.write("<p>La suma es: " + resultado + "</p>");
+                /* juntamos el texto con el valor calculado:
+                   "La suma es: " + 15  ->  "La suma es: 15" */
+            }
+
+            /* --- LLAMADA A LA FUNCIÓN --- */
+            sumar(7, 8);
+            /* dos argumentos: el 7 entra en numero1 y el 8 en numero2.
+               7 + 8 = 15, el resultado que pide el enunciado */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

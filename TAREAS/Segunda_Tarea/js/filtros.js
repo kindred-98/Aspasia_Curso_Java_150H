@@ -45,22 +45,41 @@
 
   const personajes = window.PERSONAJES || [];
 
+  const ETIQUETAS_EQUIPO = {
+    equipo7: 'Equipo 7',
+    equipo8: 'Equipo 8',
+    equipo3: 'Equipo 3',
+    'equipo-guy': 'Equipo Guy',
+    anbu: 'ANBU',
+    akatsuki: 'Akatsuki',
+    hokage: 'Hokage',
+    sensei: 'Sensei',
+    konoha: 'Konoha',
+    arena: 'Arena',
+    legendarios: 'Equipo Legendario'
+  };
+
   function renderizarPersonajes(filtro = 'todos') {
     if (!gridPersonajes) return;
     gridPersonajes.innerHTML = '';
     const filtrados = filtro === 'todos'
       ? personajes
-      : personajes.filter(p => p.equipo === filtro);
+      : personajes.filter(p => p.equipos.indexOf(filtro) !== -1);
 
     filtrados.forEach(p => {
+      const etiquetas = p.equipos
+        .map(eq => ETIQUETAS_EQUIPO[eq] || eq)
+        .join(' · ');
+
       const card = document.createElement('div');
       card.className = 'card-personaje';
-      card.dataset.equipo = p.equipo;
+      card.dataset.equipo = p.equipos.join(' ');
       card.innerHTML = `
-        <img src="img/personajes/${p.img}" alt="${p.nombre}">
+        <img src="img/personajes/${p.img}" alt="${p.nombre}" onerror="this.outerHTML='<div class=\'img-faltante\'>Sin imagen</div>'">
         <div class="info">
           <h3>${p.nombre}</h3>
-          <span class="equipo">${p.equipo}</span>
+          <span class="equipo">${etiquetas}</span>
+          <span class="rol">${p.rol}</span>
         </div>
       `;
       gridPersonajes.appendChild(card);

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Constante PI | Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Ejercicio 3 - Constante PI</h1>
+        <p>Qué pasa al intentar cambiar un const</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html" class="activo">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 3 - Constante PI</h3>
+                <p>
+                    Crea una constante llamada <code>PI</code> y asígnale el valor de
+                    3.14159. Luego intenta cambiar el valor de la misma y observa el
+                    resultado en la consola.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li><code>const</code> declara un valor que <strong>no</strong> se puede reasignar.</li>
+                <li>Por convención las constantes se escriben en mayúsculas: <code>PI</code>, <code>MAXIMO</code>.</li>
+                <li>Si intentas reasignarla, la consola da el error <code>TypeError: Assignment to constant variable.</code></li>
+                <li>Ese error <strong>para</strong> el JavaScript: lo que venga después no se ejecuta.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>let frente a const</h3>
+            <ul>
+                <li><code>let edad = 45;</code> → se puede cambiar.</li>
+                <li><code>const PI = 3.14159;</code> → no se puede cambiar.</li>
+            </ul>
+
+            <h3>Por qué usar const</h3>
+            <p>
+                Deja claro a quien lea el código que ese valor no va a cambiar.
+                Es lo ideal para valores fijos como PI o un IVA.
+            </p>
+
+            <h3>Importante</h3>
+            <p>
+                El error de reasignar un <code>const</code> detiene el JavaScript
+                entero. Por eso en este ejercicio la línea está comentada:
+                si la quitas los comentarios, verás el error en la consola
+                y el resto de la página se quedará sin pintar.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 3 - CONSTANTE PI
+               Crea una constante llamada PI con el valor 3.14159, luego
+               intenta cambiar su valor y observa el resultado en la consola.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA CONSTANTE --- */
+            const PI = 3.14159;
+            /* "const" crea un valor que NO se puede reasignar.
+               Por eso la escribimos en mayúsculas: es la convención
+               para los valores constantes */
+
+            /* --- MOSTRAR EL RESULTADO --- */
+            console.log("Valor de la constante PI:", PI);
+            document.write("<h3>Ejercicio 3 - Constante PI</h3>");
+            document.write("<p>Valor de la constante <strong>PI</strong>: " + PI + "</p>");
+
+            /* --- INTENTO DE CAMBIAR EL VALOR --- */
+            /* Para hacer la prueba: quita la apertura y el cierre de este
+               comentario (la línea de abajo y la que pone FIN DEL COMENTARIO)
+               y recarga la página con F5. En la consola aparecerá:
+
+                   Uncaught TypeError: Assignment to constant variable.
+
+               y el resto del JavaScript NO se ejecutará, por eso la zona
+               de resultados se quedará vacía a partir de ese punto.
+
+               const PI = 3.14;
+               ↑ esta línea da error: no se puede reasignar un const
+
+               FIN DEL COMENTARIO
+            */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

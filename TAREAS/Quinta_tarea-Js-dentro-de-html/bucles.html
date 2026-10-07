@@ -1,34 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bucles y condicionales | Quinta tarea de JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
 
-    <script>    
-    
-    //Declaración de variables(Pedmos al usuario que introduzca un número)
-    let numero = prompt("Introduce un número: ");       
+    <header class="header">
+        <h1>Bucles y condicionales</h1>
+        <p>Quinta tarea · JavaScript dentro del HTML</p>
+    </header>
 
-    //comprobamos si el resto al dividir entre 2 es igual a 0, si es así es par, si no es impar
-    if (numero %2 === 0) {
-        document.write("<h2>El número " + numero + " es par</h2>");
-    } else {
-        document.write("<h2>El número " + numero + " es impar</h2>");
-    }
+    <nav class="nav" aria-label="Navegación de la tarea">
+        <a href="variables.html">Variables</a>
+        <a href="bucles.html" class="activo">Bucles y condicionales</a>
+    </nav>
 
-    //crea un programa que pida al usuario una contraseña mediante un prompt y que compruebe si la contraseña es correcta. La contraseña correcta será “1234”. Si la contraseña es correcta, mostrará un mensaje de bienvenida, si no lo es, mostrará un mensaje de error.
+    <main class="resultados">
+        <h2>Bucles y condicionales</h2>
+        <p>Introduce valores en cada ejercicio y pulsa el botón para comprobar el resultado.</p>
 
-    let contraseña = prompt("Introduce la contraseña: ");
-    if (contraseña === "1234") {
-        document.write("<h2>Bienvenido</h2>");
-    } else {
-        document.write("<h2>Contraseña incorrecta</h2>");
-    }
+        <article class="ejercicio">
+            <h3>Ejercicio 1 · Bucle for</h3>
+            <p>Escribe un número del 1 al 20. El bucle mostrará todos los números desde 1 hasta ese límite.</p>
+            <form id="form-bucle">
+                <label for="limite-bucle">Número límite:</label>
+                <input id="limite-bucle" type="number" min="1" max="20" step="1" required>
+                <button class="boton" type="submit">Ejecutar bucle</button>
+            </form>
+            <p id="resultado-bucle" class="resultado-interactivo" aria-live="polite">El resultado aparecerá aquí.</p>
+        </article>
 
-    </script>
-    
+        <article class="ejercicio">
+            <h3>Ejercicio 2 · Condicional if / else</h3>
+            <p>Introduce un número entero para comprobar si es par o impar.</p>
+            <form id="form-condicional">
+                <label for="numero-condicional">Número:</label>
+                <input id="numero-condicional" type="number" step="1" required>
+                <button class="boton" type="submit">Comprobar número</button>
+            </form>
+            <p id="resultado-condicional" class="resultado-interactivo" aria-live="polite">El resultado aparecerá aquí.</p>
+        </article>
+
+        <script>
+            // El bucle for cuenta desde 1 hasta el número límite introducido.
+            document.getElementById("form-bucle").addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                let limite = Number(document.getElementById("limite-bucle").value);
+                let resultado = document.getElementById("resultado-bucle");
+
+                if (!Number.isInteger(limite) || limite < 1 || limite > 20) {
+                    resultado.textContent = "Escribe un número entero entre 1 y 20.";
+                    return;
+                }
+
+                let numeros = [];
+                for (let i = 1; i <= limite; i++) {
+                    numeros.push(i);
+                }
+
+                resultado.textContent = "El bucle cuenta: " + numeros.join(", ");
+            });
+
+            // El condicional if / else decide si el número es par o impar.
+            document.getElementById("form-condicional").addEventListener("submit", function (evento) {
+                evento.preventDefault();
+
+                let numero = Number(document.getElementById("numero-condicional").value);
+                let resultado = document.getElementById("resultado-condicional");
+
+                if (!Number.isInteger(numero)) {
+                    resultado.textContent = "Escribe un número entero.";
+                } else if (numero % 2 === 0) {
+                    resultado.textContent = "El número " + numero + " es par.";
+                } else {
+                    resultado.textContent = "El número " + numero + " es impar.";
+                }
+            });
+        </script>
+    </main>
+
+    <footer class="footer">
+        <p>Quinta tarea · JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
 </body>
 </html>

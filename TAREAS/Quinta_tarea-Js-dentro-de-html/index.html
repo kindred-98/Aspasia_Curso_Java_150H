@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | JavaScript - Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Variables y funciones</h1>
+        <p>5 ejercicios de JavaScript dentro del HTML</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Resumen de lo que debemos hacer</h2>
+
+            <p>
+                Vamos a practicar <strong>variables</strong> y <strong>funciones</strong>
+                en JavaScript. Cada ejercicio pide declarar variables, ver de qué tipo
+                son y, en el último caso, ver hasta dónde llega una variable.
+            </p>
+
+            <p>
+                El enunciado de cada ejercicio está en su propia página. Esta vez el
+                JavaScript va escrito <strong>dentro del propio HTML</strong>, en una
+                etiqueta <code>&lt;script&gt;</code>.
+            </p>
+
+            <h3>Las 4 cosas que hay que aprender</h3>
+            <ul>
+                <li>Declarar una variable con <code>let</code> o con <code>const</code>.</li>
+                <li>Distinguir los tipos: texto, número, booleano, array y objeto.</li>
+                <li>Comprobar el tipo de una variable con <code>typeof</code>.</li>
+                <li>Diferir una variable local de una global (ámbito o <em>scope</em>).</li>
+            </ul>
+
+            <h3>Dónde se ve el resultado</h3>
+            <p>
+                Estos ejercicios usan <code>console.log()</code>, así que el resultado
+                aparece en la <strong>consola del navegador</strong> (púlsalo con
+                <code>F12</code> y entra en la pestaña <em>Console</em>).
+                Para verlo también dentro de la página, cada ejercicio escribe su
+                resultado con <code>document.write()</code> en la zona de resultados.
+            </p>
+
+            <h3>Los 5 ejercicios</h3>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 1 - Variable edad</h3>
+                <p>
+                    Crea una variable <code>edad</code>, muéstrala, cambia su valor
+                    y vuelve a mostrarla.
+                </p>
+                <p class="concepto">Qué se practica: <code>let</code> y reasignar el valor.</p>
+                <a class="boton" href="ejercicio1.html">Abrir ejercicio 1</a>
+            </div>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 2 - Variables con tipos de dato</h3>
+                <p>
+                    Crea <code>esEstudiante</code> (booleano), <code>promedio</code>
+                    (número decimal) y <code>apellido</code> (texto).
+                </p>
+                <p class="concepto">Qué se practica: los tres tipos de dato más usados.</p>
+                <a class="boton" href="ejercicio2.html">Abrir ejercicio 2</a>
+            </div>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 3 - Constante PI</h3>
+                <p>
+                    Crea la constante <code>PI</code> con el valor 3.14159 e intenta
+                    cambiarlo para ver qué pasa.
+                </p>
+                <p class="concepto">Qué se practica: <code>const</code> y por qué no se puede cambiar.</p>
+                <a class="boton" href="ejercicio3.html">Abrir ejercicio 3</a>
+            </div>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 4 - Variables y tipos de dato</h3>
+                <p>
+                    Crea una variable de cada tipo: texto, número entero, decimal,
+                    booleano, sin definir, <code>null</code>, un array y un objeto.
+                    Comprueba cada una con <code>typeof</code>.
+                </p>
+                <p class="concepto">Qué se practica: <code>typeof</code>, <code>null</code> y <code>undefined</code>.</p>
+                <a class="boton" href="ejercicio4.html">Abrir ejercicio 4</a>
+            </div>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 5 - Ámbito de una variable</h3>
+                <p>
+                    Declara una variable dentro de una función e intenta usarla
+                    fuera de ella.
+                </p>
+                <p class="concepto">Qué se practica: variables locales y globales (<em>scope</em>).</p>
+                <a class="boton" href="ejercicio5.html">Abrir ejercicio 5</a>
+            </div>
+
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Declarar una variable</h3>
+            <p>
+                <code>let edad = 45;</code> se puede cambiar después.
+                <code>const PI = 3.14159;</code> no.
+            </p>
+
+            <h3>Tipos de dato</h3>
+            <ul>
+                <li><code>"texto"</code> es string: siempre entre comillas.</li>
+                <li><code>25</code> es number: con o sin decimales.</li>
+                <li><code>true</code> es boolean: solo true o false.</li>
+                <li><code>undefined</code>: declarada pero sin valor.</li>
+                <li><code>null</code>: vacía a propósito.</li>
+                <li><code>["a", "b"]</code> es un array.</li>
+                <li><code>{ }</code> es un objeto.</li>
+            </ul>
+
+            <h3>typeof</h3>
+            <p>
+                Devuelve el tipo de una variable como texto.
+                Ojo: <code>typeof null</code> devuelve <code>"object"</code>,
+                es un error antiguo de JavaScript.
+            </p>
+
+            <h3>Ámbito (scope)</h3>
+            <p>
+                Una variable creada dentro de una función con <code>let</code> solo
+                existe dentro de ella. Fuera daría error <code>is not defined</code>.
+            </p>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

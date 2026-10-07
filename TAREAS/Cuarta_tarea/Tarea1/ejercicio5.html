@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Calcular precio total | Ejercicios de funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 5 - Calcular precio total</h1>
+        <p>Combina return con dos parámetros</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html" class="activo">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 5 - Calcular precio total</h3>
+                <p>
+                    Crea una función llamada <code>calcularTotal(precio, cantidad)</code>.
+                    La función debe multiplicar el precio por la cantidad y devolver el
+                    resultado utilizando <code>return</code>. Después, guarda el resultado
+                    en una variable y muestra con <code>document.write()</code> el precio,
+                    la cantidad y el total: <em>Precio: 20 € / Cantidad: 3 / Total: 60 €</em>.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Para multiplicar se usa <code>*</code>: 20 * 3 = 60.</li>
+                <li>La función solo calcula y devuelve; de mostrar se encarga quien la llama.</li>
+                <li>El símbolo del euro se escribe con la entidad <code>&amp;euro;</code>.</li>
+                <li>Este ejercicio junta los dos anteriores: 2 parámetros y <code>return</code>.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Flujo del ejercicio</h3>
+            <ul>
+                <li>1. Declaramos <code>calcularTotal(precio, cantidad)</code>.</li>
+                <li>2. Dentro multiplicamos y hacemos <code>return</code>.</li>
+                <li>3. Fuera, declaramos las variables precio y cantidad.</li>
+                <li>4. Llamamos y guardamos: <code>var total = calcularTotal(precio, cantidad);</code></li>
+                <li>5. Mostramos las tres cosas con <code>document.write()</code>.</li>
+            </ul>
+
+            <h3>Por qué return</h3>
+            <p>
+                Con <code>return</code> la función se puede usar para cualquier producto:
+                la misma función sirve para 20 x 3, para 5 x 10 o para 99,90 x 2.
+            </p>
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 5 - CALCULAR PRECIO TOTAL
+               Crea una función llamada calcularTotal(precio, cantidad) que
+               multiplique el precio por la cantidad y devuelva el resultado
+               con return. Guarda el resultado y muestra precio, cantidad y
+               total con document.write().
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function calcularTotal(precio, cantidad) {
+                /* dos parámetros: "precio" (lo que cuesta un artículo)
+                   y "cantidad" (cuántos artículos se compran) */
+
+                var total = precio * cantidad;
+                /* multiplicamos precio x cantidad con el operador *
+                   20 * 3 = 60 */
+
+                return total;
+                /* devolvemos el total para poder usarlo fuera de la función.
+                   Esta función no muestra nada: solo calcula */
+            }
+
+            /* --- VARIABLES DE PARTIDA --- */
+            var precio = 20;
+            /* precio de un artículo en euros */
+
+            var cantidad = 3;
+            /* número de artículos que compramos */
+
+            /* --- LLAMADA Y GUARDADO --- */
+            var total = calcularTotal(precio, cantidad);
+            /* llamamos a la función pasando las dos variables como argumentos
+               y guardamos lo que devuelve (60) en la variable "total" */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 5 - Calcular precio total</h3>");
+            /* pintamos el título del ejercicio */
+
+            document.write("<p>Precio: " + precio + " &euro;</p>");
+            /* &euro; es la entidad HTML del símbolo € */
+
+            document.write("<p>Cantidad: " + cantidad + "</p>");
+            /* mostramos la cantidad de artículos */
+
+            document.write("<p>Total: " + total + " &euro;</p>");
+            /* mostramos el total calculado: 20 * 3 = 60 € */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

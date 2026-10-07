@@ -1,0 +1,347 @@
+/* ============================================================
+   QUINTA TAREA - JAVASCRIPT: VARIABLES Y FUNCIONES
+   Paleta: azul marino y naranja
+   ============================================================ */
+
+
+/* ---------- AJUSTES GENERALES ---------- */
+
+html {
+    font-size: 20px;   /* tamaño base de la página; a partir de aquí se calculan los rem */
+}
+
+* {
+    box-sizing: border-box;  /* los bordes y el padding se calculan DENTRO del ancho */
+}
+
+body {
+    margin: 0;                              /* elimina el margen por defecto del navegador */
+    font-family: Arial, Helvetica, sans-serif;  /* tipografía de la página */
+    color: #16222e;                         /* color del texto: azul casi negro */
+    background-color: #eef2f7;              /* fondo de la página: azul muy claro */
+}
+
+.volver-tareas {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 10;
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+    border: 2px solid #ffd166;
+    border-radius: 6px;
+    background-color: #0d3b66;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(7, 31, 56, 0.25);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.volver-tareas:hover {
+    background-color: #1b263b;
+    color: #ffd166;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- HEADER ---------- */
+
+.header {
+    width: 100%;                    /* ocupa todo el ancho disponible */
+    height: 150px;                  /* altura fija de 150 píxeles */
+    background-color: #0d3b66;      /* fondo azul marino */
+    color: #ffffff;                 /* color del texto: blanco */
+    border: 3px solid #071f38;      /* borde azul todavía más oscuro */
+    text-align: center;             /* centra el texto horizontalmente */
+    display: flex;                  /* activa flexbox */
+    flex-direction: column;         /* los hijos se apilan de arriba a abajo */
+    justify-content: center;        /* centra los hijos en sentido vertical */
+}
+
+.header h1 {
+    margin: 0;                      /* quita el margen por defecto de los títulos */
+    font-size: 1.6rem;              /* tamaño del título */
+    color: #ffd166;                 /* amarillo cálido sobre el azul */
+}
+
+.header p {
+    margin: 0.4rem 0 0 0;           /* 0.4rem arriba y 0 en los otros tres lados */
+    font-size: 0.8rem;              /* tamaño del subtítulo */
+    color: #b8d4ee;                 /* azul claro */
+}
+
+
+/* ---------- NAV ---------- */
+
+.nav {
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 70px;                   /* altura de 70 píxeles */
+    background-color: #1b263b;      /* azul casi negro */
+    border: 3px solid #071f38;      /* mismo borde que el header */
+    border-top: none;               /* quita el borde de arriba */
+    text-align: center;             /* centra los enlaces */
+    line-height: 64px;              /* centra el texto verticalmente */
+}
+
+.nav a {
+    display: inline-block;          /* permite aplicar margen vertical */
+    vertical-align: middle;         /* alinea los enlaces por el centro */
+    margin: 0 1.2rem;               /* separación entre enlaces */
+    color: #a8d5ff;                 /* azul claro */
+    text-decoration: none;          /* elimina el subrayado */
+    font-size: 0.9rem;              /* tamaño del texto del menú */
+    cursor: pointer;                /* el ratón se convierte en mano */
+    transition: color 0.2s;         /* anima el cambio de color */
+}
+
+.nav a:hover {
+    color: #ffd166;                 /* amarillo al pasar el ratón */
+}
+
+.nav a.activo {
+    color: #ffd166;                 /* el enlace de la página actual va en amarillo */
+    font-weight: bold;              /* y en negrita */
+}
+
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+
+.contenedor {
+    width: 90%;                     /* ocupa el 90% del ancho */
+    margin: 0 auto;                 /* centrado horizontal */
+    display: flex;                  /* MAIN y ASIDE quedan uno al lado del otro */
+}
+
+
+/* ---------- MAIN ---------- */
+
+.main {
+    width: 70%;                     /* ocupa el 70% del contenedor */
+    min-height: 400px;              /* alto mínimo: si hay más contenido, crece */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #16222e;      /* borde oscuro */
+    border-top: none;               /* sin borde arriba */
+    padding: 1rem;                  /* espacio interior */
+}
+
+.main h2 {
+    margin: 0.3rem 0;               /* márgenes verticales del título */
+    font-size: 1.1rem;              /* tamaño del subtítulo */
+    color: #0d3b66;                 /* azul marino */
+    border-bottom: 2px solid #ff8c42;   /* línea naranja bajo el título */
+    padding-bottom: 0.3rem;         /* aire entre el texto y la línea */
+}
+
+.main p,
+.main li {
+    font-size: 0.8rem;              /* tamaño del texto */
+    line-height: 1.4;               /* interlineado */
+}
+
+.main p {
+    margin: 0.4rem 0;               /* separación entre párrafos */
+}
+
+.main ul {
+    margin: 0.4rem 0 0 0;           /* margen solo arriba */
+    padding-left: 1.4rem;           /* sangría de la lista */
+}
+
+
+/* ---------- ASIDE ---------- */
+
+.aside {
+    width: 30%;                     /* ocupa el 30% del contenedor */
+    min-height: 400px;              /* mismo alto mínimo que el main */
+    background-color: #e3f2fd;      /* azul muy claro */
+    border: 3px solid #1565c0;      /* borde azul */
+    border-top: none;               /* sin borde arriba */
+    border-left: none;              /* sin borde izquierdo: no se duplica */
+    padding: 1rem;                  /* espacio interior */
+}
+
+.aside h2 {
+    margin: 0.3rem 0;               /* márgenes verticales */
+    font-size: 1.1rem;              /* tamaño del título */
+    color: #0d3b66;                 /* azul marino */
+    border-bottom: 2px solid #ff8c42;   /* línea naranja */
+    padding-bottom: 0.3rem;         /* aire entre texto y línea */
+}
+
+.aside h3 {
+    margin: 0.5rem 0 0.2rem 0;      /* más espacio arriba para agrupar con su texto */
+    font-size: 0.9rem;              /* tamaño de los subtítulos */
+    color: #1565c0;                 /* azul medio */
+}
+
+.aside p,
+.aside li {
+    font-size: 0.75rem;             /* texto más pequeño que en el main */
+    line-height: 1.4;
+}
+
+.aside p {
+    margin: 0.2rem 0;               /* separación pequeña */
+}
+
+.aside ul {
+    margin: 0.2rem 0 0 0;
+    padding-left: 1.2rem;           /* sangría de la lista */
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 120px;                  /* altura de 120 píxeles */
+    background-color: #0d3b66;      /* azul marino, igual que el header */
+    color: #ffffff;                 /* texto blanco */
+    border: 3px solid #071f38;      /* borde azul oscuro */
+    border-top: none;               /* sin borde arriba */
+    text-align: center;             /* centra el texto */
+    display: flex;                  /* flexbox para centrar en ambos ejes */
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+/* ---------- ZONA DE RESULTADOS (salida del JavaScript) ---------- */
+
+.resultados {
+    width: 90%;                     /* igual de ancha que el contenedor */
+    margin: 1.2rem auto;            /* centrada y separada */
+    background-color: #ffffff;      /* fondo blanco */
+    border: 3px solid #16222e;      /* borde oscuro */
+    padding: 1rem;
+}
+
+.resultados h2 {
+    margin: 0 0 0.6rem 0;           /* solo separación inferior */
+    font-size: 1.2rem;
+    color: #0d3b66;                 /* azul marino */
+    border-bottom: 2px solid #ff8c42;   /* línea naranja decorativa */
+    padding-bottom: 0.3rem;
+}
+
+.resultados h3 {
+    margin: 0.9rem 0 0.3rem 0;      /* separa cada ejercicio del anterior */
+    font-size: 1rem;
+    color: #e8590c;                 /* naranja intenso */
+}
+
+.resultados p {
+    margin: 0.2rem 0;               /* separación entre líneas de salida */
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+
+/* ---------- EJERCICIOS (enunciados) ---------- */
+
+.ejercicio {
+    margin-bottom: 0.8rem;          /* separa un enunciado del siguiente */
+    padding: 0.6rem;                /* espacio interior de la tarjeta */
+    background-color: #fff7ed;      /* crema muy claro */
+    border-left: 4px solid #ff8c42; /* barra naranja que marca el bloque */
+}
+
+.ejercicio h3 {
+    margin: 0 0 0.3rem 0;           /* solo separación inferior */
+    font-size: 0.95rem;
+    color: #0d3b66;                 /* azul marino */
+}
+
+.ejercicio p {
+    margin: 0;                      /* márgenes a cero para que quede compacta */
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* línea que explica qué se practica en cada ejercicio */
+.ejercicio .concepto {
+    margin: 0.4rem 0 0 0;           /* un poco de aire respecto al enunciado */
+    font-size: 0.72rem;             /* texto más pequeño */
+    color: #6a7c8f;                 /* gris azulado */
+    font-style: italic;             /* en cursiva, como un comentario */
+}
+
+/* ---------- FORMULARIOS INTERACTIVOS ---------- */
+
+.ejercicio form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.ejercicio label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #0d3b66;
+}
+
+.ejercicio input {
+    width: 7rem;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid #9aaabd;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.ejercicio input:focus {
+    outline: 2px solid #1565c0;
+    outline-offset: 1px;
+}
+
+.ejercicio .resultado-interactivo {
+    min-height: 1.4em;
+    margin-top: 0.6rem;
+    color: #0d3b66;
+    font-weight: bold;
+}
+
+/* botón "Abrir ejercicio N" */
+.boton {
+    display: inline-block;          /* permite darle relleno y margen vertical */
+    margin-top: 0.5rem;             /* separa el botón del texto */
+    padding: 0.4rem 0.9rem;         /* espacio interior del botón */
+    background-color: #ff8c42;      /* naranja */
+    color: #ffffff;                 /* texto blanco */
+    border-radius: 5px;             /* esquinas ligeramente redondeadas */
+    font-size: 0.75rem;             /* tamaño del texto */
+    text-decoration: none;          /* sin subrayado */
+    cursor: pointer;                /* el ratón se convierte en mano */
+    transition: background-color 0.2s;  /* anima el cambio de color */
+}
+
+.boton:hover {
+    background-color: #0d3b66;      /* al pasar el ratón se pone azul marino */
+    color: #ffffff;                 /* el texto sigue blanco */
+}
+
+
+/* ---------- CÓDIGO EN LÍNEA ---------- */
+
+code {
+    background-color: #e3eaf2;      /* fondo azul grisáceo */
+    padding: 0 0.25rem;             /* pequeño espacio a los lados */
+    border-radius: 3px;             /* esquinas redondeadas */
+    font-family: Consolas, monospace;  /* tipografía de código */
+    font-size: 0.85rem;
+}
+
+em {
+    color: #b3541e;                 /* naranja oscuro para la salida esperada */
+    font-style: normal;             /* quita la cursiva */
+    font-weight: bold;              /* la pone en negrita */
+}

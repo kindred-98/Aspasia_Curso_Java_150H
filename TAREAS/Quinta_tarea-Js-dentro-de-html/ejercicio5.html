@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Ámbito de una variable | Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Ejercicio 5 - Ámbito de una variable</h1>
+        <p>Variables locales frente a globales (scope)</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html" class="activo">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 5 - Ámbito de una variable</h3>
+                <p>
+                    Declara una variable dentro de una función y trata de acceder a
+                    ella fuera de la función.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Una variable creada dentro de una función es <strong>local</strong>: solo existe dentro de ella.</li>
+                <li>Una variable creada fuera de cualquier función es <strong>global</strong>: existe en toda la página.</li>
+                <li>Intentar leer una variable local desde fuera da el error <code>ReferenceError: mensaje is not defined</code>.</li>
+                <li>Ese error <strong>para</strong> el JavaScript, así que vuelve a dejarlo comentado.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Ámbito (scope)</h3>
+            <p>
+                Es el sitio donde existe una variable. La palabra <em>scope</em>
+                significa alcance.
+            </p>
+
+            <h3>Local</h3>
+            <p>
+                Creada dentro de una función con <code>let</code>.
+                Desaparece cuando la función termina.
+            </p>
+
+            <h3>Global</h3>
+            <p>
+                Creada fuera de cualquier función. Se puede usar en cualquier
+                parte de la página, aunque es mejor evitarla.
+            </p>
+
+            <h3>Buena práctica</h3>
+            <p>
+                Declara las variables dentro de las funciones que las usan:
+                así se evita que unas funciones pisen los datos de otras.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 5 - ÁMBITO DE UNA VARIABLE (SCOPE)
+               Declara una variable dentro de una función y trata de acceder
+               a ella fuera de la función.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function miFuncion() {
+                /* DENTRO de la función */
+                let mensaje = "Hola dentro de la función";
+                /* esta variable es LOCAL: solo existe dentro de miFuncion.
+                   Cuando la función termina, desaparece */
+
+                console.log("Dentro de la función:", mensaje);
+                /* aquí dentro sí se puede leer sin problema */
+            }
+
+            /* --- INVOCAMOS LA FUNCIÓN --- */
+            miFuncion();
+            /* al ejecutarla imprime el mensaje una sola vez */
+
+            document.write("<h3>Ejercicio 5 - Ámbito de una variable</h3>");
+            document.write("<p>La variable <strong>mensaje</strong> es local: existe solo dentro de miFuncion().</p>");
+
+            /* --- INTENTO DE ACCEDER DESDE FUERA --- */
+            /* Descomenta la línea de abajo y recarga con F5.
+               En la consola aparecerá:
+
+                   Uncaught ReferenceError: mensaje is not defined
+
+               porque "mensaje" no existe fuera de la función.
+
+               console.log(mensaje);
+               ↑ esta línea da error
+            */
+
+            /* --- COMPARACIÓN: UNA VARIABLE GLOBAL --- */
+            let mensajeGlobal = "Hola desde fuera";
+            /* esta variable se declara FUERA de cualquier función,
+               así que es GLOBAL: se puede leer en cualquier parte */
+            console.log("Fuera de la función (global):", mensajeGlobal);
+            document.write("<p>En cambio, <strong>mensajeGlobal</strong> es global: se declara fuera de la función y sí se puede leer en cualquier sitio.</p>");
+
+            /* --- RESUMEN --- */
+            document.write("<p>La diferencia entre una variable local (<code>let</code> dentro de una función) y una global es el <strong>ámbito</strong>, es decir, el sitio donde existe.</p>");
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

@@ -212,12 +212,13 @@ function pintarPracticas() {
 
 function pintarClase() {
 
-    /* ---- 1. los 4 grupos de PDF ---- */
+    /* ---- 1. los 5 grupos de PDF ---- */
     var grupos = [
         { id: 'html', icono: '&lt;/&gt;', clase: 'icon-html', nombre: 'HTML5' },
         { id: 'css', icono: '{ }', clase: 'icon-css', nombre: 'CSS3' },
         { id: 'manual', icono: '&#128214;', clase: 'icon-manual', nombre: 'Manual completo' },
-        { id: 'vscode', icono: '&#9653;', clase: 'icon-vscode', nombre: 'Visual Studio Code' }
+        { id: 'vscode', icono: '&#9653;', clase: 'icon-vscode', nombre: 'Visual Studio Code' },
+        { id: 'java', icono: 'J', clase: 'icon-java', nombre: 'Java' }
     ];
 
     for (var g = 0; g < grupos.length; g++) {

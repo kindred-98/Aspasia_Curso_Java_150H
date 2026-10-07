@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Saludo | Ejercicios de funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 1 - Saludo</h1>
+        <p>Primera función: declararla y llamarla</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html" class="activo">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 1 - Saludo</h3>
+                <p>
+                    Crea una función llamada <code>saludar()</code> que muestre en la
+                    página el siguiente mensaje utilizando <code>document.write()</code>:
+                    <em>Hola, bienvenido a JavaScript</em>.
+                    Después, llama a la función para comprobar que funciona.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Una función se escribe <code>function nombre() { ... }</code>.</li>
+                <li>Los paréntesis van vacíos porque no recibe ningún dato.</li>
+                <li>Para ejecutarla escribes <code>saludar();</code>.</li>
+                <li>Las llaves <code>{ }</code> marcan dónde empieza y acaba la función.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Sintaxis</h3>
+            <p>
+                <code>function saludar() {<br>
+                &nbsp;&nbsp;document.write("...");<br>
+                }</code>
+            </p>
+
+            <h3>Partes</h3>
+            <ul>
+                <li><code>function</code>: palabra clave que declara la función.</li>
+                <li><code>saludar</code>: el nombre que le damos.</li>
+                <li><code>()</code>: los parámetros. Aquí no hay ninguno.</li>
+                <li><code>{ }</code>: el bloque de código que se ejecuta.</li>
+            </ul>
+
+            <h3>Ojo</h3>
+            <p>
+                Si declaras la función pero no la llamas con <code>saludar();</code>,
+                no se ve nada en la página.
+            </p>
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 1 - SALUDO
+               Crea una función llamada saludar() que muestre en la página
+               el mensaje "Hola, bienvenido a JavaScript" usando
+               document.write(). Después, llama a la función.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function saludar() {
+                /* "function" declara la función,
+                   "saludar" es su nombre y los paréntesis () están vacíos
+                   porque no recibe ningún parámetro */
+
+                document.write("<h3>Ejercicio 1 - Saludo</h3>");
+                /* document.write() escribe dentro de la página.
+                   Pintamos un título con la etiqueta <h3> */
+
+                document.write("<p>Hola, bienvenido a JavaScript</p>");
+                /* el mensaje que pide el enunciado, dentro de <p> */
+            }
+
+            /* --- LLAMADA A LA FUNCIÓN --- */
+            saludar();
+            /* al escribir saludar() con paréntesis ejecutamos
+               todo el código que hay dentro de sus llaves */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

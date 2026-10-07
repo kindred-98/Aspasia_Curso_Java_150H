@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Variables y tipos de dato | Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Ejercicio 4 - Variables y tipos de dato</h1>
+        <p>Todos los tipos y typeof</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html" class="activo">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 4 - Variables y tipos de dato</h3>
+                <p>
+                    Crea una variable para cada uno de los siguientes tipos de dato:
+                </p>
+                <ul>
+                    <li>Guarda el nombre de una persona.</li>
+                    <li>Guarda su edad.</li>
+                    <li>Guarda su altura en decimales.</li>
+                    <li>Indica si tiene carnet de conducir.</li>
+                    <li>Crea una variable sin asignarle ningún valor.</li>
+                    <li>Crea una variable cuyo valor sea <code>null</code>.</li>
+                    <li>Guarda en una variable tres lenguajes de programación.</li>
+                    <li>Guarda los datos de una persona: nombre y edad.</li>
+                    <li>Muestra los datos en la consola.</li>
+                    <li>Utiliza <code>typeof</code> para comprobar el tipo de cada variable.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>typeof devuelve</h3>
+            <ul>
+                <li><code>"string"</code> para el texto</li>
+                <li><code>"number"</code> para los números</li>
+                <li><code>"boolean"</code> para true/false</li>
+                <li><code>"undefined"</code> si no tiene valor</li>
+                <li><code>"object"</code> para arrays, objetos y… <code>null</code></li>
+            </ul>
+
+            <h3>El caso de null</h3>
+            <p>
+                <code>typeof null</code> devuelve <code>"object"</code>.
+                Es un error antiguo de JavaScript que se conserva por
+                compatibilidad con código viejo.
+            </p>
+
+            <h3>Array</h3>
+            <p>
+                <code>["HTML", "CSS"]</code> guarda varios valores.
+                Las posiciones empiezan en <strong>cero</strong>: el primer
+                elemento es <code>lenguajes[0]</code>, nunca <code>[1]</code>.
+            </p>
+
+            <h3>Objeto</h3>
+            <p>
+                Agrupa datos que pertenecen a lo mismo. Cada dato es una
+                propiedad: <code>nombre</code> es la clave y <code>"Ana"</code> el valor.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 4 - VARIABLES Y TIPOS DE DATO
+               Crea una variable de cada tipo de dato, muéstralas y comprueba
+               el tipo de cada una con typeof.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LAS VARIABLES --- */
+
+            /* STRING: cadena de texto */
+            let nombre = "Ana";
+            /* el tipo de dato de un texto entre comillas es string */
+
+            /* NUMBER: número entero */
+            let edad = 45;
+            /* number sin decimales */
+
+            /* NUMBER: número con decimales */
+            let altura = 1.75;
+            /* en JavaScript no hay int y double: hay un único tipo number */
+
+            /* BOOLEAN: solo true o false */
+            let tieneCarnet = true;
+
+            /* UNDEFINED: declarada pero sin valor */
+            let datoSinDefinir;
+            /* sin valor, su tipo es undefined */
+
+            /* NULL: vacía a propósito */
+            let datoVacio = null;
+            /* null = vacío a propósito.
+               Ojo: typeof null devuelve "object", un error antiguo de JS */
+
+            /* ARRAY: varios valores en una misma variable */
+            let lenguajes = ["HTML", "CSS", "JAVASCRIPT"];
+            /* un array es una lista de valores. Cada valor ocupa una posición
+               y la posición EMPIEZA A CONTAR DESDE CERO:
+               lenguajes[0] es "HTML", lenguajes[1] es "CSS" */
+
+            /* OBJECT: agrupar datos relacionados */
+            let persona = {
+                nombre: "María",
+                edad: 12
+            };
+            /* "nombre" y "edad" son propiedades (claves) del objeto,
+               y "María" y 12 son sus valores */
+
+            /* --- SALIDA POR CONSOLA CON typeof --- */
+            console.log(
+                "Nombre:", nombre, "- Tipo:", typeof nombre,
+                "\nEdad:", edad, "- Tipo:", typeof edad,
+                "\nAltura:", altura, "- Tipo:", typeof altura,
+                "\nTiene carnet:", tieneCarnet, "- Tipo:", typeof tieneCarnet,
+                "\nDato sin definir:", datoSinDefinir, "- Tipo:", typeof datoSinDefinir,
+                "\nDato vacío:", datoVacio, "- Tipo:", typeof datoVacio,
+                "\nLenguajes:", lenguajes, "- Tipo:", typeof lenguajes,
+                "\nPersona:", persona, "- Tipo:", typeof persona
+            );
+            /* typeof devuelve el TIPO de dato de la variable.
+               El \n es un salto de línea, así cada dato sale en su línea */
+
+            /* --- EL MISMO RESULTADO EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 4 - Variables y tipos de dato</h3>");
+            document.write("<p>Nombre: <strong>" + nombre + "</strong> — tipo: " + typeof nombre + "</p>");
+            document.write("<p>Edad: <strong>" + edad + "</strong> — tipo: " + typeof edad + "</p>");
+            document.write("<p>Altura: <strong>" + altura + "</strong> — tipo: " + typeof altura + "</p>");
+            document.write("<p>Tiene carnet: <strong>" + tieneCarnet + "</strong> — tipo: " + typeof tieneCarnet + "</p>");
+            document.write("<p>Dato sin definir: <strong>" + datoSinDefinir + "</strong> — tipo: " + typeof datoSinDefinir + "</p>");
+            document.write("<p>Dato vacío: <strong>" + datoVacio + "</strong> — tipo: " + typeof datoVacio + "</p>");
+            document.write("<p>Lenguajes: <strong>" + lenguajes + "</strong> — tipo: " + typeof lenguajes + "</p>");
+            document.write("<p>Persona: <strong>" + persona.nombre + ", " + persona.edad + "</strong> — tipo: " + typeof persona + "</p>");
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

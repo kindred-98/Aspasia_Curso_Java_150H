@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Datos de un producto | Variables y document.write()</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 2 - Datos de un producto</h1>
+        <p>Primera operación aritmética</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html" class="activo">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 2 - Datos de un producto</h3>
+                <p>
+                    Crea las variables <code>producto</code>, <code>precio</code> y
+                    <code>cantidad</code>. Crea una nueva variable
+                    <code>total</code> que multiplique el precio por la cantidad y
+                    muestra todos los datos con <code>document.write()</code>.
+                    <em>Producto: Teclado / Precio: 30 EUR / Cantidad: 2 / Total: 60 EUR</em>
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Una variable puede calcularse a partir de otras: <code>var total = precio * cantidad;</code></li>
+                <li>El operador <code>*</code> multiplica.</li>
+                <li>30 * 2 = 60, que es el total del enunciado.</li>
+                <li>Si el precio fuera texto, la multiplicación no funcionaría.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Variable calculada</h3>
+            <p>
+                Puede usar otras variables ya declaradas:
+                <code>var total = precio * cantidad;</code>
+            </p>
+
+            <h3>El operador *</h3>
+            <p>
+                Multiplica. Necesita que los dos lados sean números:
+                <code>30 * 2 = 60</code>.
+            </p>
+
+            <h3>Ojo con el +</h3>
+            <p>
+                <code>+</code> suma si hay números, pero junta textos si hay comillas.
+                <code>"30" + "2"</code> da <code>302</code>, y
+                <code>30 + 2</code> da <code>32</code>.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 2 - DATOS DE UN PRODUCTO
+               Crea producto, precio y cantidad, y una variable total que
+               multiplique el precio por la cantidad. Muéstralo todo con
+               document.write().
+               ============================================================ */
+
+            /* --- VARIABLES DEL ENUNCIADO --- */
+            var producto = "Teclado";
+            /* nombre del producto (texto) */
+
+            var precio = 30;
+            /* precio unitario en EUR (número, sin comillas) */
+
+            var cantidad = 2;
+            /* unidades compradas (número) */
+
+            /* --- VARIABLE CALCULADA --- */
+            var total = precio * cantidad;
+            /* el operador * multiplica: 30 * 2 = 60.
+               Esta variable se calcula a partir de las dos anteriores */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 2 - Datos de un producto</h3>");
+
+            document.write("<p>Producto: " + producto + "</p>");
+            /* nombre del producto */
+
+            document.write("<p>Precio: " + precio + " EUR</p>");
+            /* unimos el número con el texto " EUR" */
+
+            document.write("<p>Cantidad: " + cantidad + "</p>");
+            /* cantidad comprada */
+
+            document.write("<p>Total: " + total + " EUR</p>");
+            /* total ya calculado: 30 * 2 = 60 EUR */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y document.write() &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

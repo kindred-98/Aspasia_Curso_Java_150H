@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Calcular el doble | Ejercicios de funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 4 - Calcular el doble</h1>
+        <p>La palabra clave return</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html" class="activo">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 4 - Calcular el doble</h3>
+                <p>
+                    Crea una función llamada <code>doble(numero)</code>. La función debe
+                    recibir un número y devolver su doble utilizando <code>return</code>.
+                    Después, guarda el resultado en una variable y muéstralo con
+                    <code>document.write()</code>: <em>El doble de 8 es 16</em>.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li><code>return</code> devuelve el valor al lugar donde llamaste la función.</li>
+                <li>Para multiplicar se usa <code>*</code>.</li>
+                <li>Guarda el resultado de la función en una variable para poder mostrarlo.</li>
+                <li>Sin <code>return</code>, la función devolvería <code>undefined</code>.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Qué hace return</h3>
+            <p>
+                Envía el valor de vuelta a quien llamó a la función
+                y detiene la ejecución en esa línea.
+            </p>
+
+            <h3>Estructura</h3>
+            <p>
+                <code>function doble(numero) {<br>
+                &nbsp;&nbsp;return numero * 2;<br>
+                }</code>
+            </p>
+
+            <h3>Diferencia clave</h3>
+            <ul>
+                <li>En el ejercicio 3 la función pintaba el resultado con <code>document.write()</code>.</li>
+                <li>Aquí la función <strong>devuelve</strong> el resultado y quien la llama lo muestra.</li>
+                <li>Una función con <code>return</code> se puede reutilizar en muchos sitios.</li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 4 - CALCULAR EL DOBLE
+               Crea una función llamada doble(numero) que reciba un número y
+               devuelva su doble usando return. Guarda el resultado en una
+               variable y muéstralo con document.write().
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function doble(numero) {
+                /* "numero" es el parámetro que recibimos */
+
+                var resultado = numero * 2;
+                /* calculamos el doble multiplicando por 2 con el operador * */
+
+                return resultado;
+                /* return DEVUELVE el valor al lugar donde se llamó la función
+                   y DETIENE la ejecución en esta línea.
+                   Sin return, aquí fuera se guardaría undefined */
+            }
+
+            /* --- LLAMADA Y GUARDADO DEL RESULTADO --- */
+            var dobleDe8 = doble(8);
+            /* guardamos en la variable "dobleDe8" lo que devuelve la función,
+               que en este caso es 16 (8 x 2) */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 4 - Calcular el doble</h3>");
+            /* pintamos el título del ejercicio */
+
+            document.write("<p>El doble de 8 es " + dobleDe8 + "</p>");
+            /* "El doble de 8 es " + 16  ->  "El doble de 8 es 16" */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

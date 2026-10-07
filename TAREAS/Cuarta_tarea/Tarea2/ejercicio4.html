@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Precio con descuento | Variables y document.write()</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 4 - Precio con descuento</h1>
+        <p>Porcentajes con dos operaciones</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html" class="activo">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 4 - Precio con descuento</h3>
+                <p>
+                    Producto <em>Monitor</em> con precio de 200 EUR y descuento del
+                    15 %. Guarda el dinero descontado en una variable y calcula el
+                    precio final. Muestra todo con <code>document.write()</code>:
+                    <em>Precio final: 170 EUR</em>
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>Para sacar el porcentaje se multiplica y se divide: <code>200 * 15 / 100</code>.</li>
+                <li>El <code>/</code> divide, y por eso el 100 va después.</li>
+                <li>El precio final es el precio original menos lo descontado.</li>
+                <li>Guarda cada paso en su propia variable, así se entiende mejor.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Cómo sacar un porcentaje</h3>
+            <p>
+                <code>porcentaje = precio * descuento / 100</code>
+            </p>
+
+            <h3>Los 4 operadores</h3>
+            <ul>
+                <li><code>*</code> multiplica</li>
+                <li><code>/</code> divide</li>
+                <li><code>+</code> suma o junta textos</li>
+                <li><code>-</code> resta</li>
+            </ul>
+
+            <h3>Orden</h3>
+            <p>
+                <code>*</code> y <code>/</code> tienen la misma prioridad y se
+                calculan antes que <code>+</code> y <code>-</code>.
+            </p>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 4 - PRECIO CON DESCUENTO
+               Producto de 200 EUR con un 15 % de descuento. Guarda el dinero
+               descontado en una variable, calcula el precio final y muestralo
+               todo con document.write().
+               ============================================================ */
+
+            /* --- VARIABLES DEL PRODUCTO --- */
+            var nombreProducto = "Monitor";
+            /* nombre del producto (texto) */
+
+            var precioOriginal = 200;
+            /* precio antes del descuento (número) */
+
+            var porcentajeDescuento = 15;
+            /* descuento del 15 % (número, sin el símbolo %) */
+
+            /* --- CÁLCULO EN DOS PASOS --- */
+            var cantidadDescontada = precioOriginal * porcentajeDescuento / 100;
+            /* cuánto dinero se descuenta: 200 * 15 / 100 = 30.
+               Multiplicamos primero y dividimos después */
+
+            var precioFinal = precioOriginal - cantidadDescontada;
+            /* precio final: 200 - 30 = 170 */
+
+            /* --- SALIDA EN LA PÁGINA --- */
+            document.write("<h3>Ejercicio 4 - Precio con descuento</h3>");
+
+            document.write("<p>Producto: " + nombreProducto + "</p>");
+
+            document.write("<p>Precio original: " + precioOriginal + " EUR</p>");
+            /* precio antes del descuento */
+
+            document.write("<p>Descuento: " + porcentajeDescuento + " %</p>");
+            /* el porcentaje, con su símbolo % detrás */
+
+            document.write("<p>Cantidad descontada: " + cantidadDescontada + " EUR</p>");
+            /* el dinero que se descuenta: 30 EUR */
+
+            document.write("<p>Precio final: " + precioFinal + " EUR</p>");
+            /* el precio ya con descuento: 170 EUR */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y document.write() &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>

@@ -218,7 +218,9 @@ a {
     display: block;
     width: 100%;
     max-width: 100%;
-    height: auto;                   /* la altura se sola: no se deforma */
+    height: 420px;                  /* alto fijo: la portada no se estira */
+    object-fit: cover;              /* recorta la foto sin deformarla */
+    object-position: center;        /* recorta desde el centro */
     margin-top: 1rem;
     border: 3px solid #166534;
     border-radius: 12px;            /* bordes redondeados */
@@ -407,6 +409,129 @@ a {
     margin-bottom: 1rem;
 }
 
+/* --- ACTIVIDADES: desplegable por sección + dos columnas --- */
+
+.desplegable {
+    margin-top: 1rem;
+    border: 3px solid #166534;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 0.6rem 0.9rem 0.9rem 0.9rem;
+}
+
+.desplegable > summary {
+    cursor: pointer;
+    list-style: none;                /* quita la flechita del navegador */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #14532d;
+    border-bottom: 3px solid #f6c518;
+    padding-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.25s;
+}
+
+.desplegable > summary:hover {
+    color: #c1440e;
+}
+
+/* la flechita propia: apunta hacia abajo cuando está abierto */
+.desplegable > summary::before {
+    content: "\25B8";                 /* triangulo a la derecha, cerrado */
+    color: #f6c518;
+    font-size: 1rem;
+    transition: transform 0.25s;
+}
+
+.desplegable[open] > summary::before {
+    transform: rotate(90deg);         /* al abrir, la flecha baja */
+}
+
+.celulas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));   /* dos celdas por fila */
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.celula-destino {
+    display: flex;                    /* foto y texto apilados verticalmente */
+    flex-direction: column;           /* foto arriba, texto debajo */
+    border: 3px solid #166534;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 0.9rem;
+    height: 100%;                     /* ambas celdas con la misma altura */
+}
+
+.celula-destino .destino-foto {
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.celula-destino .destino-texto {
+    flex: 1 1 auto;
+    min-width: 0;                     /* permite que el texto encoja */
+    display: flex;
+    flex-direction: column;
+}
+
+.celula-destino .destino-foto img {
+    display: block;
+    width: 100%;                      /* la foto ocupa todo el ancho de la tarjeta */
+    height: 190px;
+    object-fit: cover;                /* recorta sin deformar */
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    transition: transform 0.25s, box-shadow 0.25s;   /* efecto al pasar el ratón */
+}
+
+.celula-destino .destino-foto img:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Los destinos sin foto (como Playa Los Caracas) usan toda la celda,
+   porque .destino-texto tiene flex: 1 y la foto simplemente no está */
+
+/* --- Fila de chips + botón Wikipedia --- */
+/* los chips se alinean a la izquierda y el botón se va al extremo derecho */
+
+.celula-destino .fichas {
+    display: flex;
+    flex-wrap: wrap;                  /* si no caben, el botón baja de línea */
+    align-items: center;
+    justify-content: space-between;  /* chips a la izquierda, botón a la derecha */
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+.celula-destino .fichas .ficha {
+    margin: 0;
+}
+
+.celula-destino .wikipedia {
+    display: inline-block;
+    flex-shrink: 0;                   /* el botón nunca se deforma */
+    padding: 0.35rem 0.9rem;
+    background-color: #166534;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.celula-destino .wikipedia:hover {
+    background-color: #f6c518;
+    color: #14532d;
+}
+
 .destino header {
     display: flex;                  /* nombre a la izquierda, etiqueta a la derecha */
     align-items: center;
@@ -560,6 +685,143 @@ a {
 .galeria img:hover {
     transform: scale(1.05);         /* la foto crece un 5% al pasar el ratón */
     box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* La foto es un enlace: al pulsarla se abre el modal (sin JavaScript) */
+
+.foto-enlace {
+    display: block;
+    text-decoration: none;
+}
+
+.foto-enlace img {
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+.foto-enlace:hover img,
+.foto-enlace:focus-visible img {
+    transform: scale(1.08);         /* crece un poco más que antes */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.08);       /* y se aclara un poco */
+    cursor: zoom-in;                /* el cursor indica que se puede ampliar */
+}
+
+
+/* ============ MODAL DE FOTOS (CSS puro con :target) ============ */
+/* al pulsar una foto se abre su ventana; se cierra con la X o al pulsar fuera */
+
+.modal {
+    display: none;                  /* oculta por defecto */
+}
+
+.modal:target {
+    display: flex;
+    position: fixed;                /* fijo sobre toda la pantalla */
+    inset: 0;                       /* ocupa el 100% del ancho y alto */
+    z-index: 100;                   /* por encima de todo */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(8, 25, 15, 0.9);   /* fondo oscuro translúcido */
+}
+
+.modal-fondo {
+    position: absolute;              /* ocupa todo el fondo del modal */
+    inset: 0;
+    z-index: 0;
+    display: block;
+    cursor: zoom-out;                /* indica que al pulsar se cierra */
+}
+
+.modal-foto {
+    position: relative;
+    z-index: 1;                      /* la foto va por encima del fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0.8rem;
+    background-color: #ffffff;
+    border: 3px solid #f6c518;
+    border-radius: 12px;
+    overflow: auto;                 /* si la foto es alta, la ventana scrollea */
+}
+
+/* Se anulan los estilos de .galeria img para que la foto no salga recortada */
+.modal-foto img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 76vh;               /* alto máximo antes de(scrollear) */
+    object-fit: contain;            /* la foto entera, sin recortarla */
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    animation: modal-zoom 0.3s ease;   /* la foto aparece con un pequeño zoom */
+}
+
+@keyframes modal-zoom {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-pie {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #14532d;
+    text-align: center;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: -0.8rem;
+    right: -0.8rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6c518;
+    color: #14532d;
+    border: 3px solid #14532d;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.modal-cerrar:hover {
+    background-color: #c1440e;
+    color: #ffffff;
+}
+
+/* el texto que aparece si el usuario tiene animaciones desactivadas */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .galeria img,
+    .foto-enlace img,
+    .modal-foto img {
+        transition: none;
+        animation: none;
+    }
+
+    .foto-enlace:hover img,
+    .galeria img:hover {
+        transform: none;
+    }
 }
 
 .galeria figcaption {
@@ -910,6 +1172,32 @@ form .form-rejilla {
     .alojamiento,
     .mapa-web article {
         margin-right: 0;
+    }
+
+    /* en móvil cada destino vuelve a ocupar una sola columna */
+    .celulas {
+        grid-template-columns: 1fr;
+    }
+
+    .celula-destino .destino-foto img {
+        height: 200px;
+    }
+
+    .imagen-portada {
+        height: 260px;               /* más baja todavía en móvil */
+    }
+
+    .modal:target {
+        padding: 0.6rem;
+    }
+
+    .modal-foto img {
+        max-height: 68vh;
+    }
+
+    .modal-cerrar {
+        top: -0.6rem;
+        right: -0.6rem;
     }
 
     .nav a {

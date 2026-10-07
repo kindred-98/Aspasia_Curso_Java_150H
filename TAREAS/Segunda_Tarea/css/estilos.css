@@ -83,7 +83,7 @@ body {
 .header .subtitle {
   margin: 0.4rem 0 0 0;
   font-size: 0.8rem;
-  color: #ffe9d2;
+  color: #000000;
 }
 
 /* ---------- NAV ---------- */
@@ -95,7 +95,7 @@ body {
   border-top: none;
   display: flex;
   align-items: center;
-  justify-content center;
+  justify-content: center;
 }
 
 .nav a {
@@ -253,6 +253,25 @@ body {
   margin-top: 0.2rem;
 }
 
+.card-personaje .info .rol {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.card-personaje .img-faltante {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0e6d2;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  border-bottom: 2px dashed var(--border-color);
+}
+
 /* ---------- LUGARES GRID ---------- */
 
 .grid-lugares {
@@ -354,6 +373,34 @@ body {
   font-size: 0.75rem;
   color: var(--text-muted);
   align-self: flex-start;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+  width: 100%;
+  background-color: var(--footer-bg);
+  color: #ffffff;
+  border-top: 3px solid #0d1730;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.footer .contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.footer p:first-child {
+  font-weight: 600;
+  color: var(--accent-orange);
 }
 
 /* ---------- RESPONSIVE ---------- */

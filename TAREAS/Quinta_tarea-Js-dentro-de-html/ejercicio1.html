@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Variable edad | Variables y funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="volver-tareas" href="../../WebMia/tareas.html">&larr; Volver a tareas</a>
+
+    <header class="header">
+        <h1>Ejercicio 1 - Variable edad</h1>
+        <p>Declarar con let y reasignar el valor</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html" class="activo">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 1 - Variable edad</h3>
+                <p>
+                    Crea una variable llamada <code>edad</code> y asígnale tu edad.
+                    Muestra el resultado a través de la consola y luego actualiza el
+                    valor de <code>edad</code> y vuelve a mostrar el valor.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li><code>let</code> declara una variable cuyo valor puede cambiar.</li>
+                <li>Para cambiar el valor se escribe solo el nombre: <code>edad = 45;</code>, sin <code>let</code>.</li>
+                <li><code>console.log()</code> escribe en la consola del navegador (<code>F12</code> → <em>Console</em>).</li>
+                <li><code>document.write()</code> escribe dentro de la página.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Declarar</h3>
+            <p>
+                <code>let edad = 45;</code>
+            </p>
+
+            <h3>Cambiar el valor</h3>
+            <p>
+                <code>edad = 46;</code><br>
+                Sin <code>let</code>. Si lo pones otra vez, JavaScript da error.
+            </p>
+
+            <h3>Ver el resultado</h3>
+            <ul>
+                <li>En la consola: <code>console.log(edad);</code></li>
+                <li>En la página: <code>document.write(edad);</code></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 1 - VARIABLE EDAD
+               Crea una variable llamada edad y asígnale tu edad. Muestra el
+               resultado a través de la consola y luego actualiza el valor
+               de edad y vuelve a mostrar el valor.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA VARIABLE --- */
+            let edad = 45;
+            /* "let" declara una variable cuyo valor puede cambiar.
+               "edad" es el nombre y 45 es el valor que le guardamos.
+               En el ejercicio 4 creamos otra variable llamada "edad",
+               así que aquí no podemos repetir ese nombre dentro del mismo
+               <script>. */
+
+            /* --- MOSTRAR EL RESULTADO --- */
+            console.log("Valor inicial de edad:", edad);
+            /* console.log() escribe en la consola del navegador.
+               Se abre con F12, pestaña "Console".
+               Para verlo también en la página usamos document.write: */
+            document.write("<p>Valor inicial de <strong>edad</strong>: " + edad + "</p>");
+
+            /* --- MODIFICACIÓN DEL VALOR --- */
+            edad = 46;
+            /* reasignamos el valor SIN volver a escribir let.
+               Si escribiéramos "let edad = 46" otra vez, JavaScript
+               daría error: la variable ya está declarada */
+
+            /* --- MOSTRAR EL NUEVO RESULTADO --- */
+            console.log("Valor después de cambiar:", edad);
+            document.write("<p>Valor después de cambiar: <strong>" + edad + "</strong></p>");
+            /* el mismo nombre, ahora con otro valor */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Variables y funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../navegacion.js"></script>
+</body>
+</html>

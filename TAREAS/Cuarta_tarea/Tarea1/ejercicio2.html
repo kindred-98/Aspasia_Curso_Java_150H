@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Mostrar un nombre | Ejercicios de funciones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Ejercicio 2 - Mostrar un nombre</h1>
+        <p>Funciones con un parámetro</p>
+    </header>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html" class="activo">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <main class="main">
+            <h2>Enunciado</h2>
+
+            <div class="ejercicio">
+                <h3>Ejercicio 2 - Mostrar un nombre</h3>
+                <p>
+                    Crea una función llamada <code>mostrarNombre(nombre)</code>.
+                    La función debe recibir un nombre como parámetro y mostrar un saludo
+                    con <code>document.write()</code>: <em>Hola Patricia</em>.
+                    Llama a la función pasando un nombre como argumento.
+                </p>
+            </div>
+
+            <h3>Pistas</h3>
+            <ul>
+                <li>El parámetro se escribe entre los paréntesis: <code>mostrarNombre(nombre)</code>.</li>
+                <li>Dentro de la función, <code>nombre</code> vale lo que le pasemos al llamarla.</li>
+                <li>Para unir textos se usa el signo <code>+</code>: <code>"Hola " + nombre</code>.</li>
+                <li>El texto siempre va entre comillas, el valor de la variable no.</li>
+            </ul>
+        </main>
+
+        <aside class="aside">
+            <h2>Recordatorio</h2>
+
+            <h3>Parámetro</h3>
+            <p>
+                El hueco que la función espera recibir. Se declara en la definición
+                de la función: <code>function mostrarNombre(nombre)</code>.
+            </p>
+
+            <h3>Argumento</h3>
+            <p>
+                El valor real que le pasamos al ejecutar la función:
+                <code>mostrarNombre("Patricia")</code>.
+            </p>
+
+            <h3>Concatenar</h3>
+            <p>
+                Con <code>+</code> juntamos trozos de texto y variables:
+                <code>"Hola " + nombre</code> produce <code>Hola Patricia</code>.
+            </p>
+
+            <h3>Ojo</h3>
+            <p>
+                <code>"Patricia"</code> con comillas es texto.
+                <code>nombre</code> sin comillas es la variable.
+            </p>
+        </aside>
+
+    </div>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="resultados">
+        <h2>Resultado</h2>
+
+        <script>
+            /* ============================================================
+               EJERCICIO 2 - MOSTRAR UN NOMBRE
+               Crea una función llamada mostrarNombre(nombre) que reciba un
+               nombre como parámetro y muestre "Hola Patricia" con
+               document.write(). Llámala pasando un nombre como argumento.
+               ============================================================ */
+
+            /* --- DECLARACIÓN DE LA FUNCIÓN --- */
+            function mostrarNombre(nombre) {
+                /* "nombre" es el PARÁMETRO: el hueco que la función espera recibir.
+                   Cuando la llamemos le-meteremos un valor dentro */
+
+                document.write("<h3>Ejercicio 2 - Mostrar un nombre</h3>");
+                /* pintamos el título del ejercicio */
+
+                document.write("<p>Hola " + nombre + "</p>");
+                /* concatenamos con + :  "Hola " + "Patricia"  ->  "Hola Patricia".
+                   La palabra nombre se sustituye por el valor que le pasemos */
+            }
+
+            /* --- LLAMADA A LA FUNCIÓN --- */
+            mostrarNombre("Patricia");
+            /* "Patricia" entre comillas es el ARGUMENTO:
+               ese valor entra en la variable "nombre" */
+        </script>
+    </section>
+
+    <footer class="footer">
+        <p>Ejercicios de funciones JavaScript &copy; 2026</p>
+    </footer>
+
+<script src="../../navegacion.js"></script>
+</body>
+</html>
