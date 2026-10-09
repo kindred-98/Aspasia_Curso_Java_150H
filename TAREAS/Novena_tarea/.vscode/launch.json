@@ -1,0 +1,83 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "precioDescuento",
+            "request": "launch",
+            "mainClass": "TAREAS.Novena_tarea.precioDescuento",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "Ej1",
+            "request": "launch",
+            "mainClass": "PrimerEjecicioFacil.Ej1",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "PProducto",
+            "request": "launch",
+            "mainClass": "PrimerEjecicioFacil.PProducto",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "YoSolito",
+            "request": "launch",
+            "mainClass": "PrimerEjecicioFacil.YoSolito",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "PAlumno",
+            "request": "launch",
+            "mainClass": "primervezenjava.PAlumno",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "VariableRun",
+            "request": "launch",
+            "mainClass": "primervezenjava.Proyecto2.VariableRun",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "AngelEjercicio",
+            "request": "launch",
+            "mainClass": "SegundoDia.AngelEjercicio",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "AngelEjercios2 (triangulo)",
+            "request": "launch",
+            "mainClass": "SegundoDia.AngelEjercios2",
+            "projectName": "Novena_tarea",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "java",
+            "name": "PercioConDescuentos",
+            "request": "launch",
+            "mainClass": "SegundoDia.PercioConDescuentos",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "Compra (clase)",
+            "request": "launch",
+            "mainClass": "Tarea4_java.Compra",
+            "projectName": "Novena_tarea"
+        },
+        {
+            "type": "java",
+            "name": "PrecioConDescuentoEIVA",
+            "request": "launch",
+            "mainClass": "Tarea4_java.PrecioConDescuentoEIVA",
+            "projectName": "Novena_tarea"
+        }
+    ]
+}
